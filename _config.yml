@@ -1,0 +1,4 @@
+name: JuliaOpt.org
+markdown: redcarpet
+pygments: true
+permalink: /:year/:title.html
