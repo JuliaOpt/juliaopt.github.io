@@ -7,15 +7,86 @@ title: JuliaOpt - Home of the JuliaOpt Project
   <img src="/images/logo300.png" style="display: block; margin-left: auto; margin-right: auto; margin-bottom: 10px">
 
   <h2>What is Julia?</h2>
-    {% capture blurb %}
-  {% include blurb.md %}
-  {% endcapture %}
-  {{ blurb | markdownify }}
+  <p><a href="http://julialang.org">Julia</a> is a "high-level, high-performance dynamic programming language for technical computing". It is free (open-source) and cross-platform. The familiar syntax, the ease of connecting with external libraries, the speed, and advanced language features like metaprogramming offer interesting possibilities for optimization software.</p>
 
   <h2>What is JuliaOpt?</h2>
-  <ul class="posts">
-    <li>JuMP</li>
-    <li>Solver interfaces, table of capabilities?</li>
+  <p><a href="http://juliaopt.org">JuliaOpt</a> is an umbrella group for Julia-based optimization-related projects. All our code is available from our <a href="http://github.com/JuliaOpt/">GitHub</a> page, as well as through the Julia <a href="http://docs.julialang.org/en/latest/manual/packages/">package manager</a>. The current JuliaOpt projects include:</p>
+  <ul>
+    <li><strong>JuMP</strong> - An algebraic modelling language for optimization problems embedded in Julia that generates models as quick as commercial modelling tools. (<a href="https://jump.readthedocs.org/en/latest/jump.html">Documentation</a>, <a href="https://github.com/IainNZ/JuMP.jl">GitHub</a>)</li>
   </ul>
+
+  We also have connections to many open-source and commercial solvers:
+  <table style="text-align: center;" width="100%">
+    <caption>Julia Solver Interfaces</caption>
+    <thead>
+      <tr>
+        <th>Solver</th>
+        <th>Julia</th>
+        <th>Status</th>
+        <th>LP</th>
+        <th>MILP</th>
+        <th>SOCP</th>
+        <th>MISOCP</th>
+        <th>SDP</th>
+        <th>NLP</th>
+        <th>MINLP</th>
+        <th>Other</th>
+      </tr>
+    </thead>
+
+    <tfoot> <!-- Must appear before tbody, see W3.org -->
+      <tr style="text-align: left">
+        <td colspan="11">
+          <small>(1): Convex nonlinear problems only.</small>
+        </td>
+      </tr>
+    </tfoot>
+
+    <tbody>
+      <tr>
+        <th><a href="https://www.coin-or.org">COIN</a> <a href="https://projects.coin-or.org/Cbc">Cbc</a>/<a href="https://projects.coin-or.org/Clp">Clp</a></th>
+        <td><a href="https://github.com/mlubin/Cbc.jl">Cbc.jl</a>/<a href="https://github.com/mlubin/Clp.jl">Clp.jl</a></td>
+        <td>100%</td>
+        <td>&#10004;</td> <!-- LP -->
+        <td>&#10004;</td> <!-- MILP -->
+        <td></td> <!-- SOCP -->
+        <td></td> <!-- MISOCP -->
+        <td></td> <!-- SDP -->
+        <td></td> <!-- NLP -->
+        <td></td> <!-- MINLP -->
+        <td></td> <!-- Other -->
+      </tr>
+
+      <tr>
+        <th><a href="http://www.gurobi.com">Gurobi</a></th>
+        <td><a href="https://github.com/mlubin/Gurobi.jl">Gurobi.jl</a></td>
+        <td>75%</td>
+        <td>&#10004;</td> <!-- LP -->
+        <td>&#10004;</td> <!-- MILP -->
+        <td>&#10004;</td> <!-- SOCP -->
+        <td>&#10004;</td> <!-- MISOCP -->
+        <td></td> <!-- SDP -->
+        <td></td> <!-- NLP -->
+        <td></td> <!-- MINLP -->
+        <td>IP Callbacks</td> <!-- Other -->
+      </tr>
+
+      <tr>
+        <th><a href="http://www.mosek.com">Mosek</a></th>
+        <td><a href="https://github.com/IainNZ/Mosek.jl">Mosek.jl</a></td>
+        <td>10%</td>
+        <td>&#10004;</td> <!-- LP -->
+        <td>&#10004;</td> <!-- MILP -->
+        <td>&#10004;</td> <!-- SOCP -->
+        <td>&#10004;</td> <!-- MISOCP -->
+        <td>&#10004;</td> <!-- SDP -->
+        <td>&#10004;<small>1</small></td> <!-- NLP -->
+        <td></td> <!-- MINLP -->
+        <td></td> <!-- Other -->
+      </tr>
+
+    </tbody>
+
+  </table>
 
 </div>

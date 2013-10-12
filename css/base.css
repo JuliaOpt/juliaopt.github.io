@@ -287,3 +287,27 @@
  pre { overflow: auto; }
  code { background: #eeeeee; font-family: Monaco, "Courier New", monospace; }
  .highlight { margin-bottom: 20px !important; }
+
+/* Front page table */
+th {
+ background-color: #EEEEEE;
+ border: 1px solid #CCCCCC;
+ color: #555555;
+ padding: 8px;
+ text-align: center;
+}
+
+td {
+ border: 1px solid #CCCCCC;
+ padding: 5px 10px;
+ vertical-align: top;
+}
+
+caption {
+ text-align: center;
+ background-color: #EFEFEF;
+ border: 1px solid #CCCCCC;
+ border-bottom: none;
+ font-weight: bold;
+ padding: 5px;
+}
