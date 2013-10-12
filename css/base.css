@@ -103,12 +103,12 @@
 ================================================== */
 	ul, ol { margin-bottom: 20px; }
 	/* ul { list-style: none outside; } */
-        ul { list-style: disc outside; }
+        ul { list-style: disc; }
 	ol { list-style: decimal; }
 	ol, ul.square, ul.circle, ul.disc { margin-left: 30px; }
-	ul.square { list-style: square outside; }
-	ul.circle { list-style: circle outside; }
-	ul.disc { list-style: disc outside; }
+	ul.square { list-style: square; }
+	ul.circle { list-style: circle; }
+	ul.disc { list-style: disc; }
 	ul ul, ul ol,
 	ol ol, ol ul { margin: 4px 0 5px 30px; font-size: 90%;  }
 	ul ul li, ul ol li,
