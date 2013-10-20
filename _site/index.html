@@ -56,7 +56,7 @@
     <!--<div class="twelve columns">-->
     <div class="sixteen columns">
       <div id="home">
-  <img src="/images/logo300.png" style="display: block; margin-left: auto; margin-right: auto; margin-bottom: 20px">
+  <img src="/images/logo300.png" style="display: block; margin-left: auto; margin-right: auto; margin-bottom: 20px" alt="The three circles represent (clockwise): linear, integer, and nonlinear programming.">
 
   <h2>What is Julia?</h2>
   <p><a href="http://julialang.org">Julia</a> is a "high-level, high-performance dynamic programming language for technical computing". It is free (open-source) and cross-platform. The familiar syntax, the ease of connecting with external libraries, the speed, and advanced language features like metaprogramming offer interesting possibilities for optimization software.</p>
@@ -76,11 +76,10 @@
       <tr>
         <th>Solver</th>
         <th>Julia</th>
-        <!--<th>Status</th>-->
         <th>LP</th>
         <th>MILP</th>
-        <th>SOCP</th>
-        <th>MISOCP</th>
+        <th>QCQP</th>
+        <th>MIQCQP</th>
         <th>SDP</th>
         <th>NLP</th>
         <th>MINLP</th>
@@ -91,7 +90,19 @@
     <tfoot> <!-- Must appear before tbody, see W3.org -->
       <tr style="text-align: left">
         <td colspan="10">
-          <small>(1): Convex nonlinear problems only.</small>
+          <small>
+	  <strong>Key:</strong>
+	  <ul style="list-style: none; margin-top: 5px">
+            <li>LP=Linear Programming, MILP=Mixed Integer LP</li>
+	    <li>QCQP=Quadratically constrained quadratic programs (incl. SOCP), MIQCQP=Mixed Integer QCQP</li>
+	    <li>SDP=Semidefinite Programming</li>
+	    <li>NLP=Nonlinear Programming, MINLP=Mixed Integer NLP</li>
+          </ul>
+          <strong>Notes:</strong>
+          <ol style="">
+	    <li>These must be specified like any other non-linear program, e.g. gradient and sparse Jacobian.</li>
+          </ol>
+	  </small>
         </td>
       </tr>
     </tfoot>
@@ -100,11 +111,23 @@
       <tr>
         <th><a href="https://www.coin-or.org">COIN</a> <a href="https://projects.coin-or.org/Cbc">Cbc</a>/<a href="https://projects.coin-or.org/Clp">Clp</a></th>
         <td><a href="https://github.com/mlubin/Cbc.jl">Cbc.jl</a>/<a href="https://github.com/mlubin/Clp.jl">Clp.jl</a></td>
-        <!--<td>100%</td>-->
         <td>&#10004;</td> <!-- LP -->
         <td>&#10004;</td> <!-- MILP -->
-        <td></td> <!-- SOCP -->
-        <td></td> <!-- MISOCP -->
+        <td></td> <!-- QCQP -->
+        <td></td> <!-- MIQCQP -->
+        <td></td> <!-- SDP -->
+        <td></td> <!-- NLP -->
+        <td></td> <!-- MINLP -->
+        <td></td> <!-- Other -->
+      </tr>
+      
+      <tr>
+        <th><a href="http://www.gnu.org/software/glpk/">GNU GLPK</a></th>
+        <td><a href="https://github.com/JuliaOpt/GLPK.jl">GLPK.jl</a></td>
+        <td>&#10004;</td> <!-- LP -->
+        <td>&#10004;</td> <!-- MILP -->
+        <td></td> <!-- QCQP -->
+        <td></td> <!-- MIQCQP -->
         <td></td> <!-- SDP -->
         <td></td> <!-- NLP -->
         <td></td> <!-- MINLP -->
@@ -114,33 +137,29 @@
       <tr>
         <th><a href="http://www.gurobi.com">Gurobi</a></th>
         <td><a href="https://github.com/JuliaOpt/Gurobi.jl">Gurobi.jl</a></td>
-        <!--<td>75%</td>-->
         <td>&#10004;</td> <!-- LP -->
         <td>&#10004;</td> <!-- MILP -->
-        <td>&#10004;</td> <!-- SOCP -->
-        <td>&#10004;</td> <!-- MISOCP -->
+        <td>&#10004;</td> <!-- QCQP -->
+        <td>&#10004;</td> <!-- MIQCQP -->
         <td></td> <!-- SDP -->
         <td></td> <!-- NLP -->
         <td></td> <!-- MINLP -->
         <td>IP Callbacks</td> <!-- Other -->
       </tr>
 
-      <!--<tr>
-        <th><a href="http://www.mosek.com">Mosek</a></th>
-        <td><a href="https://github.com/IainNZ/Mosek.jl">Mosek.jl</a></td>
-        <td>10%</td>
-        <td>&#10004;</td> <!-- LP --
-        <td>&#10004;</td> <!-- MILP --
-        <td>&#10004;</td> <!-- SOCP --
-        <td>&#10004;</td> <!-- MISOCP --
-        <td>&#10004;</td> <!-- SDP --
-        <td>&#10004;<small>1</small></td> <!-- NLP --
-        <td></td> <!-- MINLP --
-        <td></td> <!-- Other --
-      </tr>-->
-
+      <tr>
+        <th><a href="https://projects.coin-or.org/Ipopt">Ipopt</a></th>
+        <td><a href="https://github.com/JuliaOpt/Ipopt.jl">Ipopt.jl</a></td>
+        <td>&#10004;<small>1</small></td> <!-- LP -->
+        <td></td> <!-- MILP -->
+        <td>&#10004;<small>1</small></td> <!-- QCQP -->
+        <td></td> <!-- MIQCQP -->
+        <td></td> <!-- SDP -->
+        <td>&#10004;</td> <!-- NLP -->
+        <td></td> <!-- MINLP -->
+        <td></td> <!-- Other -->
+      </tr>
     </tbody>
-
   </table>
 
   <h2>Guidelines for JuliaOpt Packages</h2>
@@ -151,9 +170,8 @@ that packages follow the following simple guidelines:</p>
 
 <ul>
 <li>Packages should have good documentation.</li>
-<li>Packages must have a basic suite of tests in a <code>test</code>
-subdirectory. Unit testing and the use of the <a href="https://travis-ci.org/">Travis</a> continuous
-integration service is strongly encouraged.</li>
+<li>Packages must have a basic suite of tests in a <code>test</code> subdirectory, ideally controlled by a master file <code>test/runtests.jl</code>.
+Unit testing and the use of the <a href="https://travis-ci.org/">Travis</a> continuous integration service is strongly encouraged.</li>
 <li>(Recent) Linux, OS X, and Windows platforms must be fully supported.</li>
 <li>For packages with freely distributable binary dependencies, these
 should be installed automatically via <a href="https://github.com/loladiro/BinDeps.jl">BinDeps</a>.  Binaries should be

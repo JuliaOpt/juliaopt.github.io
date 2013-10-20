@@ -3,9 +3,8 @@ packages for users of Julia. To be included in JuliaOpt, we request
 that packages follow the following simple guidelines:
 
 * Packages should have good documentation.
-* Packages must have a basic suite of tests in a ``test``
-subdirectory. Unit testing and the use of the [Travis] continuous
-integration service is strongly encouraged.
+* Packages must have a basic suite of tests in a ``test`` subdirectory, ideally controlled by a master file ``test/runtests.jl``.
+Unit testing and the use of the [Travis] continuous integration service is strongly encouraged.
 * (Recent) Linux, OS X, and Windows platforms must be fully supported.
 * For packages with freely distributable binary dependencies, these
 should be installed automatically via [BinDeps].  Binaries should be
