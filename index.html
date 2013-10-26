@@ -10,7 +10,7 @@ title: JuliaOpt - Home of the JuliaOpt Project
   <p><a href="http://julialang.org">Julia</a> is a "high-level, high-performance dynamic programming language for technical computing". It is free (open-source) and cross-platform. The familiar syntax, the ease of connecting with external libraries, the speed, and advanced language features like metaprogramming offer interesting possibilities for optimization software.</p>
 
   <h2>What is JuliaOpt?</h2>
-  <p><a href="http://juliaopt.org">JuliaOpt</a> is an umbrella group for Julia-based optimization-related projects. All our code is available from our <a href="http://github.com/JuliaOpt/">GitHub</a> page, as well as through the Julia <a href="http://docs.julialang.org/en/latest/manual/packages/">package manager</a>. The current JuliaOpt projects include:</p>
+  <p><a href="http://juliaopt.org">JuliaOpt</a> is an umbrella group for Julia-based optimization-related projects. All our code is available from our <a href="http://github.com/JuliaOpt/">GitHub</a> page, as well as through the Julia <a href="http://docs.julialang.org/en/latest/manual/packages/">package manager</a>. The current JuliaOpt projects are:</p>
   <ul>
     <li><strong>JuMP</strong> - An algebraic modeling language for optimization problems embedded in Julia that generates models as quick as commercial modeling tools. (<a href="https://jump.readthedocs.org/en/latest/jump.html">Documentation</a>, <a href="https://github.com/JuliaOpt/JuMP.jl">GitHub</a>)</li>
     <li><strong>Optim</strong> - Implementations of basic optimization algorithms in pure Julia for unconstrained or simply-constrained problems. (<a href="https://github.com/JuliaOpt/Optim.jl/blob/master/README.md">Documentation</a>, <a href="https://github.com/JuliaOpt/Optim.jl">GitHub</a>)</li>
@@ -25,6 +25,7 @@ title: JuliaOpt - Home of the JuliaOpt Project
       <tr>
         <th>Solver</th>
         <th>Julia</th>
+        <th>JuMP</th>
         <th>LP</th>
         <th>MILP</th>
         <th>QCQP</th>
@@ -38,17 +39,18 @@ title: JuliaOpt - Home of the JuliaOpt Project
 
     <tfoot> <!-- Must appear before tbody, see W3.org -->
       <tr style="text-align: left">
-        <td colspan="10">
+        <td colspan="11">
           <small>
 	  <strong>Key:</strong>
-	  <ul style="list-style: none; margin-top: 5px">
-            <li>LP = <a href="http://en.wikipedia.org/wiki/Linear_programming">Linear Programming</a></li>
-            <li>MILP = <a href="http://en.wikipedia.org/wiki/Integer_programming">Mixed Integer LP</a></li>
-            <li>QCQP = <a href="http://en.wikipedia.org/wiki/Second_order_cone_programming">Quadratically constrained quadratic programs (incl. SOCP)</a></li>
-            <li>MIQCQP = Mixed Integer QCQP</li>
-            <li>SDP = <a href="http://en.wikipedia.org/wiki/Semidefinite_programming">Semidefinite Programming</a></li>
-            <li>NLP = (constrained) <a href="http://en.wikipedia.org/wiki/Nonlinear_programming">Nonlinear Programming</a></li>
-            <li>MINLP = Mixed Integer NLP</li>
+	  <ul style="list-style: none; margin-top: 5px; margin-bottom: 5px">
+            <li style="margin: 0.1em 0;">JuMP = Can call this solver via <a href="https://github.com/JuliaOpt/JuMP.jl">JuMP</a></li>
+            <li style="margin: 0.1em 0;">LP = <a href="http://en.wikipedia.org/wiki/Linear_programming">Linear Programming</a></li>
+            <li style="margin: 0.1em 0;">MILP = <a href="http://en.wikipedia.org/wiki/Integer_programming">Mixed Integer LP</a></li>
+            <li style="margin: 0.1em 0;">QCQP = <a href="http://en.wikipedia.org/wiki/Second_order_cone_programming">Quadratically constrained quadratic programs (incl. SOCP)</a></li>
+            <li style="margin: 0.1em 0;">MIQCQP = Mixed Integer QCQP</li>
+            <li style="margin: 0.1em 0;">SDP = <a href="http://en.wikipedia.org/wiki/Semidefinite_programming">Semidefinite Programming</a></li>
+            <li style="margin: 0.1em 0;">NLP = (constrained) <a href="http://en.wikipedia.org/wiki/Nonlinear_programming">Nonlinear Programming</a></li>
+            <li style="margin: 0.1em 0;">MINLP = Mixed Integer NLP</li>
           </ul>
           <strong>Notes:</strong>
           <ol style="">
@@ -65,6 +67,7 @@ title: JuliaOpt - Home of the JuliaOpt Project
         <td><a href="https://github.com/mlubin/Cbc.jl">Cbc.jl</a>/<a href="https://github.com/mlubin/Clp.jl">Clp.jl</a></td>
         <td>&#10004;</td> <!-- LP -->
         <td>&#10004;</td> <!-- MILP -->
+        <td>&#10004;</td> <!-- JuMP -->
         <td></td> <!-- QCQP -->
         <td></td> <!-- MIQCQP -->
         <td></td> <!-- SDP -->
@@ -78,6 +81,7 @@ title: JuliaOpt - Home of the JuliaOpt Project
         <td><a href="https://github.com/JuliaOpt/GLPK.jl">GLPK.jl</a></td>
         <td>&#10004;</td> <!-- LP -->
         <td>&#10004;</td> <!-- MILP -->
+        <td>&#10004;</td> <!-- JuMP -->
         <td></td> <!-- QCQP -->
         <td></td> <!-- MIQCQP -->
         <td></td> <!-- SDP -->
@@ -91,6 +95,7 @@ title: JuliaOpt - Home of the JuliaOpt Project
         <td><a href="https://github.com/JuliaOpt/Gurobi.jl">Gurobi.jl</a></td>
         <td>&#10004;</td> <!-- LP -->
         <td>&#10004;</td> <!-- MILP -->
+        <td>&#10004;</td> <!-- JuMP -->
         <td>&#10004;</td> <!-- QCQP -->
         <td>&#10004;</td> <!-- MIQCQP -->
         <td></td> <!-- SDP -->
@@ -102,6 +107,7 @@ title: JuliaOpt - Home of the JuliaOpt Project
       <tr>
         <th><a href="https://projects.coin-or.org/Ipopt">Ipopt</a></th>
         <td><a href="https://github.com/JuliaOpt/Ipopt.jl">Ipopt.jl</a></td>
+        <td></td> <!-- JuMP -->
         <td>&#10004;<small>1</small></td> <!-- LP -->
         <td></td> <!-- MILP -->
         <td>&#10004;<small>1</small></td> <!-- QCQP -->
