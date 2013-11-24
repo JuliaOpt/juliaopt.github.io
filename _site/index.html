@@ -66,7 +66,6 @@
   <ul>
     <li><strong>JuMP</strong> - An algebraic modeling language for optimization problems embedded in Julia that generates models as quick as commercial modeling tools. (<a href="https://jump.readthedocs.org/en/latest/jump.html">Documentation</a>, <a href="https://github.com/JuliaOpt/JuMP.jl">GitHub</a>)</li>
     <li><strong>Optim.jl</strong> - Implementations of standard optimization algorithms in pure Julia for unconstrained or box constrained problems. (<a href="https://github.com/JuliaOpt/Optim.jl/blob/master/README.md">Documentation</a>, <a href="https://github.com/JuliaOpt/Optim.jl">GitHub</a>)</li>
-    <li><strong>NLopt.jl</strong> - An interface to the free/open-source <a href="http://ab-initio.mit.edu/nlopt">NLopt</a> library for nonlinear optimization. (<a href="https://github.com/JuliaOpt/NLopt.jl/blob/master/README.md">Documentation</a>, <a href="https://github.com/JuliaOpt/NLopt.jl">GitHub</a>)</li>
     <li><strong>MathProgBase</strong> - A standardized interface implemented by solvers that allows code to remain solver-agnostic. Used by JuMP. (<a href="http://mathprogbasejl.readthedocs.org/en/latest/mathprogbase.html">Documentation</a>, <a href="https://github.com/JuliaOpt/MathProgBase.jl">GitHub</a>)</li>
   </ul>
 
@@ -162,6 +161,20 @@
         <th><a href="https://projects.coin-or.org/Ipopt">Ipopt</a></th>
         <td><a href="https://github.com/JuliaOpt/Ipopt.jl">Ipopt.jl</a></td>
         <td>&#10004;<small>1</small></td> <!-- JuMP -->
+        <td>&#10004;<small>2</small></td> <!-- LP -->
+        <td></td> <!-- MILP -->
+        <td>&#10004;<small>2</small></td> <!-- QCQP -->
+        <td></td> <!-- MIQCQP -->
+        <td></td> <!-- SDP -->
+        <td>&#10004;</td> <!-- NLP -->
+        <td></td> <!-- MINLP -->
+        <td></td> <!-- Other -->
+      </tr>
+
+      <tr>
+        <th><a href="http://ab-initio.mit.edu/nlopt">NLopt</a></th>
+        <td><a href="https://github.com/JuliaOpt/NLopt.jl">NLopt.jl</a></td>
+        <td></td> <!-- JuMP -->
         <td>&#10004;<small>2</small></td> <!-- LP -->
         <td></td> <!-- MILP -->
         <td>&#10004;<small>2</small></td> <!-- QCQP -->
