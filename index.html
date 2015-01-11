@@ -18,6 +18,10 @@
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/skeleton.css">
   <link rel="stylesheet" href="css/layout.css">
+  <style type="text/css">
+     th { vertical-align: middle; }
+     td { vertical-align: middle; }
+  </style>
 
   <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -63,35 +67,34 @@
     <li><strong>JuMP</strong> - An algebraic modeling language for linear, quadratic, and nonlinear constrained optimization problems embedded in Julia. Generates models as quick as commercial modeling tools and supports advanced features like solver callbacks. (<a href="https://jump.readthedocs.org/en/latest/">Documentation</a>, <a href="https://github.com/JuliaOpt/JuMP.jl">GitHub</a>)</li>
     <li><strong>Optim.jl</strong> - Implementations of standard optimization algorithms in pure Julia for unconstrained or box constrained problems. (<a href="https://github.com/JuliaOpt/Optim.jl/blob/master/README.md">Documentation</a>, <a href="https://github.com/JuliaOpt/Optim.jl">GitHub</a>)</li>
     <li><strong>MathProgBase</strong> - A standardized interface implemented by solvers that allows code to remain solver-agnostic. Used by JuMP. (<a href="http://mathprogbasejl.readthedocs.org/en/latest/mathprogbase.html">Documentation</a>, <a href="https://github.com/JuliaOpt/MathProgBase.jl">GitHub</a>)</li>
+    <li><strong>Convex.jl</strong> - An algebraic modeling language for <a href="http://stanford.edu/~boyd/papers/disc_cvx_prog.html">disciplined convex programming</a> embedded in Julia. (<a href="http://convexjl.readthedocs.org/en/latest/">Documentation</a>, <a href="https://github.com/cvxgrp/Convex.jl">GitHub</a>)</li>
+    <li><strong>Solver interfaces</strong> - a variety of Julia wrappers for many open-source and commercial solvers.</p>
   </ul>
 
-  <p>We also have connections to many open-source and commercial solvers:</p>
+  <p>The following table lists the current JuliaOpt solver interfaces and the problem classes they support. We also list the problem classes that can be modelled with JuMP and Convex.jl below:</p>
 
   <table style="text-align: center; margin-bottom: 20px" width="100%">
-    <caption>Julia Solver Interfaces</caption>
+    <caption>JuliaOpt Compatibility Table</caption>
     <thead>
       <tr>
-        <th>Solver</th>
-        <th>Julia</th>
-        <th>JuMP</th>
-        <th>LP</th>
-        <th>MILP</th>
-        <th>SOCP</th>
-        <th>MISOCP</th>
-        <th>SDP</th>
-        <th>NLP</th>
-        <th>MINLP</th>
+        <th width="30%">Solver</th>
+        <th width="8%">LP</th>
+        <th width="8%">MILP</th>
+        <th width="8%">SOCP</th>
+        <th width="8%">MISOCP</th>
+        <th width="8%">SDP</th>
+        <th width="8%">NLP</th>
+        <th width="8%">MINLP</th>
         <th>Other</th>
       </tr>
     </thead>
 
     <tfoot> <!-- Must appear before tbody, see W3.org -->
       <tr style="text-align: left">
-        <td colspan="11">
+        <td colspan="10">
           <small>
 	  <strong>Key:</strong>
 	  <ul style="list-style: none; margin-top: 5px; margin-bottom: 5px">
-            <li style="margin: 0.1em 0;">JuMP = Can call this solver via <a href="https://github.com/JuliaOpt/JuMP.jl">JuMP</a></li>
             <li style="margin: 0.1em 0;">LP = <a href="http://en.wikipedia.org/wiki/Linear_programming">Linear Programming</a></li>
             <li style="margin: 0.1em 0;">MILP = <a href="http://en.wikipedia.org/wiki/Integer_programming">Mixed Integer LP</a></li>
             <li style="margin: 0.1em 0;">SOCP = <a href="http://en.wikipedia.org/wiki/Second_order_cone_programming">Second-order cone programming</a> (includes QP, QCQP)</li>
@@ -100,10 +103,10 @@
             <li style="margin: 0.1em 0;">NLP = (constrained) <a href="http://en.wikipedia.org/wiki/Nonlinear_programming">Nonlinear Programming</a></li>
             <li style="margin: 0.1em 0;">MINLP = Mixed Integer NLP</li>
           </ul>
-          <strong>Notes:</strong>
+          <!--<strong>Notes:</strong>
           <ol style="">
             <li>Not exposed through JuMP yet - use interface directly.</li>
-          </ol>
+          </ol>-->
 	  </small>
         </td>
       </tr>
@@ -111,9 +114,17 @@
 
     <tbody>
       <tr>
-        <th><a href="https://www.coin-or.org">COIN</a> <a href="https://projects.coin-or.org/Cbc">Cbc</a>/<a href="https://projects.coin-or.org/Clp">Clp</a></th>
-        <td><a href="https://github.com/JuliaOpt/Cbc.jl">Cbc.jl</a>/<a href="https://github.com/JuliaOpt/Clp.jl">Clp.jl</a></td>
-        <td>&#10004;</td> <!-- JuMP -->
+        <th>
+          <a href="https://www.coin-or.org">COIN</a>
+          <a href="https://projects.coin-or.org/Cbc">Cbc</a>
+          <a href="https://github.com/JuliaOpt/Cbc.jl">(.jl)</a>
+          <br>
+          <a href="https://www.coin-or.org">COIN</a>
+          <a href="https://projects.coin-or.org/Clp">Clp</a>
+          <a href="https://github.com/JuliaOpt/Clp.jl">(.jl)</a>
+        </th>
+        <!--<td><a href="https://github.com/JuliaOpt/Cbc.jl">Cbc.jl</a>/<a href="https://github.com/JuliaOpt/Clp.jl">Clp.jl</a></td>-->
+
         <td>&#10004;</td> <!-- LP -->
         <td>&#10004;</td> <!-- MILP -->
         <td></td> <!-- QCQP -->
@@ -125,9 +136,11 @@
       </tr>
       
       <tr>
-        <th><a href="http://www-01.ibm.com/software/commerce/optimization/cplex-optimizer/">CPLEX</a></th>
-        <td><a href="https://github.com/JuliaOpt/CPLEX.jl">CPLEX.jl</a></td>
-        <td>&#10004;</td> <!-- JuMP -->
+        <th>
+          <a href="http://www-01.ibm.com/software/commerce/optimization/cplex-optimizer/">CPLEX</a> 
+          <a href="https://github.com/JuliaOpt/CPLEX.jl">(.jl)</a>
+        </th>
+        <!--<td><a href="https://github.com/JuliaOpt/CPLEX.jl">CPLEX.jl</a></td>-->
         <td>&#10004;</td> <!-- LP -->
         <td>&#10004;</td> <!-- MILP -->
         <td>&#10004;</td> <!-- QCQP -->
@@ -135,17 +148,19 @@
         <td></td> <!-- SDP -->
         <td></td> <!-- NLP -->
         <td></td> <!-- MINLP -->
-        <td>IP Callbacks</td> <!-- Other -->
+        <td><small>IP Callbacks</small></td> <!-- Other -->
       </tr>
       
       
       <tr>
-        <th><a href="https://github.com/ifa-ethz/ecos/">ECOS</a></th>
-        <td><a href="https://github.com/JuliaOpt/ECOS.jl">ECOS.jl</a></td>
-        <td>&#10004;</td> <!-- JuMP -->
+        <th>
+          <a href="https://github.com/ifa-ethz/ecos/">ECOS</a>
+          <a href="https://github.com/JuliaOpt/ECOS.jl">(.jl)</a>
+        </th>
+        <!--<td><a href="https://github.com/JuliaOpt/ECOS.jl">ECOS.jl</a></td>-->
         <td>&#10004;</td> <!-- LP -->
         <td></td> <!-- MILP -->
-        <td>&#10004;<small>1</small></td> <!-- QCQP -->
+        <td>&#10004;</td> <!-- QCQP -->
         <td></td> <!-- MIQCQP -->
         <td></td> <!-- SDP -->
         <td></td> <!-- NLP -->
@@ -154,9 +169,11 @@
       </tr>
       
       <tr>
-        <th><a href="http://www.gnu.org/software/glpk/">GNU GLPK</a></th>
-        <td><a href="https://github.com/JuliaOpt/GLPK.jl">GLPK.jl</a></td>
-        <td>&#10004;</td> <!-- JuMP -->
+        <th>
+          <a href="http://www.gnu.org/software/glpk/">GNU GLPK</a>
+          <a href="https://github.com/JuliaOpt/GLPK.jl">(.jl)</a>
+        </th>
+        <!--<td><a href="https://github.com/JuliaOpt/GLPK.jl">GLPK.jl</a></td>-->
         <td>&#10004;</td> <!-- LP -->
         <td>&#10004;</td> <!-- MILP -->
         <td></td> <!-- QCQP -->
@@ -164,13 +181,15 @@
         <td></td> <!-- SDP -->
         <td></td> <!-- NLP -->
         <td></td> <!-- MINLP -->
-        <td>IP Callbacks</td> <!-- Other -->
+        <td><small>IP Callbacks</small></td> <!-- Other -->
       </tr>
 
       <tr>
-        <th><a href="http://www.gurobi.com">Gurobi</a></th>
-        <td><a href="https://github.com/JuliaOpt/Gurobi.jl">Gurobi.jl</a></td>
-        <td>&#10004;</td> <!-- JuMP -->
+        <th>
+          <a href="http://www.gurobi.com">Gurobi</a>
+          <a href="https://github.com/JuliaOpt/Gurobi.jl">(.jl)</a>
+        </th>
+        <!--<td><a href="https://github.com/JuliaOpt/Gurobi.jl">Gurobi.jl</a></td>-->
         <td>&#10004;</td> <!-- LP -->
         <td>&#10004;</td> <!-- MILP -->
         <td>&#10004;</td> <!-- QCQP -->
@@ -178,13 +197,15 @@
         <td></td> <!-- SDP -->
         <td></td> <!-- NLP -->
         <td></td> <!-- MINLP -->
-        <td>IP Callbacks</td> <!-- Other -->
+        <td><small>IP Callbacks</small></td> <!-- Other -->
       </tr>
 
       <tr>
-        <th><a href="https://projects.coin-or.org/Ipopt">Ipopt</a></th>
-        <td><a href="https://github.com/JuliaOpt/Ipopt.jl">Ipopt.jl</a></td>
-        <td>&#10004;</td> <!-- JuMP -->
+        <th>
+          <a href="https://projects.coin-or.org/Ipopt">Ipopt</a>
+          <a href="https://github.com/JuliaOpt/Ipopt.jl">(.jl)</a>
+        </th>
+        <!--<td><a href="https://github.com/JuliaOpt/Ipopt.jl">Ipopt.jl</a></td>-->
         <td>&#10004;</td> <!-- LP -->
         <td></td> <!-- MILP -->
         <td></td> <!-- QCQP -->
@@ -196,43 +217,87 @@
       </tr>
       
       <tr>
-        <th><a href="http://www.ziena.com/knitro.htm">KNITRO</a></th>
-        <td><a href="https://github.com/JuliaOpt/KNITRO.jl/">KNITRO.jl</a></td>
-        <td>&#10004;</td> <!-- JuMP -->
-        <td>&#10004;<small>1</small></td> <!-- LP -->
-        <td>&#10004;<small>1</small></td></td> <!-- MILP -->
+        <th>
+          <a href="http://www.ziena.com/knitro.htm">KNITRO</a>
+          <a href="https://github.com/JuliaOpt/KNITRO.jl">(.jl)</a>
+        </th>
+        <!--<td><a href="https://github.com/JuliaOpt/KNITRO.jl/">KNITRO.jl</a></td>-->
+        <td>&#10004;</td> <!-- LP -->
+        <td>&#10004;</td></td> <!-- MILP -->
         <td></td> <!-- QCQP -->
         <td></td> <!-- MIQCQP -->
         <td></td> <!-- SDP -->
         <td>&#10004;</td> <!-- NLP -->
-        <td>&#10004;<small>1</small></td></td> <!-- MINLP -->
+        <td>&#10004;</td></td> <!-- MINLP -->
         <td></td> <!-- Other -->
       </tr>
       
       <tr>
-        <th><a href="http://www.mosek.com/">Mosek</a></th>
-        <td><a href="https://github.com/JuliaOpt/Mosek.jl">Mosek.jl</a></td>
-        <td>&#10004;</td> <!-- JuMP -->
+        <th>
+          <a href="http://www.mosek.com/">Mosek</a>
+          <a href="https://github.com/JuliaOpt/Mosek.jl">(.jl)</a>
+        </th>
+        <!--<td><a href="https://github.com/JuliaOpt/Mosek.jl">Mosek.jl</a></td>-->
         <td>&#10004;</td> <!-- LP -->
         <td>&#10004;</td> <!-- MILP -->
         <td>&#10004;</td> <!-- QCQP -->
         <td>&#10004;</td> <!-- MIQCQP -->
-        <td>&#10004;<small>1</small></td> <!-- SDP -->
+        <td>&#10004;</td> <!-- SDP -->
         <td>&#10004;</td> <!-- NLP -->
-        <td>&#10004;<small>1</small></td> <!-- MINLP -->
+        <td>&#10004;</td> <!-- MINLP -->
         <td></td> <!-- Other -->
       </tr>
 
       <tr>
-        <th><a href="http://ab-initio.mit.edu/nlopt">NLopt</a></th>
-        <td><a href="https://github.com/JuliaOpt/NLopt.jl">NLopt.jl</a></td>
-        <td>&#10004;</td> <!-- JuMP -->
+        <th>
+          <a href="http://ab-initio.mit.edu/nlopt">NLopt</a>
+          <a href="https://github.com/JuliaOpt/NLopt.jl">(.jl)</a>
+        </th>
+        <!--<td><a href="https://github.com/JuliaOpt/NLopt.jl">NLopt.jl</a></td>-->
         <td></td> <!-- LP -->
         <td></td> <!-- MILP -->
         <td></td> <!-- QCQP -->
         <td></td> <!-- MIQCQP -->
         <td></td> <!-- SDP -->
         <td>&#10004;</td> <!-- NLP -->
+        <td></td> <!-- MINLP -->
+        <td></td> <!-- Other -->
+      </tr>
+
+      <thead>
+        <tr>
+          <th>Modeling Tool</th>
+          <th>LP</th>
+          <th>MILP</th>
+          <th>SOCP</th>
+          <th>MISOCP</th>
+          <th>SDP</th>
+          <th>NLP</th>
+          <th>MINLP</th>
+          <th>Other</th>
+        </tr>
+      </thead>
+
+      <tr>
+        <th><a href="https://github.com/JuliaOpt/JuMP.jl">JuMP</a></th>
+        <td>&#10004;</td> <!-- LP -->
+        <td>&#10004;</td> <!-- MILP -->
+        <td>&#10004;</td> <!-- QCQP -->
+        <td>&#10004;</td> <!-- MIQCQP -->
+        <td></td> <!-- SDP -->
+        <td>&#10004;</td> <!-- NLP -->
+        <td>&#10004;</td> <!-- MINLP -->
+        <td></td> <!-- Other -->
+      </tr>
+
+      <tr>
+        <th><a href="https://github.com/cvxgrp/Convex.jl">Convex.jl</a></th>
+        <td>&#10004;</td> <!-- LP -->
+        <td>&#10004;</td> <!-- MILP -->
+        <td>&#10004;</td> <!-- QCQP -->
+        <td>&#10004;</td> <!-- MIQCQP -->
+        <td>&#10004;</td> <!-- SDP -->
+        <td></td> <!-- NLP -->
         <td></td> <!-- MINLP -->
         <td></td> <!-- Other -->
       </tr>
