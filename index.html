@@ -77,14 +77,14 @@
     <caption>JuliaOpt Compatibility Table</caption>
     <thead>
       <tr>
-        <th width="30%">Solver</th>
-        <th width="8%">LP</th>
-        <th width="8%">MILP</th>
-        <th width="8%">SOCP</th>
-        <th width="8%">MISOCP</th>
-        <th width="8%">SDP</th>
-        <th width="8%">NLP</th>
-        <th width="8%">MINLP</th>
+        <th width="23%"><strong>Modeling Tool</strong></th>
+        <th width="9%">LP</th>
+        <th width="9%">MILP</th>
+        <th width="9%">SOCP</th>
+        <th width="9%">MISOCP</th>
+        <th width="9%">SDP</th>
+        <th width="9%">NLP</th>
+        <th width="9%">MINLP</th>
         <th>Other</th>
       </tr>
     </thead>
@@ -113,6 +113,44 @@
     </tfoot>
 
     <tbody>
+      <tr>
+        <th><a href="https://github.com/JuliaOpt/JuMP.jl">JuMP</a></th>
+        <td>&#10004;</td> <!-- LP -->
+        <td>&#10004;</td> <!-- MILP -->
+        <td>&#10004;</td> <!-- QCQP -->
+        <td>&#10004;</td> <!-- MIQCQP -->
+        <td></td> <!-- SDP -->
+        <td>&#10004;</td> <!-- NLP -->
+        <td>&#10004;</td> <!-- MINLP -->
+        <td></td> <!-- Other -->
+      </tr>
+
+      <tr>
+        <th><a href="https://github.com/cvxgrp/Convex.jl">Convex.jl</a></th>
+        <td>&#10004;</td> <!-- LP -->
+        <td>&#10004;</td> <!-- MILP -->
+        <td>&#10004;</td> <!-- QCQP -->
+        <td>&#10004;</td> <!-- MIQCQP -->
+        <td>&#10004;</td> <!-- SDP -->
+        <td></td> <!-- NLP -->
+        <td></td> <!-- MINLP -->
+        <td></td> <!-- Other -->
+      </tr>
+
+      <thead>
+        <tr>
+          <th><strong>Solver</strong></th>
+          <th>LP</th>
+          <th>MILP</th>
+          <th>SOCP</th>
+          <th>MISOCP</th>
+          <th>SDP</th>
+          <th>NLP</th>
+          <th>MINLP</th>
+          <th>Other</th>
+        </tr>
+      </thead>
+
       <tr>
         <th>
           <a href="https://www.coin-or.org">COIN</a>
@@ -162,7 +200,6 @@
         <td></td> <!-- MINLP -->
         <td><small>IP Callbacks</small></td> <!-- Other -->
       </tr>
-      
       
       <tr>
         <th>
@@ -272,44 +309,6 @@
         <td></td> <!-- MIQCQP -->
         <td></td> <!-- SDP -->
         <td>&#10004;</td> <!-- NLP -->
-        <td></td> <!-- MINLP -->
-        <td></td> <!-- Other -->
-      </tr>
-
-      <thead>
-        <tr>
-          <th>Modeling Tool</th>
-          <th>LP</th>
-          <th>MILP</th>
-          <th>SOCP</th>
-          <th>MISOCP</th>
-          <th>SDP</th>
-          <th>NLP</th>
-          <th>MINLP</th>
-          <th>Other</th>
-        </tr>
-      </thead>
-
-      <tr>
-        <th><a href="https://github.com/JuliaOpt/JuMP.jl">JuMP</a></th>
-        <td>&#10004;</td> <!-- LP -->
-        <td>&#10004;</td> <!-- MILP -->
-        <td>&#10004;</td> <!-- QCQP -->
-        <td>&#10004;</td> <!-- MIQCQP -->
-        <td></td> <!-- SDP -->
-        <td>&#10004;</td> <!-- NLP -->
-        <td>&#10004;</td> <!-- MINLP -->
-        <td></td> <!-- Other -->
-      </tr>
-
-      <tr>
-        <th><a href="https://github.com/cvxgrp/Convex.jl">Convex.jl</a></th>
-        <td>&#10004;</td> <!-- LP -->
-        <td>&#10004;</td> <!-- MILP -->
-        <td>&#10004;</td> <!-- QCQP -->
-        <td>&#10004;</td> <!-- MIQCQP -->
-        <td>&#10004;</td> <!-- SDP -->
-        <td></td> <!-- NLP -->
         <td></td> <!-- MINLP -->
         <td></td> <!-- Other -->
       </tr>
