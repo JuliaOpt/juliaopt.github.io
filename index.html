@@ -103,10 +103,10 @@
             <li style="margin: 0.1em 0;">NLP = (constrained) <a href="http://en.wikipedia.org/wiki/Nonlinear_programming">Nonlinear Programming</a></li>
             <li style="margin: 0.1em 0;">MINLP = Mixed Integer NLP</li>
           </ul>
-          <!--<strong>Notes:</strong>
+          <strong>Notes:</strong>
           <ol style="">
-            <li>Not exposed through JuMP yet - use interface directly.</li>
-          </ol>-->
+            <li>Problem must be convex.</li>
+          </ol>
 	  </small>
         </td>
       </tr>
@@ -255,8 +255,8 @@
         <td>&#10004;</td> <!-- QCQP -->
         <td>&#10004;</td> <!-- MIQCQP -->
         <td>&#10004;</td> <!-- SDP -->
-        <td>&#10004;</td> <!-- NLP -->
-        <td>&#10004;</td> <!-- MINLP -->
+        <td>&#10004;<small>1</small></td> <!-- NLP -->
+        <td>&#10004;<small>1</small></td> <!-- MINLP -->
         <td></td> <!-- Other -->
       </tr>
 
