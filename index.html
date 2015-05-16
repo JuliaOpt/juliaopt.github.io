@@ -44,40 +44,6 @@
   <body>
 
     <div class="container">
-
-      <!-- Static navbar -->
-      <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/index.html">JuliaOpt</a>
-          </div>
-          <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-              <li><a href="/index.html#about">About</a></li>
-              <li><a href="/index.html#packages">Packages</a></li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">JuMP <span class="caret"></span></a>
-                <ul class="dropdown-menu" role="menu">
-                  <li><a href="#">Action</a></li>
-                  <li><a href="#">Another action</a></li>
-                  <li><a href="#">Something else here</a></li>
-                  <li class="divider"></li>
-                  <li class="dropdown-header">Nav header</li>
-                  <li><a href="#">Separated link</a></li>
-                  <li><a href="#">One more separated link</a></li>
-                </ul>
-              </li>
-            </ul>
-          </div><!--/.nav-collapse -->
-        </div><!--/.container-fluid -->
-      </nav>
-
       
       <!-- Big box at top -->
       <div class="jumbotron text-center">
@@ -114,17 +80,47 @@
         </div>
       </div>
 
-      <!--
+      
       <div class="row">
         <div class="col-md-6">
-          <h2>Example: <a href="notebooks/JuMP-Sudoku.html">Sudoku</a></h2>
-
+          <h2>Getting Started</h2>
+          <ol>
+            <li>
+              You can find <a href="http://julialang.org/downloads/">downloads and installation instructions for Julia</a> for your operating system on the Julia site.
+            </li>
+            <li>
+              To install a JuliaOpt package, simply use the <code>Pkg.add</code> command from inside Julia:<br>
+              <code>
+              julia> Pkg.update()  # Get latest package info<br>
+              julia> Pkg.add("Optim.jl")<br>
+              julia> Pkg.add("JuMP.jl")<br>
+              julia> Pkg.add("Cbc.jl")  # and so on
+              </code>
+            </li>
+            <li>
+              Open-source solvers will automatically be downloaded and installed in your Julia package directory. If you want to use an external <b>commercial</b> solver, you will need to download those before installing the corresponding JuliaOpt package.
+            </li>
+          </ol>
         </div>
+
         <div class="col-md-6">
-          <h2>Example: <a href="notebooks/JuMP-Rocket.html">Rocket Control</a></h2>
+          <h2>Examples</h2>
+          <div class="text-center" style="margin-bottom: 10px">
+            <img style="height: 4em; width:auto" src="/images/ijulialogo.png">
+          </div>
+          <p>
+            We have a collection of JuliaOpt examples in the form of <a href="https://jupyter.org/">Jupyter</a>/<a href="https://github.com/JuliaLang/IJulia.jl">IJulia</a> notebooks, including:
+            <ul>
+              <li><a href="/notebooks/JuMP-Sudoku.html">Solving Sudoku puzzles with JuMP</a>,
+              <li><a href="/notebooks/JuMP-Rocket.html">Controlling a rocket with JuMP</a>,
+              <li>and <a href="/notebooks/index.html">more</a>.
+            </ul>
+            The source for these notebooks is <a href="https://github.com/JuliaOpt/juliaopt-notebooks">available here</a>.
+          </p>
         </div>
       </div>
-      -->
+
+
 
       <a id="packages"></a>
       <div class="row">
