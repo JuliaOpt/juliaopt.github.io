@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="JuliaOpt - Optimization packages for the Julia language">
+    <meta name="author" content="Iain Dunning">
+    <link rel="icon" href="favicon.ico">
+
+    <title>JuliaOpt - Optimization packages for the Julia language</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+    <!-- Additional styles -->
+    <style>
+      body {
+        padding-top: 60px;
+        padding-bottom: 20px;
+      }
+    </style>
+    <style type="text/css">
+    .highlight .hll { background-color: #ffffcc }
+.highlight  { background: #f8f8f8; }
+.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
+    </style>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div class="container">
+
+
+      <!-- Static navbar -->
+      <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/index.html">JuliaOpt</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="#about">About</a></li>
+              <li><a href="#packages">Packages</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li class="divider"></li>
+                  <li class="dropdown-header">Nav header</li>
+                  <li><a href="#">Separated link</a></li>
+                  <li><a href="#">One more separated link</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </nav>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Description</strong>: Introduction to automatic differentiation and the <code>DualNumbers</code> package. Prepared for MIT course 15.S60 "Software Tools for Operations Research", January 2015.</p>
+<p><strong>Author</strong>: Miles Lubin</p>
+<p><strong>License</strong>: <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Computing-derivatives-for-nonlinear-optimization:-Forward-mode-automatic-differentiation">Computing derivatives for nonlinear optimization: Forward mode automatic differentiation<a class="anchor-link" href="#Computing-derivatives-for-nonlinear-optimization:-Forward-mode-automatic-differentiation">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Consider a general constrained nonlinear optimization problem:
+$$
+\begin{align}
+\min \quad&f(x)\\
+\text{s.t.} \quad& g(x) = 0, \\
+& h(x) \leq 0.
+\end{align}
+$$
+where $f : \mathbb{R}^n \to \mathbb{R}, g : \mathbb{R}^n \to \mathbb{R}^r$, and $h: \mathbb{R}^n \to \mathbb{R}^s$.</p>
+<p>When $f$ and $h$ are convex and $g$ is affine, we can hope for a globally optimal solution, otherwise typically we can only ask for a locally optimal solution.</p>
+<p>What approaches can we use to solve this?</p>
+<ul>
+<li>When $r=0$ and $s = 0$ (unconstrained), and $f$ differentiable, most classical approach is <a href="http://en.wikipedia.org/wiki/Gradient_descent">gradient descent</a>, also fancier methods like <a href="http://en.wikipedia.org/wiki/Newton%27s_method">Newton's method</a> and quasi-newton methods like <a href="http://en.wikipedia.org/wiki/Broyden%E2%80%93Fletcher%E2%80%93Goldfarb%E2%80%93Shanno_algorithm">BFGS</a>.</li>
+<li>When $f$ differentiable and $g$ and $h$ linear, <a href="http://neos-guide.org/content/gradient-projection-methods">gradient projection</a></li>
+<li>When $f$, $g$, and $h$ twice differentiable, <a href="http://en.wikipedia.org/wiki/Interior_point_method">interior-point methods</a>, <a href="http://www.neos-guide.org/content/sequential-quadratic-programming">sequential quadratic programming</a></li>
+<li>When derivatives "not available", <a href="http://rd.springer.com/article/10.1007/s10898-012-9951-y">derivative-free optimization</a></li>
+</ul>
+<p>This is not meant to be an exhaustive list, see <a href="http://plato.asu.edu/sub/nlores.html#general">http://plato.asu.edu/sub/nlores.html#general</a> and <a href="http://www.neos-guide.org/content/nonlinear-programming">http://www.neos-guide.org/content/nonlinear-programming</a> for more details.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="How-are-derivatives-computed?">How are derivatives computed?<a class="anchor-link" href="#How-are-derivatives-computed?">&#182;</a></h2><ul>
+<li>Hand-written by applying chain rule</li>
+<li>Finite difference approximation $\frac{\partial f}{\partial x_i} = \lim_{h\to 0} \frac{f(x+h e_i)-f(x)}{h}$</li>
+<li><strong>Automatic differentiation</strong><ul>
+<li>Idea: Automatically transform code to compute a function into code to compute its derivatives</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Dual-Numbers">Dual Numbers<a class="anchor-link" href="#Dual-Numbers">&#182;</a></h2><p>Consider numbers of the form $x + y\epsilon$ with $x,y \in \mathbb{R}$. We <em>define</em> $\epsilon^2 = 0$, so
+$$
+(x_1 + y_1\epsilon)(x_2+y_2\epsilon) = x_1x_2 + (x_1y_2 + x_2y_1)\epsilon.
+$$
+These are called the <em>dual numbers</em>. Think of $\epsilon$ as an infinitesimal perturbation (you've probably seen hand-wavy algebra using $(dx)^2 = 0$ when computing integrals - this is the same idea).</p>
+<p>If we are given an infinitely differentiable function in Taylor expanded form
+$$
+f(x) = \sum_{k=0}^{\infty} \frac{f^{(k)}(a)}{k!} (x-a)^k
+$$
+it follows that 
+$$
+f(x+y\epsilon) = \sum_{k=0}^{\infty} \frac{f^{(k)}(a)}{k!} (x-a+y\epsilon)^k = \sum_{k=0}^{\infty} \frac{f^{(k)}(a)}{k!} (x-a)^k + y\epsilon\sum_{k=0}^{\infty} \frac{f^{(k)}(a)}{k!}\binom{k}{1} (x-a)^{k-1} = f(x) + yf'(x)\epsilon
+$$</p>
+<p>Let's unpack what's going on here. We started with a function $f : \mathbb{R} \to \mathbb{R}$. Dual numbers are <em>not</em> real numbers, so it doesn't even make sense to ask for the value $f(x+y\epsilon)$ given $x+y\epsilon \in \mathbb{D}$ (the set of dual numbers). But anyway we plugged the dual number into the Taylor expansion, and by using the algebra rule $\epsilon^2 = 0$ we found that $f(x+y\epsilon)$ must be equal to $f(x) + yf'(x)\epsilon$ if we use the Taylor expansion as the definition of $f : \mathbb{D} \to \mathbb{R}$.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Alternatively, for any once differentiable function $f : \mathbb{R} \to \mathbb{R}$, we can <em>define</em> its extension to the dual numbers as
+$$
+f(x+y\epsilon) = f(x) + yf'(x)\epsilon.
+$$
+This is essentially equivalent to the previous definition.</p>
+<p>Let's verify a very basic property, the chain rule, using this definition.</p>
+<p>Suppose $h(x) = f(g(x))$. Then,
+$$
+h(x+y\epsilon) = f(g(x+y\epsilon)) = f(g(x) + yg'(x)\epsilon) = f(g(x)) + yg'(x)f'(g(x))\epsilon = h(x) + yh'(x)\epsilon.
+$$</p>
+<p>Maybe that's not too surprising, but it's actually a quite useful observation.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Implementation">Implementation<a class="anchor-link" href="#Implementation">&#182;</a></h3><p>Dual numbers are implemented in the <a href="https://github.com/JuliaDiff/DualNumbers.jl">DualNumbers</a> package in Julia.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">using</span> <span class="n">DualNumbers</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>You construct $x + y\epsilon$ with <code>Dual(x,y)</code>. The real and epsilon components are accessed as <code>real(d)</code> and <code>epsilon(d)</code>:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">d</span> <span class="o">=</span> <span class="n">Dual</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[2]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>2.0 + 1.0du</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">typeof</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[3]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>Dual{Float64} (constructor with 1 method)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">real</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[4]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>2.0</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">epsilon</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[5]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>1.0</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>How is addition of dual numbers defined?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="nd">@which</span> <span class="n">d</span><span class="o">+</span><span class="n">Dual</span><span class="p">(</span><span class="mf">3.0</span><span class="p">,</span><span class="mf">4.0</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Clicking on the link, we'll see:</p>
+<div class="highlight"><pre><span class="o">+</span><span class="p">(</span><span class="n">z</span><span class="p">::</span><span class="n">Dual</span><span class="p">,</span> <span class="n">w</span><span class="p">::</span><span class="n">Dual</span><span class="p">)</span> <span class="o">=</span> <span class="n">dual</span><span class="p">(</span><span class="n">real</span><span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="o">+</span><span class="n">real</span><span class="p">(</span><span class="n">w</span><span class="p">),</span> <span class="n">epsilon</span><span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="o">+</span><span class="n">epsilon</span><span class="p">(</span><span class="n">w</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Multiplication?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">Dual</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span><span class="mf">2.0</span><span class="p">)</span><span class="o">*</span><span class="n">Dual</span><span class="p">(</span><span class="mf">3.0</span><span class="p">,</span><span class="mf">4.0</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[6]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>6.0 + 14.0du</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="nd">@which</span> <span class="n">Dual</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span><span class="mf">2.0</span><span class="p">)</span><span class="o">*</span><span class="n">Dual</span><span class="p">(</span><span class="mf">3.0</span><span class="p">,</span><span class="mf">4.0</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The code is:</p>
+<div class="highlight"><pre><span class="o">*</span><span class="p">(</span><span class="n">z</span><span class="p">::</span><span class="n">Dual</span><span class="p">,</span> <span class="n">w</span><span class="p">::</span><span class="n">Dual</span><span class="p">)</span> <span class="o">=</span> <span class="n">dual</span><span class="p">(</span><span class="n">real</span><span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="o">*</span><span class="n">real</span><span class="p">(</span><span class="n">w</span><span class="p">),</span> <span class="n">epsilon</span><span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="o">*</span><span class="n">real</span><span class="p">(</span><span class="n">w</span><span class="p">)</span><span class="o">+</span><span class="n">real</span><span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="o">*</span><span class="n">epsilon</span><span class="p">(</span><span class="n">w</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Basic univariate functions?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">log</span><span class="p">(</span><span class="n">Dual</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[7]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0.6931471805599453 + 0.5du</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="mi">1</span><span class="o">/</span><span class="mf">2.0</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[8]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0.5</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>How is this implemented?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="nd">@code_lowered</span> <span class="n">log</span><span class="p">(</span><span class="n">Dual</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[9]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>1-element Array{Any,1}:
+ :($(Expr(:lambda, {:z}, {{:xp,:x},{{:z,:Any,0},{:xp,:Any,18},{:x,:Any,18}},{}}, :(begin  # /home/mlubin/.julia/v0.3/DualNumbers/src/dual.jl, line 169:
+        xp = epsilon(z) # line 170:
+        x = real(z) # line 171:
+        return Dual(log(x),xp * (1 / x))
+    end))))</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Trig functions?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="nd">@code_lowered</span> <span class="n">sin</span><span class="p">(</span><span class="n">Dual</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[10]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>1-element Array{Any,1}:
+ :($(Expr(:lambda, {:z}, {{:xp,:x},{{:z,:Any,0},{:xp,:Any,18},{:x,:Any,18}},{}}, :(begin  # /home/mlubin/.julia/v0.3/DualNumbers/src/dual.jl, line 169:
+        xp = epsilon(z) # line 170:
+        x = real(z) # line 171:
+        return Dual(sin(x),xp * cos(x))
+    end))))</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Computing-derivatives-of-functions">Computing derivatives of functions<a class="anchor-link" href="#Computing-derivatives-of-functions">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can define a function in Julia as:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">=</span> <span class="n">x</span><span class="o">^</span><span class="mi">2</span> <span class="o">-</span> <span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="c"># Or equivalently</span>
+<span class="n">function</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">^</span><span class="mi">2</span> <span class="o">-</span> <span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">end</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[11]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>f (generic function with 1 method)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">f</span><span class="p">(</span><span class="n">Dual</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[12]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0.8465735902799727 - 2.220446049250313e-16du</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<blockquote><p><strong>[Exercise]</strong>: Differentiate it!</p>
+<ol>
+<li>Evaluate $f$ at $1 + \epsilon$. What are $f(1)$ and $f'(1)$?</li>
+<li>Evaluate $f$ at $\frac{1}{\sqrt{2}} + \epsilon$. What are $f(\frac{1}{\sqrt{2}})$ and $f'(\frac{1}{\sqrt{2}})$?</li>
+<li>Define a new function <code>fprime</code> which returns the derivative of <code>f</code> by using <code>DualNumbers</code>.</li>
+<li>Use the finite difference formula $$
+f'(x) \approx \frac{f(x+h)-f(x)}{h}
+$$
+to evaluate $f'(\frac{1}{\sqrt{2}})$ approximately using a range of values of $h$. Visualize the approximation error using <code>@manipulate</code>, plots, or both!</li>
+</ol>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="How-general-is-it?">How general is it?<a class="anchor-link" href="#How-general-is-it?">&#182;</a></h3><p>Recall <a href="http://en.wikipedia.org/wiki/Newton%27s_method">Newton's iterative method</a> for finding zeros:
+$$
+x \leftarrow x - \frac{f(x)}{f'(x)}
+$$
+until $f(x) \approx 0$.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Let's use this method to compute $\sqrt{x}$ by solving $f(z) = 0$ where $f(z) = z^2-x$.
+So $f'(z) = 2z$, and we can implement the algorithm as:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">function</span> <span class="n">squareroot</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="n">x</span> <span class="c"># Initial starting point</span>
+    <span class="k">while</span> <span class="nb">abs</span><span class="p">(</span><span class="n">z</span><span class="o">*</span><span class="n">z</span> <span class="o">-</span> <span class="n">x</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="n">e</span><span class="o">-</span><span class="mi">13</span>
+        <span class="n">z</span> <span class="o">=</span> <span class="n">z</span> <span class="o">-</span> <span class="p">(</span><span class="n">z</span><span class="o">*</span><span class="n">z</span><span class="o">-</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="n">z</span><span class="p">)</span>
+    <span class="n">end</span>
+    <span class="k">return</span> <span class="n">z</span>
+<span class="n">end</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[13]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>squareroot (generic function with 1 method)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">squareroot</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[14]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>10.0</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Can we differentiate this code? <strong>Yes!</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">d</span> <span class="o">=</span> <span class="n">squareroot</span><span class="p">(</span><span class="n">Dual</span><span class="p">(</span><span class="mf">100.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[15]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>10.0 + 0.049999999999999996du</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">epsilon</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="c"># Computed derivative</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[16]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0.049999999999999996</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">100</span><span class="p">))</span> <span class="c"># The exact derivative</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[17]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0.05</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="nb">abs</span><span class="p">(</span><span class="n">epsilon</span><span class="p">(</span><span class="n">d</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">100</span><span class="p">)))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[18]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>6.938893903907228e-18</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Multivariate-functions?">Multivariate functions?<a class="anchor-link" href="#Multivariate-functions?">&#182;</a></h3><p>Dual numbers can be used to compute the gradient of a function $f: \mathbb{R}^n \to \mathbb{R}$. This requires $n$ evaluations of $f$ with dual number input, essentially computing the partial derivative in each of the $n$ dimensions. We won't get into the details, but this procedure is <a href="https://github.com/JuliaOpt/Optim.jl/blob/583907676b5b99cdb2d4cba37f6026a3fe620a49/src/autodiff.jl">implemented</a> in <a href="https://github.com/JuliaOpt/Optim.jl">Optim</a> with the <code>autodiff=true</code> keyword.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">using</span> <span class="n">Optim</span>
+<span class="n">rosenbrock</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">^</span><span class="mi">2</span> <span class="o">+</span> <span class="mf">100.0</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span>
+<span class="n">optimize</span><span class="p">(</span><span class="n">rosenbrock</span><span class="p">,</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="n">method</span> <span class="o">=</span> <span class="p">:</span><span class="n">l_bfgs</span><span class="p">,</span> <span class="n">autodiff</span> <span class="o">=</span> <span class="n">true</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>When $n$ is large, there's an alternative procedure called <a href="http://en.wikipedia.org/wiki/Automatic_differentiation#Reverse_accumulation">reverse-mode automatic differentiation</a> which requires only $O(1)$ evaluations of $f$ to compute its gradient. This is the method used internally by JuMP (implemented in <a href="https://github.com/mlubin/ReverseDiffSparse.jl">ReverseDiffSparse</a>).</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Conclusions">Conclusions<a class="anchor-link" href="#Conclusions">&#182;</a></h2><ul>
+<li>We can compute numerically exact derivatives of any differentiable function which is implemented by using a sequence of basic operations.</li>
+<li>In Julia it's very easy to use dual numbers for this!</li>
+<li>Reconsider when derivatives are "not available."</li>
+</ul>
+<p>This was just an introduction to one technique from the area of automatic differentiation. For more references, see <a href="http://www.autodiff.org/?module=Introduction&submenu=Selected%20Books">autodiff.org</a>.</p>
+
+</div>
+</div>
+</div>    </div> <!-- /container -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <!-- MathJax -->
+    <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+  </body>
+</html>

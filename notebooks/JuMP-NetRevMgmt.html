@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="JuliaOpt - Optimization packages for the Julia language">
+    <meta name="author" content="Iain Dunning">
+    <link rel="icon" href="favicon.ico">
+
+    <title>JuliaOpt - Optimization packages for the Julia language</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+    <!-- Additional styles -->
+    <style>
+      body {
+        padding-top: 60px;
+        padding-bottom: 20px;
+      }
+    </style>
+    <style type="text/css">
+    .highlight .hll { background-color: #ffffcc }
+.highlight  { background: #f8f8f8; }
+.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
+    </style>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div class="container">
+
+
+      <!-- Static navbar -->
+      <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/index.html">JuliaOpt</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="#about">About</a></li>
+              <li><a href="#packages">Packages</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li class="divider"></li>
+                  <li class="dropdown-header">Nav header</li>
+                  <li><a href="#">Separated link</a></li>
+                  <li><a href="#">One more separated link</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </nav>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Description</strong>: Shows how to solve a network revenue management problem using JuMP.</p>
+<p><strong>Author</strong>: Iain Dunning</p>
+<p><strong>License</strong>: <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Airline-Network-Revenue-Management">Airline Network Revenue Management<a class="anchor-link" href="#Airline-Network-Revenue-Management">&#182;</a></h1><p><img style="max-width:100%; width:500px; height:auto" src="http://i.imgur.com/jeGwWET.png"></p>
+<p>In the airline network revenue management problem we are trying to decide how many tickets for each origin-destination (O-D) pair to sell at each price level. The goal is to maximize revenue, and we cannot sell more tickets than there is demand for, or space on the planes for.</p>
+<h2 id="Three-Flight-Problem">Three Flight Problem<a class="anchor-link" href="#Three-Flight-Problem">&#182;</a></h2><p>We'll start with a toy problem that has three origin-destination pairs, with two price classes for each pair. The three origin-destination pairs are BOS-MDW, MDW-SFO, or BOS-SFO via MDW. BOS stands for Boston, MDW is Chicago-Midway, and SFO is San Francisco. Each O-D pair has a "regular" and "discount" fare class. The data we will use is summarized as follows:</p>
+
+<pre><code>PLANE CAPACITY: 166
+
+BOS-MDW
+        Regular  Discount
+Price:  428      190
+Demand: 80       120
+
+BOS-SFO
+        Regular  Discount
+Price:  642      224
+Demand: 75       100
+
+MDW-SFO
+        Regular  Discount
+Price:  512      190
+Demand: 60       110</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="c"># First we need to load the JuMP package</span>
+<span class="k">using</span> <span class="n">JuMP</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Model">Model<a class="anchor-link" href="#Model">&#182;</a></h3><p>Now we need to create a <code>Model</code>. A <code>Model</code> is an object that has associated variables and constraints. We can also pick and customize different solvers to use with the model. In this case we'll assume you a LP solver installed - JuMP will detect it and use it automatically.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="n">nrm</span> <span class="o">=</span> <span class="n">Model</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can see that JuMP displays the model in a human-readable form.</p>
+<h3 id="Variables">Variables<a class="anchor-link" href="#Variables">&#182;</a></h3><p>Now we can create our variables, in the optimization sense. Variables have a name, bounds, and type. For this problem, we need six continuous variables, each with a lower and upper bound on their value.</p>
+<p>Here we will spell out each variable one-by-one - rest assured that later we will do something smarter that will scale to millions of variables!</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="p">@</span><span class="n">defVar</span><span class="p">(</span><span class="n">nrm</span><span class="p">,</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">BOStoMDW_R</span> <span class="o">&lt;=</span> <span class="mi">80</span><span class="p">)</span>
+<span class="p">@</span><span class="n">defVar</span><span class="p">(</span><span class="n">nrm</span><span class="p">,</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">BOStoMDW_D</span> <span class="o">&lt;=</span> <span class="mi">120</span><span class="p">)</span>
+<span class="p">@</span><span class="n">defVar</span><span class="p">(</span><span class="n">nrm</span><span class="p">,</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">BOStoSFO_R</span> <span class="o">&lt;=</span> <span class="mi">75</span><span class="p">)</span>
+<span class="p">@</span><span class="n">defVar</span><span class="p">(</span><span class="n">nrm</span><span class="p">,</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">BOStoSFO_D</span> <span class="o">&lt;=</span> <span class="mi">100</span><span class="p">)</span>
+<span class="p">@</span><span class="n">defVar</span><span class="p">(</span><span class="n">nrm</span><span class="p">,</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">MDWtoSFO_R</span> <span class="o">&lt;=</span> <span class="mi">60</span><span class="p">)</span>
+<span class="p">@</span><span class="n">defVar</span><span class="p">(</span><span class="n">nrm</span><span class="p">,</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">MDWtoSFO_D</span> <span class="o">&lt;=</span> <span class="mi">110</span><span class="p">)</span>
+<span class="n">nrm</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Great, now we are getting somewhere!</p>
+<h3 id="Objective">Objective<a class="anchor-link" href="#Objective">&#182;</a></h3><p>The objective is to maximize the revenue. We set the objective with <code>@setObjective</code>, which takes three arguments: the model, the sense (<code>Max</code> or <code>Min</code>), and the expression.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="p">@</span><span class="n">setObjective</span><span class="p">(</span><span class="n">nrm</span><span class="p">,</span> <span class="n">Max</span><span class="p">,</span> <span class="mi">428</span><span class="o">*</span><span class="n">BOStoMDW_R</span> <span class="o">+</span> <span class="mi">190</span><span class="o">*</span><span class="n">BOStoMDW_D</span> <span class="o">+</span>
+                        <span class="mi">642</span><span class="o">*</span><span class="n">BOStoSFO_R</span> <span class="o">+</span> <span class="mi">224</span><span class="o">*</span><span class="n">BOStoSFO_D</span> <span class="o">+</span>
+                        <span class="mi">512</span><span class="o">*</span><span class="n">MDWtoSFO_R</span> <span class="o">+</span> <span class="mi">190</span><span class="o">*</span><span class="n">MDWtoSFO_D</span><span class="p">)</span>
+<span class="n">nrm</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Constraints">Constraints<a class="anchor-link" href="#Constraints">&#182;</a></h3><p>We have only two constraints, one per physical flight: that the number of people on each flight is less than the capacity of the planes.</p>
+<p>We add constraints with <code>@addConstraint</code>, which takes two arguments: the model, and an expression with an inequality in it: <code>&lt;=</code>, <code>==</code>, <code>&gt;=</code>.</p>
+<p>(note that there are other forms of <code>@addConstraint</code> that can be useful sometimes - see the manual or other examples for details)</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="p">@</span><span class="n">addConstraint</span><span class="p">(</span><span class="n">nrm</span><span class="p">,</span> <span class="n">BOStoMDW_R</span> <span class="o">+</span> <span class="n">BOStoMDW_D</span> <span class="o">+</span> 
+                    <span class="n">BOStoSFO_R</span> <span class="o">+</span> <span class="n">BOStoSFO_D</span> <span class="o">&lt;=</span> <span class="mi">166</span><span class="p">)</span>
+<span class="p">@</span><span class="n">addConstraint</span><span class="p">(</span><span class="n">nrm</span><span class="p">,</span> <span class="n">MDWtoSFO_R</span> <span class="o">+</span> <span class="n">MDWtoSFO_D</span> <span class="o">+</span> 
+                    <span class="n">BOStoSFO_R</span> <span class="o">+</span> <span class="n">BOStoSFO_D</span> <span class="o">&lt;=</span> <span class="mi">166</span><span class="p">)</span>
+<span class="n">nrm</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Our model is complete!</p>
+<h2 id="Solve">Solve<a class="anchor-link" href="#Solve">&#182;</a></h2><p>The easy part! Lets check out the finished model before solving it. We didn't specify a solver before, but JuMP knows we have an LP solver installed, so it will use that.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="n">status</span> <span class="o">=</span> <span class="n">solve</span><span class="p">(</span><span class="n">nrm</span><span class="p">)</span>
+<span class="n">status</span>  <span class="c"># Should be `:Optimal`</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Inspect-the-solution">Inspect the solution<a class="anchor-link" href="#Inspect-the-solution">&#182;</a></h2><p>We can use <code>getValue()</code> to inspect the value of solutions</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="n">getValue</span><span class="p">(</span><span class="n">BOStoMDW_R</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="n">getValue</span><span class="p">(</span><span class="n">BOStoMDW_D</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="n">getObjectiveValue</span><span class="p">(</span><span class="n">nrm</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="General-Model">General Model<a class="anchor-link" href="#General-Model">&#182;</a></h2><p>We'll now code our model in a more general way, to take any number of cities and flights. Hard-coding every variable would be painful and hard to update - it'd be better to <em>index</em> the variables, just like in mathematical notation.</p>
+<p>Consider a generalized version of our first problem, where there are flights in both directions and one extra airport YYZ - Toronto!</p>
+<p>Rather than hardcode data, we will generate some random data.</p>
+<p><em>(If you don't understand all of this right away, thats OK - its not critical to understanding JuMP)</em></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="c"># Set the random seed to ensure we always</span>
+<span class="c"># get the same stream of &#39;random&#39; numbers</span>
+<span class="n">srand</span><span class="p">(</span><span class="mi">1988</span><span class="p">)</span>  
+
+<span class="c"># Lets create a vector of symbols, one for each airport</span>
+<span class="n">airports</span> <span class="o">=</span> <span class="p">[:</span><span class="n">BOS</span><span class="p">,</span> <span class="p">:</span><span class="n">MDW</span><span class="p">,</span> <span class="p">:</span><span class="n">SFO</span><span class="p">,</span> <span class="p">:</span><span class="n">YYZ</span><span class="p">]</span>
+<span class="n">num_airport</span> <span class="o">=</span> <span class="n">length</span><span class="p">(</span><span class="n">airports</span><span class="p">)</span>
+
+<span class="c"># We&#39;ll also create a vector of fare classes</span>
+<span class="n">classes</span> <span class="o">=</span> <span class="p">[:</span><span class="n">REG</span><span class="p">,</span> <span class="p">:</span><span class="n">DIS</span><span class="p">]</span>
+
+<span class="c"># All the demand and price data for each triple of</span>
+<span class="c"># (origin, destination, class) will be stored in</span>
+<span class="c"># &#39;dictionaries&#39;, also known as &#39;maps&#39;.</span>
+<span class="n">demand</span> <span class="o">=</span> <span class="n">Dict</span><span class="p">()</span>
+<span class="n">prices</span> <span class="o">=</span> <span class="n">Dict</span><span class="p">()</span>
+
+<span class="c"># Generate a demand and price for each pair of airports</span>
+<span class="c"># To keep the code simple we will generate info for</span>
+<span class="c"># nonsense flights like BOS-BOS and SFO-SFO, but they</span>
+<span class="c"># won&#39;t appear in our final model.</span>
+<span class="k">for</span> <span class="n">origin</span> <span class="k">in</span> <span class="n">airports</span><span class="p">,</span> <span class="n">dest</span> <span class="k">in</span> <span class="n">airports</span>
+    <span class="c"># Generate demand:</span>
+    <span class="c">#  - Regular demand is Uniform(50,90)</span>
+    <span class="c">#  - Discount demand is Uniform(100,130)</span>
+    <span class="n">demand</span><span class="p">[(</span><span class="n">origin</span><span class="p">,</span><span class="n">dest</span><span class="p">,:</span><span class="n">REG</span><span class="p">)]</span> <span class="o">=</span> <span class="n">rand</span><span class="p">(</span><span class="mi">50</span><span class="p">:</span><span class="mi">90</span><span class="p">)</span>    
+    <span class="n">demand</span><span class="p">[(</span><span class="n">origin</span><span class="p">,</span><span class="n">dest</span><span class="p">,:</span><span class="n">DIS</span><span class="p">)]</span> <span class="o">=</span> <span class="n">rand</span><span class="p">(</span><span class="mi">100</span><span class="p">:</span><span class="mi">130</span><span class="p">)</span>
+    <span class="c"># Generate prices:</span>
+    <span class="c">#  - Regular price is Uniform(400,700)</span>
+    <span class="c">#  - Discount price is Uniform(150,300)</span>
+    <span class="n">prices</span><span class="p">[(</span><span class="n">origin</span><span class="p">,</span><span class="n">dest</span><span class="p">,:</span><span class="n">REG</span><span class="p">)]</span> <span class="o">=</span> <span class="n">rand</span><span class="p">(</span><span class="mi">400</span><span class="p">:</span><span class="mi">700</span><span class="p">)</span>
+    <span class="n">prices</span><span class="p">[(</span><span class="n">origin</span><span class="p">,</span><span class="n">dest</span><span class="p">,:</span><span class="n">DIS</span><span class="p">)]</span> <span class="o">=</span> <span class="n">rand</span><span class="p">(</span><span class="mi">150</span><span class="p">:</span><span class="mi">300</span><span class="p">)</span>
+<span class="k">end</span>
+
+<span class="c"># Finally set all places to have the same capacity</span>
+<span class="n">plane_cap</span> <span class="o">=</span> <span class="n">rand</span><span class="p">(</span><span class="mi">150</span><span class="p">:</span><span class="mi">200</span><span class="p">)</span>
+
+<span class="c"># Lets look at a sample demand at random</span>
+<span class="p">@</span><span class="n">show</span> <span class="n">demand</span><span class="p">[(:</span><span class="n">BOS</span><span class="p">,:</span><span class="n">YYZ</span><span class="p">,:</span><span class="n">REG</span><span class="p">)]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now we have the data, we can build the model.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="n">nrm2</span> <span class="o">=</span> <span class="n">Model</span><span class="p">()</span>
+<span class="c"># Create a variable indexed by 3 things:</span>
+<span class="c"># * Origin</span>
+<span class="c"># * Destination</span>
+<span class="c"># * Class</span>
+<span class="c"># And set the upper bound for each variable differently.</span>
+<span class="c"># The origins and destinations should be indexed across</span>
+<span class="c"># the vector of airports, and the class should be indexed</span>
+<span class="c"># across the vector of classes.</span>
+<span class="c"># We&#39;ll draw the upper bounds from the demand dictionary.</span>
+<span class="p">@</span><span class="n">defVar</span><span class="p">(</span><span class="n">nrm2</span><span class="p">,</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">x</span><span class="p">[</span><span class="n">o</span><span class="o">=</span><span class="n">airports</span><span class="p">,</span>
+                     <span class="n">d</span><span class="o">=</span><span class="n">airports</span><span class="p">,</span>
+                     <span class="n">c</span><span class="o">=</span><span class="n">classes</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">demand</span><span class="p">[(</span><span class="n">o</span><span class="p">,</span><span class="n">d</span><span class="p">,</span><span class="n">c</span><span class="p">)])</span>
+<span class="c"># Note that we don&#39;t have to split it up across multiple lines,</span>
+<span class="c"># its personal preference!</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>JuMP displays the variable in a compact form - note that the upper bound is
+blank because the upper bound is different for each variable.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="c"># The objective is just like before, except now we can use</span>
+<span class="c"># the sum{} functionality provided by JuMP to sum over all</span>
+<span class="c"># combinations of origin/destination/class, and provide a</span>
+<span class="c"># filter (after the semicolon ;) to exclude all cases where</span>
+<span class="c"># the origin is equal to the destination</span>
+<span class="p">@</span><span class="n">setObjective</span><span class="p">(</span><span class="n">nrm2</span><span class="p">,</span> <span class="n">Max</span><span class="p">,</span> <span class="n">sum</span><span class="p">{</span><span class="n">prices</span><span class="p">[(</span><span class="n">o</span><span class="p">,</span><span class="n">d</span><span class="p">,</span><span class="n">c</span><span class="p">)]</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="n">o</span><span class="p">,</span><span class="n">d</span><span class="p">,</span><span class="n">c</span><span class="p">],</span> 
+    <span class="n">o</span> <span class="k">in</span> <span class="n">airports</span><span class="p">,</span> <span class="n">d</span> <span class="k">in</span> <span class="n">airports</span><span class="p">,</span> <span class="n">c</span> <span class="k">in</span> <span class="n">classes</span><span class="p">;</span> <span class="n">o</span> <span class="o">!=</span> <span class="n">d</span><span class="p">})</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="c"># Next we&#39;ll add constraints on flights from the hub</span>
+<span class="c"># to any of the non-hub airports.</span>
+<span class="k">for</span> <span class="n">d</span> <span class="k">in</span> <span class="n">airports</span>
+    <span class="k">if</span> <span class="n">d</span> <span class="o">==</span> <span class="p">:</span><span class="n">MDW</span>
+        <span class="k">continue</span>
+    <span class="k">end</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">&quot;Adding constraint for hub (MDW) to </span><span class="si">$</span><span class="s">d&quot;</span><span class="p">)</span>
+    <span class="p">@</span><span class="n">addConstraint</span><span class="p">(</span><span class="n">nrm2</span><span class="p">,</span> 
+        <span class="n">sum</span><span class="p">{</span><span class="n">x</span><span class="p">[</span><span class="n">o</span><span class="p">,</span><span class="n">d</span><span class="p">,</span><span class="n">c</span><span class="p">],</span> <span class="n">o</span> <span class="k">in</span> <span class="n">airports</span><span class="p">,</span> <span class="n">c</span> <span class="k">in</span> <span class="n">classes</span><span class="p">;</span> <span class="n">o</span><span class="o">!=</span><span class="n">d</span><span class="p">}</span> <span class="o">&lt;=</span> <span class="n">plane_cap</span><span class="p">)</span>
+<span class="k">end</span>
+<span class="n">nrm2</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="c"># Now flights into the hub</span>
+<span class="k">for</span> <span class="n">o</span> <span class="k">in</span> <span class="n">airports</span>
+    <span class="k">if</span> <span class="n">o</span> <span class="o">==</span> <span class="p">:</span><span class="n">MDW</span>
+        <span class="k">continue</span>
+    <span class="k">end</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">&quot;Adding constraint for </span><span class="si">$</span><span class="s">o to hub (MDW)&quot;</span><span class="p">)</span>
+    <span class="p">@</span><span class="n">addConstraint</span><span class="p">(</span><span class="n">nrm2</span><span class="p">,</span> 
+        <span class="n">sum</span><span class="p">{</span><span class="n">x</span><span class="p">[</span><span class="n">o</span><span class="p">,</span><span class="n">d</span><span class="p">,</span><span class="n">c</span><span class="p">],</span> <span class="n">d</span> <span class="k">in</span> <span class="n">airports</span><span class="p">,</span> <span class="n">c</span> <span class="k">in</span> <span class="n">classes</span><span class="p">;</span> <span class="n">o</span><span class="o">!=</span><span class="n">d</span><span class="p">}</span> <span class="o">&lt;=</span> <span class="n">plane_cap</span><span class="p">)</span>
+<span class="k">end</span>
+<span class="n">nrm2</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="c"># Now just need to solve it</span>
+<span class="n">solve</span><span class="p">(</span><span class="n">nrm2</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="n">getValue</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>    </div> <!-- /container -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <!-- MathJax -->
+    <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+  </body>
+</html>

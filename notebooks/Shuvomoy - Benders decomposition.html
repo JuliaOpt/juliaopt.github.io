@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="JuliaOpt - Optimization packages for the Julia language">
+    <meta name="author" content="Iain Dunning">
+    <link rel="icon" href="favicon.ico">
+
+    <title>JuliaOpt - Optimization packages for the Julia language</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+    <!-- Additional styles -->
+    <style>
+      body {
+        padding-top: 60px;
+        padding-bottom: 20px;
+      }
+    </style>
+    <style type="text/css">
+    .highlight .hll { background-color: #ffffcc }
+.highlight  { background: #f8f8f8; }
+.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
+    </style>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div class="container">
+
+
+      <!-- Static navbar -->
+      <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/index.html">JuliaOpt</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="#about">About</a></li>
+              <li><a href="#packages">Packages</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li class="divider"></li>
+                  <li class="dropdown-header">Nav header</li>
+                  <li><a href="#">Separated link</a></li>
+                  <li><a href="#">One more separated link</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </nav>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Description:</strong> This notebook describes how to implement Benders decomposition, which is a large scale optimization scheme, in JuMP. Both the classical approach (using loop) and the modern approach (using lazy constraints) are described.</p>
+<p><strong>Author:</strong> <a href="http://scg.utoronto.ca/~shuvomoy.dasgupta/">Shuvomoy Das Gupta</a></p>
+<p><strong>License:</strong> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>
+<h1 id="Using-Julia+JuMP-for-optimization---Benders-decomposition">Using Julia+JuMP for optimization - Benders decomposition<a class="anchor-link" href="#Using-Julia+JuMP-for-optimization---Benders-decomposition">&#182;</a></h1><hr>
+<p><br></p>
+<p>To illustrate implementation of solver callback in JuMP, we consider applying Benders decomposition to the following general mixed integer problem:</p>
+\begin{align}
+& \text{maximize} \quad &&c_1^T x+c_2^T v \\
+& \text{subject to} \quad &&A_1 x+ A_2 v \preceq b \\
+& &&x \succeq 0, x \in \mathbb{Z}^n \\
+& &&v \succeq 0, v \in \mathbb{R}^p \\
+\end{align}<p>where $b \in \mathbb{R}^m$, $A_1 \in \mathbb{R}^{m \times n}$ and $A_2 \in \mathbb{R}^{m \times p}$. Here the symbol $\succeq$ ($\preceq$) stands for element-wise greater (less) than or equal to. Any mixed integer programming problem can be written in the form above.</p>
+<p>We want to write the Benders decomposition algorithm for the problem above. Consider the polyhedron $\{u \in \mathbb{R}^m| A_2^T u \succeq 0, u \succeq 0\}$. Assume the set of vertices and extreme rays of the polyhedron is denoted by $P$ and $Q$ respectively. Assume on the $k$th iteration the subset of vertices of the polyhedron mentioned is denoted by $T(k)$ and the subset of extreme rays are denoted by $Q(k)$, which will be generated by the Benders decomposition problem below.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Benders-decomposition-algorithm">Benders decomposition algorithm<a class="anchor-link" href="#Benders-decomposition-algorithm">&#182;</a></h3><hr>
+<p><strong>Step 1 (Initialization)</strong> <br>
+We start with $T(1)=Q(1)=\emptyset$. Let $f_m^{(1)}$ be arbitrarily large and $x^{(1)}$ be any non-negative integer vector and go to Step 3.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong> Step 2 (Solving the master problem)</strong> <br>
+Solve the master problem:</p>
+\begin{align}
+&  f_\text{m}^{(k)}= \\
+&\text{maximize} &&\quad t \\
+&\text{subject to} \quad &&\forall \bar{u} \in T(k) \qquad t + (A_1^T \bar{u} - c_1)^T x \leq b^T \bar{u} \\
+& && \forall \bar{y} \in Q(k) \qquad (A_1 ^T \bar{y})^T x \leq b^T \bar{y} \\
+& && \qquad \qquad \qquad \; x \succeq 0, x \in \mathbb{Z}^n
+\end{align}<p>Let the maximizer corresponding to the objective value $f_\text{m}^{(k)}$ be denoted by $x^{(k)}$. Now there are three possibilities:</p>
+<ul>
+<li><p>If $f_\text{m}^{(k)}=-\infty$, i.e., the master problem is infeasible, then the original proble is infeasible and sadly, we are done.</p>
+</li>
+<li><p>If $f_\text{m}^{(k)}=\infty$, i.e. the master problem is unbounded above, then we take $f_\text{m}^{(k)}$ to be arbitrarily large and $x^{(k)}$ to be a corresponding feasible solution. Go to Step 3</p>
+</li>
+<li><p>If $f_\text{m}^{(k)}$ is finite, then we collect $t^{(k)}$ and $x^{(k)}$ and go to Step 3.</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong> Step 3 (Solving the subproblem and add Benders cut when needed) </strong> <br>
+Solve the subproblem</p>
+\begin{align}
+  f_s(x^{(k)})= \\
+  c_1^T x^{(k)} + & \text{minimize} &&  (b-A_1 x^{(k)})^T u \\
+  & \text{subject to} && A_2^T u \succeq c_2 \\
+  & && u \succeq 0, u \in \mathbb{R}^m
+\end{align}<p>Let the minimizer corresponding to the objective value $f_s(x^{(k)})$ be denoted by $u^{(k)}$. There are three possibilities:</p>
+<ul>
+<li><p>If $f_s(x^{(k)}) = \infty$, the original problem is either infeasible or unbounded. We quit from Benders algorithm and use special purpose algorithm to find a feasible solution if there exists one.</p>
+</li>
+<li><p>If $f_s(x^{(k)}) = - \infty$, we arrive at an extreme ray $y^{(k)}$. We add the Benders cut corresponding to this extreme ray $(A_1 ^T y^{(k)})^T x \leq b^T y^{(k)}$ to the master problem i.e., $Q(k+1):= Q(k) \cup \{y^{(k)}\}$. Take $k:=k+1$ and go to Step 3.</p>
+</li>
+<li><p>If $f_s(x^{(k)})$ is finite, then</p>
+<ul>
+<li><p>If $f_s(x^{(k)})=f_m^{(k)}$ we arrive at the optimal solution. The optimum objective value of the original problem is $f_s(x^{(k)})=f_m^{(k)}$, an optimal $x$ is $x^{(k)}$ and an optimal $v$ is the dual values for the second constraints of the subproblem. We are happily done!</p>
+</li>
+<li><p>If $f_s(x^{(k)}) < f_m^{(k)}$ we get an suboptimal vertex $u^{(k)}$. We add the corresponding Benders cut $u_0 + (A_1^T u^{(k)} - c_1)^T x \leq b^T u^{(k)}$ to the master problem, i.e., $T(k+1) := T(k) \cup \{u^{(k)}\}$. Take $k:=k+1$ and go to Step 3.</p>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Data-for-the-problem">Data for the problem<a class="anchor-link" href="#Data-for-the-problem">&#182;</a></h2><p>The input data is from page 139, Integer programming by Garfinkel and Nemhauser, 1972.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="c"># Data for the problem</span>
+                   <span class="c">#---------------------</span>
+<span class="n">c1</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span><span class="o">-</span><span class="mi">4</span><span class="p">]</span>
+<span class="n">c2</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">;</span> <span class="o">-</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">dimX</span><span class="o">=</span><span class="n">length</span><span class="p">(</span><span class="n">c1</span><span class="p">)</span>
+<span class="n">dimU</span><span class="o">=</span><span class="n">length</span><span class="p">(</span><span class="n">c2</span><span class="p">)</span>
+<span class="n">b</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">;</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">A1</span><span class="o">=</span><span class="p">[</span>
+    <span class="mi">1</span> <span class="o">-</span><span class="mi">3</span><span class="p">;</span>
+   <span class="o">-</span><span class="mi">1</span> <span class="o">-</span><span class="mi">3</span>
+   <span class="p">]</span>
+<span class="n">A2</span><span class="o">=</span><span class="p">[</span>
+    <span class="mi">1</span> <span class="o">-</span><span class="mi">2</span><span class="p">;</span>
+   <span class="o">-</span><span class="mi">1</span> <span class="o">-</span><span class="mi">1</span>
+   <span class="p">]</span>
+<span class="n">M</span><span class="o">=</span><span class="mi">1000</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[1]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>1000</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="How-to-implement-the-Benders-decomposition-algorithm-in-JuMP">How to implement the Benders decomposition algorithm in JuMP<a class="anchor-link" href="#How-to-implement-the-Benders-decomposition-algorithm-in-JuMP">&#182;</a></h2><p>There are two ways we can implement Benders decomposition in JuMP:</p>
+<ul>
+<li><em>Classical approach:</em> Adding the Benders cuts in a loop,  and</li>
+<li><em>Modern approach:</em> Adding the Benders cuts as lazy constraints.</li>
+</ul>
+<p>The classical approach might be inferior to the modern one, as the solver</p>
+<ul>
+<li>might revisit previously eliminated solution, and</li>
+<li>might discard the optimal solution to the original problem in favor of a better but ultimately infeasible solution to the relaxed one.</li>
+</ul>
+<p>For more details on the comparison between the two approaches, see <a href="http://orinanobworld.blogspot.ca/2011/10/benders-decomposition-then-and-now.html">Paul Rubin's blog on Benders Decomposition</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Classical-approach:-adding-the-Benders-cuts-in-a-loop">Classical approach: adding the Benders cuts in a loop<a class="anchor-link" href="#Classical-approach:-adding-the-Benders-cuts-in-a-loop">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Let's describe the master problem first. Note that there are no constraints, which we will added later using Benders decomposition.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="c"># Loading the necessary packages</span>
+<span class="c">#-------------------------------</span>
+<span class="k">using</span> <span class="n">JuMP</span> 
+<span class="k">using</span> <span class="n">GLPKMathProgInterface</span>
+
+<span class="c"># Master Problem Description</span>
+<span class="c"># --------------------------</span>
+
+<span class="n">masterProblemModel</span> <span class="o">=</span> <span class="n">Model</span><span class="p">(</span><span class="n">solver</span><span class="o">=</span><span class="n">GLPKSolverMIP</span><span class="p">())</span> 
+
+<span class="c"># Variable Definition </span>
+<span class="c"># ----------------------------------------------------------------</span>
+<span class="p">@</span><span class="n">defVar</span><span class="p">(</span><span class="n">masterProblemModel</span><span class="p">,</span> <span class="mi">0</span><span class="o">&lt;=</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="n">dimX</span><span class="p">]</span><span class="o">&lt;=</span> <span class="mf">1e6</span>  <span class="p">,</span> <span class="kt">Int</span><span class="p">)</span> 
+<span class="p">@</span><span class="n">defVar</span><span class="p">(</span><span class="n">masterProblemModel</span><span class="p">,</span> <span class="n">t</span><span class="o">&lt;=</span><span class="mf">1e6</span><span class="p">)</span>
+
+<span class="c"># Objective Setting</span>
+<span class="c"># -----------------</span>
+<span class="p">@</span><span class="n">setObjective</span><span class="p">(</span><span class="n">masterProblemModel</span><span class="p">,</span> <span class="n">Max</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
+<span class="n">iC</span><span class="o">=</span><span class="mi">1</span> <span class="c"># iC is the iteration counter </span>
+
+<span class="n">print</span><span class="p">(</span><span class="n">masterProblemModel</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Max t
+Subject to
+ 0 &lt;= x[i] &lt;= 1.0e6, integer, for all i in {1,2}
+ t &lt;= 1.0e6
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Here is the loop that checks the status of the master problem and the subproblem and then adds necessary Benders cuts accordingly.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="c"># Trying the entire benders decomposition in one step</span>
+<span class="k">while</span><span class="p">(</span><span class="n">true</span><span class="p">)</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">-----------------------&quot;</span><span class="p">)</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">&quot;Iteration number = &quot;</span><span class="p">,</span> <span class="n">iC</span><span class="p">)</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">&quot;-----------------------</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">)</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">&quot;The current master problem is&quot;</span><span class="p">)</span>
+    <span class="n">print</span><span class="p">(</span><span class="n">masterProblemModel</span><span class="p">)</span>
+    <span class="n">statusMasterProblem</span> <span class="o">=</span> <span class="n">solve</span><span class="p">(</span><span class="n">masterProblemModel</span><span class="p">)</span>
+    
+<span class="k">if</span> <span class="n">statusMasterProblem</span> <span class="o">==</span> <span class="p">:</span><span class="n">Infeasible</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">&quot;The problem is infeasible :-(&quot;</span><span class="p">)</span>
+    <span class="k">break</span>
+<span class="k">end</span>
+    
+<span class="k">if</span> <span class="n">statusMasterProblem</span> <span class="o">==</span> <span class="p">:</span><span class="n">Unbounded</span>  
+    <span class="n">fmCurrent</span> <span class="o">=</span> <span class="n">M</span>
+    <span class="n">xCurrent</span><span class="o">=</span><span class="n">M</span><span class="o">*</span><span class="n">ones</span><span class="p">(</span><span class="n">dimX</span><span class="p">)</span>
+<span class="k">end</span>
+
+
+<span class="k">if</span> <span class="n">statusMasterProblem</span> <span class="o">==</span> <span class="p">:</span><span class="n">Optimal</span>
+    <span class="n">fmCurrent</span> <span class="o">=</span> <span class="n">getValue</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+    <span class="n">xCurrent</span><span class="o">=</span><span class="kt">Float64</span><span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="p">:</span><span class="n">dimX</span>
+        <span class="n">push</span><span class="o">!</span><span class="p">(</span><span class="n">xCurrent</span><span class="p">,</span><span class="n">getValue</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+    <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;Status of the master problem is&quot;</span><span class="p">,</span> <span class="n">statusMasterProblem</span><span class="p">,</span> 
+        <span class="s">&quot;</span><span class="se">\n</span><span class="s">with fmCurrent = &quot;</span><span class="p">,</span> <span class="n">fmCurrent</span><span class="p">,</span> 
+        <span class="s">&quot;</span><span class="se">\n</span><span class="s">xCurrent = &quot;</span><span class="p">,</span> <span class="n">xCurrent</span><span class="p">)</span>
+
+    
+<span class="n">subProblemModel</span> <span class="o">=</span> <span class="n">Model</span><span class="p">(</span><span class="n">solver</span><span class="o">=</span><span class="n">GLPKSolverLP</span><span class="p">())</span>
+    
+<span class="n">cSub</span><span class="o">=</span><span class="n">b</span><span class="o">-</span><span class="n">A1</span><span class="o">*</span><span class="n">xCurrent</span>
+    
+<span class="p">@</span><span class="n">defVar</span><span class="p">(</span><span class="n">subProblemModel</span><span class="p">,</span> <span class="n">u</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="n">dimU</span><span class="p">]</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">)</span>
+    
+
+<span class="p">@</span><span class="n">addConstraint</span><span class="p">(</span><span class="n">subProblemModel</span><span class="p">,</span> <span class="n">constrRefSubProblem</span><span class="p">[</span><span class="n">j</span><span class="o">=</span><span class="mi">1</span><span class="p">:</span><span class="n">size</span><span class="p">(</span><span class="n">A2</span><span class="p">,</span><span class="mi">2</span><span class="p">)],</span><span class="n">sum</span><span class="p">{</span><span class="n">A2</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span><span class="o">*</span><span class="n">u</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="p">,</span> <span class="n">i</span> <span class="k">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="n">size</span><span class="p">(</span><span class="n">A2</span><span class="p">,</span><span class="mi">1</span><span class="p">)]}</span><span class="o">&gt;=</span><span class="n">c2</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+<span class="c"># The second argument of @addConstraint macro, constrRefSubProblem[j=1:size(A2,2)] means that the j-th constraint is</span>
+<span class="c"># referenced by constrRefSubProblem[j]. </span>
+
+    
+<span class="p">@</span><span class="n">setObjective</span><span class="p">(</span><span class="n">subProblemModel</span><span class="p">,</span> <span class="n">Min</span><span class="p">,</span> <span class="n">dot</span><span class="p">(</span><span class="n">c1</span><span class="p">,</span> <span class="n">xCurrent</span><span class="p">)</span> <span class="o">+</span> <span class="n">sum</span><span class="p">{</span><span class="n">cSub</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">u</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">i</span> <span class="k">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="n">dimU</span><span class="p">]})</span>
+
+<span class="n">print</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">The current subproblem model is </span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">subProblemModel</span><span class="p">)</span>
+    
+<span class="n">statusSubProblem</span> <span class="o">=</span> <span class="n">solve</span><span class="p">(</span><span class="n">subProblemModel</span><span class="p">)</span>  
+    
+<span class="n">fsxCurrent</span> <span class="o">=</span> <span class="n">getObjectiveValue</span><span class="p">(</span><span class="n">subProblemModel</span><span class="p">)</span> 
+
+<span class="n">uCurrent</span> <span class="o">=</span> <span class="kt">Float64</span><span class="p">[]</span>
+    
+<span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="p">:</span><span class="n">dimU</span>
+    <span class="n">push</span><span class="o">!</span><span class="p">(</span><span class="n">uCurrent</span><span class="p">,</span> <span class="n">getValue</span><span class="p">(</span><span class="n">u</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+<span class="k">end</span>
+
+<span class="err">γ</span><span class="o">=</span><span class="n">dot</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">uCurrent</span><span class="p">)</span>
+
+        <span class="n">println</span><span class="p">(</span><span class="s">&quot;Status of the subproblem is &quot;</span><span class="p">,</span> <span class="n">statusSubProblem</span><span class="p">,</span> 
+        <span class="s">&quot;</span><span class="se">\n</span><span class="s">with fsxCurrent= &quot;</span><span class="p">,</span> <span class="n">fsxCurrent</span><span class="p">,</span> 
+        <span class="s">&quot;</span><span class="se">\n</span><span class="s">and fmCurrent= &quot;</span><span class="p">,</span> <span class="n">fmCurrent</span><span class="p">)</span> 
+    
+    <span class="k">if</span> <span class="n">statusSubProblem</span> <span class="o">==</span> <span class="p">:</span><span class="n">Optimal</span> <span class="o">&amp;&amp;</span>  <span class="n">fsxCurrent</span> <span class="o">==</span> <span class="n">fmCurrent</span> <span class="c"># we are done</span>
+        <span class="n">println</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">################################################&quot;</span><span class="p">)</span>
+        <span class="n">println</span><span class="p">(</span><span class="s">&quot;Optimal solution of the original problem found&quot;</span><span class="p">)</span>
+        <span class="n">println</span><span class="p">(</span><span class="s">&quot;The optimal objective value t is &quot;</span><span class="p">,</span> <span class="n">fmCurrent</span><span class="p">)</span>
+        <span class="n">println</span><span class="p">(</span><span class="s">&quot;The optimal x is &quot;</span><span class="p">,</span> <span class="n">xCurrent</span><span class="p">)</span>
+        <span class="n">println</span><span class="p">(</span><span class="s">&quot;The optimal v is &quot;</span><span class="p">,</span> <span class="n">getDual</span><span class="p">(</span><span class="n">constrRefSubProblem</span><span class="p">))</span>
+        <span class="n">println</span><span class="p">(</span><span class="s">&quot;################################################</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">)</span>
+        <span class="k">break</span>
+    <span class="k">end</span>  
+    
+    <span class="k">if</span> <span class="n">statusSubProblem</span> <span class="o">==</span> <span class="p">:</span><span class="n">Optimal</span> <span class="o">&amp;&amp;</span> <span class="n">fsxCurrent</span> <span class="o">&lt;</span> <span class="n">fmCurrent</span> 
+      <span class="n">println</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">There is a suboptimal vertex, add the corresponding constraint&quot;</span><span class="p">)</span>
+        <span class="n">cv</span><span class="o">=</span> <span class="n">A1</span><span class="o">&#39;*</span><span class="n">uCurrent</span> <span class="o">-</span> <span class="n">c1</span>
+    <span class="p">@</span><span class="n">addConstraint</span><span class="p">(</span><span class="n">masterProblemModel</span><span class="p">,</span> <span class="n">t</span><span class="o">+</span><span class="n">sum</span><span class="p">{</span><span class="n">cv</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="p">:</span><span class="n">dimX</span><span class="p">}</span> <span class="o">&lt;=</span> <span class="err">γ</span> <span class="p">)</span>
+        <span class="n">println</span><span class="p">(</span><span class="s">&quot;t + &quot;</span><span class="p">,</span> <span class="n">cv</span><span class="p">,</span> <span class="s">&quot;ᵀ x &lt;= &quot;</span><span class="p">,</span> <span class="err">γ</span><span class="p">)</span>
+    <span class="k">end</span> 
+    
+    <span class="k">if</span> <span class="n">statusSubProblem</span> <span class="o">==</span> <span class="p">:</span><span class="n">Unbounded</span> 
+        <span class="n">println</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">There is an  extreme ray, adding the corresponding constraint&quot;</span><span class="p">)</span>
+        <span class="n">ce</span> <span class="o">=</span> <span class="n">A1</span><span class="o">&#39;*</span><span class="n">uCurrent</span>
+        <span class="p">@</span><span class="n">addConstraint</span><span class="p">(</span><span class="n">masterProblemModel</span><span class="p">,</span> <span class="n">sum</span><span class="p">{</span><span class="n">ce</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="p">:</span><span class="n">dimX</span><span class="p">}</span> <span class="o">&lt;=</span> <span class="err">γ</span><span class="p">)</span>
+        <span class="n">println</span><span class="p">(</span><span class="n">ce</span><span class="p">,</span> <span class="s">&quot;ᵀ x &lt;= &quot;</span><span class="p">,</span> <span class="err">γ</span><span class="p">)</span>
+    <span class="k">end</span>
+   
+    <span class="n">iC</span><span class="o">=</span><span class="n">iC</span><span class="o">+</span><span class="mi">1</span>
+    
+<span class="k">end</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+-----------------------
+Iteration number = 1
+-----------------------
+
+The current master problem is
+Max t
+Subject to
+ 0 &lt;= x[i] &lt;= 1.0e6, integer, for all i in {1,2}
+ t &lt;= 1.0e6
+Status of the master problem isOptimal
+with fmCurrent = 1.0e6
+xCurrent = [0.0,0.0]
+
+The current subproblem model is 
+Min -2 u[1] - 3 u[2]
+Subject to
+ u[1] - u[2] &gt;= -2
+ -2 u[1] - u[2] &gt;= -3
+ u[i] &gt;= 0 for all i in {1,2}
+Status of the subproblem is Optimal
+with fsxCurrent= -7.666666666666667
+and fmCurrent= 1.0e6
+
+There is a suboptimal vertex, add the corresponding constraint
+t + [-1.0,-4.0]ᵀ x &lt;= -7.666666666666667
+
+-----------------------
+Iteration number = 2
+-----------------------
+
+The current master problem is
+</pre>
+</div>
+</div>
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>WARNING: Solver does not appear to support providing initial feasible solutions.
+</pre>
+</div>
+</div>
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Max t
+Subject to
+ t - x[1] - 4 x[2] &lt;= -7.666666666666667
+ 0 &lt;= x[i] &lt;= 1.0e6, integer, for all i in {1,2}
+ t &lt;= 1.0e6
+Status of the master problem isOptimal
+with fmCurrent = 1.0e6
+xCurrent = [0.0,250002.0]
+
+The current subproblem model is 
+Min 750004 u[1] + 750003 u[2] - 1.000008e6
+Subject to
+ u[1] - u[2] &gt;= -2
+ -2 u[1] - u[2] &gt;= -3
+ u[i] &gt;= 0 for all i in {1,2}
+Status of the subproblem is Optimal
+with fsxCurrent= -1.000008e6
+and fmCurrent= 1.0e6
+
+There is a suboptimal vertex, add the corresponding constraint
+t + [1.0,4.0]ᵀ x &lt;= -0.0
+
+-----------------------
+Iteration number = 3
+-----------------------
+
+The current master problem is
+Max t
+Subject to
+ t - x[1] - 4 x[2] &lt;= -7.666666666666667
+ t + x[1] + 4 x[2] &lt;= 0
+ 0 &lt;= x[i] &lt;= 1.0e6, integer, for all i in {1,2}
+ t &lt;= 1.0e6
+Status of the master problem isOptimal
+with fmCurrent = -4.0
+xCurrent = [4.0,0.0]
+
+The current subproblem model is 
+Min -6 u[1] + u[2] - 4
+Subject to
+ u[1] - u[2] &gt;= -2
+ -2 u[1] - u[2] &gt;= -3
+ u[i] &gt;= 0 for all i in {1,2}
+Status of the subproblem is Optimal
+with fsxCurrent= -13.0
+and fmCurrent= -4.0
+
+There is a suboptimal vertex, add the corresponding constraint
+t + [2.5,-0.5]ᵀ x &lt;= -3.0
+
+-----------------------
+Iteration number = 4
+-----------------------
+
+The current master problem is
+Max t
+Subject to
+ t - x[1] - 4 x[2] &lt;= -7.666666666666667
+ t + x[1] + 4 x[2] &lt;= 0
+ t + 2.5 x[1] - 0.5 x[2] &lt;= -3
+ 0 &lt;= x[i] &lt;= 1.0e6, integer, for all i in {1,2}
+ t &lt;= 1.0e6
+Status of the master problem isOptimal
+with fmCurrent = -4.0
+xCurrent = [0.0,1.0]
+
+The current subproblem model is 
+Min u[1] - 4
+Subject to
+ u[1] - u[2] &gt;= -2
+ -2 u[1] - u[2] &gt;= -3
+ u[i] &gt;= 0 for all i in {1,2}
+Status of the subproblem is Optimal
+with fsxCurrent= -4.0
+and fmCurrent= -4.0
+
+################################################
+Optimal solution of the original problem found
+The optimal objective value t is -4.0
+The optimal x is [0.0,1.0]
+The optimal v is constrRefSubProblem: 1 dimensions:
+[1] = 0.0
+[2] = 0.0
+
+################################################
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Modern-approach:-adding-the-Benders-cuts-as-lazy-constraints">Modern approach: adding the Benders cuts as lazy constraints<a class="anchor-link" href="#Modern-approach:-adding-the-Benders-cuts-as-lazy-constraints">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="What-are-lazy-constraints?">What are lazy constraints?<a class="anchor-link" href="#What-are-lazy-constraints?">&#182;</a></h3><p>Mixed integer programming solver works on branch-and-bound strategy. Often in a mixed integer programming problem, including all possible constraints might be too space consuming or computationally too expensive. Instead we can start with a manageable set of constraints in a comparatively smaller, hence relaxed version of the original MIP. Once a feasible integer solution is found, we can check the status of the problem by solving some subproblem. The subproblem can be derived from duality, as in our current problem and/or from logic. In the case of suboptimality, we can add lazy constraints to cut off the current feasible solution at that node of the branch-and-bound tree.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="How-to-add-lazy-constraints-in-Julia?">How to add lazy constraints in Julia?<a class="anchor-link" href="#How-to-add-lazy-constraints-in-Julia?">&#182;</a></h3><p>Note that, in Step 3 we are solving the subproblem, checking the state of our problem and adding Benders cut if necessary. We write a function <code>addBendersCut(cb)</code> which will perform the steps. The argument of the function <code>cb</code> refers to the callback handle, which is a reference to the callback management code inside JuMP.</p>
+<p>When we add the lazy constraints we have to use the <code>@addLazyConstraint</code> macro as follows:</p>
+<blockquote><p><code>@addLazyConstraint(cb, description of the constraint)</code>.</p>
+</blockquote>
+<p>Description of the constraint will be of the same manner as in adding a normal constraint in JuMP using <code>@addConstraint</code> macro.</p>
+<p>Note that we have not mentioned which model is associated with the added lazy constraints. So outside the <code>addBendersCut(cb)</code> function we invoke the command:</p>
+<blockquote><p><code>setLazyCallback(name of the master problem model, addBendersCut)</code></p>
+</blockquote>
+<p>, which tells JuMP to add the lazy constraints generated by the function <code>addBendersCut</code> to the master problem.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="c"># Loading the necessary packages</span>
+                    <span class="c">#-------------------------------</span>
+<span class="k">using</span> <span class="n">JuMP</span> 
+<span class="k">using</span> <span class="n">CPLEX</span>
+<span class="c"># using Gurobi</span>
+
+                    <span class="c"># Master Problem Description</span>
+                    <span class="c"># --------------------------</span>
+
+<span class="c"># Model name</span>
+ 
+<span class="n">masterProblemModel</span> <span class="o">=</span> <span class="n">Model</span><span class="p">(</span><span class="n">solver</span> <span class="o">=</span> <span class="n">CplexSolver</span><span class="p">())</span>
+<span class="c"># masterProblemModel = Model(solver = GurobiSolver(Heuristics=0.0, Cuts = 0)) # If we want to add Benders lazy constraints </span>
+<span class="c"># in Gurobi, then we have to turn of Gurobi&#39;s own Cuts and Heuristics in the master problem</span>
+
+<span class="c"># Variable Definition (Only CplexSolver() works properly for these)</span>
+<span class="c"># ----------------------------------------------------------------</span>
+<span class="p">@</span><span class="n">defVar</span><span class="p">(</span><span class="n">masterProblemModel</span><span class="p">,</span>  <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="n">dimX</span><span class="p">]</span> <span class="o">&gt;=</span><span class="mi">0</span> <span class="p">,</span> <span class="kt">Int</span><span class="p">)</span> 
+<span class="p">@</span><span class="n">defVar</span><span class="p">(</span><span class="n">masterProblemModel</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
+
+<span class="c"># ***************ALTERNATIVE VARIABLE DEFINITION FOR GUROBI************</span>
+<span class="c">#If we replace the two lines above with the follwoing:</span>
+<span class="c">#@defVar(masterProblemModel,  0&lt;= x[1:dimX] &lt;= 1e6 , Int)</span>
+<span class="c">#@defVar(masterProblemModel, t &lt;= 1e6)</span>
+<span class="c"># then all the solvers give the expected solution</span>
+<span class="c">#**********************************************************************</span>
+
+<span class="c"># Objective Setting</span>
+<span class="c"># -----------------</span>
+<span class="p">@</span><span class="n">setObjective</span><span class="p">(</span><span class="n">masterProblemModel</span><span class="p">,</span> <span class="n">Max</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
+
+<span class="n">print</span><span class="p">(</span><span class="n">masterProblemModel</span><span class="p">)</span>
+
+<span class="n">stringOfBenderCuts</span><span class="o">=</span><span class="n">String</span><span class="p">[]</span> <span class="c"># this is an array of strings which will contain all the</span>
+<span class="c"># Benders cuts added to be displayed later</span>
+
+<span class="c"># There are no constraints when we start, so we will add all the constraints in the</span>
+<span class="c"># form of Benders cuts lazily</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Max t
+Subject to
+ x[i] &gt;= 0, integer, for all i in {1,2}
+ t free
+</pre>
+</div>
+</div>
+
+<div class="output_area"><div class="prompt output_prompt">Out[5]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0-element Array{String,1}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="k">function</span><span class="nf"> addBendersCut</span><span class="p">(</span><span class="n">cb</span><span class="p">)</span>
+    <span class="c">#***************************************************************************</span>
+    <span class="c"># First we store the master problem solution in conventional data structures</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">&quot;----------------------------&quot;</span><span class="p">)</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">&quot;ITERATION NUMBER = &quot;</span><span class="p">,</span> <span class="n">length</span><span class="p">(</span><span class="n">stringOfBenderCuts</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">&quot;---------------------------</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">)</span>
+    
+    <span class="n">fmCurrent</span> <span class="o">=</span> <span class="n">getValue</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+    <span class="n">xCurrent</span><span class="o">=</span><span class="kt">Float64</span><span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="p">:</span><span class="n">dimX</span>
+        <span class="n">push</span><span class="o">!</span><span class="p">(</span><span class="n">xCurrent</span><span class="p">,</span><span class="n">getValue</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+    <span class="k">end</span>
+    
+    <span class="c"># Display the current solution of the master problem</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">&quot;MASTERPROBLEM INFORMATION&quot;</span><span class="p">)</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">&quot;-------------------------&quot;</span><span class="p">)</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">&quot;The master problem that was solved was:&quot;</span><span class="p">)</span>
+    <span class="n">print</span><span class="p">(</span><span class="n">masterProblemModel</span><span class="p">)</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">&quot;with &quot;</span><span class="p">,</span> <span class="n">length</span><span class="p">(</span><span class="n">stringOfBenderCuts</span><span class="p">),</span> <span class="s">&quot; added lazy constraints&quot;</span><span class="p">)</span>
+    <span class="n">println</span><span class="p">(</span><span class="n">stringOfBenderCuts</span><span class="p">)</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">&quot;Current Value of x is: &quot;</span><span class="p">,</span> <span class="n">xCurrent</span><span class="p">)</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">&quot;Current objective value of master problem, fmCurrent is: &quot;</span><span class="p">,</span> <span class="n">fmCurrent</span><span class="p">)</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">)</span>
+    
+    <span class="c">#************************************************************************</span>
+    
+    <span class="c"># ========================================================================</span>
+    <span class="c">#                         Now we solve the subproblem</span>
+
+    <span class="n">subProblemModel</span><span class="o">=</span><span class="n">Model</span><span class="p">(</span><span class="n">solver</span><span class="o">=</span><span class="n">CplexSolver</span><span class="p">())</span>
+
+    <span class="c">#  subProblemModel = Model(solver=GurobiSolver(Presolve=0.0))</span>
+    
+    <span class="n">cSub</span><span class="o">=</span><span class="n">b</span><span class="o">-</span><span class="n">A1</span><span class="o">*</span><span class="n">xCurrent</span>
+    
+    <span class="p">@</span><span class="n">defVar</span><span class="p">(</span><span class="n">subProblemModel</span><span class="p">,</span> <span class="n">u</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="n">dimU</span><span class="p">]</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">)</span>
+    
+
+    <span class="p">@</span><span class="n">addConstraint</span><span class="p">(</span><span class="n">subProblemModel</span><span class="p">,</span> <span class="n">constrRefSubProblem</span><span class="p">[</span><span class="n">j</span><span class="o">=</span><span class="mi">1</span><span class="p">:</span><span class="n">size</span><span class="p">(</span><span class="n">A2</span><span class="p">,</span><span class="mi">2</span><span class="p">)],</span> <span class="n">sum</span><span class="p">{</span><span class="n">A2</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span><span class="o">*</span><span class="n">u</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="p">,</span> <span class="n">i</span> <span class="k">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="n">size</span><span class="p">(</span><span class="n">A2</span><span class="p">,</span><span class="mi">1</span><span class="p">)]}</span><span class="o">&gt;=</span><span class="n">c2</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+
+    
+    <span class="p">@</span><span class="n">setObjective</span><span class="p">(</span><span class="n">subProblemModel</span><span class="p">,</span> <span class="n">Min</span><span class="p">,</span> <span class="n">dot</span><span class="p">(</span><span class="n">c1</span><span class="p">,</span> <span class="n">xCurrent</span><span class="p">)</span> <span class="o">+</span> <span class="n">sum</span><span class="p">{</span><span class="n">cSub</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">u</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">i</span> <span class="k">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="n">dimU</span><span class="p">]})</span>
+    
+    <span class="n">println</span><span class="p">(</span><span class="s">&quot;The subproblem is being solved&quot;</span><span class="p">)</span>
+    
+    <span class="n">statusSubProblem</span> <span class="o">=</span> <span class="n">solve</span><span class="p">(</span><span class="n">subProblemModel</span><span class="p">)</span> 
+
+    <span class="c"># We store the results achieved from the subproblem in conventional data structures    </span>
+    
+    <span class="n">fsxCurrent</span> <span class="o">=</span> <span class="n">getObjectiveValue</span><span class="p">(</span><span class="n">subProblemModel</span><span class="p">)</span> 
+
+    <span class="n">uCurrent</span> <span class="o">=</span> <span class="kt">Float64</span><span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="p">:</span><span class="n">dimU</span>
+        <span class="n">push</span><span class="o">!</span><span class="p">(</span><span class="n">uCurrent</span><span class="p">,</span> <span class="n">getValue</span><span class="p">(</span><span class="n">u</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+    <span class="k">end</span>
+    
+    <span class="c"># Display the solution corresponding to the subproblem</span>
+    
+    <span class="n">println</span><span class="p">(</span><span class="s">&quot;SUBPROBLEM INFORMATION&quot;</span><span class="p">)</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">&quot;----------------------&quot;</span><span class="p">)</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">&quot;The subproblem that was solved was: &quot;</span><span class="p">)</span>
+    <span class="n">print</span><span class="p">(</span><span class="n">subProblemModel</span><span class="p">)</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">&quot;Current status of the subproblem is &quot;</span><span class="p">,</span> <span class="n">statusSubProblem</span><span class="p">)</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">&quot;Current Value of u is: &quot;</span><span class="p">,</span> <span class="n">uCurrent</span><span class="p">)</span> <span class="c"># JuMP will return an extreme ray</span>
+    <span class="c"># automatically (if the solver supports it), so we do not need to change the syntax</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">&quot;Current Value of fs(xCurrent) is: &quot;</span><span class="p">,</span> <span class="n">fsxCurrent</span><span class="p">)</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">)</span>
+    
+    <span class="c"># ==========================================================================</span>
+    
+    
+    
+    <span class="c"># ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
+    <span class="c"># Now we check the status of the algorithm and add Benders cut when necessary</span>
+    <span class="err">γ</span><span class="o">=</span><span class="n">dot</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">uCurrent</span><span class="p">)</span>
+      
+
+    
+    <span class="k">if</span> <span class="n">statusSubProblem</span> <span class="o">==</span> <span class="p">:</span><span class="n">Optimal</span> <span class="o">&amp;&amp;</span>  <span class="n">fsxCurrent</span><span class="o">==</span><span class="n">fmCurrent</span> <span class="c"># we are done</span>
+        <span class="n">println</span><span class="p">(</span><span class="s">&quot;OPTIMAL SOLUTION OF THE ORIGINAL PROBLEM FOUND :-)&quot;</span><span class="p">)</span>
+        <span class="n">println</span><span class="p">(</span><span class="s">&quot;The optimal objective value t is &quot;</span><span class="p">,</span> <span class="n">fmCurrent</span><span class="p">)</span>
+        <span class="n">println</span><span class="p">(</span><span class="s">&quot;The optimal x is &quot;</span><span class="p">,</span> <span class="n">xCurrent</span><span class="p">)</span>
+        <span class="n">println</span><span class="p">(</span><span class="s">&quot;The optimal v is &quot;</span><span class="p">,</span> <span class="n">getDual</span><span class="p">(</span><span class="n">constrRefSubProblem</span><span class="p">))</span>
+        <span class="n">println</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">)</span>
+        <span class="k">return</span>
+    <span class="k">end</span> 
+
+    <span class="n">println</span><span class="p">(</span><span class="s">&quot;-------------------ADDING LAZY CONSTRAINT----------------&quot;</span><span class="p">)</span>  
+        <span class="k">if</span> <span class="n">statusSubProblem</span> <span class="o">==</span> <span class="p">:</span><span class="n">Optimal</span> <span class="o">&amp;&amp;</span> <span class="n">fsxCurrent</span> <span class="o">&lt;</span> <span class="n">fmCurrent</span> 
+        <span class="n">println</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">There is a suboptimal vertex, add the corresponding constraint&quot;</span><span class="p">)</span>
+        <span class="n">cv</span><span class="o">=</span> <span class="n">A1</span><span class="o">&#39;*</span><span class="n">uCurrent</span> <span class="o">-</span> <span class="n">c1</span>
+        <span class="p">@</span><span class="n">addLazyConstraint</span><span class="p">(</span><span class="n">cb</span><span class="p">,</span> <span class="n">t</span><span class="o">+</span><span class="n">sum</span><span class="p">{</span><span class="n">cv</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="p">:</span><span class="n">dimX</span><span class="p">}</span> <span class="o">&lt;=</span> <span class="err">γ</span> <span class="p">)</span>
+        <span class="n">println</span><span class="p">(</span><span class="s">&quot;t + &quot;</span><span class="p">,</span> <span class="n">cv</span><span class="p">,</span> <span class="s">&quot;ᵀ x &lt;= &quot;</span><span class="p">,</span> <span class="err">γ</span><span class="p">)</span>
+        <span class="n">push</span><span class="o">!</span><span class="p">(</span><span class="n">stringOfBenderCuts</span><span class="p">,</span> <span class="n">string</span><span class="p">(</span><span class="s">&quot;t+&quot;</span><span class="p">,</span> <span class="n">cv</span><span class="p">,</span> <span class="s">&quot;&#39;x &lt;=&quot;</span><span class="p">,</span> <span class="err">γ</span><span class="p">))</span>
+    <span class="k">end</span>
+    
+    <span class="k">if</span> <span class="n">statusSubProblem</span> <span class="o">==</span> <span class="p">:</span><span class="n">Unbounded</span> 
+        <span class="n">println</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">There is an  extreme ray, adding the corresponding constraint&quot;</span><span class="p">)</span>
+        <span class="n">ce</span> <span class="o">=</span> <span class="n">A1</span><span class="o">&#39;*</span><span class="n">uCurrent</span>
+        <span class="p">@</span><span class="n">addLazyConstraint</span><span class="p">(</span><span class="n">cb</span><span class="p">,</span> <span class="n">sum</span><span class="p">{</span><span class="n">ce</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="p">:</span><span class="n">dimX</span><span class="p">}</span> <span class="o">&lt;=</span> <span class="err">γ</span><span class="p">)</span>
+        <span class="n">println</span><span class="p">(</span><span class="n">ce</span><span class="p">,</span> <span class="s">&quot;x &lt;= &quot;</span><span class="p">,</span> <span class="err">γ</span><span class="p">)</span>
+        <span class="n">push</span><span class="o">!</span><span class="p">(</span><span class="n">stringOfBenderCuts</span><span class="p">,</span> <span class="n">string</span><span class="p">(</span><span class="n">ce</span><span class="p">,</span> <span class="s">&quot;ᵀ x &lt;= &quot;</span><span class="p">,</span> <span class="err">γ</span><span class="p">))</span>
+    <span class="k">end</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">)</span> 
+    <span class="c">#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
+        
+<span class="k">end</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[6]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>addBendersCut (generic function with 1 method)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now we tell the solver to use the callback function and solve the problem.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="n">addLazyCallback</span><span class="p">(</span><span class="n">masterProblemModel</span><span class="p">,</span> <span class="n">addBendersCut</span><span class="p">)</span> <span class="c"># Telling the solver to use the </span>
+<span class="c"># callback function</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[8]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>2-element Array{Any,1}:
+ LazyCallback(addBendersCut,false)
+ LazyCallback(addBendersCut,false)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="n">solve</span><span class="p">(</span><span class="n">masterProblemModel</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Warning: Control callbacks may disable some MIP features.
+Tried aggregator 1 time.
+Reduced MIP has 0 rows, 3 columns, and 0 nonzeros.
+Reduced MIP has 0 binaries, 2 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.01 sec. (0.00 ticks)
+Tried aggregator 1 time.
+Reduced MIP has 0 rows, 3 columns, and 0 nonzeros.
+Reduced MIP has 0 binaries, 2 generals, 0 SOSs, and 0 indicators.
+Presolve time = -0.00 sec. (0.00 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: traditional branch-and-cut.
+Parallel mode: none, using 1 thread.
+Root relaxation solution time = 0.02 sec. (0.00 ticks)
+----------------------------
+ITERATION NUMBER = 1
+---------------------------
+
+MASTERPROBLEM INFORMATION
+-------------------------
+The master problem that was solved was:
+Max t
+Subject to
+ x[i] &gt;= 0, integer, for all i in {1,2}
+ t free
+with 0 added lazy constraints
+String[]
+Current Value of x is: [0.0,0.0]
+Current objective value of master problem, fmCurrent is: 1.0e20
+
+
+The subproblem is being solved
+Tried aggregator 1 time.
+LP Presolve eliminated 1 rows and 1 columns.
+Aggregator did 1 substitutions.
+All rows and columns eliminated.
+Presolve time = 0.00 sec. (0.00 ticks)
+SUBPROBLEM INFORMATION
+----------------------
+The subproblem that was solved was: 
+Min -2 u[1] - 3 u[2]
+Subject to
+ u[1] - u[2] &gt;= -2
+ -2 u[1] - u[2] &gt;= -3
+ u[i] &gt;= 0 for all i in {1,2}
+Current status of the subproblem is Optimal
+Current Value of u is: [0.3333333333333335,2.333333333333333]
+Current Value of fs(xCurrent) is: -7.666666666666666
+
+
+-------------------ADDING LAZY CONSTRAINT----------------
+
+There is a suboptimal vertex, add the corresponding constraint
+t + [-0.9999999999999996,-4.0]ᵀ x &lt;= -7.666666666666666
+
+
+----------------------------
+ITERATION NUMBER = 2
+---------------------------
+
+MASTERPROBLEM INFORMATION
+-------------------------
+The master problem that was solved was:
+Max t
+Subject to
+ x[i] &gt;= 0, integer, for all i in {1,2}
+ t free
+with 1 added lazy constraints
+String[&quot;t+[-0.9999999999999996,-4.0]&apos;x &lt;=-7.666666666666666&quot;]
+Current Value of x is: [0.0,0.0]
+Current objective value of master problem, fmCurrent is: 1.0e20
+
+
+The subproblem is being solved
+Tried aggregator 1 time.
+LP Presolve eliminated 1 rows and 1 columns.
+Aggregator did 1 substitutions.
+All rows and columns eliminated.
+Presolve time = -0.00 sec. (0.00 ticks)
+SUBPROBLEM INFORMATION
+----------------------
+The subproblem that was solved was: 
+Min -2 u[1] - 3 u[2]
+Subject to
+ u[1] - u[2] &gt;= -2
+ -2 u[1] - u[2] &gt;= -3
+ u[i] &gt;= 0 for all i in {1,2}
+Current status of the subproblem is Optimal
+Current Value of u is: [0.3333333333333335,2.333333333333333]
+Current Value of fs(xCurrent) is: -7.666666666666666
+
+
+-------------------ADDING LAZY CONSTRAINT----------------
+
+There is a suboptimal vertex, add the corresponding constraint
+t + [-0.9999999999999996,-4.0]ᵀ x &lt;= -7.666666666666666
+
+
+----------------------------
+ITERATION NUMBER = 3
+---------------------------
+
+MASTERPROBLEM INFORMATION
+-------------------------
+The master problem that was solved was:
+Max t
+Subject to
+ x[i] &gt;= 0, integer, for all i in {1,2}
+ t free
+with 2 added lazy constraints
+String[&quot;t+[-0.9999999999999996,-4.0]&apos;x &lt;=-7.666666666666666&quot;,&quot;t+[-0.9999999999999996,-4.0]&apos;x &lt;=-7.666666666666666&quot;]
+Current Value of x is: [0.0,2.5e19]
+Current objective value of master problem, fmCurrent is: 1.0e20
+
+
+The subproblem is being solved
+Tried aggregator 1 time.
+LP Presolve eliminated 2 rows and 2 columns.
+All rows and columns eliminated.
+Presolve time = 0.00 sec. (0.00 ticks)
+SUBPROBLEM INFORMATION
+----------------------
+The subproblem that was solved was: 
+Min 7.5e19 u[1] + 7.5e19 u[2] - 1.0e20
+Subject to
+ u[1] - u[2] &gt;= -2
+ -2 u[1] - u[2] &gt;= -3
+ u[i] &gt;= 0 for all i in {1,2}
+Current status of the subproblem is Optimal
+Current Value of u is: [0.0,0.0]
+Current Value of fs(xCurrent) is: -1.0e20
+
+
+-------------------ADDING LAZY CONSTRAINT----------------
+
+There is a suboptimal vertex, add the corresponding constraint
+t + [1.0,4.0]ᵀ x &lt;= -0.0
+
+
+----------------------------
+ITERATION NUMBER = 4
+---------------------------
+
+MASTERPROBLEM INFORMATION
+-------------------------
+The master problem that was solved was:
+Max t
+Subject to
+ x[i] &gt;= 0, integer, for all i in {1,2}
+ t free
+with 3 added lazy constraints
+String[&quot;t+[-0.9999999999999996,-4.0]&apos;x &lt;=-7.666666666666666&quot;,&quot;t+[-0.9999999999999996,-4.0]&apos;x &lt;=-7.666666666666666&quot;,&quot;t+[1.0,4.0]&apos;x &lt;=-0.0&quot;]
+Current Value of x is: [0.0,2.5e19]
+Current objective value of master problem, fmCurrent is: 1.0e20
+
+
+The subproblem is being solved
+Tried aggregator 1 time.
+LP Presolve eliminated 2 rows and 2 columns.
+All rows and columns eliminated.
+Presolve time = 0.00 sec. (0.00 ticks)
+SUBPROBLEM INFORMATION
+----------------------
+The subproblem that was solved was: 
+Min 7.5e19 u[1] + 7.5e19 u[2] - 1.0e20
+Subject to
+ u[1] - u[2] &gt;= -2
+ -2 u[1] - u[2] &gt;= -3
+ u[i] &gt;= 0 for all i in {1,2}
+Current status of the subproblem is Optimal
+Current Value of u is: [0.0,0.0]
+Current Value of fs(xCurrent) is: -1.0e20
+
+
+-------------------ADDING LAZY CONSTRAINT----------------
+
+There is a suboptimal vertex, add the corresponding constraint
+t + [1.0,4.0]ᵀ x &lt;= -0.0
+
+
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+      0     0       -3.8333     1                     -3.8333        0         
+----------------------------
+ITERATION NUMBER = 5
+---------------------------
+
+MASTERPROBLEM INFORMATION
+-------------------------
+The master problem that was solved was:
+Max t
+Subject to
+ x[i] &gt;= 0, integer, for all i in {1,2}
+ t free
+with 4 added lazy constraints
+String[&quot;t+[-0.9999999999999996,-4.0]&apos;x &lt;=-7.666666666666666&quot;,&quot;t+[-0.9999999999999996,-4.0]&apos;x &lt;=-7.666666666666666&quot;,&quot;t+[1.0,4.0]&apos;x &lt;=-0.0&quot;,&quot;t+[1.0,4.0]&apos;x &lt;=-0.0&quot;]
+Current Value of x is: [0.0,1.0]
+Current objective value of master problem, fmCurrent is: -4.0
+
+
+The subproblem is being solved
+Tried aggregator 1 time.
+LP Presolve eliminated 2 rows and 2 columns.
+All rows and columns eliminated.
+Presolve time = 0.00 sec. (0.00 ticks)
+SUBPROBLEM INFORMATION
+----------------------
+The subproblem that was solved was: 
+Min u[1] - 4
+Subject to
+ u[1] - u[2] &gt;= -2
+ -2 u[1] - u[2] &gt;= -3
+ u[i] &gt;= 0 for all i in {1,2}
+Current status of the subproblem is Optimal
+Current Value of u is: [0.0,0.0]
+Current Value of fs(xCurrent) is: -4.0
+
+
+OPTIMAL SOLUTION OF THE ORIGINAL PROBLEM FOUND :-)
+The optimal objective value t is -4.0
+The optimal x is [0.0,1.0]
+The optimal v is constrRefSubProblem: 1 dimensions:
+[1] = -0.0
+[2] = -0.0
+
+
+
+----------------------------
+ITERATION NUMBER = 5
+---------------------------
+
+MASTERPROBLEM INFORMATION
+-------------------------
+The master problem that was solved was:
+Max t
+Subject to
+ x[i] &gt;= 0, integer, for all i in {1,2}
+ t free
+with 4 added lazy constraints
+String[&quot;t+[-0.9999999999999996,-4.0]&apos;x &lt;=-7.666666666666666&quot;,&quot;t+[-0.9999999999999996,-4.0]&apos;x &lt;=-7.666666666666666&quot;,&quot;t+[1.0,4.0]&apos;x &lt;=-0.0&quot;,&quot;t+[1.0,4.0]&apos;x &lt;=-0.0&quot;]
+Current Value of x is: [0.0,1.0]
+Current objective value of master problem, fmCurrent is: -4.0
+
+
+The subproblem is being solved
+Tried aggregator 1 time.
+LP Presolve eliminated 2 rows and 2 columns.
+All rows and columns eliminated.
+Presolve time = 0.00 sec. (0.00 ticks)
+SUBPROBLEM INFORMATION
+----------------------
+The subproblem that was solved was: 
+Min u[1] - 4
+Subject to
+ u[1] - u[2] &gt;= -2
+ -2 u[1] - u[2] &gt;= -3
+ u[i] &gt;= 0 for all i in {1,2}
+Current status of the subproblem is Optimal
+Current Value of u is: [0.0,0.0]
+Current Value of fs(xCurrent) is: -4.0
+
+
+OPTIMAL SOLUTION OF THE ORIGINAL PROBLEM FOUND :-)
+The optimal objective value t is -4.0
+The optimal x is [0.0,1.0]
+The optimal v is constrRefSubProblem: 1 dimensions:
+[1] = -0.0
+[2] = -0.0
+
+
+
+</pre>
+</div>
+</div>
+
+<div class="output_area"><div class="prompt output_prompt">Out[9]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>:Optimal</pre>
+</div>
+
+</div>
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>*     0+    0                           -4.0000       -3.8333        0    4.17%
+      0     1       -3.8333     1       -4.0000       -3.8333        0    4.17%
+Elapsed time = 0.83 sec. (0.04 ticks, tree = 0.00 MB, solutions = 1)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>    </div> <!-- /container -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <!-- MathJax -->
+    <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+  </body>
+</html>

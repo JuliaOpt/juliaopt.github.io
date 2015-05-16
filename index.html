@@ -1,368 +1,502 @@
 <!DOCTYPE html>
-<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
-<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
-<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
-<head>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="JuliaOpt - Optimization packages for the Julia language">
+    <meta name="author" content="Iain Dunning">
+    <link rel="icon" href="favicon.ico">
 
-  <!-- Basic Page Needs -->
-  <meta charset="utf-8">
-  <title>JuliaOpt</title>
-  <meta name="description" content="Home of the JuliaOpt project.">
-  <meta name="author" content="Iain Dunning">
+    <title>JuliaOpt - Optimization packages for the Julia language</title>
 
-  <!-- Mobile Specific Metas -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/skeleton.css">
-  <link rel="stylesheet" href="css/layout.css">
-  <style type="text/css">
-     th { vertical-align: middle; }
-     td { vertical-align: middle; }
-  </style>
+    <!-- Additional styles -->
+    <style>
+      body {
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+      th {
+        background-color: #EEEEEE;
+        border: 1px solid #CCCCCC;
+        color: #555555;
+        padding: 8px;
+        text-align: center;
+      }
+      td {
+        border: 1px solid #CCCCCC;
+        padding: 5px 10px;
+        vertical-align: top;
+      }
+    </style>
+    
 
-  <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
 
-  <!-- Google Analytics -->        
-  <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  <body>
 
-  ga('create', 'UA-44252521-2', 'juliaopt.org');
-  ga('send', 'pageview');
+    <div class="container">
 
-  </script>
-</head>
-<body>
-  <div class="container">
-    <!-- Header -->
-    <div class="sixteen columns">
-      <h1 class="remove-bottom" style="margin-top: 40px; color: #ad3f39;">JuliaOpt</h1>
-      <h5>
-        Optimization-related projects in <a href="http://julialang.org">Julia</a>.
-        <a href="http://github.com/JuliaOpt/">JuliaOpt on GitHub.</a>
-      </h5>
-      <hr />
-    </div>
+      <!-- Static navbar -->
+      <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/index.html">JuliaOpt</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="/index.html#about">About</a></li>
+              <li><a href="/index.html#packages">Packages</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">JuMP <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li class="divider"></li>
+                  <li class="dropdown-header">Nav header</li>
+                  <li><a href="#">Separated link</a></li>
+                  <li><a href="#">One more separated link</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </nav>
 
-    <div class="sixteen columns">
+      
+      <!-- Big box at top -->
+      <div class="jumbotron text-center">
+        <img style="height: 12em; width:auto" src="/images/juliaopt.svg">
+        <h1>JuliaOpt</h1>
+        <p>
+          Optimization packages for the <a href="http://julialang.org">Julia language.</a>
+        </p>
+      </div>
 
-<!--//// BEGIN CONTENT ////-->
 
-<div id="home">
-  <img src="images/logo300.png" style="display: block; margin-left: auto; margin-right: auto; margin-bottom: 20px" alt="The three circles represent (clockwise): linear, integer, and nonlinear programming.">
+      <!-- Julia & JuliaOpt-->
+      <a id="about"></a>
+      <div class="row">
+        <div class="col-md-6">
+          <h1>What is Julia?</h1>
+          <p>
+            <a href="http://julialang.org">"Julia is a high-level, high-performance dynamic programming language for technical computing"</a>. It is free (open source) and supports Windows, OSX, and Linux. It has a familiar syntax, works well with external libraries, is fast, and has advanced language features like metaprogramming that enable interesting possibilities for optimization software.
+          </p>
+          <p>
+            <b>Case study</b>: <a href="http://dx.doi.org/10.1287/ijoc.2014.0623">"Computing in Operations Research using Julia"</a>. <i>INFORMS Journal on Computing</i>. <a href="http://arxiv.org/abs/1312.1431">[PDF]</a>.
+          </p>
+        </div>
+        <div class="col-md-6">
+          <h1>What is JuliaOpt?</h1>
+          <p>
+            JuliaOpt is an organization that brings together packages written in Julia that are related to optimization. All JuliaOpt packages should be high-quality, documented, tested, support the main operating systems, and interact with each other.
+            <ul>
+              <li><b>Overview</b>: <a href="http://youtu.be/VwZvUvXX-vY">presentation from JuliaCon 2014</a></li>
+              <li><b>Code</b>: <a href="http://github.com/JuliaOpt">github.com/JuliaOpt</a></li>
+              <li><b>Mailing list</b>: <a href="https://groups.google.com/forum/#!forum/julia-opt">julia-opt</a></li>
+            </ul>
+          </p>
+        </div>
+      </div>
 
-  <h2>What is Julia?</h2>
-  <p><a href="http://julialang.org">Julia</a> is a "high-level, high-performance dynamic programming language for technical computing". It is free (open-source) and cross-platform. The familiar syntax, the ease of connecting with external libraries, the speed, and advanced language features like metaprogramming offer interesting possibilities for optimization software.</p>
+      <!--
+      <div class="row">
+        <div class="col-md-6">
+          <h2>Example: <a href="notebooks/JuMP-Sudoku.html">Sudoku</a></h2>
 
-  <h2>What is JuliaOpt?</h2>
-  <p><a href="http://juliaopt.org">JuliaOpt</a> is an umbrella group for Julia-based optimization-related projects. For more in-depth information about JuliaOpt and some of its projects, see this <a href="http://youtu.be/VwZvUvXX-vY">presentation from JuliaCon 2014</a>. All our code is available from our <a href="http://github.com/JuliaOpt/">GitHub</a> page, as well as through the Julia <a href="http://docs.julialang.org/en/latest/manual/packages/">package manager</a>. We have a mailing list, <a href="https://groups.google.com/forum/#!forum/julia-opt">julia-opt</a>, on Google Groups. The current JuliaOpt projects are:</p>
-  <ul>
-    <li><strong>Optim.jl</strong> - Implementations of standard optimization algorithms in pure Julia for unconstrained or box constrained problems. (<a href="https://github.com/JuliaOpt/Optim.jl/blob/master/README.md">Documentation</a>, <a href="https://github.com/JuliaOpt/Optim.jl">GitHub</a>)</li>
-    <li><strong>JuMP</strong> - An algebraic modeling language for linear, quadratic, and nonlinear constrained optimization problems embedded in Julia. Generates models as quick as commercial modeling tools and supports advanced features like solver callbacks. (<a href="https://jump.readthedocs.org/en/latest/">Documentation</a>, <a href="https://github.com/JuliaOpt/JuMP.jl">GitHub</a>)</li>
-    <li><strong>Convex.jl</strong> - An algebraic modeling language for <a href="http://stanford.edu/~boyd/papers/disc_cvx_prog.html">disciplined convex programming</a> embedded in Julia. (<a href="http://convexjl.readthedocs.org/en/latest/">Documentation</a>, <a href="https://github.com/cvxgrp/Convex.jl">GitHub</a>)</li>
-    <li><strong>MathProgBase</strong> - A standardized interface implemented by solvers that allows code to remain solver-agnostic. Used by JuMP and Convex.jl. Provides one-shot functions <a href="http://mathprogbasejl.readthedocs.org/en/latest/linprog.html">linprog</a>, <a href="http://mathprogbasejl.readthedocs.org/en/latest/mixintprog.html">mixintprog</a>, and <a href="http://mathprogbasejl.readthedocs.org/en/latest/quadprog.html">quadprog</a>.  (<a href="http://mathprogbasejl.readthedocs.org/en/latest/">Documentation</a>, <a href="https://github.com/JuliaOpt/MathProgBase.jl">GitHub</a>)</li>
-    <li><strong>Solver interfaces</strong> - a variety of Julia wrappers for many open-source and commercial solvers.</li>
-  </ul>
+        </div>
+        <div class="col-md-6">
+          <h2>Example: <a href="notebooks/JuMP-Rocket.html">Rocket Control</a></h2>
+        </div>
+      </div>
+      -->
 
-  <p>The following table lists the current JuliaOpt solver interfaces and the problem classes they support. We also list the problem classes that can be modelled with JuMP and Convex.jl below:</p>
+      <a id="packages"></a>
+      <div class="row">
+        <div class="col-md-12">
+        <h1>Overview of Packages</h1>
+        
+        <svg  version="1.1" baseProfile="full"
+              width="100%" height="280"
+              xmlns="http://www.w3.org/2000/svg"
+              style="margin-top: 20px">
 
-  <table style="text-align: center; margin-bottom: 20px" width="100%">
-    <caption>JuliaOpt Compatibility Table</caption>
+          <g fill="#DAA" text-anchor="middle" font-size="25" >
+            <rect x="1%" y="1" width="30%" height="30" stroke="black" />
+            <text x="16%" y="23" fill="black">JuMP</text>
+
+            <rect x="35%" y="1" width="30%" height="30" stroke="black" />
+            <text x="50%" y="23" fill="black">Convex.jl</text>
+          </g>
+
+          <g fill="#9D9" text-anchor="middle">
+            <rect x="1%" y="50" width="64%" height="30" stroke="black" />
+            <text x="33%" y="73" font-size="25" fill="black">MathProgBase.jl</text>
+          </g>
+
+          <g fill="#DAD" font-size="20" text-anchor="middle">
+          <rect x="1%" y="100" width="20%" height="30" stroke="black" />
+          <text x="11%" y="121" fill="black">Cbc.jl</text>
+
+          <rect x="23%" y="100" width="20%" height="30" stroke="black" />
+          <text x="33%" y="121" fill="black">Clp.jl</text>
+
+          <rect x="45%" y="100" width="20%" height="30" stroke="black" />
+          <text x="55%" y="121" fill="black">CPLEX.jl</text>
+
+
+          <rect x="1%" y="140" width="20%" height="30" stroke="black" />
+          <text x="11%" y="161" fill="black">ECOS.jl</text>
+
+          <rect x="23%" y="140" width="20%" height="30" stroke="black" />
+          <text x="33%" y="161" fill="black">GLPK.jl</text>
+
+          <rect x="45%" y="140" width="20%" height="30" stroke="black" />
+          <text x="55%" y="161" fill="black">Gurobi.jl</text>
+
+
+          <rect x="1%" y="180" width="20%" height="30" stroke="black" />
+          <text x="11%" y="201" fill="black">Ipopt.jl</text>
+
+          <rect x="23%" y="180" width="20%" height="30" stroke="black" />
+          <text x="33%" y="201" fill="black">KNITRO.jl</text>
+
+          <rect x="45%" y="180" width="20%" height="30" stroke="black" />
+          <text x="55%" y="201" fill="black">Mosek.jl</text>
+
+
+          <rect x="11%" y="220" width="20%" height="30" stroke="black" />
+          <text x="21%" y="241" fill="black">NLopt.jl</text>
+
+          <rect x="33%" y="220" width="20%" height="30" stroke="black" />
+          <text x="43%" y="241" fill="black">SCS.jl</text>
+          </g>
+
+          <g fill="#BBE" font-size="25" text-anchor="middle">
+          <rect x="69%" y="70" width="30%" height="30" stroke="black" />
+          <text x="84%" y="93" fill="black">Optim.jl</text>
+
+          <rect x="69%" y="120" width="30%" height="30" stroke="black" />
+          <text x="84%" y="143" fill="black">LsqFit.jl</text>
+        </svg>
+
+        <p>JuliaOpt's packages can be loosely grouped into two sets. The first set are standalone Julia packages:</p>
+        <ul>
+          <li>
+            <strong>Optim.jl</strong>
+            - Implementations in Julia of standard optimization algorithms for unconstrained or box-constrained problems such as BFGS, Nelder-Mead, conjugate gradient, etc.
+            (<a href="https://github.com/JuliaOpt/Optim.jl">documentation/code</a>)
+          </li>
+          <li>
+            <strong>LsqFit.jl</strong>
+            - Least-squares non-linear curve fitting in Julia.
+            (<a href="https://github.com/JuliaOpt/LsqFit.jl">documentation/code</a>)
+          </li>
+        </ul>
+        <p>The second set comprises modeling languages (red), external solver interfaces (purple), and an abstraction layer over the solvers (green), primarily for constrained optimization:
+        <ul>
+          <li>
+            <strong>JuMP</strong>
+            - An algebraic modeling language for linear, quadratic, and nonlinear constrained optimization problems embedded in Julia. Generates models as quick as commercial modeling tools and supports advanced features like solver callbacks. (<a href="https://jump.readthedocs.org/en/latest/">documentation</a>, <a href="https://github.com/JuliaOpt/JuMP.jl">code</a>)
+          </li>
+          <li>
+            <strong>Convex.jl</strong>
+            - An algebraic modeling language for <a href="http://stanford.edu/~boyd/papers/disc_cvx_prog.html">disciplined convex programming</a> embedded in Julia.
+            (<a href="http://convexjl.readthedocs.org/">documentation</a>, <a href="https://github.com/JuliaOpt/Convex.jl">code</a>)
+          </li>
+          <li><strong>MathProgBase</strong> - A standardized interface implemented by all solvers that allows code to remain solver-agnostic. Used by JuMP and Convex.jl, but can be called by user code directly if a user doesn't want to go through a modeling language, but wishes to remain solver-independent.  (<a href="http://mathprogbasejl.readthedocs.org/en/latest/">documentation</a>, <a href="https://github.com/JuliaOpt/MathProgBase.jl">code</a>)</li>
+        </ul>
+        <p>
+          JuliaOpt provides wrappers for a wide variety of solvers. The following table summarizes the capabilities of each solver, and also shows the problem forms supported by the two modeling languages.
+        </p>
+
+
+<table style="text-align: center; margin-top: 20px" width="100%">
+  <thead>
+    <tr>
+      <th width="23%"><strong>Modeling Tool</strong></th>
+      <th width="9%">LP</th>
+      <th width="9%">MILP</th>
+      <th width="9%">SOCP</th>
+      <th width="9%">MISOCP</th>
+      <th width="9%">SDP</th>
+      <th width="9%">NLP</th>
+      <th width="9%">MINLP</th>
+      <th>Other</th>
+    </tr>
+  </thead>
+
+  <tfoot> <!-- Must appear before tbody, see W3.org -->
+    <tr style="text-align: left">
+      <td colspan="10">
+        <small>
+  <strong>Key:</strong>
+  <ul style="list-style: none; margin-top: 5px; margin-bottom: 5px">
+          <li style="margin: 0.1em 0;">LP = <a href="http://en.wikipedia.org/wiki/Linear_programming">Linear Programming</a></li>
+          <li style="margin: 0.1em 0;">MILP = <a href="http://en.wikipedia.org/wiki/Integer_programming">Mixed Integer LP</a></li>
+          <li style="margin: 0.1em 0;">SOCP = <a href="http://en.wikipedia.org/wiki/Second_order_cone_programming">Second-order cone programming</a> (includes convex <a href="http://en.wikipedia.org/wiki/Quadratic_programming">QP</a>, <a href="http://en.wikipedia.org/wiki/Quadratically_constrained_quadratic_program">QCQP</a>)</li>
+          <li style="margin: 0.1em 0;">MISOCP = Mixed Integer SOCP</li>
+          <li style="margin: 0.1em 0;">SDP = <a href="http://en.wikipedia.org/wiki/Semidefinite_programming">Semidefinite Programming</a></li>
+          <li style="margin: 0.1em 0;">NLP = (constrained) <a href="http://en.wikipedia.org/wiki/Nonlinear_programming">Nonlinear Programming</a> (includes general <a href="http://en.wikipedia.org/wiki/Quadratic_programming">QP</a>, <a href="http://en.wikipedia.org/wiki/Quadratically_constrained_quadratic_program">QCQP</a>)</li>
+          <li style="margin: 0.1em 0;">MINLP = Mixed Integer NLP</li>
+        </ul>
+        <strong>Notes:</strong>
+        <ol style="">
+          <li>Problem must be convex.</li>
+        </ol>
+  </small>
+      </td>
+    </tr>
+  </tfoot>
+
+  <tbody>
+    <tr>
+      <th><a href="https://github.com/JuliaOpt/JuMP.jl">JuMP</a></th>
+      <td>&#10004;</td> <!-- LP -->
+      <td>&#10004;</td> <!-- MILP -->
+      <td>&#10004;</td> <!-- QCQP -->
+      <td>&#10004;</td> <!-- MIQCQP -->
+      <td></td> <!-- SDP -->
+      <td>&#10004;</td> <!-- NLP -->
+      <td>&#10004;</td> <!-- MINLP -->
+      <td></td> <!-- Other -->
+    </tr>
+
+    <tr>
+      <th><a href="https://github.com/cvxgrp/Convex.jl">Convex.jl</a></th>
+      <td>&#10004;</td> <!-- LP -->
+      <td>&#10004;</td> <!-- MILP -->
+      <td>&#10004;</td> <!-- QCQP -->
+      <td>&#10004;</td> <!-- MIQCQP -->
+      <td>&#10004;</td> <!-- SDP -->
+      <td></td> <!-- NLP -->
+      <td></td> <!-- MINLP -->
+      <td></td> <!-- Other -->
+    </tr>
+
     <thead>
       <tr>
-        <th width="23%"><strong>Modeling Tool</strong></th>
-        <th width="9%">LP</th>
-        <th width="9%">MILP</th>
-        <th width="9%">SOCP</th>
-        <th width="9%">MISOCP</th>
-        <th width="9%">SDP</th>
-        <th width="9%">NLP</th>
-        <th width="9%">MINLP</th>
+        <th><strong>Solver</strong></th>
+        <th>LP</th>
+        <th>MILP</th>
+        <th>SOCP</th>
+        <th>MISOCP</th>
+        <th>SDP</th>
+        <th>NLP</th>
+        <th>MINLP</th>
         <th>Other</th>
       </tr>
     </thead>
 
-    <tfoot> <!-- Must appear before tbody, see W3.org -->
-      <tr style="text-align: left">
-        <td colspan="10">
-          <small>
-	  <strong>Key:</strong>
-	  <ul style="list-style: none; margin-top: 5px; margin-bottom: 5px">
-            <li style="margin: 0.1em 0;">LP = <a href="http://en.wikipedia.org/wiki/Linear_programming">Linear Programming</a></li>
-            <li style="margin: 0.1em 0;">MILP = <a href="http://en.wikipedia.org/wiki/Integer_programming">Mixed Integer LP</a></li>
-            <li style="margin: 0.1em 0;">SOCP = <a href="http://en.wikipedia.org/wiki/Second_order_cone_programming">Second-order cone programming</a> (includes convex <a href="http://en.wikipedia.org/wiki/Quadratic_programming">QP</a>, <a href="http://en.wikipedia.org/wiki/Quadratically_constrained_quadratic_program">QCQP</a>)</li>
-            <li style="margin: 0.1em 0;">MISOCP = Mixed Integer SOCP</li>
-            <li style="margin: 0.1em 0;">SDP = <a href="http://en.wikipedia.org/wiki/Semidefinite_programming">Semidefinite Programming</a></li>
-            <li style="margin: 0.1em 0;">NLP = (constrained) <a href="http://en.wikipedia.org/wiki/Nonlinear_programming">Nonlinear Programming</a> (includes general <a href="http://en.wikipedia.org/wiki/Quadratic_programming">QP</a>, <a href="http://en.wikipedia.org/wiki/Quadratically_constrained_quadratic_program">QCQP</a>)</li>
-            <li style="margin: 0.1em 0;">MINLP = Mixed Integer NLP</li>
-          </ul>
-          <strong>Notes:</strong>
-          <ol style="">
-            <li>Problem must be convex.</li>
-          </ol>
-	  </small>
-        </td>
-      </tr>
-    </tfoot>
+    <tr>
+      <th>
+        <a href="https://www.coin-or.org">COIN</a>
+        <a href="https://projects.coin-or.org/Cbc">Cbc</a>
+        <a href="https://github.com/JuliaOpt/Cbc.jl">(.jl)</a>
+      </th>
 
-    <tbody>
-      <tr>
-        <th><a href="https://github.com/JuliaOpt/JuMP.jl">JuMP</a></th>
-        <td>&#10004;</td> <!-- LP -->
-        <td>&#10004;</td> <!-- MILP -->
-        <td>&#10004;</td> <!-- QCQP -->
-        <td>&#10004;</td> <!-- MIQCQP -->
-        <td></td> <!-- SDP -->
-        <td>&#10004;</td> <!-- NLP -->
-        <td>&#10004;</td> <!-- MINLP -->
-        <td></td> <!-- Other -->
-      </tr>
+      <td>&#10004;</td> <!-- LP -->
+      <td>&#10004;</td> <!-- MILP -->
+      <td></td> <!-- QCQP -->
+      <td></td> <!-- MIQCQP -->
+      <td></td> <!-- SDP -->
+      <td></td> <!-- NLP -->
+      <td></td> <!-- MINLP -->
+      <td></td> <!-- Other -->
+    </tr>
 
-      <tr>
-        <th><a href="https://github.com/cvxgrp/Convex.jl">Convex.jl</a></th>
-        <td>&#10004;</td> <!-- LP -->
-        <td>&#10004;</td> <!-- MILP -->
-        <td>&#10004;</td> <!-- QCQP -->
-        <td>&#10004;</td> <!-- MIQCQP -->
-        <td>&#10004;</td> <!-- SDP -->
-        <td></td> <!-- NLP -->
-        <td></td> <!-- MINLP -->
-        <td></td> <!-- Other -->
-      </tr>
+    <tr>
+      <th>
+        <a href="https://www.coin-or.org">COIN</a>
+        <a href="https://projects.coin-or.org/Clp">Clp</a>
+        <a href="https://github.com/JuliaOpt/Clp.jl">(.jl)</a>
+      </th>
 
-      <thead>
-        <tr>
-          <th><strong>Solver</strong></th>
-          <th>LP</th>
-          <th>MILP</th>
-          <th>SOCP</th>
-          <th>MISOCP</th>
-          <th>SDP</th>
-          <th>NLP</th>
-          <th>MINLP</th>
-          <th>Other</th>
-        </tr>
-      </thead>
+      <td>&#10004;</td> <!-- LP -->
+      <td></td> <!-- MILP -->
+      <td></td> <!-- QCQP -->
+      <td></td> <!-- MIQCQP -->
+      <td></td> <!-- SDP -->
+      <td></td> <!-- NLP -->
+      <td></td> <!-- MINLP -->
+      <td></td> <!-- Other -->
+    </tr>
+    
+    <tr>
+      <th>
+        <a href="http://www-01.ibm.com/software/commerce/optimization/cplex-optimizer/">CPLEX</a> 
+        <a href="https://github.com/JuliaOpt/CPLEX.jl">(.jl)</a>
+      </th>
+      <!--<td><a href="https://github.com/JuliaOpt/CPLEX.jl">CPLEX.jl</a></td>-->
+      <td>&#10004;</td> <!-- LP -->
+      <td>&#10004;</td> <!-- MILP -->
+      <td>&#10004;</td> <!-- QCQP -->
+      <td>&#10004;</td> <!-- MIQCQP -->
+      <td></td> <!-- SDP -->
+      <td></td> <!-- NLP -->
+      <td></td> <!-- MINLP -->
+      <td><small>IP Callbacks</small></td> <!-- Other -->
+    </tr>
+    
+    <tr>
+      <th>
+        <a href="https://github.com/ifa-ethz/ecos/">ECOS</a>
+        <a href="https://github.com/JuliaOpt/ECOS.jl">(.jl)</a>
+      </th>
+      <!--<td><a href="https://github.com/JuliaOpt/ECOS.jl">ECOS.jl</a></td>-->
+      <td>&#10004;</td> <!-- LP -->
+      <td></td> <!-- MILP -->
+      <td>&#10004;</td> <!-- QCQP -->
+      <td></td> <!-- MIQCQP -->
+      <td></td> <!-- SDP -->
+      <td></td> <!-- NLP -->
+      <td></td> <!-- MINLP -->
+      <td></td> <!-- Other -->
+    </tr>
+    
+    <tr>
+      <th>
+        <a href="http://www.gnu.org/software/glpk/">GNU GLPK</a>
+        <a href="https://github.com/JuliaOpt/GLPK.jl">(.jl)</a>
+      </th>
+      <!--<td><a href="https://github.com/JuliaOpt/GLPK.jl">GLPK.jl</a></td>-->
+      <td>&#10004;</td> <!-- LP -->
+      <td>&#10004;</td> <!-- MILP -->
+      <td></td> <!-- QCQP -->
+      <td></td> <!-- MIQCQP -->
+      <td></td> <!-- SDP -->
+      <td></td> <!-- NLP -->
+      <td></td> <!-- MINLP -->
+      <td><small>IP Callbacks</small></td> <!-- Other -->
+    </tr>
 
-      <tr>
-        <th>
-          <a href="https://www.coin-or.org">COIN</a>
-          <a href="https://projects.coin-or.org/Cbc">Cbc</a>
-          <a href="https://github.com/JuliaOpt/Cbc.jl">(.jl)</a>
-        </th>
+    <tr>
+      <th>
+        <a href="http://www.gurobi.com">Gurobi</a>
+        <a href="https://github.com/JuliaOpt/Gurobi.jl">(.jl)</a>
+      </th>
+      <!--<td><a href="https://github.com/JuliaOpt/Gurobi.jl">Gurobi.jl</a></td>-->
+      <td>&#10004;</td> <!-- LP -->
+      <td>&#10004;</td> <!-- MILP -->
+      <td>&#10004;</td> <!-- QCQP -->
+      <td>&#10004;</td> <!-- MIQCQP -->
+      <td></td> <!-- SDP -->
+      <td></td> <!-- NLP -->
+      <td></td> <!-- MINLP -->
+      <td><small>IP Callbacks</small></td> <!-- Other -->
+    </tr>
 
-        <td>&#10004;</td> <!-- LP -->
-        <td>&#10004;</td> <!-- MILP -->
-        <td></td> <!-- QCQP -->
-        <td></td> <!-- MIQCQP -->
-        <td></td> <!-- SDP -->
-        <td></td> <!-- NLP -->
-        <td></td> <!-- MINLP -->
-        <td></td> <!-- Other -->
-      </tr>
+    <tr>
+      <th>
+        <a href="https://projects.coin-or.org/Ipopt">Ipopt</a>
+        <a href="https://github.com/JuliaOpt/Ipopt.jl">(.jl)</a>
+      </th>
+      <!--<td><a href="https://github.com/JuliaOpt/Ipopt.jl">Ipopt.jl</a></td>-->
+      <td>&#10004;</td> <!-- LP -->
+      <td></td> <!-- MILP -->
+      <td></td> <!-- QCQP -->
+      <td></td> <!-- MIQCQP -->
+      <td></td> <!-- SDP -->
+      <td>&#10004;</td> <!-- NLP -->
+      <td></td> <!-- MINLP -->
+      <td></td> <!-- Other -->
+    </tr>
+    
+    <tr>
+      <th>
+        <a href="http://www.ziena.com/knitro.htm">KNITRO</a>
+        <a href="https://github.com/JuliaOpt/KNITRO.jl">(.jl)</a>
+      </th>
+      <!--<td><a href="https://github.com/JuliaOpt/KNITRO.jl/">KNITRO.jl</a></td>-->
+      <td>&#10004;</td> <!-- LP -->
+      <td>&#10004;</td></td> <!-- MILP -->
+      <td></td> <!-- QCQP -->
+      <td></td> <!-- MIQCQP -->
+      <td></td> <!-- SDP -->
+      <td>&#10004;</td> <!-- NLP -->
+      <td>&#10004;</td></td> <!-- MINLP -->
+      <td></td> <!-- Other -->
+    </tr>
+    
+    <tr>
+      <th>
+        <a href="http://www.mosek.com/">Mosek</a>
+        <a href="https://github.com/JuliaOpt/Mosek.jl">(.jl)</a>
+      </th>
+      <!--<td><a href="https://github.com/JuliaOpt/Mosek.jl">Mosek.jl</a></td>-->
+      <td>&#10004;</td> <!-- LP -->
+      <td>&#10004;</td> <!-- MILP -->
+      <td>&#10004;</td> <!-- QCQP -->
+      <td>&#10004;</td> <!-- MIQCQP -->
+      <td>&#10004;</td> <!-- SDP -->
+      <td>&#10004;<small>1</small></td> <!-- NLP -->
+      <td></td> <!-- MINLP -->
+      <td></td> <!-- Other -->
+    </tr>
 
-      <tr>
-        <th>
-          <a href="https://www.coin-or.org">COIN</a>
-          <a href="https://projects.coin-or.org/Clp">Clp</a>
-          <a href="https://github.com/JuliaOpt/Clp.jl">(.jl)</a>
-        </th>
-
-        <td>&#10004;</td> <!-- LP -->
-        <td></td> <!-- MILP -->
-        <td></td> <!-- QCQP -->
-        <td></td> <!-- MIQCQP -->
-        <td></td> <!-- SDP -->
-        <td></td> <!-- NLP -->
-        <td></td> <!-- MINLP -->
-        <td></td> <!-- Other -->
-      </tr>
-      
-      <tr>
-        <th>
-          <a href="http://www-01.ibm.com/software/commerce/optimization/cplex-optimizer/">CPLEX</a> 
-          <a href="https://github.com/JuliaOpt/CPLEX.jl">(.jl)</a>
-        </th>
-        <!--<td><a href="https://github.com/JuliaOpt/CPLEX.jl">CPLEX.jl</a></td>-->
-        <td>&#10004;</td> <!-- LP -->
-        <td>&#10004;</td> <!-- MILP -->
-        <td>&#10004;</td> <!-- QCQP -->
-        <td>&#10004;</td> <!-- MIQCQP -->
-        <td></td> <!-- SDP -->
-        <td></td> <!-- NLP -->
-        <td></td> <!-- MINLP -->
-        <td><small>IP Callbacks</small></td> <!-- Other -->
-      </tr>
-      
-      <tr>
-        <th>
-          <a href="https://github.com/ifa-ethz/ecos/">ECOS</a>
-          <a href="https://github.com/JuliaOpt/ECOS.jl">(.jl)</a>
-        </th>
-        <!--<td><a href="https://github.com/JuliaOpt/ECOS.jl">ECOS.jl</a></td>-->
-        <td>&#10004;</td> <!-- LP -->
-        <td></td> <!-- MILP -->
-        <td>&#10004;</td> <!-- QCQP -->
-        <td></td> <!-- MIQCQP -->
-        <td></td> <!-- SDP -->
-        <td></td> <!-- NLP -->
-        <td></td> <!-- MINLP -->
-        <td></td> <!-- Other -->
-      </tr>
-      
-      <tr>
-        <th>
-          <a href="http://www.gnu.org/software/glpk/">GNU GLPK</a>
-          <a href="https://github.com/JuliaOpt/GLPK.jl">(.jl)</a>
-        </th>
-        <!--<td><a href="https://github.com/JuliaOpt/GLPK.jl">GLPK.jl</a></td>-->
-        <td>&#10004;</td> <!-- LP -->
-        <td>&#10004;</td> <!-- MILP -->
-        <td></td> <!-- QCQP -->
-        <td></td> <!-- MIQCQP -->
-        <td></td> <!-- SDP -->
-        <td></td> <!-- NLP -->
-        <td></td> <!-- MINLP -->
-        <td><small>IP Callbacks</small></td> <!-- Other -->
-      </tr>
-
-      <tr>
-        <th>
-          <a href="http://www.gurobi.com">Gurobi</a>
-          <a href="https://github.com/JuliaOpt/Gurobi.jl">(.jl)</a>
-        </th>
-        <!--<td><a href="https://github.com/JuliaOpt/Gurobi.jl">Gurobi.jl</a></td>-->
-        <td>&#10004;</td> <!-- LP -->
-        <td>&#10004;</td> <!-- MILP -->
-        <td>&#10004;</td> <!-- QCQP -->
-        <td>&#10004;</td> <!-- MIQCQP -->
-        <td></td> <!-- SDP -->
-        <td></td> <!-- NLP -->
-        <td></td> <!-- MINLP -->
-        <td><small>IP Callbacks</small></td> <!-- Other -->
-      </tr>
-
-      <tr>
-        <th>
-          <a href="https://projects.coin-or.org/Ipopt">Ipopt</a>
-          <a href="https://github.com/JuliaOpt/Ipopt.jl">(.jl)</a>
-        </th>
-        <!--<td><a href="https://github.com/JuliaOpt/Ipopt.jl">Ipopt.jl</a></td>-->
-        <td>&#10004;</td> <!-- LP -->
-        <td></td> <!-- MILP -->
-        <td></td> <!-- QCQP -->
-        <td></td> <!-- MIQCQP -->
-        <td></td> <!-- SDP -->
-        <td>&#10004;</td> <!-- NLP -->
-        <td></td> <!-- MINLP -->
-        <td></td> <!-- Other -->
-      </tr>
-      
-      <tr>
-        <th>
-          <a href="http://www.ziena.com/knitro.htm">KNITRO</a>
-          <a href="https://github.com/JuliaOpt/KNITRO.jl">(.jl)</a>
-        </th>
-        <!--<td><a href="https://github.com/JuliaOpt/KNITRO.jl/">KNITRO.jl</a></td>-->
-        <td>&#10004;</td> <!-- LP -->
-        <td>&#10004;</td></td> <!-- MILP -->
-        <td></td> <!-- QCQP -->
-        <td></td> <!-- MIQCQP -->
-        <td></td> <!-- SDP -->
-        <td>&#10004;</td> <!-- NLP -->
-        <td>&#10004;</td></td> <!-- MINLP -->
-        <td></td> <!-- Other -->
-      </tr>
-      
-      <tr>
-        <th>
-          <a href="http://www.mosek.com/">Mosek</a>
-          <a href="https://github.com/JuliaOpt/Mosek.jl">(.jl)</a>
-        </th>
-        <!--<td><a href="https://github.com/JuliaOpt/Mosek.jl">Mosek.jl</a></td>-->
-        <td>&#10004;</td> <!-- LP -->
-        <td>&#10004;</td> <!-- MILP -->
-        <td>&#10004;</td> <!-- QCQP -->
-        <td>&#10004;</td> <!-- MIQCQP -->
-        <td>&#10004;</td> <!-- SDP -->
-        <td>&#10004;<small>1</small></td> <!-- NLP -->
-        <td></td> <!-- MINLP -->
-        <td></td> <!-- Other -->
-      </tr>
-
-      <tr>
-        <th>
-          <a href="http://ab-initio.mit.edu/nlopt">NLopt</a>
-          <a href="https://github.com/JuliaOpt/NLopt.jl">(.jl)</a>
-        </th>
-        <!--<td><a href="https://github.com/JuliaOpt/NLopt.jl">NLopt.jl</a></td>-->
-        <td></td> <!-- LP -->
-        <td></td> <!-- MILP -->
-        <td></td> <!-- QCQP -->
-        <td></td> <!-- MIQCQP -->
-        <td></td> <!-- SDP -->
-        <td>&#10004;</td> <!-- NLP -->
-        <td></td> <!-- MINLP -->
-        <td></td> <!-- Other -->
-      </tr>
-      
-      <tr>
-        <th>
-          <a href="https://github.com/cvxgrp/scs">SCS</a>
-          <a href="https://github.com/JuliaOpt/SCS.jl">(.jl)</a>
-        </th>
-        <!--<td><a href="https://github.com/JuliaOpt/NLopt.jl">NLopt.jl</a></td>-->
-        <td>&#10004;</td> <!-- LP -->
-        <td></td> <!-- MILP -->
-        <td>&#10004;</td> <!-- QCQP -->
-        <td></td> <!-- MIQCQP -->
-        <td>&#10004;</td> <!-- SDP -->
-        <td></td> <!-- NLP -->
-        <td></td> <!-- MINLP -->
-        <td></td> <!-- Other -->
-      </tr>
-      
-    </tbody>
-  </table>
-
-  <h2>Guidelines for JuliaOpt Packages</h2>
-  
-<p>JuliaOpt aims to be a collection of high-quality optimization-related
-packages for users of Julia. To be included in JuliaOpt, we request
-that packages follow the following simple guidelines:</p>
-
-<ul>
-<li> Packages should have good documentation. </li>
-<li> Packages must have a basic suite of tests in a <code>test</code> subdirectory, ideally controlled by a master file <code>test/runtests.jl</code>. Unit testing and the use of the <a href="https://travis-ci.org/">Travis</a> continuous integration service is strongly encouraged. </li>
-<li> (Recent) Linux, OS X, and Windows platforms must be fully supported. </li>
-<li> For packages with freely distributable binary dependencies, these
-should be installed automatically via <a href="https://github.com/loladiro/BinDeps.jl">BinDeps</a>.  Binaries should be available for both OS X and Windows users. (See the Julia <a href="https://github.com/JuliaLang/Homebrew.jl">Homebrew</a> package for easy binary packaging on OS X. For Windows, many upstream libraries provide a pre-compiled DLL file.) </li>
-</ul>
-
-<p>Current JuliaOpt packages can be used as examples of how to implement
-these guidelines (please file an issue if you believe they don't!). We
-are happy to provide assistance to package maintainers, especially with
-testing on various platforms and dealing with binary dependencies.</p>
+    <tr>
+      <th>
+        <a href="http://ab-initio.mit.edu/nlopt">NLopt</a>
+        <a href="https://github.com/JuliaOpt/NLopt.jl">(.jl)</a>
+      </th>
+      <!--<td><a href="https://github.com/JuliaOpt/NLopt.jl">NLopt.jl</a></td>-->
+      <td></td> <!-- LP -->
+      <td></td> <!-- MILP -->
+      <td></td> <!-- QCQP -->
+      <td></td> <!-- MIQCQP -->
+      <td></td> <!-- SDP -->
+      <td>&#10004;</td> <!-- NLP -->
+      <td></td> <!-- MINLP -->
+      <td></td> <!-- Other -->
+    </tr>
+    
+    <tr>
+      <th>
+        <a href="https://github.com/cvxgrp/scs">SCS</a>
+        <a href="https://github.com/JuliaOpt/SCS.jl">(.jl)</a>
+      </th>
+      <!--<td><a href="https://github.com/JuliaOpt/NLopt.jl">NLopt.jl</a></td>-->
+      <td>&#10004;</td> <!-- LP -->
+      <td></td> <!-- MILP -->
+      <td>&#10004;</td> <!-- QCQP -->
+      <td></td> <!-- MIQCQP -->
+      <td>&#10004;</td> <!-- SDP -->
+      <td></td> <!-- NLP -->
+      <td></td> <!-- MINLP -->
+      <td></td> <!-- Other -->
+    </tr>
+    
+  </tbody>
+</table>
 
 
-</div>
 
 
-<!-- //// END CONTENT //// -->
+        </div>
+      </div>
 
-    </div>
-    <div class="sixteen columns">
-      <hr />
-      <small>This website was made with <a href="http://www.getskeleton.com">Skeleton</a>. Something wrong? Submit <a href="https://github.com/JuliaOpt/juliaopt.org/issues">issue</a>. Contact: <a href="http://iaindunning.com">Iain Dunning</a> (idunning AT mit DOT edu, <a href="https://www.twitter.com/iaindunning">@iaindunning</a>), <a href="http://www.mit.edu/~mlubin/">Miles Lubin</a> (mlubin AT mit DOT edu). <a href="https://www.stickermule.com/marketplace/4071-juliaopt">Stickers!</a></small>
-    </div>
-  </div><!-- container -->
+    </div> <!-- /container -->
 
-</body>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  </body>
 </html>

@@ -1,0 +1,1915 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="JuliaOpt - Optimization packages for the Julia language">
+    <meta name="author" content="Iain Dunning">
+    <link rel="icon" href="favicon.ico">
+
+    <title>JuliaOpt - Optimization packages for the Julia language</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+    <!-- Additional styles -->
+    <style>
+      body {
+        padding-top: 60px;
+        padding-bottom: 20px;
+      }
+    </style>
+    <style type="text/css">
+    .highlight .hll { background-color: #ffffcc }
+.highlight  { background: #f8f8f8; }
+.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
+    </style>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div class="container">
+
+
+      <!-- Static navbar -->
+      <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/index.html">JuliaOpt</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="#about">About</a></li>
+              <li><a href="#packages">Packages</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li class="divider"></li>
+                  <li class="dropdown-header">Nav header</li>
+                  <li><a href="#">Separated link</a></li>
+                  <li><a href="#">One more separated link</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </nav>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Description:</strong> This notebook is an introduction to JuMP. The topics described are as follows:</p>
+<ul>
+<li>Installing Julia and JuMP</li>
+<li>Representing vectors in Julia</li>
+<li>Structure of a JuMP model</li>
+<li>Solving general purpose linear programming problem</li>
+<li>Solving general purpose integer programming problem</li>
+</ul>
+<p><strong>Author:</strong> <a href="http://scg.utoronto.ca/~shuvomoy.dasgupta/">Shuvomoy Das Gupta</a></p>
+<p><strong>License:</strong> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>
+<h1 id="Using-Julia+JuMP-for-optimization---getting-started">Using Julia+JuMP for optimization - getting started<a class="anchor-link" href="#Using-Julia+JuMP-for-optimization---getting-started">&#182;</a></h1><hr>
+<h2 id="Julia">Julia<a class="anchor-link" href="#Julia">&#182;</a></h2><h3 id="What-is-Julia?">What is Julia?<a class="anchor-link" href="#What-is-Julia?">&#182;</a></h3><p>Julia is a new programming language.</p>
+<h3 id="Why-Julia?">Why Julia?<a class="anchor-link" href="#Why-Julia?">&#182;</a></h3><ul>
+<li>Free and open-source</li>
+<li>Syntax similar to MATLAB, speed similar to C</li>
+</ul>
+<h2 id="JuMP">JuMP<a class="anchor-link" href="#JuMP">&#182;</a></h2><h3 id="What-is-JuMP?">What is JuMP?<a class="anchor-link" href="#What-is-JuMP?">&#182;</a></h3><p>JuMP is a modelling language for mathematical optimization [1]. It is embedded in Julia.</p>
+<h3 id="Why-JuMP?">Why JuMP?<a class="anchor-link" href="#Why-JuMP?">&#182;</a></h3><ul>
+<li>Very user-friendly</li>
+<li>Speed similar to special purpose commercial modelling language like AMPL</li>
+<li>Solver independent code: same code will run for both commercial and open-source solvers</li>
+<li>Very easy to implement solver callback and problem modification</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Installation">Installation<a class="anchor-link" href="#Installation">&#182;</a></h1><h2 id="Installing-Julia-and-IJulia">Installing Julia and IJulia<a class="anchor-link" href="#Installing-Julia-and-IJulia">&#182;</a></h2><h3 id="Installing-Julia">Installing Julia<a class="anchor-link" href="#Installing-Julia">&#182;</a></h3><p>Go to the <a href="http://julialang.org/downloads/" title="downloadJulia">download page</a> of Julia, download the appropriate installer and run it. Now you can start an interactive Julia session!</p>
+<p><img src="http://scg.utoronto.ca/~shuvomoy.dasgupta/Miscellaneous/JuMPTutorial/julia_REPL.png"></p>
+<h3 id="Installing-IJulia">Installing IJulia<a class="anchor-link" href="#Installing-IJulia">&#182;</a></h3><p>IJulia will allow us to create powerful graphical notebooks, which is very convenient for the tutorial. We can insert codes, text, mathematical formulas and multimedia etc. in the same notebook. To install IJulia:</p>
+<ul>
+<li><p>Install Anaconda from <a href="http://continuum.io/downloads">http://continuum.io/downloads</a>. If you are on Windows, then while running the Anaconda installer please check the options <em>Add Anaconda to the System Path</em> and also <em>Register Anaconda as default Python version of the system</em>.</p>
+</li>
+<li><p>Now start a Julia interactive session. Type the following <code>Pkg.add("IJulia")</code></p>
+</li>
+<li><p>To open a new notebook</p>
+<ul>
+<li>In the Julia interactive session, run <code>Using IJulia</code> and then <code>notebook()</code>. It will open the Home for IJulia in your web browser. </li>
+</ul>
+<p><img src="http://scg.utoronto.ca/~shuvomoy.dasgupta/Miscellaneous/JuMPTutorial/IJulia_home.png"></p>
+<ul>
+<li>The directory location can be checked by the command <code>pwd()</code>. If you want to change the directory to something else, the before running <code>Using IJulia</code> and <code>notebook()</code>, run <code>cd(path to your preferred directory)</code>, e.g., <code>cd("E:\\Dropbox\\Julia_Workspaces")</code>.  </li>
+<li>Click on <em>New Notebook</em> on the top right corner. In the new notebook, you can execute any Julia command pressing SHIFT+ENTER.</li>
+</ul>
+<p><img src="http://scg.utoronto.ca/~shuvomoy.dasgupta/Miscellaneous/JuMPTutorial/Hello_world_IJulia.png"></p>
+</li>
+</ul>
+<h3 id="Installing-JuMP">Installing JuMP<a class="anchor-link" href="#Installing-JuMP">&#182;</a></h3><p>At first add the JuMP package by running the following code in the notebook:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="n">Pkg</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s">&quot;JuMP&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>INFO: Nothing to be done
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We need to install a solver package. Let's install the open source solvers GLPK, Cbc and Clp by typing in <code>Pkg.add("GLPKMathProgInterface")</code>, <code>Pkg.add("Cbc")</code> and <code>Pkg.add("Clp")</code> respectively. Let's add the Julia package associated with CPLEX by typing in <code>Pkg.add("CPLEX")</code>. The other choices are <code>"CPLEX"</code>, <code>"Cbc"</code>, <code>"Clp"</code>, <code>"Gurobi"</code> and <code>"MOSEK"</code>.</p>
+<p>It should be noted that, in order to use commercial solvers such as CPLEX, Gurobi and Mosek in JuMP, we will require working installations of them with appropriate licences. Both Gurobi and Mosek are free for academic use. CPLEX is free for faculty members and graduate teaching assistants.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="n">Pkg</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s">&quot;GLPKMathProgInterface&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>INFO: Nothing to be done
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="n">Pkg</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s">&quot;Cbc&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>INFO: Nothing to be done
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="n">Pkg</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s">&quot;Clp&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>INFO: Nothing to be done
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="n">Pkg</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s">&quot;CPLEX&quot;</span><span class="p">)</span> <span class="c"># Working installation of CPLEX is needed in advance</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>INFO: Nothing to be done
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="n">Pkg</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s">&quot;Gurobi&quot;</span><span class="p">)</span> <span class="c"># Working installation of Gurobi is needed in advance</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>INFO: Nothing to be done
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>If you have not updated your Julia packages in a while, a good idea might be updating them.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="n">Pkg</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>INFO: Updating METADATA...
+INFO: Computing changes...
+INFO: No packages to install, update or remove
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="n">println</span><span class="p">(</span><span class="s">&quot;Hello World!&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Hello World!
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="The-very-first-example">The very first example<a class="anchor-link" href="#The-very-first-example">&#182;</a></h1><p>At first let us try to solve a very simple and trivial optimization problem using JuMP to check if everything is working properly.</p>
+\begin{align}
+\text{minimize} \qquad & x+y \\
+ \text{subject to} \quad \quad & x+y \leq 1 \\
+ \qquad \qquad & x \geq 0, y \geq 0 \\
+ \qquad \qquad & x,y \in \mathbb{R}
+\end{align}<p>Here is the JuMP code to solve the mentioned problem:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="k">using</span> <span class="n">JuMP</span>  <span class="c"># Need to say it whenever we use JuMP</span>
+
+<span class="k">using</span> <span class="n">GLPKMathProgInterface</span> <span class="c"># Loading the GLPK module for using its solver</span>
+
+
+<span class="c">#MODEL CONSTRUCTION</span>
+<span class="c">#--------------------</span>
+
+<span class="n">myModel</span> <span class="o">=</span> <span class="n">Model</span><span class="p">(</span><span class="n">solver</span><span class="o">=</span><span class="n">GLPKSolverLP</span><span class="p">())</span> 
+<span class="c"># Name of the model object. All constraints and variables of an optimization problem are associated </span>
+<span class="c"># with a particular model object. The name of the model object does not have to be myModel, it can be yourModel too! The argument of Model,</span>
+<span class="c"># solver=GLPKsolverLP() means that to solve the optimization problem we will use GLPK solver.</span>
+
+<span class="c">#VARIABLES</span>
+<span class="c">#---------</span>
+
+<span class="c"># A variable is modelled using @defVar(name of the model object, variable name and bound, variable type)</span>
+<span class="c"># Bound can be lower bound, upper bound or both. If no variable type is defined, then it is treated as </span>
+<span class="c">#real. For binary variable write Bin and for integer use Int.</span>
+
+<span class="p">@</span><span class="n">defVar</span><span class="p">(</span><span class="n">myModel</span><span class="p">,</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="c"># Models x &gt;=0</span>
+
+<span class="c"># Some possible variations:</span>
+<span class="c"># @defVar(myModel, x, Binary) # No bound on x present, but x is a binary variable now</span>
+<span class="c"># @defVar(myModel, x &lt;= 10) # This one defines a variable with lower bound x &lt;= 10</span>
+<span class="c"># @defVar(myModel, 0 &lt;= x &lt;= 10, Int) # This one has both lower and upper bound, and x is an integer</span>
+
+<span class="p">@</span><span class="n">defVar</span><span class="p">(</span><span class="n">myModel</span><span class="p">,</span> <span class="n">y</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="c"># Models y &gt;= 0</span>
+
+<span class="c">#OBJECTIVE</span>
+<span class="c">#---------</span>
+
+<span class="p">@</span><span class="n">setObjective</span><span class="p">(</span><span class="n">myModel</span><span class="p">,</span> <span class="n">Min</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">)</span> <span class="c"># Sets the objective to be minimized. For maximization use Max</span>
+
+<span class="c">#CONSTRAINTS</span>
+<span class="c">#-----------</span>
+
+<span class="p">@</span><span class="n">addConstraint</span><span class="p">(</span><span class="n">myModel</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">)</span> <span class="c"># Adds the constraint x + y &lt;= 1</span>
+
+<span class="c">#THE MODEL IN A HUMAN-READABLE FORMAT</span>
+<span class="c">#------------------------------------</span>
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;The optimization problem to be solved is:&quot;</span><span class="p">)</span>
+<span class="n">print</span><span class="p">(</span><span class="n">myModel</span><span class="p">)</span> <span class="c"># Shows the model constructed in a human-readable form</span>
+
+<span class="c">#SOLVE IT AND DISPLAY THE RESULTS</span>
+<span class="c">#--------------------------------</span>
+<span class="n">status</span> <span class="o">=</span> <span class="n">solve</span><span class="p">(</span><span class="n">myModel</span><span class="p">)</span> <span class="c"># solves the model  </span>
+
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;Objective value: &quot;</span><span class="p">,</span> <span class="n">getObjectiveValue</span><span class="p">(</span><span class="n">myModel</span><span class="p">))</span> <span class="c"># getObjectiveValue(model_name) gives the optimum objective value</span>
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;x = &quot;</span><span class="p">,</span> <span class="n">getValue</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="c"># getValue(decision_variable) will give the optimum value of the associated decision variable</span>
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;y = &quot;</span><span class="p">,</span> <span class="n">getValue</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>The optimization problem to be solved is:
+Min x + y
+Subject to
+ x + y &lt;= 1
+ x &gt;= 0
+ y &gt;= 0
+Objective value: 0.0
+x = 0.0
+y = 0.0
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This was certainly not the most exciting optimization problem to solve. This was for test purpose only. However, before going into the structure of a JuMP model, let us learn how to represent vectors in Julia.</p>
+<h1 id="Representing-vectors-in-Julia">Representing vectors in Julia<a class="anchor-link" href="#Representing-vectors-in-Julia">&#182;</a></h1><ul>
+<li><p>A column vector, $y=(y_1, y_2, \ldots, y_n)= \begin{pmatrix}
+y_1 \
+y_2 \
+. \
+. \
+y_n
+\end{pmatrix} \in \mathbb{R}^n$ will be written in Julia as <code>[y[1];y[2];...;y[n]]</code>.</p>
+<p>For example to create column vector $\begin{pmatrix}
+3 \
+2.4 \
+9.1 \
+\end{pmatrix}$  use: <code>[3; 2.4; 9.1]</code>.</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="p">[</span><span class="mi">3</span><span class="p">;</span> <span class="mf">2.4</span><span class="p">;</span> <span class="mf">9.1</span><span class="p">]</span> <span class="c"># Column vector</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[19]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>3-element Array{Float64,1}:
+ 3.0
+ 2.4
+ 9.1</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><p>A row vector, $z=(z_1 \; z_2 \; \ldots \; z_n) \in \mathbb{R}^{1 \times n}$ will be written in Julia as <code>[z[1] y[2]...z[n]]</code>.</p>
+<p>For example to create row vector $(1.2 \; 3.5 \; 8.21)$  use: <code>[1.2 3.5 8.21]</code>.</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="p">[</span><span class="mf">1.2</span> <span class="mf">3.5</span> <span class="mf">8.21</span><span class="p">]</span> <span class="c"># Row vector</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[11]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>1x3 Array{Float64,2}:
+ 1.2  3.5  8.21</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>To create a $m \times n$ matrix </li>
+</ul>
+$$
+A = \begin{pmatrix}
+  A_{11} & A_{12} & A_{13} & \ldots &A_{1n} \\
+  \ldots & \ldots & \ldots & \ldots & \ldots  \\
+  A_{m1} & A_{m2} & A_{m3} & \ldots & A_{mn}
+ \end{pmatrix}
+$$<p>write:</p>
+<p><code>[A[1,1] A[1,2] A[1,3]... A[1,n];</code>
+ <code>... ;</code>
+  <code>A[m,1] A[m,2] ... A[m,n]]</code>.</p>
+<p>So the matrix</p>
+<p>$$
+  A = \begin{pmatrix}
+  1 & 1 & 9 & 5 \\
+  3 & 5 & 0 & 8 \\
+  2 & 0 & 6 & 13
+ \end{pmatrix}
+ $$</p>
+<p>is represented in Julia as:</p>
+<p>`A= [
+     1 1 9 5;
+     3 5 0 8;
+     2 0 6 13
+    ]`</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="c"># Generating a matrix</span>
+<span class="n">A</span><span class="o">=</span> <span class="p">[</span>
+     <span class="mi">1</span> <span class="mi">1</span> <span class="mi">9</span> <span class="mi">5</span><span class="p">;</span>
+     <span class="mi">3</span> <span class="mi">5</span> <span class="mi">0</span> <span class="mi">8</span><span class="p">;</span>
+     <span class="mi">2</span> <span class="mi">0</span> <span class="mi">6</span> <span class="mi">13</span>
+    <span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[12]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>3x4 Array{Int64,2}:
+ 1  1  9   5
+ 3  5  0   8
+ 2  0  6  13</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$A_{ij}$ can be accessed by <code>A[i,j]</code> ,the $i$th row of the matrix A is represented by <code>A[i,:]</code>, the $j$th column of the matrix A is represented by <code>A[:,j]</code>.</p>
+<p>The size of a matrix $A$ can be determined by running the command <code>size(A)</code>. If we write <code>numRows, numCols = size(A)</code>, then <code>numRows</code> and <code>numCols</code> will contain the total number of rows and columns of A respectively.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="n">numRows</span><span class="p">,</span> <span class="n">numCols</span> <span class="o">=</span> <span class="n">size</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="n">println</span><span class="p">(</span>
+<span class="s">&quot;A has &quot;</span><span class="p">,</span> <span class="n">numRows</span><span class="p">,</span> <span class="s">&quot; rows and &quot;</span><span class="p">,</span> <span class="n">numCols</span><span class="p">,</span> <span class="s">&quot; columns </span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span>
+<span class="s">&quot;A[3,3] is &quot;</span><span class="p">,</span> <span class="n">A</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span>
+<span class="s">&quot;The 3rd column of A is &quot;</span><span class="p">,</span> <span class="n">A</span><span class="p">[:,</span><span class="mi">3</span><span class="p">],</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span>
+<span class="s">&quot;The 2nd row of A is &quot;</span><span class="p">,</span> <span class="n">A</span><span class="p">[</span><span class="mi">2</span><span class="p">,:]</span>
+<span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>A has 3 rows and 4 columns 
+A[3,3] is 6
+The 3rd column of A is [9,0,6]
+The 2nd row of A is [3 5 0 8]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Suppose $x,y \in \mathbb{R}^n$. Then $x^T y =\sum_{i=1}^{n} {x_i y_i}$ is written as <code>dot(x,y)</code>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">;</span> <span class="mi">2</span><span class="p">;</span> <span class="mi">3</span><span class="p">;</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">x</span><span class="o">=</span><span class="p">[</span><span class="mi">5</span><span class="p">;</span> <span class="mi">6</span><span class="p">;</span> <span class="mi">7</span><span class="p">;</span> <span class="mi">8</span><span class="p">]</span>
+<span class="n">xTy</span><span class="o">=</span><span class="n">dot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[14]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>70</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Structure-of-a-JuMP-model">Structure of a JuMP model<a class="anchor-link" href="#Structure-of-a-JuMP-model">&#182;</a></h1><p>Any JuMP model that describes an optimization problem must have four parts:</p>
+<ul>
+<li><strong>Model Object</strong>, </li>
+<li><strong>Variables</strong>, </li>
+<li><strong>Objective</strong>, </li>
+<li><strong>Constraints</strong>.</li>
+</ul>
+<h2 id="Model">Model<a class="anchor-link" href="#Model">&#182;</a></h2><p>Any instance of an optimization problem corresponds to a model object. This model object is associated with all the variables, constraints and objective of the instance. It is constructed using <code>modelName = Model(solver=</code><em>solver of our preference</em><code>)</code>. If no solver is specified, then <code>ClpSolver()</code> and/or <code>CbcSolver()</code> will be used by default. Here <code>modelName</code> is any valid name. We will limit ourselves in the open source solvers such as:</p>
+<ul>
+<li>Linear Programming Solver: <code>ClpSolver(), GLPKSolverLP()</code></li>
+<li>Mixed Integer Programming Solver: <code>GLPKSolverMIP() CbcSolver()</code></li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="k">using</span> <span class="n">JuMP</span>
+<span class="n">myModel</span> <span class="o">=</span> <span class="n">Model</span><span class="p">()</span> <span class="c"># ClpSolver() and/or CbcSolver() will be used based on the problem</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[2]:</div>
+
+
+<div class="output_latex output_subarea output_execute_result">
+$$ \begin{alignat*}{1}\min\quad & 0\\
+\text{Subject to} \quad\end{alignat*}
+ $$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Variables">Variables<a class="anchor-link" href="#Variables">&#182;</a></h2><p>Variables are defined using <code>@defVar</code> macro, which takes up to three input arguments. The <em>first</em> argument is the name of the model. Then the <em>second</em> argument contains the name of the variable, and a bound on the variable if it exists. The <em>third</em> argument is not needed if the variable is real. When the variable is binary or integer, then <code>Bin</code> or <code>Int</code>, respectively, is used in place of the third argument.</p>
+<p><img src="http://scg.utoronto.ca/~shuvomoy.dasgupta/Miscellaneous/JuMPTutorial/variables.png"></p>
+<h3 id="Examples-of-Variables">Examples of Variables<a class="anchor-link" href="#Examples-of-Variables">&#182;</a></h3><p>Suppose the model object is <code>myModel</code>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>To describe a variable $z \in \mathbb{R}$ such that $0 \leq z \leq 10$
+write</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="p">@</span><span class="n">defVar</span><span class="p">(</span><span class="n">myModel</span><span class="p">,</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">z</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[4]:</div>
+
+
+<div class="output_latex output_subarea output_execute_result">
+$$ z $$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Now consider a decision variable $x \in \mathbb{R}^n$, and it has a bound $l \preceq x \preceq u$, where naturally $l, u \in \mathbb{R}^n$.  For that we write <br></li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="c"># INPUT DATA, CHANGE THEM TO YOUR REQUIREMENT</span>
+<span class="c">#-------------------------------------------</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">;</span> <span class="mi">2</span><span class="p">;</span> <span class="mi">3</span><span class="p">;</span> <span class="mi">4</span><span class="p">;</span> <span class="mi">5</span><span class="p">;</span> <span class="mi">6</span><span class="p">;</span> <span class="mi">7</span><span class="p">;</span> <span class="mi">8</span><span class="p">;</span> <span class="mi">9</span><span class="p">;</span> <span class="mi">10</span><span class="p">]</span>
+<span class="n">u</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">;</span> <span class="mi">11</span><span class="p">;</span> <span class="mi">12</span><span class="p">;</span> <span class="mi">13</span><span class="p">;</span> <span class="mi">14</span><span class="p">;</span> <span class="mi">15</span><span class="p">;</span> <span class="mi">16</span><span class="p">;</span> <span class="mi">17</span><span class="p">;</span> <span class="mi">18</span><span class="p">;</span> <span class="mi">19</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[16]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>10-element Array{Int64,1}:
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="c"># VARIABLE DEFINITION</span>
+<span class="c"># ------------------- </span>
+<span class="p">@</span><span class="n">defVar</span><span class="p">(</span><span class="n">myModel</span><span class="p">,</span> <span class="n">l</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">u</span> <span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[17]:</div>
+
+
+<div class="output_latex output_subarea output_execute_result">
+$$ .. \leq x_{i} \leq .. \quad\forall i \in \{1,2,\dots,9,10\} $$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Suppose we have decision variables $x \in \mathbb{R}^n$, $y \in \mathbb{Z}^m$ and $z \in \mathbb \{0,1\}^p$ such that $x \succeq 0$, $a \preceq y \preceq b$. Here $a, b \in \mathbb{Z}^m$. To express this in JuMP we write</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="c"># INPUT DATA, CHANGE THEM TO YOUR REQUIREMENT</span>
+<span class="c">#-------------------------------------------</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">4</span> <span class="c"># dimension of x</span>
+<span class="n">m</span> <span class="o">=</span> <span class="mi">3</span> <span class="c"># dimension of y</span>
+<span class="n">p</span> <span class="o">=</span> <span class="mi">2</span> <span class="c"># dimensin of z</span>
+<span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">;</span> <span class="mi">1</span><span class="p">;</span> <span class="mi">2</span><span class="p">]</span>
+<span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">;</span> <span class="mi">4</span><span class="p">;</span> <span class="mi">7</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[18]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>3-element Array{Int64,1}:
+ 3
+ 4
+ 7</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="c"># VARIABLE DEFINITION</span>
+<span class="c"># -------------------</span>
+<span class="p">@</span><span class="n">defVar</span><span class="p">(</span><span class="n">myModel</span><span class="p">,</span> <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[19]:</div>
+
+
+<div class="output_latex output_subarea output_execute_result">
+$$ x_{i} \geq 0 \quad\forall i \in \{1,2,3,4\} $$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="p">@</span><span class="n">defVar</span><span class="p">(</span><span class="n">myModel</span><span class="p">,</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">:</span><span class="n">m</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="kt">Int</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[20]:</div>
+
+
+<div class="output_latex output_subarea output_execute_result">
+$$ .. \leq y_{i} \leq .., \in \mathbb{Z}, \quad\forall i \in \{1,2,3\} $$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="p">@</span><span class="n">defVar</span><span class="p">(</span><span class="n">myModel</span><span class="p">,</span> <span class="n">z</span><span class="p">[</span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">:</span><span class="n">p</span><span class="p">],</span> <span class="n">Bin</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[21]:</div>
+
+
+<div class="output_latex output_subarea output_execute_result">
+$$ z_{i} \in \{0,1\} \quad\forall i \in \{1,2\} $$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Constraints">Constraints<a class="anchor-link" href="#Constraints">&#182;</a></h2><p>Constraints are added by using <code>@addConstraint</code> macro. The first argument is the model object the constraint is associated with, the second argument is the reference to that constraint and the third argument is the constraint description. The constraint reference comes handy when we want to manipulate the constraint later or access the dual variables associated with it. If no constraint reference is needed, then the second argument is the constraint description. <br></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Examples-of-Constraints">Examples of Constraints<a class="anchor-link" href="#Examples-of-Constraints">&#182;</a></h3><p>Let's give some examples on writing constraints in JuMP. Suppose the model name is <code>yourModel</code>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="n">yourModel</span> <span class="o">=</span> <span class="n">Model</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[5]:</div>
+
+
+<div class="output_latex output_subarea output_execute_result">
+$$ \begin{alignat*}{1}\min\quad & 0\\
+\text{Subject to} \quad\end{alignat*}
+ $$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ol>
+<li>Consider variables $x, y \in \mathbb{R}$ which are coupled by the constraints $5 x +3 y \leq 5$. We write this as <br>
+<code>@addConstraint(yourModel, 5*x + 3*y &lt;= 5)</code> <br>
+Naturally, <code>x</code> and <code>y</code> have to be defined first using <code>@defVar</code> macro.</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="p">@</span><span class="n">defVar</span><span class="p">(</span><span class="n">yourModel</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="p">@</span><span class="n">defVar</span><span class="p">(</span><span class="n">yourModel</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="p">@</span><span class="n">addConstraint</span><span class="p">(</span><span class="n">yourModel</span><span class="p">,</span> <span class="mi">5</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">3</span><span class="o">*</span><span class="n">y</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[6]:</div>
+
+
+<div class="output_latex output_subarea output_execute_result">
+$$ 5 x + 3 y \leq 5 $$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Here no constraint reference is given. Now suppose we want to get the dual value of some constraint after solving the problem, then we would need a constraint reference to assign to the constraint first. Let's call the constraint reference as <code>conRef1</code> (it could be any valid name). Then the same constraint have to be written as: <br>
+<code>@addConstraint(yourModel, conRef1, 6*x + 4*y &gt;= 5)</code> <br>
+When we would need the dual value after solving the problem we just write <code>println(getDual(conRef1))</code>. <br></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="p">@</span><span class="n">addConstraint</span><span class="p">(</span><span class="n">yourModel</span><span class="p">,</span> <span class="n">conRef1</span><span class="p">,</span> <span class="mi">6</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">4</span><span class="o">*</span><span class="n">y</span> <span class="o">&gt;=</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[7]:</div>
+
+
+<div class="output_latex output_subarea output_execute_result">
+$$ 6 x + 4 y \geq 5 $$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ol>
+<li>Consider a variable $x \in \mathbb{R}^4$, a coefficient vector $a=(1, -3, 5, -7)$ We want to write a constraint of the form $\sum_{i=1}^4{a_i x_i} \leq 3$. In JuMP we write:<br></li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">;</span> <span class="o">-</span><span class="mi">3</span><span class="p">;</span> <span class="mi">5</span><span class="p">;</span> <span class="mi">7</span><span class="p">]</span> 
+<span class="p">@</span><span class="n">defVar</span><span class="p">(</span><span class="n">yourModel</span><span class="p">,</span> <span class="n">w</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">])</span>
+<span class="p">@</span><span class="n">addConstraint</span><span class="p">(</span><span class="n">yourModel</span><span class="p">,</span> <span class="n">sum</span><span class="p">{</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">}</span> <span class="o">&lt;=</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[8]:</div>
+
+
+<div class="output_latex output_subarea output_execute_result">
+$$ w_{1} - 3 w_{2} + 5 w_{3} + 7 w_{4} \leq 3 $$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Objective">Objective<a class="anchor-link" href="#Objective">&#182;</a></h2><p>Objective is set using <code>@setObjective</code> macro. It has three arguments. The first argument is as usual the model object. The second one is either <code>Max</code> if we want to maximize the objective function, or <code>Min</code> when we want to minimize. The last argument is the description of the objective which has similar syntax to that of constraint definition.</p>
+<h3 id="Example-of-objective">Example of objective<a class="anchor-link" href="#Example-of-objective">&#182;</a></h3><p>For the previous model, consider the decision variable $w \in \mathbb{R}^4$ and cost vector $c = (2, 3 , 4, 5)$. We want to minimize $c^T w$. In JuMP we would write:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="n">c</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">;</span> <span class="mi">3</span><span class="p">;</span> <span class="mi">4</span><span class="p">;</span> <span class="mi">5</span><span class="p">]</span> 
+<span class="p">@</span><span class="n">setObjective</span><span class="p">(</span><span class="n">yourModel</span><span class="p">,</span> <span class="n">Min</span><span class="p">,</span> <span class="n">sum</span><span class="p">{</span><span class="n">c</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">})</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[10]:</div>
+
+
+<div class="output_latex output_subarea output_execute_result">
+$$ 2 w_{1} + 3 w_{2} + 4 w_{3} + 5 w_{4} $$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Solving-a-standard-form-Linear-Programming">Solving a standard form Linear Programming<a class="anchor-link" href="#Solving-a-standard-form-Linear-Programming">&#182;</a></h2><p>problem
+Let us try to write the JuMP code for the following standard form optimization problem:</p>
+$$
+\begin{align}
+& \text{minimize} && c^T x \\
+& \text{subject to} && A x = b \\
+&                   && x \succeq 0 \\
+&                   && x \in \mathbb{R}^n
+\end{align}
+$$<p>where, $n = 4$, $c=(1, 3, 5, 2)$, $A = \begin{pmatrix}
+  1 &amp; 1 &amp; 9 &amp; 5 \
+  3 &amp; 5 &amp; 0 &amp; 8 \
+  2 &amp; 0 &amp; 6 &amp; 13
+ \end{pmatrix}$ and $b=(7, 3, 5)$. The symbol $\succeq$ ($\preceq$) stands for element-wise greater (less) than or equal to.</p>
+<h3 id="Entering-different-parts-of-the-code-one-by-one">Entering different parts of the code one by one<a class="anchor-link" href="#Entering-different-parts-of-the-code-one-by-one">&#182;</a></h3><p>Let us input different parts of the JuMP code one by one and see the corresponding outputs to detect if everything is okay. Of course we could input the whole code at once.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[72]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="k">using</span> <span class="n">JuMP</span>  <span class="c"># Need to say it whenever we use JuMP</span>
+
+<span class="k">using</span> <span class="n">GLPKMathProgInterface</span> <span class="c"># Loading the package for using the GLPK solver</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[74]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="c">#MODEL CONSTRUCTION</span>
+<span class="c">#------------------</span>
+
+<span class="n">sfLpModel</span> <span class="o">=</span> <span class="n">Model</span><span class="p">(</span><span class="n">solver</span><span class="o">=</span><span class="n">GLPKSolverLP</span><span class="p">())</span> <span class="c"># Name of the model object</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[74]:</div>
+
+
+<div class="output_latex output_subarea output_execute_result">
+$$ \begin{alignat*}{1}\min\quad & 0\\
+\text{Subject to} \quad\end{alignat*}
+ $$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[75]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="c">#INPUT DATA</span>
+<span class="c">#----------</span>
+
+<span class="n">c</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">;</span> <span class="mi">3</span><span class="p">;</span> <span class="mi">5</span><span class="p">;</span> <span class="mi">2</span><span class="p">]</span> 
+
+<span class="n">A</span><span class="o">=</span> <span class="p">[</span>
+     <span class="mi">1</span> <span class="mi">1</span> <span class="mi">9</span> <span class="mi">5</span><span class="p">;</span>
+     <span class="mi">3</span> <span class="mi">5</span> <span class="mi">0</span> <span class="mi">8</span><span class="p">;</span>
+     <span class="mi">2</span> <span class="mi">0</span> <span class="mi">6</span> <span class="mi">13</span>
+    <span class="p">]</span>
+
+<span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">7</span><span class="p">;</span> <span class="mi">3</span><span class="p">;</span> <span class="mi">5</span><span class="p">]</span> 
+
+<span class="n">m</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="n">size</span> <span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="c"># m = number of rows of A, n = number of columns of A</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[75]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(3,4)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[76]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="c">#VARIABLES</span>
+<span class="c">#---------</span>
+
+<span class="p">@</span><span class="n">defVar</span><span class="p">(</span><span class="n">sfLpModel</span><span class="p">,</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="c"># Models x &gt;=0</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[76]:</div>
+
+
+<div class="output_latex output_subarea output_execute_result">
+$$ x_{i} \geq 0 \quad\forall i \in \{1,2,3,4\} $$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[77]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="c">#CONSTRAINTS</span>
+<span class="c">#-----------</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">:</span><span class="n">m</span> <span class="c"># for all rows do the following</span>
+    <span class="p">@</span><span class="n">addConstraint</span><span class="p">(</span><span class="n">sfLpModel</span><span class="p">,</span> <span class="n">sum</span><span class="p">{</span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="p">,</span> <span class="n">j</span><span class="o">=</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">}</span> <span class="o">==</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="c"># the ith row </span>
+    <span class="c"># of A*x is equal to the ith component of b</span>
+<span class="k">end</span> <span class="c"># end of the for loop</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[78]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="c">#OBJECTIVE</span>
+<span class="c">#---------</span>
+
+<span class="p">@</span><span class="n">setObjective</span><span class="p">(</span><span class="n">sfLpModel</span><span class="p">,</span> <span class="n">Min</span><span class="p">,</span> <span class="n">sum</span><span class="p">{</span><span class="n">c</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">j</span><span class="o">=</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">})</span> <span class="c"># minimize c&#39;x</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[78]:</div>
+
+
+<div class="output_latex output_subarea output_execute_result">
+$$ x_{1} + 3 x_{2} + 5 x_{3} + 2 x_{4} $$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[79]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="c">#THE MODEL IN A HUMAN-READABLE FORMAT</span>
+<span class="c">#------------------------------------</span>
+
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;The optimization problem to be solved is:&quot;</span><span class="p">)</span>
+<span class="n">print</span><span class="p">(</span><span class="n">sfLpModel</span><span class="p">)</span> <span class="c"># Shows the model constructed in a human-readable form</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>The optimization problem to be solved is:
+Min x[1] + 3 x[2] + 5 x[3] + 2 x[4]
+Subject to
+ x[1] + x[2] + 9 x[3] + 5 x[4] == 7
+ 3 x[1] + 5 x[2] + 8 x[4] == 3
+ 2 x[1] + 6 x[3] + 13 x[4] == 5
+ x[i] &gt;= 0 for all i in {1,2,3,4}
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[80]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="n">status</span> <span class="o">=</span> <span class="n">solve</span><span class="p">(</span><span class="n">sfLpModel</span><span class="p">)</span> <span class="c"># solves the model</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[80]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>:Optimal</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[81]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="c">#SOLVE IT AND DISPLAY THE RESULTS</span>
+<span class="c">#--------------------------------</span>
+
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;Objective value: &quot;</span><span class="p">,</span> <span class="n">getObjectiveValue</span><span class="p">(</span><span class="n">sfLpModel</span><span class="p">))</span> <span class="c"># getObjectiveValue(model_name) gives the optimum objective value</span>
+
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;Optimal solution is x = </span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">getValue</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="c"># getValue(decision_variable) will give the optimum value </span>
+                                                   <span class="c"># of the associated decision variable</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Objective value: 4.923076923076923
+Optimal solution is x = 
+[1] = 0.4230769230769228
+[2] = 0.34615384615384626
+[3] = 0.6923076923076923
+[4] = 0.0
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="The-whole-code">The whole code<a class="anchor-link" href="#The-whole-code">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="k">using</span> <span class="n">JuMP</span>  
+
+<span class="k">using</span> <span class="n">GLPKMathProgInterface</span> 
+
+<span class="c">#MODEL CONSTRUCTION</span>
+<span class="c">#------------------</span>
+
+<span class="n">sfLpModel</span> <span class="o">=</span> <span class="n">Model</span><span class="p">(</span><span class="n">solver</span><span class="o">=</span><span class="n">GLPKSolverLP</span><span class="p">())</span>
+
+<span class="c">#INPUT DATA</span>
+<span class="c">#----------</span>
+
+<span class="n">c</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">;</span> <span class="mi">3</span><span class="p">;</span> <span class="mi">5</span><span class="p">;</span> <span class="mi">2</span><span class="p">]</span> 
+
+<span class="n">A</span><span class="o">=</span> <span class="p">[</span>
+     <span class="mi">1</span> <span class="mi">1</span> <span class="mi">9</span> <span class="mi">5</span><span class="p">;</span>
+     <span class="mi">3</span> <span class="mi">5</span> <span class="mi">0</span> <span class="mi">8</span><span class="p">;</span>
+     <span class="mi">2</span> <span class="mi">0</span> <span class="mi">6</span> <span class="mi">13</span>
+    <span class="p">]</span>
+
+<span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">7</span><span class="p">;</span> <span class="mi">3</span><span class="p">;</span> <span class="mi">5</span><span class="p">]</span> 
+
+<span class="n">m</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="n">size</span> <span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="c"># m = number of rows of A, n = number of columns of A</span>
+
+<span class="c">#VARIABLES</span>
+<span class="c">#---------</span>
+
+<span class="p">@</span><span class="n">defVar</span><span class="p">(</span><span class="n">sfLpModel</span><span class="p">,</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="c"># Models x &gt;=0</span>
+
+<span class="c">#CONSTRAINTS</span>
+<span class="c">#-----------</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">:</span><span class="n">m</span> <span class="c"># for all rows do the following</span>
+    <span class="p">@</span><span class="n">addConstraint</span><span class="p">(</span><span class="n">sfLpModel</span><span class="p">,</span> <span class="n">sum</span><span class="p">{</span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="p">,</span> <span class="n">j</span><span class="o">=</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">}</span> <span class="o">==</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="c"># the ith row </span>
+    <span class="c"># of A*x is equal to the ith component of b</span>
+<span class="k">end</span> <span class="c"># end of the for loop</span>
+
+<span class="c">#OBJECTIVE</span>
+<span class="c">#---------</span>
+
+<span class="p">@</span><span class="n">setObjective</span><span class="p">(</span><span class="n">sfLpModel</span><span class="p">,</span> <span class="n">Min</span><span class="p">,</span> <span class="n">sum</span><span class="p">{</span><span class="n">c</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">j</span><span class="o">=</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">})</span> <span class="c"># minimize c&#39;x </span>
+
+
+
+<span class="c">#THE MODEL IN A HUMAN-READABLE FORMAT</span>
+<span class="c">#------------------------------------</span>
+
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;The optimization problem to be solved is:&quot;</span><span class="p">)</span>
+<span class="n">print</span><span class="p">(</span><span class="n">sfLpModel</span><span class="p">)</span> <span class="c"># Shows the model constructed in a human-readable form</span>
+
+<span class="p">@</span><span class="n">time</span> <span class="k">begin</span>
+<span class="n">status</span> <span class="o">=</span> <span class="n">solve</span><span class="p">(</span><span class="n">sfLpModel</span><span class="p">)</span> <span class="c"># solves the model  </span>
+<span class="k">end</span>
+<span class="c">#SOLVE IT AND DISPLAY THE RESULTS</span>
+<span class="c">#-------------------------------- </span>
+
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;Objective value: &quot;</span><span class="p">,</span> <span class="n">getObjectiveValue</span><span class="p">(</span><span class="n">sfLpModel</span><span class="p">))</span> <span class="c"># getObjectiveValue(model_name) gives the optimum objective value</span>
+
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;Optimal solution is x = </span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">getValue</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="c"># getValue(decision_variable) will give the optimum value </span>
+                                                   <span class="c"># of the associated decision variable</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>The optimization problem to be solved is:
+Min x[1] + 3 x[2] + 5 x[3] + 2 x[4]
+Subject to
+ x[1] + x[2] + 9 x[3] + 5 x[4] == 7
+ 3 x[1] + 5 x[2] + 8 x[4] == 3
+ 2 x[1] + 6 x[3] + 13 x[4] == 5
+ x[i] &gt;= 0 for all i in {1,2,3,4}
+elapsed time: 0.000363692 seconds (6792 bytes allocated)
+Objective value: 4.923076923076923
+Optimal solution is x = 
+x: 1 dimensions:
+[1] = 0.4230769230769228
+[2] = 0.34615384615384626
+[3] = 0.6923076923076923
+[4] = 0.0
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Solving-a-standard-form-Mixed-Integer-Programming-Problem">Solving a standard form Mixed Integer Programming Problem<a class="anchor-link" href="#Solving-a-standard-form-Mixed-Integer-Programming-Problem">&#182;</a></h2><p>Let us try to write the JuMP code for the following standard form optimization problem:</p>
+$$
+\begin{align}
+& \text{minimize} && c^T x + d^T y\\
+& \text{subject to} && A x + B y= f \\
+ &                   && x \succeq 0, y \succeq 0 \\
+ &                   && x \in \mathbb{R}^n, y \in \mathbb{Z}^p
+\end{align}
+$$<p>Here, $A \in \mathbb{R}^{m \times n}, B \in \mathbb{R}^{m \times p}, c \in \mathbb{R}^n, d \in \mathbb{R}^p, f \in \mathbb{R}^m$. The data were randomly generated. The symbol $\succeq$ ($\preceq$) stands for element-wise greater (less) than or equal to.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="n">n</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">p</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">m</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">A</span><span class="o">=</span>
+<span class="p">[</span><span class="mf">0.7511</span> <span class="o">-</span><span class="mf">0.1357</span>   <span class="mf">0.7955</span>  <span class="o">-</span><span class="mf">0.4567</span> <span class="mf">0.1356</span>
+<span class="o">-</span><span class="mf">0.6670</span> <span class="o">-</span><span class="mf">0.3326</span>   <span class="mf">0.1657</span>  <span class="o">-</span><span class="mf">0.5519</span> <span class="o">-</span><span class="mf">0.9367</span>
+ <span class="mf">1.5894</span> <span class="o">-</span><span class="mf">0.1302</span>  <span class="o">-</span><span class="mf">0.4313</span>  <span class="o">-</span><span class="mf">0.4875</span>  <span class="mf">0.4179</span><span class="p">]</span>
+
+<span class="n">B</span><span class="o">=</span>
+<span class="p">[</span><span class="o">-</span><span class="mf">0.09520</span> <span class="o">-</span><span class="mf">0.28056</span> <span class="o">-</span><span class="mf">1.33978</span> <span class="mf">0.6506</span>
+ <span class="o">-</span><span class="mf">0.8581</span>  <span class="o">-</span><span class="mf">0.3518</span>   <span class="mf">1.2788</span>  <span class="mf">1.5114</span>
+ <span class="o">-</span><span class="mf">0.5925</span>  <span class="mf">1.3477</span>    <span class="mf">0.1589</span>  <span class="mf">0.03495</span><span class="p">]</span>
+
+<span class="n">c</span><span class="o">=</span><span class="p">[</span><span class="mf">0.3468</span><span class="p">,</span><span class="mf">0.8687</span><span class="p">,</span><span class="mf">0.1200</span><span class="p">,</span><span class="mf">0.5024</span><span class="p">,</span><span class="mf">0.2884</span><span class="p">]</span>
+
+<span class="n">d</span><span class="o">=</span><span class="p">[</span><span class="mf">0.2017</span><span class="p">,</span><span class="mf">0.2712</span><span class="p">,</span><span class="mf">0.4997</span><span class="p">,</span><span class="mf">0.9238</span><span class="p">]</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.1716</span><span class="p">,</span><span class="mf">0.3610</span><span class="p">,</span><span class="mf">0.0705</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[27]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>3-element Array{Float64,1}:
+ 0.1716
+ 0.361 
+ 0.0705</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="k">using</span> <span class="n">JuMP</span>
+<span class="k">using</span> <span class="n">GLPKMathProgInterface</span>
+
+<span class="n">sfMipModel</span> <span class="o">=</span> <span class="n">Model</span><span class="p">(</span><span class="n">solver</span> <span class="o">=</span> <span class="n">GLPKSolverMIP</span><span class="p">())</span>
+
+<span class="p">@</span><span class="n">defVar</span><span class="p">(</span><span class="n">sfMipModel</span><span class="p">,</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">]</span> <span class="o">&gt;=</span><span class="mi">0</span><span class="p">)</span>
+<span class="p">@</span><span class="n">defVar</span><span class="p">(</span><span class="n">sfMipModel</span><span class="p">,</span> <span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="n">p</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">,</span> <span class="kt">Int</span><span class="p">)</span>
+
+<span class="p">@</span><span class="n">setObjective</span><span class="p">(</span><span class="n">sfMipModel</span><span class="p">,</span> <span class="n">Min</span><span class="p">,</span> <span class="n">sum</span><span class="p">{</span><span class="n">c</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">}</span><span class="o">+</span><span class="n">sum</span><span class="p">{</span><span class="n">d</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="p">:</span><span class="n">p</span><span class="p">})</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="n">m</span><span class="p">]</span>
+    <span class="p">@</span><span class="n">addConstraint</span><span class="p">(</span><span class="n">sfMipModel</span><span class="p">,</span> <span class="n">sum</span><span class="p">{</span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">j</span> <span class="k">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">]}</span><span class="o">+</span> <span class="n">sum</span><span class="p">{</span><span class="n">B</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span><span class="o">*</span><span class="n">y</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">j</span> <span class="k">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="n">p</span><span class="p">]}</span> <span class="o">==</span> <span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+<span class="k">end</span>
+
+<span class="n">print</span><span class="p">(</span><span class="n">sfMipModel</span><span class="p">,</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">)</span>
+<span class="n">statusMipModel</span> <span class="o">=</span> <span class="n">solve</span><span class="p">(</span><span class="n">sfMipModel</span><span class="p">)</span>
+<span class="n">print</span><span class="p">(</span><span class="s">&quot;Status of the problem is &quot;</span><span class="p">,</span> <span class="n">statusMipModel</span><span class="p">,</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">statusMipModel</span> <span class="o">==</span> <span class="p">:</span><span class="n">Optimal</span>
+    <span class="n">print</span> <span class="p">(</span><span class="s">&quot;Optimal objective value = &quot;</span><span class="p">,</span> <span class="n">getObjectiveValue</span><span class="p">(</span><span class="n">sfMipModel</span><span class="p">),</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">Optimal x = &quot;</span><span class="p">,</span> <span class="n">getValue</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">Optimal y = &quot;</span><span class="p">,</span> <span class="n">getValue</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+<span class="k">end</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Min 0.3468 x[1] + 0.8687 x[2] + 0.12 x[3] + 0.5024 x[4] + 0.2884 x[5] + 0.2017 y[1] + 0.2712 y[2] + 0.4997 y[3] + 0.9238 y[4]
+Subject to
+ 0.7511 x[1] - 0.1357 x[2] + 0.7955 x[3] - 0.4567 x[4] + 0.1356 x[5] - 0.0952 y[1] - 0.28056 y[2] - 1.33978 y[3] + 0.6506 y[4] == 0.1716
+ -0.667 x[1] - 0.3326 x[2] + 0.1657 x[3] - 0.5519 x[4] - 0.9367 x[5] - 0.8581 y[1] - 0.3518 y[2] + 1.2788 y[3] + 1.5114 y[4] == 0.361
+ 1.5894 x[1] - 0.1302 x[2] - 0.4313 x[3] - 0.4875 x[4] + 0.4179 x[5] - 0.5925 y[1] + 1.3477 y[2] + 0.1589 y[3] + 0.03495 y[4] == 0.0705
+ x[i] &gt;= 0 for all i in {1,2..4,5}
+ y[i] &gt;= 0, integer, for all i in {1,2,3,4}
+
+Status of the problem is Optimal
+Optimal objective value = 1.070277955983598
+Optimal x = x: 1 dimensions:
+[1] = 0.0654906726037024
+[2] = 0.0
+[3] = 1.6298599862096397
+[4] = 0.0
+[5] = 1.221506908389311
+
+Optimal y = y: 1 dimensions:
+[1] = 0.0
+[2] = 0.0
+[3] = 1.0
+[4] = 0.0
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Reference">Reference<a class="anchor-link" href="#Reference">&#182;</a></h1><p>[1] M. Lubin and I. Dunning, “Computing in Operations Research using Julia”, INFORMS Journal on Computing, to appear, 2014. <a href="http://arxiv.org/abs/1312.1431">arXiv:1312.1431</a></p>
+
+</div>
+</div>
+</div>    </div> <!-- /container -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <!-- MathJax -->
+    <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+  </body>
+</html>

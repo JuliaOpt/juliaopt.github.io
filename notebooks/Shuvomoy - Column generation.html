@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="JuliaOpt - Optimization packages for the Julia language">
+    <meta name="author" content="Iain Dunning">
+    <link rel="icon" href="favicon.ico">
+
+    <title>JuliaOpt - Optimization packages for the Julia language</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+    <!-- Additional styles -->
+    <style>
+      body {
+        padding-top: 60px;
+        padding-bottom: 20px;
+      }
+    </style>
+    <style type="text/css">
+    .highlight .hll { background-color: #ffffcc }
+.highlight  { background: #f8f8f8; }
+.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
+    </style>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div class="container">
+
+
+      <!-- Static navbar -->
+      <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/index.html">JuliaOpt</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="#about">About</a></li>
+              <li><a href="#packages">Packages</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li class="divider"></li>
+                  <li class="dropdown-header">Nav header</li>
+                  <li><a href="#">Separated link</a></li>
+                  <li><a href="#">One more separated link</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </nav>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Description:</strong> This notebook describes how to implement column generation, which is a large scale optimization scheme, in JuMP. The cutting stock problem has been used as an illustrative example.</p>
+<p><strong>Author:</strong> <a href="http://scg.utoronto.ca/~shuvomoy.dasgupta/">Shuvomoy Das Gupta</a></p>
+<p><strong>License:</strong> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>
+<h1 id="Using-Julia+JuMP-for-optimization---column-generation">Using Julia+JuMP for optimization - column generation<a class="anchor-link" href="#Using-Julia+JuMP-for-optimization---column-generation">&#182;</a></h1><hr>
+<p>Implementing large scale optimization techniques such as column generation is really easy using JuMP. To explain how to implement column generation in JuMP, we consider the famous cutting stock problem. For more details about the problem, see pages 234-236 of Introduction to Linear Optimization by Bertsimas and Tsitsiklis.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Notation-and-notions:">Notation and notions:<a class="anchor-link" href="#Notation-and-notions:">&#182;</a></h2><ul>
+<li>Width of a large roll is $W$, and it needs to be cut into smaller width papers according to customer demand</li>
+<li>The set of indices of all feasible patterns is, $\mathcal{J}=\{1,2,\ldots,n\}$, where $n$ is a very large number</li>
+<li>A strict subset of $\mathcal{J}$ that is considered in the master problem is $\mathcal{J}'$</li>
+<li>The dummy index for a pattern is $j$ </li>
+<li>The index set of all possible paper-widths is, $\mathcal{M}=\{1,2,\ldots,m\}$</li>
+<li>The width of the paper with index $i$ is $w_i$</li>
+<li>The demand for the paper of width $w_i$ is $b_i$</li>
+<li>Number of smaller rolls of width $w_i$ produced by pattern $j$ is denoted by $a_{ij}$</li>
+<li>Number of large rolls cut according to pattern $j$ is denoted by $x_j$</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+<h2 id="Original-unabridged-problem:">Original unabridged problem:<a class="anchor-link" href="#Original-unabridged-problem:">&#182;</a></h2>$$
+\begin{align}
+&\text{minimize} && \sum_{j \in \mathcal{J}}{x_j} \\
+&\text{subject to} &&\\
+& &&\forall i \in \mathcal{M} \quad \sum_{j \in \mathcal{J}}{a_{ij} x_j}=b_i \\
+& && \forall j \in \mathcal{J} \quad x_j \geq 0 \\
+\end{align}
+$$<p>Because the set $\mathcal{J}$ can be astronomically large, even storing the problem is a challenge. So, we start with a smaller version of the problem, called the master problem, by replacing $\mathcal{J}$ with a strict subset $\mathcal{J}'$, which is much smaller than the original one.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+<h2 id="Structure-of-the-decomposition">Structure of the decomposition<a class="anchor-link" href="#Structure-of-the-decomposition">&#182;</a></h2><p><strong>Master Problem:</strong>
+$$
+\begin{align}
+&\text{minimize} && \sum_{j \in \mathcal{J}'}{x_j} \\
+&\text{subject to} &&\\
+& &&\forall i \in \mathcal{M} \quad \sum_{j \in \mathcal{J}'}{a_{ij} x_j}=b_i \\
+& && \forall j \in \mathcal{J}' \quad x_j \geq 0 \\
+\end{align}
+$$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>After solving the master problem, we want to check the optimality status. Structure of the cutting stock problem allows us to construct a subproblem which can do this very easily.</p>
+<p><strong>Subproblem:</strong>
+$$
+\begin{align}
+&\text{minimize} && 1 - \sum_{i \in \mathcal{M}} \quad {p_i a_{i {j^*}}} \\
+&\text{subject to} &&\\
+& && \forall i \in \mathcal{M} \quad a_{i {j^*}} \geq 0, \quad a_{ij^*} \; \text{integer} \\
+& && \sum_{i \in \mathcal{M}}{w_i a_{i{j^*}}} \leq W\\
+\end{align}
+$$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The objective of the subproblem is the minimum of the reduced cost vector of the original problem. If the objective value of the subproblem is greater than or equal to $0$, then the current solution of the master problem is optimal for the original unabridged problem. Otherwise, add the resultant cost reducing column $(a_{i {j^*}})_{i \in \mathcal{M}}=A_{j*}$ and a corresponding new variable $x_{j*}$ is added to the master problem. The modified master problem is as follows:</p>
+<p><strong>Modified Master Problem</strong>
+$$
+\begin{align}
+&\text{minimize} && \sum_{j \in \mathcal{J}'}{x_j} + x_{j^*} \\
+&\text{subject to} &&\\
+& &&\forall i \in \mathcal{M} \quad \sum_{j \in \mathcal{J}'}{a_{ij} x_j}+a_{i j^*} x_{j^*}=b_i \\
+& && \forall j \in \mathcal{J}'  \quad x_j \geq 0, x_j^* \geq 0 \\
+\end{align}
+$$</p>
+<p>The pseudocode for the cutting stock problem is given below.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Pseduocode">Pseduocode<a class="anchor-link" href="#Pseduocode">&#182;</a></h2><ul>
+<li>Input preliminary data for starting the problem</li>
+<li>Solve the master problem with the initial data</li>
+</ul>
+$$
+\begin{align}
+&\text{minimize} && \sum_{j \in \mathcal{J}'}{x_j} \\
+&\text{subject to} &&\\
+& &&\forall i \in \mathcal{M} \quad \sum_{j \in \mathcal{J}'}{a_{ij} x_j}=b_i \\
+& && \forall j \in \mathcal{J}' \quad x_j \geq 0 \\
+\end{align}
+$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><p>Collect the dual variables for the equality constraints and store them in an array $(p_i)_{i \in \mathcal{M}}$</p>
+</li>
+<li><p>Solve the sub problem</p>
+</li>
+</ul>
+$$
+\begin{align}
+&\text{minimize} && 1 - \sum_{i \in \mathcal{M}} \quad {p_i a_{i {j^*}}} \\
+&\text{subject to} &&\\
+& && \forall i \in \mathcal{M} \quad a_{i {j^*}} \geq 0,  \quad a_{ij^*} \; \text{integer} \\
+& && \sum_{i \in \mathcal{M}}{w_i a_{i{j^*}}} \leq W\\
+\end{align}
+$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Flow control:<br></li>
+</ul>
+<p>while ( $\text{optimal value of the subproblem} < 0$) <br></p>
+<blockquote><ul>
+<li>Add the column $(a_{i {j^*}})_{i \in \mathcal{M}}=A_{j*}$ to $A$ <br></li>
+<li>Add a corresponding new variable $x_{j*}$ to the list of variables <br></li>
+<li>Solve the modified master problem <br></li>
+</ul>
+</blockquote>
+<p>$$
+ \begin{align}
+&\text{minimize} && \sum_{j \in \mathcal{J}'}{x_j} + x_{j^*} \\
+&\text{subject to} &&\\
+& &&\forall i \in \mathcal{M} \quad \sum_{j \in \mathcal{J}'}{a_{ij} x_j}+a_{i j^*} x_{j^*}=b_i \\
+& && \forall j \in \mathcal{J}'  \quad x_j \geq 0 \\
+& && \qquad \qquad \; \; x_{j^*} \geq 0
+\end{align}
+$$</p>
+<blockquote><ul>
+<li>Collect the dual variables for the equality constraints and store them in an array $(p_i)_{i \in \mathcal{M}}$</li>
+<li>Solve the sub problem as before <br></li>
+<li>Set $\mathcal{J}':=\mathcal{J}'\cup \{j^*\}$ <br></li>
+</ul>
+</blockquote>
+<p>end while <br></p>
+<ul>
+<li>Display the results   </li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Master-Problem-Modification-in-JuMP">Master Problem Modification in JuMP<a class="anchor-link" href="#Master-Problem-Modification-in-JuMP">&#182;</a></h2><p>The problem modification can be done by using the already mentioned <code>@defVar</code> macro:</p>
+$$
+\texttt{@defVar}(m, l \leq x_\text{new} \leq u, \texttt{Int},  \texttt{objective} = c_\text{new}, \texttt{inconstraints} = \text{arrayConstrrefs}, \texttt{coefficients} = \text{arrayCoefficients}) 
+$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Here:</p>
+<ul>
+<li>The name of the original model is $m$.</li>
+<li>The new variable to be added is $x_\text{new}$ with lower bound $l$ and upper bound $u$.</li>
+<li>The type of the variable can be <code>Int</code>, <code>Bin</code>. For real variable the third argument is left vacant.</li>
+<li>The original objective, say $f_o(x)$ will become $f_o(x) +  c_\text{new} x_\text{new}$ after modification</li>
+<li>The array $\texttt{arrayConstrrefs}$ contain references to those constraints that need to be modified by inclusion of $x_\text{new}$</li>
+<li>The array $\texttt{arrayCoefficients}$ contain the coefficients that have to multiplied with $x_\text{new}$ and then added to the constraints referenced by $\texttt{arrayConstrrefs}$ in an orderly manner. For example, if the $i$th element of $\texttt{arrayConstrrefs}$ refers to a constraint $a_i^T x \lesseqgtr b_i$, then after invoking the command, the constraint is modified as:
+$a_i^T x +\texttt{arrayCoefficients}[i] x_\text{new} \lesseqgtr b_i$</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Implementing-one-iteration-of-the-column-generation-algorithm">Implementing one iteration of the column generation algorithm<a class="anchor-link" href="#Implementing-one-iteration-of-the-column-generation-algorithm">&#182;</a></h2><p>To understand how the column generation is working in Julia, we implement one iteration of the column generation algorithm manually. The entire code is presented in the next section.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="c"># Uploading the packages:</span>
+<span class="c"># -----------------------</span>
+
+<span class="k">using</span> <span class="n">JuMP</span> 
+
+<span class="c"># We will use default solvers</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="c"># Input preliminary data for starting the problem</span>
+<span class="c"># -----------------------------------------------</span>
+
+<span class="n">W</span><span class="o">=</span><span class="mi">100</span>
+<span class="n">cardinalityM</span><span class="o">=</span><span class="mi">5</span>
+<span class="n">M</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="n">cardinalityM</span><span class="p">]</span>
+<span class="n">A</span><span class="o">=</span><span class="n">eye</span><span class="p">(</span><span class="n">cardinalityM</span><span class="p">)</span>
+<span class="n">p</span><span class="o">=</span><span class="n">zeros</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">b</span><span class="o">=</span><span class="p">[</span><span class="mi">45</span><span class="p">;</span> <span class="mi">38</span><span class="p">;</span> <span class="mi">25</span><span class="p">;</span> <span class="mi">11</span><span class="p">;</span> <span class="mi">12</span><span class="p">]</span>
+<span class="n">w</span><span class="o">=</span><span class="p">[</span><span class="mi">22</span><span class="p">;</span> <span class="mi">42</span><span class="p">;</span> <span class="mi">52</span><span class="p">;</span> <span class="mi">53</span><span class="p">;</span> <span class="mi">78</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[2]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>5-element Array{Int64,1}:
+ 22
+ 42
+ 52
+ 53
+ 78</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="c"># Description of the master problem with the initial data</span>
+<span class="c">#----------------------</span>
+
+<span class="n">cutstockMain</span> <span class="o">=</span> <span class="n">Model</span><span class="p">()</span> <span class="c"># Model for the master problem</span>
+<span class="n">Jprime</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="n">size</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="mi">2</span><span class="p">)]</span> <span class="c"># Initial number of variables</span>
+<span class="p">@</span><span class="n">defVar</span><span class="p">(</span><span class="n">cutstockMain</span><span class="p">,</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">x</span><span class="p">[</span><span class="n">Jprime</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">1000000</span><span class="p">)</span> <span class="c"># Defining the variables</span>
+<span class="p">@</span><span class="n">setObjective</span><span class="p">(</span><span class="n">cutstockMain</span><span class="p">,</span> <span class="n">Min</span><span class="p">,</span> <span class="n">sum</span><span class="p">{</span><span class="mi">1</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="n">j</span><span class="p">],</span><span class="n">j</span> <span class="k">in</span> <span class="n">Jprime</span><span class="p">})</span> <span class="c"># Setting the objective</span>
+<span class="p">@</span><span class="n">addConstraint</span><span class="p">(</span><span class="n">cutstockMain</span><span class="p">,</span> <span class="n">consRef</span><span class="p">[</span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">:</span><span class="n">cardinalityM</span><span class="p">],</span> <span class="n">sum</span><span class="p">{</span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">j</span> <span class="k">in</span> <span class="n">Jprime</span><span class="p">}</span><span class="o">==</span><span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> 
+<span class="c"># Here the second argument consRef[i=1:cardinalityM] means that the i-th constraint aᵢᵀx = bᵢ has the corresponding constraint reference</span>
+<span class="c"># consRef[i]</span>
+<span class="n">print</span><span class="p">(</span><span class="n">cutstockMain</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Min x[1] + x[2] + x[3] + x[4] + x[5]
+Subject to
+ x[1] == 45
+ x[2] == 38
+ x[3] == 25
+ x[4] == 11
+ x[5] == 12
+ 0 &lt;= x[i] &lt;= 1.0e6 for all i in {1,2..4,5}
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="c"># Solving the master problem with the initial data</span>
+<span class="c"># ------------------------------------------------</span>
+<span class="n">solve</span><span class="p">(</span><span class="n">cutstockMain</span><span class="p">)</span>
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;Current solution of the master problem is &quot;</span><span class="p">,</span> <span class="n">getValue</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;Current objective value of the master problem is &quot;</span><span class="p">,</span> <span class="n">getObjectiveValue</span><span class="p">(</span><span class="n">cutstockMain</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Current solution of the master problem is x: 1 dimensions, 5 entries:
+ [1] = 45.0
+ [2] = 38.0
+ [3] = 25.0
+ [4] = 11.0
+ [5] = 12.0
+Current objective value of the master problem is 131.0
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="c">#Collect the dual variables for the equality constraints and store them in an array p</span>
+<span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="n">M</span>
+    <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">getDual</span><span class="p">(</span><span class="n">consRef</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="c"># These p[i] are the input data for the subproblem</span>
+<span class="k">end</span> 
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;The array storing the dual variables is &quot;</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>The array storing the dual variables is [1.0,1.0,1.0,1.0,1.0]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="c"># Describe the sub problem</span>
+<span class="c"># ------------------------</span>
+<span class="n">cutstockSub</span><span class="o">=</span><span class="n">Model</span><span class="p">()</span> <span class="c"># Model for the subproblem</span>
+<span class="p">@</span><span class="n">defVar</span><span class="p">(</span><span class="n">cutstockSub</span><span class="p">,</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">Ajstar</span><span class="p">[</span><span class="n">M</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">1000000</span><span class="p">,</span> <span class="kt">Int</span> <span class="p">)</span>
+<span class="p">@</span><span class="n">setObjective</span><span class="p">(</span><span class="n">cutstockSub</span><span class="p">,</span> <span class="n">Min</span><span class="p">,</span> <span class="mi">1</span><span class="o">-</span><span class="n">sum</span><span class="p">{</span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">Ajstar</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">i</span> <span class="k">in</span> <span class="n">M</span><span class="p">})</span>
+<span class="p">@</span><span class="n">addConstraint</span><span class="p">(</span><span class="n">cutstockSub</span><span class="p">,</span> <span class="n">sum</span><span class="p">{</span><span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">Ajstar</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">i</span> <span class="k">in</span> <span class="n">M</span><span class="p">}</span> <span class="o">&lt;=</span> <span class="n">W</span><span class="p">)</span>
+<span class="n">print</span><span class="p">(</span><span class="n">cutstockSub</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Min -Ajstar[1] - Ajstar[2] - Ajstar[3] - Ajstar[4] - Ajstar[5] + 1
+Subject to
+ 22 Ajstar[1] + 42 Ajstar[2] + 52 Ajstar[3] + 53 Ajstar[4] + 78 Ajstar[5] &lt;= 100
+ 0 &lt;= Ajstar[i] &lt;= 1.0e6, integer, for all i in {1,2..4,5}
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="c"># Solve the sub problem</span>
+<span class="c"># ---------------------</span>
+<span class="n">solve</span><span class="p">(</span><span class="n">cutstockSub</span><span class="p">)</span>
+<span class="n">minreducedCost</span><span class="o">=</span><span class="n">getObjectiveValue</span><span class="p">(</span><span class="n">cutstockSub</span><span class="p">)</span>
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;The minimum component of the reduced cost vector is &quot;</span><span class="p">,</span> <span class="n">minreducedCost</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>The minimum component of the reduced cost vector is -3.0
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The minimum component of the reduced cost vector is negative, so we have a suboptimal solution.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="k">if</span> <span class="n">minreducedCost</span> <span class="o">&gt;=</span> <span class="mi">0</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">&quot;We are done, current solution of the master problem is optimal&quot;</span><span class="p">)</span>
+<span class="k">else</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">&quot;We have a cost reducing column &quot;</span><span class="p">,</span> <span class="n">getValue</span><span class="p">(</span><span class="n">Ajstar</span><span class="p">))</span>
+<span class="k">end</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>We have a cost reducing column Ajstar: 1 dimensions, 5 entries:
+ [1] = 4.0
+ [2] = 0.0
+ [3] = 0.0
+ [4] = 0.0
+ [5] = 0.0
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="nb">typeof</span><span class="p">(</span><span class="n">Ajstar</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[9]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>JuMPDict{Variable,1} (constructor with 1 method)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now <code>Ajstar</code> is of type JuMPDict. To use it in the modified master problem, we have to store values from <code>Ajstar</code> in a column vector.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="n">Anew</span><span class="o">=</span><span class="kt">Float64</span><span class="p">[]</span> <span class="c"># This Anew correspond to the newly added column to the A matrix</span>
+<span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="p">:</span><span class="n">cardinalityM</span><span class="p">)</span>
+    <span class="n">push</span><span class="o">!</span><span class="p">(</span><span class="n">Anew</span><span class="p">,</span> <span class="n">getValue</span><span class="p">(</span><span class="n">Ajstar</span><span class="p">)[</span><span class="n">i</span><span class="p">])</span>
+<span class="k">end</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>When we add the cost reducing column <code>Anew</code> to the original matrix <code>A</code>, it also gives rise to a new variable <code>xNew</code> corresponding to <code>Anew</code>. Now we want to keep track of the new variables that are added by the subproblem. We do this by declaring an array of <code>Variable</code>s named <code>xNewArray</code>, which will contain all such newly added variables in the process of column generation.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="n">xNewArray</span><span class="o">=</span><span class="n">Variable</span><span class="p">[]</span> <span class="c"># The newly added variables by flow control will be</span>
+<span class="c"># pushed to the new array of variables xNewArray</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[11]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0-element Array{Variable,1}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Here we just illustrate one iteration of the while loop manually, because, for now, we are interested to understand how JuMP is managing the flow control and modifying the master problem and the sub problem.</p>
+<p>Let's modify the master problem by adding the new column <code>Anew</code> to the old <code>A</code> matrix. Note that we do not have to rewrite the entire model.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="c"># Modify the master problem by adding the new column Anew to the old A matrix</span>
+<span class="p">@</span><span class="n">defVar</span><span class="p">(</span>
+<span class="n">cutstockMain</span><span class="p">,</span> <span class="c"># Model to be modified</span>
+<span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">xNew</span> <span class="o">&lt;=</span> <span class="mi">1000000</span><span class="p">,</span> <span class="c"># New variable to be added</span>
+<span class="n">objective</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="c"># cost coefficient of new variable in the objective</span>
+<span class="n">inconstraints</span><span class="o">=</span><span class="n">consRef</span><span class="p">,</span>  <span class="c"># constraints to be modified</span>
+<span class="n">coefficients</span><span class="o">=</span><span class="n">Anew</span> <span class="c"># the coefficients of the variable in those constraints</span>
+<span class="p">)</span> 
+
+<span class="c"># The line above adds the column (aᵢⱼ*)ᵢ=Aⱼ* to A &lt;br&gt;</span>
+<span class="c"># and add a corresponding new variable xⱼ* to the list of variable</span>
+
+<span class="n">push</span><span class="o">!</span><span class="p">(</span><span class="n">xNewArray</span><span class="p">,</span> <span class="n">xNew</span><span class="p">)</span> <span class="c"># Pushing the new variable in the array of new variables</span>
+<span class="n">print</span><span class="p">(</span><span class="n">cutstockMain</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Min x[1] + x[2] + x[3] + x[4] + x[5] + xNew
+Subject to
+ x[1] + 4 xNew == 45
+ x[2] == 38
+ x[3] == 25
+ x[4] == 11
+ x[5] == 12
+ 0 &lt;= x[i] &lt;= 1.0e6 for all i in {1,2..4,5}
+ 0 &lt;= xNew &lt;= 1.0e6
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Though we are showing only one iteration of the flow control, in the final code for sure we want to have a</p>
+<blockquote>
+<pre><code>while ( some condition )
+(
+...
+)
+end</code></pre>
+</blockquote>
+<p>block.</p>
+<p>Now if we do not do anything else in the final code, all the names of the newly added variables by the <code>while</code> loop will be the same: <code>xNew</code>! JuMP is intelligent enough  to treat them as separate variables, but it is not very human-friendly. It is more convenient if the newly added variables were given different names, which we can achieve by <code>setName(oldName, newName)</code> function.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="n">setName</span><span class="p">(</span><span class="n">xNew</span><span class="p">,</span> <span class="n">string</span><span class="p">(</span><span class="s">&quot;x[&quot;</span><span class="p">,</span><span class="n">size</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="s">&quot;]&quot;</span><span class="p">))</span> <span class="c"># Changing the name of the variable </span>
+<span class="c"># otherwise all the newly added variables will have name xNew!</span>
+<span class="c"># size(A,2) gives the column number of A</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[13]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&quot;x[6]&quot;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Let us see if the name of the variable has changed as desired.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="n">print</span><span class="p">(</span><span class="n">cutstockMain</span><span class="p">)</span> <span class="c"># Let us see if the name of the variables have changed as desired</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Min x[1] + x[2] + x[3] + x[4] + x[5] + x[6]
+Subject to
+ x[1] + 4 x[6] == 45
+ x[2] == 38
+ x[3] == 25
+ x[4] == 11
+ x[5] == 12
+ 0 &lt;= x[i] &lt;= 1.0e6 for all i in {1,2..4,5}
+ 0 &lt;= x[6] &lt;= 1.0e6
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Indeed it has! Now let's solve the modified master problem, and then collect the associated dual variables for the equality constraints and store them in the array <code>p</code>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="n">statusControlFlow</span><span class="o">=</span><span class="n">solve</span><span class="p">(</span><span class="n">cutstockMain</span><span class="p">)</span> <span class="c"># Solve the modified master problem</span>
+
+<span class="n">getDual</span><span class="p">(</span><span class="n">consRef</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="n">M</span>
+    <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">getDual</span><span class="p">(</span><span class="n">consRef</span><span class="p">)[</span><span class="n">i</span><span class="p">]</span> 
+<span class="k">end</span> 
+
+<span class="n">println</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[0.25,1.0,1.0,1.0,1.0]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now we solve the subproblem for the current solution of the master problem:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="c"># Solving the modified sub problem        </span>
+<span class="p">@</span><span class="n">defVar</span><span class="p">(</span><span class="n">cutstockSub</span><span class="p">,</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">Ajstar</span><span class="p">[</span><span class="n">M</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">1000000</span><span class="p">,</span> <span class="kt">Int</span> <span class="p">)</span>
+<span class="p">@</span><span class="n">setObjective</span><span class="p">(</span><span class="n">cutstockSub</span><span class="p">,</span> <span class="n">Min</span><span class="p">,</span> <span class="mi">1</span><span class="o">-</span><span class="n">sum</span><span class="p">{</span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">Ajstar</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">i</span> <span class="k">in</span> <span class="n">M</span><span class="p">})</span>
+<span class="p">@</span><span class="n">addConstraint</span><span class="p">(</span><span class="n">cutstockSub</span><span class="p">,</span> <span class="n">sum</span><span class="p">{</span><span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">Ajstar</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">i</span> <span class="k">in</span> <span class="n">M</span><span class="p">}</span> <span class="o">&lt;=</span> <span class="n">W</span><span class="p">)</span>
+<span class="n">print</span><span class="p">(</span><span class="n">cutstockSub</span><span class="p">)</span> <span class="c"># Let&#39;s see what is the current subproblem looks like</span>
+<span class="n">solve</span><span class="p">(</span><span class="n">cutstockSub</span><span class="p">)</span>
+<span class="n">minReducedCost</span><span class="o">=</span><span class="n">getObjectiveValue</span><span class="p">(</span><span class="n">cutstockSub</span><span class="p">)</span>
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;Current value of the minimum of the reduced cost vector is &quot;</span><span class="p">,</span> <span class="n">minReducedCost</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Min -0.25 Ajstar[1] - Ajstar[2] - Ajstar[3] - Ajstar[4] - Ajstar[5] + 1
+Subject to
+ 22 Ajstar[1] + 42 Ajstar[2] + 52 Ajstar[3] + 53 Ajstar[4] + 78 Ajstar[5] &lt;= 100
+ 22 Ajstar[1] + 42 Ajstar[2] + 52 Ajstar[3] + 53 Ajstar[4] + 78 Ajstar[5] &lt;= 100
+ 0 &lt;= Ajstar[i] &lt;= 1.0e6, integer, for all i in {1,2..4,5}
+ 0 &lt;= Ajstar[i] &lt;= 1.0e6, integer, for all i in {1,2..4,5}
+</pre>
+</div>
+</div>
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>WARNING: Ignoring partial starting solution. Cbc requires a feasible value to be specified for all variables.
+</pre>
+</div>
+</div>
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Current value of the minimum of the reduced cost vector is -1.0
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The optimal value of the current subproblem is negative (which will be tested by the conditional statement of the while loop in the final code), giving us a cost reducing column to be added in the master problem. As before we have to store the column <code>Ajstar</code> in a column vector <code>Anew</code>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="c">#Store the components of the solution of current subproblem into the column Anew    </span>
+<span class="n">Anew</span><span class="o">=</span><span class="kt">Float64</span><span class="p">[]</span>
+<span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="p">:</span><span class="n">cardinalityM</span><span class="p">)</span>
+    <span class="n">push</span><span class="o">!</span><span class="p">(</span><span class="n">Anew</span><span class="p">,</span> <span class="n">getValue</span><span class="p">(</span><span class="n">Ajstar</span><span class="p">)[</span><span class="n">i</span><span class="p">])</span>
+<span class="k">end</span>
+
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;New column to be added to A is: &quot;</span><span class="p">,</span> <span class="n">Anew</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>New column to be added to A is: [0.0,2.0,0.0,0.0,0.0]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Okay, we have understood how JuMP is working in the column generation process. The entire code of the cutting stock problem is given below:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Cutting-stock-problem-code:">Cutting stock problem code:<a class="anchor-link" href="#Cutting-stock-problem-code:">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="c"># Verfied to be working:</span>
+
+                                                <span class="c"># Uploading the packages:</span>
+                                                <span class="c"># -----------------------</span>
+
+<span class="k">using</span> <span class="n">JuMP</span>
+<span class="k">using</span> <span class="n">GLPKMathProgInterface</span>
+
+                                     <span class="c"># Input preliminary data for starting the problem</span>
+                                                <span class="c"># ----------------------</span>
+
+<span class="n">W</span><span class="o">=</span><span class="mi">100</span>
+<span class="n">cardinalityM</span><span class="o">=</span><span class="mi">5</span>
+<span class="n">M</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="n">cardinalityM</span><span class="p">]</span>
+<span class="n">A</span><span class="o">=</span><span class="n">eye</span><span class="p">(</span><span class="n">cardinalityM</span><span class="p">)</span>
+<span class="n">p</span><span class="o">=</span><span class="n">zeros</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">b</span><span class="o">=</span><span class="p">[</span><span class="mi">45</span><span class="p">;</span> <span class="mi">38</span><span class="p">;</span> <span class="mi">25</span><span class="p">;</span> <span class="mi">11</span><span class="p">;</span> <span class="mi">12</span><span class="p">]</span>
+<span class="n">w</span><span class="o">=</span><span class="p">[</span><span class="mi">22</span><span class="p">;</span> <span class="mi">42</span><span class="p">;</span> <span class="mi">52</span><span class="p">;</span> <span class="mi">53</span><span class="p">;</span> <span class="mi">78</span><span class="p">]</span>
+
+<span class="p">@</span><span class="n">time</span> <span class="k">begin</span> <span class="c"># time measurement begins</span>
+
+                                     <span class="c"># Solve the master problem with the initial data</span>
+                                                <span class="c">#----------------------</span>
+
+<span class="n">cutstockMain</span> <span class="o">=</span> <span class="n">Model</span><span class="p">()</span> <span class="c"># Model for the master problem</span>
+<span class="n">Jprime</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="n">size</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="mi">2</span><span class="p">)]</span> <span class="c"># Intial number of variables</span>
+<span class="p">@</span><span class="n">defVar</span><span class="p">(</span><span class="n">cutstockMain</span><span class="p">,</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">x</span><span class="p">[</span><span class="n">Jprime</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">1000000</span><span class="p">)</span> <span class="c"># Defining the variables</span>
+    
+<span class="p">@</span><span class="n">setObjective</span><span class="p">(</span><span class="n">cutstockMain</span><span class="p">,</span> <span class="n">Min</span><span class="p">,</span> <span class="n">sum</span><span class="p">{</span><span class="mi">1</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="n">j</span><span class="p">],</span><span class="n">j</span> <span class="k">in</span> <span class="n">Jprime</span><span class="p">})</span> <span class="c"># Setting the objective</span>
+    
+<span class="p">@</span><span class="n">addConstraint</span><span class="p">(</span><span class="n">cutstockMain</span><span class="p">,</span> <span class="n">consRef</span><span class="p">[</span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">:</span><span class="n">cardinalityM</span><span class="p">],</span> <span class="n">sum</span><span class="p">{</span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">j</span> <span class="k">in</span> <span class="n">Jprime</span><span class="p">}</span><span class="o">==</span><span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="c"># Adding the constraints</span>
+<span class="c"># Here the second argument consRef[i=1:cardinalityM] means that the i-th constraint aᵢᵀx = bᵢ has </span>
+<span class="c"># the corresponding constraint reference consRef[i]</span>
+
+<span class="n">solve</span><span class="p">(</span><span class="n">cutstockMain</span><span class="p">)</span>
+ 
+<span class="c">#Collect the dual variables for the equality constraints and store them in an array p</span>
+<span class="n">getDual</span><span class="p">(</span><span class="n">consRef</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="n">M</span>
+    <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">getDual</span><span class="p">(</span><span class="n">consRef</span><span class="p">)[</span><span class="n">i</span><span class="p">]</span> <span class="c"># These p[i] are the input data for the subproblem</span>
+<span class="k">end</span> 
+
+                                             <span class="c"># Solve the sub problem</span>
+                                                <span class="c"># -------------------</span>
+
+<span class="n">cutstockSub</span><span class="o">=</span><span class="n">Model</span><span class="p">()</span> <span class="c"># Model for the subproblem</span>
+<span class="p">@</span><span class="n">defVar</span><span class="p">(</span><span class="n">cutstockSub</span><span class="p">,</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">Ajstar</span><span class="p">[</span><span class="n">M</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">1000000</span><span class="p">,</span> <span class="kt">Int</span> <span class="p">)</span>
+<span class="p">@</span><span class="n">setObjective</span><span class="p">(</span><span class="n">cutstockSub</span><span class="p">,</span> <span class="n">Min</span><span class="p">,</span> <span class="mi">1</span><span class="o">-</span><span class="n">sum</span><span class="p">{</span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">Ajstar</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">i</span> <span class="k">in</span> <span class="n">M</span><span class="p">})</span>
+<span class="p">@</span><span class="n">addConstraint</span><span class="p">(</span><span class="n">cutstockSub</span><span class="p">,</span> <span class="n">sum</span><span class="p">{</span><span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">Ajstar</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">i</span> <span class="k">in</span> <span class="n">M</span><span class="p">}</span> <span class="o">&lt;=</span> <span class="n">W</span><span class="p">)</span>
+<span class="n">solve</span><span class="p">(</span><span class="n">cutstockSub</span><span class="p">)</span>
+<span class="n">minReducedCost</span><span class="o">=</span><span class="n">getObjectiveValue</span><span class="p">(</span><span class="n">cutstockSub</span><span class="p">)</span>
+
+<span class="n">Anew</span><span class="o">=</span><span class="kt">Float64</span><span class="p">[]</span> <span class="c"># This Anew correspond to the newly added column to the A matrix</span>
+<span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="p">:</span><span class="n">cardinalityM</span><span class="p">)</span>
+    <span class="n">push</span><span class="o">!</span><span class="p">(</span><span class="n">Anew</span><span class="p">,</span> <span class="n">getValue</span><span class="p">(</span><span class="n">Ajstar</span><span class="p">)[</span><span class="n">i</span><span class="p">])</span>
+<span class="k">end</span>
+
+<span class="n">xNewArray</span><span class="o">=</span><span class="n">Variable</span><span class="p">[]</span> <span class="c"># The newly added variables by flow control will be pushed to the new array of variables xNewArray</span>
+
+<span class="n">k</span><span class="o">=</span><span class="mi">1</span> <span class="c"># Counter for the while loop</span>
+
+                                                <span class="c"># Flow control</span>
+                                                <span class="c"># ------------</span>
+
+<span class="k">while</span> <span class="p">(</span><span class="n">minReducedCost</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="c">#while (current solution of the master problem is suboptimal, i.e., subproblem objective value &lt; 0)</span>
+    <span class="c"># Solve the master problem by adding the new column Anew to the old A matrix</span>
+     <span class="p">@</span><span class="n">defVar</span><span class="p">(</span>
+             <span class="n">cutstockMain</span><span class="p">,</span> <span class="c"># Model to be modified</span>
+             <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">xNew</span> <span class="o">&lt;=</span> <span class="mi">1000000</span><span class="p">,</span> <span class="c"># New variable to be added</span>
+             <span class="n">objective</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="c"># cost coefficient of new varaible in the objective</span>
+             <span class="n">inconstraints</span><span class="o">=</span><span class="n">consRef</span><span class="p">,</span>  <span class="c"># constraints to be modified</span>
+             <span class="n">coefficients</span><span class="o">=</span><span class="n">Anew</span> <span class="c"># the coefficients of the variable in those constraints</span>
+            <span class="p">)</span> 
+        <span class="c"># The line above adds the column (aᵢⱼ*)ᵢ=Aⱼ* to A &lt;br&gt;</span>
+        <span class="c"># and add a corresponding new variable xⱼ* to the list of variable</span>
+        <span class="n">push</span><span class="o">!</span><span class="p">(</span><span class="n">xNewArray</span><span class="p">,</span> <span class="n">xNew</span><span class="p">)</span> <span class="c"># Pushing the new variable in the array of new variables</span>
+        <span class="n">setName</span><span class="p">(</span><span class="n">xNew</span><span class="p">,</span> <span class="n">string</span><span class="p">(</span><span class="s">&quot;x[&quot;</span><span class="p">,</span><span class="n">size</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="n">k</span><span class="p">,</span><span class="s">&quot;]&quot;</span><span class="p">))</span> <span class="c"># Changing the name of the variable </span>
+                                               <span class="c"># otherwise all the newly added variables will have name xNew!</span>
+        <span class="n">k</span><span class="o">=</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span> <span class="c"># Increasing k by 1</span>
+<span class="n">statusControlFlow</span><span class="o">=</span><span class="n">solve</span><span class="p">(</span><span class="n">cutstockMain</span><span class="p">)</span>
+
+<span class="c">#Collect the dual variables for the equality constraints and store them in an array p</span>
+<span class="n">getDual</span><span class="p">(</span><span class="n">consRef</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="n">M</span>
+    <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">getDual</span><span class="p">(</span><span class="n">consRef</span><span class="p">)[</span><span class="n">i</span><span class="p">]</span> 
+<span class="k">end</span> 
+   
+<span class="c"># Solving the modified sub problem        </span>
+<span class="p">@</span><span class="n">defVar</span><span class="p">(</span><span class="n">cutstockSub</span><span class="p">,</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">Ajstar</span><span class="p">[</span><span class="n">M</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">1000000</span><span class="p">,</span> <span class="kt">Int</span> <span class="p">)</span>
+<span class="p">@</span><span class="n">setObjective</span><span class="p">(</span><span class="n">cutstockSub</span><span class="p">,</span> <span class="n">Min</span><span class="p">,</span> <span class="mi">1</span><span class="o">-</span><span class="n">sum</span><span class="p">{</span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">Ajstar</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">i</span> <span class="k">in</span> <span class="n">M</span><span class="p">})</span>
+<span class="p">@</span><span class="n">addConstraint</span><span class="p">(</span><span class="n">cutstockSub</span><span class="p">,</span> <span class="n">sum</span><span class="p">{</span><span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">Ajstar</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">i</span> <span class="k">in</span> <span class="n">M</span><span class="p">}</span> <span class="o">&lt;=</span> <span class="n">W</span><span class="p">)</span>
+<span class="n">solve</span><span class="p">(</span><span class="n">cutstockSub</span><span class="p">)</span>
+<span class="n">minReducedCost</span><span class="o">=</span><span class="n">getObjectiveValue</span><span class="p">(</span><span class="n">cutstockSub</span><span class="p">)</span>
+
+<span class="c">#Store the components of the solution of current subproblem into the column Anew    </span>
+<span class="n">Anew</span><span class="o">=</span><span class="kt">Float64</span><span class="p">[]</span>
+<span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="p">:</span><span class="n">cardinalityM</span><span class="p">)</span>
+    <span class="n">push</span><span class="o">!</span><span class="p">(</span><span class="n">Anew</span><span class="p">,</span> <span class="n">getValue</span><span class="p">(</span><span class="n">Ajstar</span><span class="p">)[</span><span class="n">i</span><span class="p">])</span>
+<span class="k">end</span>
+        <span class="k">end</span> <span class="c"># While loop ends</span>
+    
+    <span class="k">end</span> <span class="c"># time measurement ends</span>
+
+                                  <span class="c"># Print the results</span>
+                                  <span class="c"># -----------------</span>
+
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;Objective value: &quot;</span><span class="p">,</span> <span class="n">getObjectiveValue</span><span class="p">(</span><span class="n">cutstockMain</span><span class="p">))</span>
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;Current Solution is: &quot;</span><span class="p">,</span> <span class="n">getValue</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;With &quot;</span><span class="p">,</span> <span class="n">length</span><span class="p">(</span><span class="n">xNewArray</span><span class="p">),</span> <span class="s">&quot; variables added by flow control:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="p">:</span><span class="n">length</span><span class="p">(</span><span class="n">xNewArray</span><span class="p">)</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">&quot;[&quot;</span><span class="p">,</span><span class="n">size</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="n">i</span><span class="p">,</span><span class="s">&quot;] = &quot;</span><span class="p">,</span><span class="n">getValue</span><span class="p">(</span><span class="n">xNewArray</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+<span class="k">end</span>
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;Reduced cost of the current solution is &quot;</span><span class="p">,</span> <span class="n">getObjectiveValue</span><span class="p">(</span><span class="n">cutstockSub</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>elapsed time: 0.038578541 seconds (812760 bytes allocated)
+Objective value: 57.25
+Current Solution is: x: 1 dimensions, 5 entries:
+ [1] = 0.0
+ [2] = 0.0
+ [3] = 0.0
+ [4] = 0.0
+ [5] = 0.0
+With 6 variables added by flow control:
+[6] = 2.75
+[7] = 6.5
+[8] = 11.0
+[9] = 0.0
+[10] = 25.0
+[11] = 12.0
+Reduced cost of the current solution is 0.0
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>    </div> <!-- /container -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <!-- MathJax -->
+    <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+  </body>
+</html>

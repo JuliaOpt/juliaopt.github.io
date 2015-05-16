@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="JuliaOpt - Optimization packages for the Julia language">
+    <meta name="author" content="Iain Dunning">
+    <link rel="icon" href="favicon.ico">
+
+    <title>JuliaOpt - Optimization packages for the Julia language</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+    <!-- Additional styles -->
+    <style>
+      body {
+        padding-top: 60px;
+        padding-bottom: 20px;
+      }
+    </style>
+    <style type="text/css">
+    .highlight .hll { background-color: #ffffcc }
+.highlight  { background: #f8f8f8; }
+.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
+    </style>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div class="container">
+
+
+      <!-- Static navbar -->
+      <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/index.html">JuliaOpt</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="#about">About</a></li>
+              <li><a href="#packages">Packages</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li class="divider"></li>
+                  <li class="dropdown-header">Nav header</li>
+                  <li><a href="#">Separated link</a></li>
+                  <li><a href="#">One more separated link</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </nav>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Description</strong>: This notebook demonstrates how to formulate basic power systems engineering models in JuMP using a 3 bus example. We will consider basic "economic dispatch" and "unit commitment" models without taking into account transmission constraints.</p>
+<p>This notebook was developed for the <a href="http://www.cvent.com/events/grid-science-winter-school-conference/event-summary-229c17f488194f2ebb5b206820974c71.aspx">Grid Science Winter School</a> held in Santa Fe, NM in January 2015.</p>
+<p>Note that the notebook contains many interactive features which do not display correctly on read-only links. For the full experience, run this notebook locally or on <a href="https://juliabox.org/">JuliaBox</a>.</p>
+<p><strong>Author</strong>: Yury Dvorkin and Miles Lubin</p>
+<p><strong>License</strong>: <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Illustrative-example">Illustrative example<a class="anchor-link" href="#Illustrative-example">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In the following notes for the sake of simplicity, we are going to use a three bus example mirroring the interface between Western and Eastern Texas. This example is taken from R. Baldick, "<a href="http://dx.doi.org/10.1109/JSYST.2011.2162798">Wind and Energy Markets: A Case Study of Texas</a>," IEEE Systems Journal, vol. 6, pp. 27-34, 2012.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="http://i57.tinypic.com/2hn530x.png"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>For this example, we set the following characteristics of generators, transmission lines, wind farms and demands:</p>
+<table style="width:25%">
+  <tr>
+    <td></td>
+    <td>Generator 1</td> 
+    <td>Generator 2</td>
+  </tr>
+  <tr>
+    <td>$g_{min}$, MW</td>
+    <td>0</td> 
+    <td>300</td> 
+  </tr>
+
+   <tr>
+    <td>$g_{max}$, MW</td>
+    <td>1000</td> 
+    <td>1000</td> 
+  </tr>
+  <tr>
+    <td>$c^g$, \$/MWh</td>
+    <td>50</td> 
+    <td>100</td> 
+  </tr>
+  <tr>
+    <td>$c^{g0}$, \$/MWh</td>
+    <td>1000</td> 
+    <td>0</td> 
+  </tr> 
+</table>
+
+<table style="width:25%">
+  <tr>
+    <td></td>
+    <td>Line 1</td> 
+    <td>Line 2</td>
+  </tr>
+  <tr>
+    <td>$f^{max}$, MW</td>
+    <td>100</td> 
+    <td>1000</td> 
+  </tr>
+  <tr>
+    <td>x, p.u.</td>
+    <td>0.001</td> 
+    <td>0.001</td> 
+  </tr>
+</table>
+
+<table style="width:25%">
+  <tr>
+    <td></td>
+    <td>Wind farm 1</td> 
+    <td>Wind farm 2</td>
+  </tr>
+  <tr>
+    <td>$w^{f}$, MW</td>
+    <td>150</td> 
+    <td>50</td> 
+  </tr>
+  <tr>
+  <td>$c^{w}$, \$/MWh</td>
+    <td>50</td> 
+    <td>50</td> 
+  </tr>
+</table>
+
+<table style="width:25%">
+  <tr>
+    <td></td>
+    <td>Bus 1</td> 
+    <td>Bus 2</td>
+    <td>Bus 3</td>
+  </tr>
+  <tr>
+    <td>$d$, MW</td>
+    <td>0</td> 
+    <td>0</td> 
+    <td>15000</td> 
+
+  </tr>
+</table>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Economic-dispatch">Economic dispatch<a class="anchor-link" href="#Economic-dispatch">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Economic dispatch (ED) is an optimization problem that minimizes the cost of supplying energy demand subject to operational constraints on power system assets. In its simplest modification, ED is an LP problem solved for an aggregated load and wind forecast and for a single infinitesimal moment. Mathematically, the ED problem can be written as follows:
+$$
+\min \sum_{i \in I} c^g_{i} \cdot g_{i} + c^w \cdot w,
+$$
+where $c_{i}$ and $g_{i}$ are the incremental cost ($\$/MWh$) and power output ($MW$) of the $i^{th}$ generator, respectively, and $c^w$ and $w$ are the incremental cost ($\$/MWh$) and wind power injection ($MW$), respectively.</p>
+<p>s.t.</p>
+<p><li> Minimum ($g^{\min}$) and maximum ($g^{\max}$) limits on power outputs of generators: </li>
+$$
+g^{\min}_{i} \leq g_{i} \leq g^{\max}_{i}.
+$$</p>
+<p><li>Constraint on the wind power injection:</li>
+$$
+0 \leq w \leq w^f, 
+$$
+where $w$ and $w^f$ are the wind power injection and wind power forecast, respectively.</p>
+<p><li>Power balance constraint:</li>
+$$
+\sum_{i \in I} g_{i} + w = d^f, 
+$$
+where $d^f$ is the demand forecast.</p>
+<p>Further reading on ED models can be found in A. J. Wood, B. F. Wollenberg, and G. B. Sheblé, "Power Generation, Operation and Control", Wiley, 2013.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="JuMP-Implementation-of-Economic-Dispatch">JuMP Implementation of Economic Dispatch<a class="anchor-link" href="#JuMP-Implementation-of-Economic-Dispatch">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="c"># Define the packages </span>
+<span class="k">using</span> <span class="n">JuMP</span> <span class="c"># used for mathematical programming</span>
+<span class="k">using</span> <span class="n">Interact</span> <span class="c"># used for enabling the slider</span>
+<span class="k">using</span> <span class="n">Gadfly</span> <span class="c"># used for plotting</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="c"># Define some input data about the test system</span>
+<span class="c"># Maximum power output of generators</span>
+<span class="kd">const</span> <span class="n">g_max</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1000</span><span class="p">,</span><span class="mi">1000</span><span class="p">];</span>
+<span class="c"># Minimum power output of generators</span>
+<span class="kd">const</span> <span class="n">g_min</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">300</span><span class="p">];</span>
+<span class="c"># Incremental cost of generators </span>
+<span class="kd">const</span> <span class="n">c_g</span> <span class="o">=</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span><span class="mi">100</span><span class="p">];</span>
+<span class="c"># Fixed cost of generators</span>
+<span class="kd">const</span> <span class="n">c_g0</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1000</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+<span class="c"># Incremental cost of wind generators</span>
+<span class="kd">const</span> <span class="n">c_w</span> <span class="o">=</span> <span class="mi">50</span><span class="p">;</span>
+<span class="c"># Total demand</span>
+<span class="kd">const</span> <span class="n">d</span> <span class="o">=</span> <span class="mi">1500</span><span class="p">;</span>
+<span class="c"># Wind forecast</span>
+<span class="kd">const</span> <span class="n">w_f</span> <span class="o">=</span> <span class="mi">200</span><span class="p">;</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="c"># In this cell we create  function solve_ed, which solves the economic dispatch problem for a given set of input parameters.</span>
+<span class="k">function</span><span class="nf"> solve_ed</span> <span class="p">(</span><span class="n">g_max</span><span class="p">,</span> <span class="n">g_min</span><span class="p">,</span> <span class="n">c_g</span><span class="p">,</span> <span class="n">c_w</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">w_f</span><span class="p">)</span>
+    <span class="c">#Define the economic dispatch (ED) model</span>
+    <span class="n">ed</span><span class="o">=</span><span class="n">Model</span><span class="p">()</span> 
+    
+    <span class="c"># Define decision variables    </span>
+    <span class="p">@</span><span class="n">defVar</span><span class="p">(</span><span class="n">ed</span><span class="p">,</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">g</span><span class="p">[</span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">g_max</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="c"># power output of generators</span>
+    <span class="p">@</span><span class="n">defVar</span><span class="p">(</span><span class="n">ed</span><span class="p">,</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">w</span>  <span class="o">&lt;=</span> <span class="n">w_f</span> <span class="p">)</span> <span class="c"># wind power injection</span>
+
+    <span class="c"># Define the objective function</span>
+    <span class="p">@</span><span class="n">setObjective</span><span class="p">(</span><span class="n">ed</span><span class="p">,</span><span class="n">Min</span><span class="p">,</span><span class="n">sum</span><span class="p">{</span><span class="n">c_g</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">g</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">}</span><span class="o">+</span> <span class="n">c_w</span> <span class="o">*</span> <span class="n">w</span><span class="p">)</span>
+
+    <span class="c"># Define the constraint on the maximum and minimum power output of each generator</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="p">:</span><span class="mi">2</span>
+        <span class="p">@</span><span class="n">addConstraint</span><span class="p">(</span><span class="n">ed</span><span class="p">,</span>  <span class="n">g</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">g_max</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="c">#maximum</span>
+        <span class="p">@</span><span class="n">addConstraint</span><span class="p">(</span><span class="n">ed</span><span class="p">,</span>  <span class="n">g</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">g_min</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="c">#minimum</span>
+    <span class="k">end</span>
+
+    <span class="c"># Define the constraint on the wind power injection</span>
+    <span class="p">@</span><span class="n">addConstraint</span><span class="p">(</span><span class="n">ed</span><span class="p">,</span> <span class="n">w</span> <span class="o">&lt;=</span> <span class="n">w_f</span><span class="p">)</span>
+
+    <span class="c"># Define the power balance constraint</span>
+    <span class="p">@</span><span class="n">addConstraint</span><span class="p">(</span><span class="n">ed</span><span class="p">,</span> <span class="n">sum</span><span class="p">{</span><span class="n">g</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">}</span> <span class="o">+</span> <span class="n">w</span> <span class="o">==</span> <span class="n">d</span><span class="p">)</span>
+
+    <span class="c"># Solve statement</span>
+    <span class="n">solve</span><span class="p">(</span><span class="n">ed</span><span class="p">)</span>
+    
+    <span class="c"># return the optimal value of the objective function and its minimizers</span>
+    <span class="k">return</span> <span class="n">getValue</span><span class="p">(</span><span class="n">g</span><span class="p">),</span> <span class="n">getValue</span><span class="p">(</span><span class="n">w</span><span class="p">),</span> <span class="n">w_f</span><span class="o">-</span><span class="n">getValue</span><span class="p">(</span><span class="n">w</span><span class="p">),</span> <span class="n">getObjectiveValue</span><span class="p">(</span><span class="n">ed</span><span class="p">)</span>
+<span class="k">end</span>
+
+<span class="c"># Solve the economic dispatch problem</span>
+<span class="p">(</span><span class="n">g_opt</span><span class="p">,</span><span class="n">w_opt</span><span class="p">,</span><span class="n">ws_opt</span><span class="p">,</span><span class="n">obj</span><span class="p">)</span><span class="o">=</span><span class="n">solve_ed</span> <span class="p">(</span><span class="n">g_max</span><span class="p">,</span> <span class="n">g_min</span><span class="p">,</span> <span class="n">c_g</span><span class="p">,</span> <span class="n">c_w</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">w_f</span><span class="p">);</span>
+
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">)</span>
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;Dispatch of Generators: &quot;</span><span class="p">,</span> <span class="n">g_opt</span><span class="p">[</span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">],</span> <span class="s">&quot; MW&quot;</span><span class="p">)</span>
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;Dispatch of Wind: &quot;</span><span class="p">,</span> <span class="n">w_opt</span><span class="p">,</span> <span class="s">&quot; MW&quot;</span><span class="p">)</span>
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;Wind spillage: &quot;</span><span class="p">,</span> <span class="n">w_f</span><span class="o">-</span><span class="n">w_opt</span><span class="p">,</span> <span class="s">&quot; MW&quot;</span><span class="p">)</span> 
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">)</span>
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;Total cost: &quot;</span><span class="p">,</span> <span class="n">obj</span><span class="p">,</span> <span class="s">&quot;\</span><span class="si">$</span><span class="s">&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Economic-dispatch-with-adjustable-incremental-costs">Economic dispatch with adjustable incremental costs<a class="anchor-link" href="#Economic-dispatch-with-adjustable-incremental-costs">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In the following exercise we adjust the incremental cost of generator G1 and observe its impact on the total cost by using the manipulator</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="c"># This cell uses the package Interact defined above. </span>
+<span class="c"># In this cell we create a manipulator that solves the economic dispatch problem for different values of c_g1_scale.</span>
+
+<span class="p">@</span><span class="n">manipulate</span> <span class="k">for</span> <span class="n">c_g1_scale</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">:</span><span class="mf">0.01</span><span class="p">:</span><span class="mf">3.0</span>
+    <span class="n">c_g_scale</span> <span class="o">=</span> <span class="p">[</span><span class="n">c_g</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">c_g1_scale</span><span class="p">,</span> <span class="n">c_g</span><span class="p">[</span><span class="mi">2</span><span class="p">]]</span> <span class="c"># update the incremental cost of the first generator at every iteration</span>
+    <span class="n">g_opt</span><span class="p">,</span><span class="n">w_opt</span><span class="p">,</span><span class="n">ws_opt</span><span class="p">,</span><span class="n">obj</span> <span class="o">=</span> <span class="n">solve_ed</span><span class="p">(</span><span class="n">g_max</span><span class="p">,</span> <span class="n">g_min</span><span class="p">,</span> <span class="n">c_g_scale</span><span class="p">,</span> <span class="n">c_w</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">w_f</span><span class="p">)</span> <span class="c"># solve the ed problem with the updated incremental cost</span>
+    <span class="n">html</span><span class="p">(</span><span class="s">&quot;Dispatch of Generators, MW: </span><span class="si">$</span><span class="s">(g_opt[:])&lt;br&gt;&quot;</span><span class="o">*</span>
+    <span class="s">&quot;Dispatch of Wind, MW: </span><span class="si">$</span><span class="s">w_opt&lt;br&gt;&quot;</span><span class="o">*</span>
+    <span class="s">&quot;Spillage of Wind, MW: </span><span class="si">$</span><span class="s">ws_opt&lt;br&gt;&quot;</span><span class="o">*</span>
+    <span class="s">&quot;Total cost, \</span><span class="si">$</span><span class="s">: </span><span class="si">$</span><span class="s">obj&quot;</span><span class="p">)</span>
+<span class="k">end</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Impact-of-the-wind-generation-cost">Impact of the wind generation cost<a class="anchor-link" href="#Impact-of-the-wind-generation-cost">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In the following exercise we introduce a new manipulator to vary the cost of wind generation and observe its impact the total cost, dispatch of generators G1 and G2, utilization of available wind under different values of the incremental cost of generator G1.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="p">@</span><span class="n">manipulate</span> <span class="k">for</span> <span class="n">c_w_scale</span> <span class="o">=</span> <span class="mi">1</span><span class="p">:</span><span class="mf">0.1</span><span class="p">:</span><span class="mf">3.5</span>
+    <span class="c"># Define the vectors of outputs</span>
+    <span class="n">obj_out</span> <span class="o">=</span> <span class="kt">Float64</span><span class="p">[]</span> 
+    <span class="n">w_out</span> <span class="o">=</span> <span class="kt">Float64</span><span class="p">[]</span>
+    <span class="n">g1_out</span> <span class="o">=</span> <span class="kt">Float64</span><span class="p">[]</span>
+    <span class="n">g2_out</span> <span class="o">=</span> <span class="kt">Float64</span><span class="p">[]</span>
+    
+    <span class="p">@</span><span class="n">time</span> <span class="k">for</span> <span class="n">c_g1_scale</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">:</span><span class="mf">0.01</span><span class="p">:</span><span class="mf">3.0</span>
+        <span class="n">c_g_scale</span> <span class="o">=</span> <span class="p">[</span><span class="n">c_g</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">c_g1_scale</span>  <span class="n">c_g</span><span class="p">[</span><span class="mi">2</span><span class="p">]]</span> <span class="c"># update the incremental cost of the first generator at every iteration</span>
+        <span class="n">g_opt</span><span class="p">,</span><span class="n">w_opt</span><span class="p">,</span><span class="n">ws_opt</span><span class="p">,</span><span class="n">obj</span> <span class="o">=</span> <span class="n">solve_ed</span><span class="p">(</span><span class="n">g_max</span><span class="p">,</span> <span class="n">g_min</span><span class="p">,</span> <span class="n">c_g_scale</span><span class="p">,</span> <span class="n">c_w_scale</span><span class="o">*</span><span class="n">c_w</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">w_f</span><span class="p">)</span> <span class="c"># solve the ed problem with the updated incremental cost</span>
+        <span class="c"># Add the solution of the economic dispatch problem to the respective vectors</span>
+        <span class="n">push</span><span class="o">!</span><span class="p">(</span><span class="n">obj_out</span><span class="p">,</span><span class="n">obj</span><span class="p">)</span>
+        <span class="n">push</span><span class="o">!</span><span class="p">(</span><span class="n">w_out</span><span class="p">,</span><span class="n">w_opt</span><span class="p">)</span>
+        <span class="n">push</span><span class="o">!</span><span class="p">(</span><span class="n">g1_out</span><span class="p">,</span><span class="n">g_opt</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">push</span><span class="o">!</span><span class="p">(</span><span class="n">g2_out</span><span class="p">,</span><span class="n">g_opt</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+    <span class="k">end</span>
+    
+    <span class="c"># Plot the outputs</span>
+    <span class="c"># Define the size of the plots</span>
+    <span class="n">set_default_plot_size</span><span class="p">(</span><span class="mi">16</span><span class="n">cm</span><span class="p">,</span> <span class="mi">30</span><span class="n">cm</span><span class="p">)</span>
+    
+    <span class="n">vstack</span><span class="p">(</span>
+    <span class="c"># Plot the total cost</span>
+    <span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mf">0.5</span><span class="p">:</span><span class="mf">0.01</span><span class="p">:</span><span class="mf">3.0</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="n">obj_out</span><span class="p">,</span> <span class="n">Geom</span><span class="o">.</span><span class="n">line</span><span class="p">,</span>
+    <span class="n">Guide</span><span class="o">.</span><span class="n">XLabel</span><span class="p">(</span><span class="s">&quot;c_g1_scale&quot;</span><span class="p">),</span> <span class="n">Guide</span><span class="o">.</span><span class="n">YLabel</span><span class="p">(</span><span class="s">&quot;Total cost, \</span><span class="si">$</span><span class="s">&quot;</span><span class="p">),</span>
+    <span class="n">Scale</span><span class="o">.</span><span class="n">y_continuous</span><span class="p">(</span><span class="n">minvalue</span><span class="o">=</span><span class="mi">50000</span><span class="p">,</span> <span class="n">maxvalue</span><span class="o">=</span><span class="mi">200000</span><span class="p">)),</span>
+    <span class="c"># Plot the power output of Generator 1</span>
+    <span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mf">0.5</span><span class="p">:</span><span class="mf">0.01</span><span class="p">:</span><span class="mf">3.0</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="n">g1_out</span><span class="p">],</span> <span class="n">Geom</span><span class="o">.</span><span class="n">line</span><span class="p">,</span>
+    <span class="n">Guide</span><span class="o">.</span><span class="n">XLabel</span><span class="p">(</span><span class="s">&quot;c_g1_scale&quot;</span><span class="p">),</span> <span class="n">Guide</span><span class="o">.</span><span class="n">YLabel</span><span class="p">(</span><span class="s">&quot;Dispatch of  G1, MW&quot;</span><span class="p">),</span>
+    <span class="n">Scale</span><span class="o">.</span><span class="n">y_continuous</span><span class="p">(</span><span class="n">minvalue</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">maxvalue</span><span class="o">=</span><span class="mi">1100</span><span class="p">)),</span>
+    <span class="c"># Plot the power output of Generator 2    </span>
+    <span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mf">0.5</span><span class="p">:</span><span class="mf">0.01</span><span class="p">:</span><span class="mf">3.0</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="n">g2_out</span><span class="p">],</span> <span class="n">Geom</span><span class="o">.</span><span class="n">line</span><span class="p">,</span>
+    <span class="n">Guide</span><span class="o">.</span><span class="n">XLabel</span><span class="p">(</span><span class="s">&quot;c_g1_scale&quot;</span><span class="p">),</span> <span class="n">Guide</span><span class="o">.</span><span class="n">YLabel</span><span class="p">(</span><span class="s">&quot;Dispatch of  G2, MW&quot;</span><span class="p">),</span>
+    <span class="n">Scale</span><span class="o">.</span><span class="n">y_continuous</span><span class="p">(</span><span class="n">minvalue</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">maxvalue</span><span class="o">=</span><span class="mi">1600</span><span class="p">)),</span>
+    <span class="c"># Plot the wind power output</span>
+    <span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mf">0.5</span><span class="p">:</span><span class="mf">0.01</span><span class="p">:</span><span class="mf">3.0</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="n">w_out</span><span class="p">],</span> <span class="n">Geom</span><span class="o">.</span><span class="n">line</span><span class="p">,</span>
+    <span class="n">Guide</span><span class="o">.</span><span class="n">XLabel</span><span class="p">(</span><span class="s">&quot;c_g1_scale&quot;</span><span class="p">),</span> <span class="n">Guide</span><span class="o">.</span><span class="n">YLabel</span><span class="p">(</span><span class="s">&quot;Dispatch of Wind, MW&quot;</span><span class="p">),</span>
+    <span class="n">Scale</span><span class="o">.</span><span class="n">y_continuous</span><span class="p">(</span><span class="n">minvalue</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">maxvalue</span><span class="o">=</span><span class="mi">250</span><span class="p">))</span>
+    <span class="p">)</span>
+<span class="k">end</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>For further reading on the impact of wind generation costs on dispatch decisions, we refer interested readers to J. M. Morales, A. J. Conejo, and J. Perez-Ruiz, "Economic Valuation of Reserves in Power Systems With High Penetration of Wind Power," IEEE Transactions on Power Systems, vol. 24, pp. 900-910, 2009.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Modifying-the-JuMP-model-in-place">Modifying the JuMP model in place<a class="anchor-link" href="#Modifying-the-JuMP-model-in-place">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Note that in the previous exercise we entirely rebuilt the optimization model at every iteration of the internal loop, which incurs an additional computational burden. This burden can be alleviated if instead of re-building the entire model, we modify a specific constraint(s) or the objective function, as it shown in the example below.</p>
+<p>Compare the computing time in case of the above and below models.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="k">function</span><span class="nf"> solve_ed_inplace</span><span class="p">(</span><span class="n">c_w_scale</span><span class="p">)</span>
+    <span class="n">tic</span><span class="p">()</span>
+    <span class="n">obj_out</span> <span class="o">=</span> <span class="kt">Float64</span><span class="p">[]</span>
+    <span class="n">w_out</span> <span class="o">=</span> <span class="kt">Float64</span><span class="p">[]</span>
+    <span class="n">g1_out</span> <span class="o">=</span> <span class="kt">Float64</span><span class="p">[]</span>
+    <span class="n">g2_out</span> <span class="o">=</span> <span class="kt">Float64</span><span class="p">[]</span>
+    
+    <span class="n">ed</span><span class="o">=</span><span class="n">Model</span><span class="p">()</span> 
+    
+    <span class="c"># Define decision variables    </span>
+    <span class="p">@</span><span class="n">defVar</span><span class="p">(</span><span class="n">ed</span><span class="p">,</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">g</span><span class="p">[</span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">g_max</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="c"># power output of generators</span>
+    <span class="p">@</span><span class="n">defVar</span><span class="p">(</span><span class="n">ed</span><span class="p">,</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">w</span>  <span class="o">&lt;=</span> <span class="n">w_f</span> <span class="p">)</span> <span class="c"># wind power injection</span>
+
+    <span class="c"># Define the objective function</span>
+    <span class="p">@</span><span class="n">setObjective</span><span class="p">(</span><span class="n">ed</span><span class="p">,</span><span class="n">Min</span><span class="p">,</span><span class="n">sum</span><span class="p">{</span><span class="n">c_g</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">g</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">}</span><span class="o">+</span> <span class="n">c_w</span> <span class="o">*</span> <span class="n">w</span><span class="p">)</span>
+
+    <span class="c"># Define the constraint on the maximum and minimum power output of each generator</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="p">:</span><span class="mi">2</span>
+        <span class="p">@</span><span class="n">addConstraint</span><span class="p">(</span><span class="n">ed</span><span class="p">,</span>  <span class="n">g</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">g_max</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="c">#maximum</span>
+        <span class="p">@</span><span class="n">addConstraint</span><span class="p">(</span><span class="n">ed</span><span class="p">,</span>  <span class="n">g</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">g_min</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="c">#minimum</span>
+    <span class="k">end</span>
+
+
+    <span class="c"># Define the constraint on the wind power injection</span>
+    <span class="p">@</span><span class="n">addConstraint</span><span class="p">(</span><span class="n">ed</span><span class="p">,</span> <span class="n">w</span> <span class="o">&lt;=</span> <span class="n">w_f</span><span class="p">)</span>
+
+    <span class="c"># Define the power balance constraint</span>
+    <span class="p">@</span><span class="n">addConstraint</span><span class="p">(</span><span class="n">ed</span><span class="p">,</span> <span class="n">sum</span><span class="p">{</span><span class="n">g</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">}</span> <span class="o">+</span> <span class="n">w</span> <span class="o">==</span> <span class="n">d</span><span class="p">)</span>
+    <span class="n">solve</span><span class="p">(</span><span class="n">ed</span><span class="p">)</span>
+    
+    <span class="k">for</span> <span class="n">c_g1_scale</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">:</span><span class="mf">0.01</span><span class="p">:</span><span class="mf">3.0</span>
+        <span class="p">@</span><span class="n">setObjective</span><span class="p">(</span><span class="n">ed</span><span class="p">,</span> <span class="n">Min</span><span class="p">,</span> <span class="n">c_g1_scale</span><span class="o">*</span><span class="n">c_g</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">g</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">c_g</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="n">g</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">c_w_scale</span><span class="o">*</span><span class="n">c_w</span><span class="o">*</span><span class="n">w</span><span class="p">)</span>
+        <span class="n">solve</span><span class="p">(</span><span class="n">ed</span><span class="p">)</span>
+        <span class="n">push</span><span class="o">!</span><span class="p">(</span><span class="n">obj_out</span><span class="p">,</span><span class="n">getObjectiveValue</span><span class="p">(</span><span class="n">ed</span><span class="p">))</span>
+        <span class="n">push</span><span class="o">!</span><span class="p">(</span><span class="n">w_out</span><span class="p">,</span><span class="n">getValue</span><span class="p">(</span><span class="n">w</span><span class="p">))</span>
+        <span class="n">push</span><span class="o">!</span><span class="p">(</span><span class="n">g1_out</span><span class="p">,</span><span class="n">getValue</span><span class="p">(</span><span class="n">g</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+        <span class="n">push</span><span class="o">!</span><span class="p">(</span><span class="n">g2_out</span><span class="p">,</span><span class="n">getValue</span><span class="p">(</span><span class="n">g</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>
+    <span class="k">end</span>
+    <span class="n">toc</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">obj_out</span><span class="p">,</span> <span class="n">w_out</span><span class="p">,</span> <span class="n">g1_out</span><span class="p">,</span> <span class="n">g2_out</span>
+<span class="k">end</span>
+<span class="n">solve_ed_inplace</span><span class="p">(</span><span class="mf">2.0</span><span class="p">);</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Adjusting specific constraints and/or the objective function is faster than re-building the entire model.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="A-few-practical-limitations-of-the-economic-dispatch-model">A few practical limitations of the economic dispatch model<a class="anchor-link" href="#A-few-practical-limitations-of-the-economic-dispatch-model">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Inefficient-usage-of-wind-generators">Inefficient usage of wind generators<a class="anchor-link" href="#Inefficient-usage-of-wind-generators">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The economic dispatch problem does not perform commitment decisions and, thus, assumes that all generators must be dispatched at least at their minimum power output limit. This approach is not cost efficient and may lead to absurd decisions. For example, if $ d = \sum_{i \in I} g^{\min}_{i}$, the wind power injection must be zero, i.e. all available wind generation is spilled, to meet the minimum power output constraints on generators.</p>
+<p>In the following example, we adjust the total demand and observed how it affects wind spillage.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="p">@</span><span class="n">manipulate</span> <span class="k">for</span> <span class="n">demandscale</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">:</span><span class="mf">0.01</span><span class="p">:</span><span class="mf">1.5</span>
+    <span class="n">g_opt</span><span class="p">,</span><span class="n">w_opt</span><span class="p">,</span><span class="n">ws_opt</span><span class="p">,</span><span class="n">obj</span> <span class="o">=</span> <span class="n">solve_ed</span><span class="p">(</span><span class="n">g_max</span><span class="p">,</span> <span class="n">g_min</span><span class="p">,</span> <span class="n">c_g</span><span class="p">,</span> <span class="n">c_w</span><span class="p">,</span> <span class="n">demandscale</span><span class="o">*</span><span class="n">d</span><span class="p">,</span> <span class="n">w_f</span><span class="p">)</span>
+    
+        <span class="n">html</span><span class="p">(</span><span class="s">&quot;Dispatch of Generators, MW: </span><span class="si">$</span><span class="s">(g_opt[:])&lt;br&gt;&quot;</span><span class="o">*</span>
+    <span class="s">&quot;Dispatch of Wind, MW: </span><span class="si">$</span><span class="s">w_opt&lt;br&gt;&quot;</span><span class="o">*</span>
+    <span class="s">&quot;Spillage of Wind, MW: </span><span class="si">$</span><span class="s">ws_opt&lt;br&gt;&quot;</span><span class="o">*</span>
+    <span class="s">&quot;Total cost, \</span><span class="si">$</span><span class="s">: </span><span class="si">$</span><span class="s">obj&quot;</span><span class="p">)</span>
+    
+<span class="k">end</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This particular drawback can be overcome by introducing binary decisions on the "on/off" status of generators. This model is called unit commitment and considered later in these notes.</p>
+<p>For further reading on the interplay between wind generation and the minimum power output constraints of generators, we refer interested readers to R. Baldick, "Wind and Energy Markets: A Case Study of Texas," IEEE Systems Journal, vol. 6, pp. 27-34, 2012.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Transmission-infeasible-solution">Transmission-infeasible solution<a class="anchor-link" href="#Transmission-infeasible-solution">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The ED solution is entirely market-based and disrespects limitations of the transmission network. Indeed, the flows in transmission lines would attain the following values:</p>
+$$f_{1-2} = 150 MW \leq f_{1-2}^{\max} = 100 MW $$$$f_{2-3} = 1200 MW \leq f_{2-3}^{\max} = 1000 MW $$<p>Thus, if this ED solution was enforced in practice, the power flow limits on both lines would be violated. Therefore, in the following section we consider the optimal power flow model, which amends the ED model with network constraints.</p>
+<p>The importance of the transmission-aware decisions is emphasized in E. Lannoye, D. Flynn, and M. O'Malley, "Transmission, Variable Generation, and Power System Flexibility," IEEE Transactions on Power Systems, vol. 30, pp. 57-66, 2015.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Unit-Commitment-model">Unit Commitment model<a class="anchor-link" href="#Unit-Commitment-model">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The Unit Commitment (UC) model can be obtained from ED model by introducing binary variable associated with each generator. This binary variable can attain two values: if it is "1", the generator is synchronized and, thus, can be dispatched, otherwise, i.e. if the binary variable is "0", that generator is not synchronized and its power output is set to 0.</p>
+<p>To obtain the mathematical formulation of the UC model, we will modify the constraints of the ED model as follows:
+$$
+g^{\min}_{i} \cdot u_{t,i} \leq g_{i} \leq g^{\max}_{i} \cdot u_{t,i},
+$$</p>
+<p>where $ u_{i} \in \{0;1\}. $ In this constraint, if $ u_{i} = 0$, then $g_{i}  = 0$. On the other hand, if $ u_{i} = 1$, then $g^{max}_{i} \leq g_{i}   \leq g^{min}_{i}$.</p>
+<p>For further reading on the UC problem we refer interested readers to G. Morales-Espana, J. M. Latorre, and A. Ramos, "Tight and Compact MILP Formulation for the Thermal Unit Commitment Problem," IEEE Transactions on Power Systems, vol. 28, pp. 4897-4908, 2013.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In the following example we convert the ED model explained above to the UC model.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="c"># In this cell we introduce binary decision u to the economic dispatch problem (function solve_ed)</span>
+<span class="k">function</span><span class="nf"> solve_uc</span> <span class="p">(</span><span class="n">g_max</span><span class="p">,</span> <span class="n">g_min</span><span class="p">,</span> <span class="n">c_g</span><span class="p">,</span> <span class="n">c_w</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">w_f</span><span class="p">)</span>
+    <span class="c">#Define the unit commitment (UC) model</span>
+    <span class="n">uc</span><span class="o">=</span><span class="n">Model</span><span class="p">()</span> 
+    
+    <span class="c"># Define decision variables    </span>
+    <span class="p">@</span><span class="n">defVar</span><span class="p">(</span><span class="n">uc</span><span class="p">,</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">g</span><span class="p">[</span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">g_max</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="c"># power output of generators</span>
+    <span class="p">@</span><span class="n">defVar</span><span class="p">(</span><span class="n">uc</span><span class="p">,</span> <span class="n">u</span><span class="p">[</span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">],</span> <span class="n">Bin</span><span class="p">)</span> <span class="c"># Binary status of generators</span>
+    <span class="p">@</span><span class="n">defVar</span><span class="p">(</span><span class="n">uc</span><span class="p">,</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">w</span>  <span class="o">&lt;=</span> <span class="n">w_f</span> <span class="p">)</span> <span class="c"># wind power injection</span>
+
+    <span class="c"># Define the objective function</span>
+    <span class="p">@</span><span class="n">setObjective</span><span class="p">(</span><span class="n">uc</span><span class="p">,</span><span class="n">Min</span><span class="p">,</span><span class="n">sum</span><span class="p">{</span><span class="n">c_g</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">g</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">}</span><span class="o">+</span> <span class="n">c_w</span> <span class="o">*</span> <span class="n">w</span><span class="p">)</span>
+
+    <span class="c"># Define the constraint on the maximum and minimum power output of each generator</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="p">:</span><span class="mi">2</span>
+        <span class="p">@</span><span class="n">addConstraint</span><span class="p">(</span><span class="n">uc</span><span class="p">,</span>  <span class="n">g</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">g_max</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">u</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="c">#maximum</span>
+        <span class="p">@</span><span class="n">addConstraint</span><span class="p">(</span><span class="n">uc</span><span class="p">,</span>  <span class="n">g</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">g_min</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">u</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="c">#minimum</span>
+    <span class="k">end</span>
+
+    <span class="c"># Define the constraint on the wind power injection</span>
+    <span class="p">@</span><span class="n">addConstraint</span><span class="p">(</span><span class="n">uc</span><span class="p">,</span> <span class="n">w</span> <span class="o">&lt;=</span> <span class="n">w_f</span><span class="p">)</span>
+
+    <span class="c"># Define the power balance constraint</span>
+    <span class="p">@</span><span class="n">addConstraint</span><span class="p">(</span><span class="n">uc</span><span class="p">,</span> <span class="n">sum</span><span class="p">{</span><span class="n">g</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">}</span> <span class="o">+</span> <span class="n">w</span> <span class="o">==</span> <span class="n">d</span><span class="p">)</span>
+
+    <span class="c"># Solve statement</span>
+    <span class="n">status</span> <span class="o">=</span> <span class="n">solve</span><span class="p">(</span><span class="n">uc</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">status</span><span class="p">,</span> <span class="n">getValue</span><span class="p">(</span><span class="n">g</span><span class="p">),</span> <span class="n">getValue</span><span class="p">(</span><span class="n">w</span><span class="p">),</span> <span class="n">w_f</span><span class="o">-</span><span class="n">getValue</span><span class="p">(</span><span class="n">w</span><span class="p">),</span> <span class="n">getValue</span><span class="p">(</span><span class="n">u</span><span class="p">),</span> <span class="n">getObjectiveValue</span><span class="p">(</span><span class="n">uc</span><span class="p">)</span>
+<span class="k">end</span>
+
+<span class="c"># Solve the economic dispatch problem</span>
+<span class="n">status</span><span class="p">,</span><span class="n">g_opt</span><span class="p">,</span><span class="n">w_opt</span><span class="p">,</span><span class="n">ws_opt</span><span class="p">,</span><span class="n">u_opt</span><span class="p">,</span><span class="n">obj</span><span class="o">=</span><span class="n">solve_uc</span> <span class="p">(</span><span class="n">g_max</span><span class="p">,</span> <span class="n">g_min</span><span class="p">,</span> <span class="n">c_g</span><span class="p">,</span> <span class="n">c_w</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">w_f</span><span class="p">);</span>
+
+  
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">)</span>
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;Dispatch of Generators: &quot;</span><span class="p">,</span> <span class="n">g_opt</span><span class="p">[:],</span> <span class="s">&quot; MW&quot;</span><span class="p">)</span>
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;Commitments of Generators: &quot;</span><span class="p">,</span> <span class="n">u_opt</span><span class="p">[:])</span>
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;Dispatch of Wind: &quot;</span><span class="p">,</span> <span class="n">w_opt</span><span class="p">,</span> <span class="s">&quot; MW&quot;</span><span class="p">)</span>
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;Wind spillage: &quot;</span><span class="p">,</span> <span class="n">w_f</span><span class="o">-</span><span class="n">w_opt</span><span class="p">,</span> <span class="s">&quot; MW&quot;</span><span class="p">)</span> 
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">)</span>
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;Total cost: &quot;</span><span class="p">,</span> <span class="n">obj</span><span class="p">,</span> <span class="s">&quot;\</span><span class="si">$</span><span class="s">&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Unit-Commitment-as-a-function-of-demand">Unit Commitment as a function of demand<a class="anchor-link" href="#Unit-Commitment-as-a-function-of-demand">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>After implementing the UC model, we can now assess the interplay between the minimum power output constraints on generators and wind generation.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="p">@</span><span class="n">manipulate</span> <span class="k">for</span> <span class="n">demandscale</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">:</span><span class="mf">0.01</span><span class="p">:</span><span class="mf">1.5</span>
+    <span class="n">status</span><span class="p">,</span> <span class="n">g_opt</span><span class="p">,</span><span class="n">w_opt</span><span class="p">,</span><span class="n">ws_opt</span><span class="p">,</span> <span class="n">u_opt</span><span class="p">,</span> <span class="n">obj</span> <span class="o">=</span> <span class="n">solve_uc</span><span class="p">(</span><span class="n">g_max</span><span class="p">,</span> <span class="n">g_min</span><span class="p">,</span> <span class="n">c_g</span><span class="p">,</span> <span class="n">c_w</span><span class="p">,</span> <span class="n">demandscale</span><span class="o">*</span><span class="n">d</span><span class="p">,</span> <span class="n">w_f</span><span class="p">)</span>
+ 
+    <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="p">:</span><span class="n">Optimal</span>
+        <span class="n">html</span><span class="p">(</span><span class="s">&quot;Commitment of Generators, MW: </span><span class="si">$</span><span class="s">(u_opt[:])&lt;br&gt;&quot;</span><span class="o">*</span>
+    <span class="s">&quot;Dispatch of Generators, MW: </span><span class="si">$</span><span class="s">(g_opt[:])&lt;br&gt;&quot;</span><span class="o">*</span>
+    <span class="s">&quot;Dispatch of Wind, MW: </span><span class="si">$</span><span class="s">w_opt&lt;br&gt;&quot;</span><span class="o">*</span>
+    <span class="s">&quot;Spillage of Wind, MW: </span><span class="si">$</span><span class="s">ws_opt&lt;br&gt;&quot;</span><span class="o">*</span>
+    <span class="s">&quot;Total cost, \</span><span class="si">$</span><span class="s">: </span><span class="si">$</span><span class="s">obj&quot;</span><span class="p">)</span>
+    <span class="k">else</span>
+        <span class="n">html</span><span class="p">(</span><span class="s">&quot;Status: </span><span class="si">$</span><span class="s">status&quot;</span><span class="p">)</span>
+    <span class="k">end</span>
+<span class="k">end</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Unit-Commitment-with-different-wind-availability">Unit Commitment with different wind availability<a class="anchor-link" href="#Unit-Commitment-with-different-wind-availability">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In the following experiment, we use a manipulator for adjusting demand and observe the different dispatch decisions under different wind generation conditions.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="p">@</span><span class="n">manipulate</span> <span class="k">for</span> <span class="n">demandscale</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">:</span><span class="mf">0.05</span><span class="p">:</span><span class="mf">1.45</span>
+    <span class="n">w_out</span> <span class="o">=</span> <span class="kt">Float64</span><span class="p">[]</span>
+    <span class="n">g1_out</span> <span class="o">=</span> <span class="kt">Float64</span><span class="p">[]</span>
+    <span class="n">g2_out</span> <span class="o">=</span> <span class="kt">Float64</span><span class="p">[]</span>
+    
+    <span class="k">for</span> <span class="n">w_f_scale</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">:</span><span class="mf">0.05</span><span class="p">:</span><span class="mi">5</span>
+        <span class="n">status</span><span class="p">,</span> <span class="n">g_opt</span><span class="p">,</span><span class="n">w_opt</span><span class="p">,</span><span class="n">ws_opt</span><span class="p">,</span> <span class="n">u_opt</span><span class="p">,</span> <span class="n">obj</span> <span class="o">=</span> <span class="n">solve_uc</span><span class="p">(</span><span class="n">g_max</span><span class="p">,</span> <span class="n">g_min</span><span class="p">,</span> <span class="n">c_g</span><span class="p">,</span> <span class="n">c_w</span><span class="p">,</span> <span class="n">demandscale</span><span class="o">*</span><span class="n">d</span><span class="p">,</span> <span class="n">w_f</span><span class="o">*</span><span class="n">w_f_scale</span><span class="p">)</span>
+        <span class="n">push</span><span class="o">!</span><span class="p">(</span><span class="n">g1_out</span><span class="p">,</span><span class="n">g_opt</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">push</span><span class="o">!</span><span class="p">(</span><span class="n">g2_out</span><span class="p">,</span><span class="n">g_opt</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+        <span class="n">push</span><span class="o">!</span><span class="p">(</span><span class="n">w_out</span><span class="p">,</span><span class="n">w_opt</span><span class="p">)</span>
+    <span class="k">end</span>
+    
+    <span class="n">set_default_plot_size</span><span class="p">(</span><span class="mi">16</span><span class="n">cm</span><span class="p">,</span> <span class="mi">30</span><span class="n">cm</span><span class="p">)</span>
+    
+    <span class="n">vstack</span><span class="p">(</span>
+    <span class="c"># Plot the power output of Generator 1</span>
+    <span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mf">0.5</span><span class="p">:</span><span class="mf">0.05</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="n">g1_out</span><span class="p">],</span> <span class="n">Geom</span><span class="o">.</span><span class="n">line</span><span class="p">,</span>
+    <span class="n">Guide</span><span class="o">.</span><span class="n">XLabel</span><span class="p">(</span><span class="s">&quot;w_f_scale &quot;</span><span class="p">),</span> <span class="n">Guide</span><span class="o">.</span><span class="n">YLabel</span><span class="p">(</span><span class="s">&quot;Dispatch of  G1, MW&quot;</span><span class="p">)),</span>
+    <span class="c"># Plot the power output of Generator 2    </span>
+    <span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mf">0.5</span><span class="p">:</span><span class="mf">0.05</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="n">g2_out</span><span class="p">],</span> <span class="n">Geom</span><span class="o">.</span><span class="n">line</span><span class="p">,</span>
+    <span class="n">Guide</span><span class="o">.</span><span class="n">XLabel</span><span class="p">(</span><span class="s">&quot;w_f_scale &quot;</span><span class="p">),</span> <span class="n">Guide</span><span class="o">.</span><span class="n">YLabel</span><span class="p">(</span><span class="s">&quot;Dispatch of  G2, MW&quot;</span><span class="p">)),</span>
+    <span class="c"># Plot the wind power output</span>
+    <span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mf">0.5</span><span class="p">:</span><span class="mf">0.05</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="n">w_out</span><span class="p">],</span> <span class="n">Geom</span><span class="o">.</span><span class="n">line</span><span class="p">,</span>
+    <span class="n">Guide</span><span class="o">.</span><span class="n">XLabel</span><span class="p">(</span><span class="s">&quot;w_f_scale &quot;</span><span class="p">),</span> <span class="n">Guide</span><span class="o">.</span><span class="n">YLabel</span><span class="p">(</span><span class="s">&quot;Dispatch of Wind, MW&quot;</span><span class="p">)),</span>
+    <span class="p">)</span>  
+<span class="k">end</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Unit-Commitment-with-no-load-cost">Unit Commitment with no load cost<a class="anchor-link" href="#Unit-Commitment-with-no-load-cost">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Like power output decisions ($g_i$), binary commitment decisions ($u_i$) can also be priced in the objective function. The physical interpretation of the cost incurred by binary commitment decisions is no-load component of the operating cost.</p>
+<p>This is implementing in the following example.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="c"># In this cell we redefine the UC model to account for the no-load cost</span>
+
+<span class="k">function</span><span class="nf"> solve_uc_nlc</span> <span class="p">(</span><span class="n">g_max</span><span class="p">,</span> <span class="n">g_min</span><span class="p">,</span> <span class="n">c_g</span><span class="p">,</span> <span class="n">c_w</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">w_f</span><span class="p">,</span> <span class="n">c_g0</span><span class="p">)</span>
+<span class="c">#Define the unit commitment (UC) model</span>
+<span class="n">uc</span><span class="o">=</span><span class="n">Model</span><span class="p">()</span> 
+    
+<span class="c"># Define decision variables    </span>
+<span class="p">@</span><span class="n">defVar</span><span class="p">(</span><span class="n">uc</span><span class="p">,</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">g</span><span class="p">[</span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">g_max</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="c"># power output of generators</span>
+<span class="p">@</span><span class="n">defVar</span><span class="p">(</span><span class="n">uc</span><span class="p">,</span> <span class="n">u</span><span class="p">[</span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">],</span> <span class="n">Bin</span><span class="p">)</span> <span class="c"># Binary status of generators</span>
+<span class="p">@</span><span class="n">defVar</span><span class="p">(</span><span class="n">uc</span><span class="p">,</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">w</span>  <span class="o">&lt;=</span> <span class="n">w_f</span> <span class="p">)</span> <span class="c"># wind power injection</span>
+
+<span class="c"># Define the objective function</span>
+<span class="p">@</span><span class="n">setObjective</span><span class="p">(</span><span class="n">uc</span><span class="p">,</span><span class="n">Min</span><span class="p">,</span><span class="n">sum</span><span class="p">{</span><span class="n">c_g</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">g</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">}</span><span class="o">+</span> <span class="n">c_w</span> <span class="o">*</span> <span class="n">w</span> <span class="o">+</span> <span class="n">sum</span><span class="p">{</span><span class="n">c_g0</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">u</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">})</span>
+
+<span class="c"># Define the constraint on the maximum and minimum power output of each generator</span>
+<span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="p">:</span><span class="mi">2</span>
+    <span class="p">@</span><span class="n">addConstraint</span><span class="p">(</span><span class="n">uc</span><span class="p">,</span>  <span class="n">g</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">g_max</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">u</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="c">#maximum</span>
+    <span class="p">@</span><span class="n">addConstraint</span><span class="p">(</span><span class="n">uc</span><span class="p">,</span>  <span class="n">g</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">g_min</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">u</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="c">#minimum</span>
+<span class="k">end</span>
+
+
+<span class="c"># Define the constraint on the wind power injection</span>
+<span class="p">@</span><span class="n">addConstraint</span><span class="p">(</span><span class="n">uc</span><span class="p">,</span> <span class="n">w</span> <span class="o">&lt;=</span> <span class="n">w_f</span><span class="p">)</span>
+
+<span class="c"># Define the power balance constraint</span>
+<span class="p">@</span><span class="n">addConstraint</span><span class="p">(</span><span class="n">uc</span><span class="p">,</span> <span class="n">sum</span><span class="p">{</span><span class="n">g</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">}</span> <span class="o">+</span> <span class="n">w</span> <span class="o">==</span> <span class="n">d</span><span class="p">)</span>
+
+<span class="c"># Solve statement</span>
+    <span class="n">status</span> <span class="o">=</span> <span class="n">solve</span><span class="p">(</span><span class="n">uc</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">status</span><span class="p">,</span> <span class="n">getValue</span><span class="p">(</span><span class="n">g</span><span class="p">),</span> <span class="n">getValue</span><span class="p">(</span><span class="n">w</span><span class="p">),</span> <span class="n">w_f</span><span class="o">-</span><span class="n">getValue</span><span class="p">(</span><span class="n">w</span><span class="p">),</span> <span class="n">getValue</span><span class="p">(</span><span class="n">u</span><span class="p">),</span> <span class="n">getObjectiveValue</span><span class="p">(</span><span class="n">uc</span><span class="p">)</span>
+<span class="k">end</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Using the model above, we can now assess the sensitivity of the UC solution to demand under different levels of the minimum power output limits.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span class="p">@</span><span class="n">manipulate</span> <span class="k">for</span> <span class="n">demandscale</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">:</span><span class="mf">0.05</span><span class="p">:</span><span class="mf">1.45</span>
+    <span class="n">w_out</span> <span class="o">=</span> <span class="kt">Float64</span><span class="p">[]</span>
+    <span class="n">g1_out</span> <span class="o">=</span> <span class="kt">Float64</span><span class="p">[]</span>
+    <span class="n">g2_out</span> <span class="o">=</span> <span class="kt">Float64</span><span class="p">[]</span>
+    
+    <span class="k">for</span> <span class="n">pmin_scale</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">:</span><span class="mf">0.05</span><span class="p">:</span><span class="mi">3</span>
+        <span class="n">status</span><span class="p">,</span> <span class="n">g_opt</span><span class="p">,</span><span class="n">w_opt</span><span class="p">,</span><span class="n">ws_opt</span><span class="p">,</span> <span class="n">u_opt</span><span class="p">,</span> <span class="n">obj</span> <span class="o">=</span> <span class="n">solve_uc_nlc</span><span class="p">(</span><span class="n">g_max</span><span class="p">,</span> <span class="n">pmin_scale</span><span class="o">*</span><span class="n">g_min</span><span class="p">,</span> <span class="n">c_g</span><span class="p">,</span> <span class="n">c_w</span><span class="p">,</span> <span class="n">demandscale</span><span class="o">*</span><span class="n">d</span><span class="p">,</span> <span class="n">w_f</span><span class="p">,</span> <span class="n">c_g0</span><span class="p">)</span>
+        <span class="n">push</span><span class="o">!</span><span class="p">(</span><span class="n">g1_out</span><span class="p">,</span><span class="n">g_opt</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">push</span><span class="o">!</span><span class="p">(</span><span class="n">g2_out</span><span class="p">,</span><span class="n">g_opt</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+        <span class="n">push</span><span class="o">!</span><span class="p">(</span><span class="n">w_out</span><span class="p">,</span><span class="n">w_opt</span><span class="p">)</span>
+    <span class="k">end</span>
+    
+    
+    <span class="n">set_default_plot_size</span><span class="p">(</span><span class="mi">16</span><span class="n">cm</span><span class="p">,</span> <span class="mi">30</span><span class="n">cm</span><span class="p">)</span>
+    
+    <span class="n">vstack</span><span class="p">(</span>
+    <span class="c"># Plot the power output of Generator 1</span>
+    <span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mf">0.5</span><span class="p">:</span><span class="mf">0.05</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="n">g1_out</span><span class="p">],</span> <span class="n">Geom</span><span class="o">.</span><span class="n">line</span><span class="p">,</span>
+    <span class="n">Guide</span><span class="o">.</span><span class="n">XLabel</span><span class="p">(</span><span class="s">&quot;w_f_scale &quot;</span><span class="p">),</span> <span class="n">Guide</span><span class="o">.</span><span class="n">YLabel</span><span class="p">(</span><span class="s">&quot;Dispatch of  G1, MW&quot;</span><span class="p">)),</span>
+    <span class="c"># Plot the power output of Generator 2    </span>
+    <span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mf">0.5</span><span class="p">:</span><span class="mf">0.05</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="n">g2_out</span><span class="p">],</span> <span class="n">Geom</span><span class="o">.</span><span class="n">line</span><span class="p">,</span>
+    <span class="n">Guide</span><span class="o">.</span><span class="n">XLabel</span><span class="p">(</span><span class="s">&quot;w_f_scale &quot;</span><span class="p">),</span> <span class="n">Guide</span><span class="o">.</span><span class="n">YLabel</span><span class="p">(</span><span class="s">&quot;Dispatch of  G2, MW&quot;</span><span class="p">)),</span>
+    <span class="c"># Plot the wind power output</span>
+    <span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mf">0.5</span><span class="p">:</span><span class="mf">0.05</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="n">w_out</span><span class="p">],</span> <span class="n">Geom</span><span class="o">.</span><span class="n">line</span><span class="p">,</span>
+    <span class="n">Guide</span><span class="o">.</span><span class="n">XLabel</span><span class="p">(</span><span class="s">&quot;w_f_scale &quot;</span><span class="p">),</span> <span class="n">Guide</span><span class="o">.</span><span class="n">YLabel</span><span class="p">(</span><span class="s">&quot;Dispatch of Wind, MW&quot;</span><span class="p">)),</span>
+    <span class="p">)</span>
+    
+<span class="k">end</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>    </div> <!-- /container -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <!-- MathJax -->
+    <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+  </body>
+</html>
