@@ -1,0 +1,275 @@
+<table class="solvers">
+  <thead>
+    <tr>
+      <th width="23%"><strong>Modeling Tool</strong></th>
+      <th width="9%">LP</th>
+      <th width="9%">MILP</th>
+      <th width="9%">SOCP</th>
+      <th width="9%">MISOCP</th>
+      <th width="9%">SDP</th>
+      <th width="9%">NLP</th>
+      <th width="9%">MINLP</th>
+      <th>Other</th>
+    </tr>
+  </thead>
+
+  <tfoot> <!-- Must appear before tbody, see W3.org -->
+    <tr style="text-align: left">
+      <td colspan="10">
+        <small>
+  <strong>Key:</strong>
+  <ul style="list-style: none; margin-top: 5px; margin-bottom: 5px">
+          <li style="margin: 0.1em 0;">LP = <a href="http://en.wikipedia.org/wiki/Linear_programming">Linear Programming</a></li>
+          <li style="margin: 0.1em 0;">MILP = <a href="http://en.wikipedia.org/wiki/Integer_programming">Mixed Integer LP</a></li>
+          <li style="margin: 0.1em 0;">SOCP = <a href="http://en.wikipedia.org/wiki/Second_order_cone_programming">Second-order cone programming</a> (includes convex <a href="http://en.wikipedia.org/wiki/Quadratic_programming">QP</a>, <a href="http://en.wikipedia.org/wiki/Quadratically_constrained_quadratic_program">QCQP</a>)</li>
+          <li style="margin: 0.1em 0;">MISOCP = Mixed Integer SOCP</li>
+          <li style="margin: 0.1em 0;">SDP = <a href="http://en.wikipedia.org/wiki/Semidefinite_programming">Semidefinite Programming</a></li>
+          <li style="margin: 0.1em 0;">NLP = (constrained) <a href="http://en.wikipedia.org/wiki/Nonlinear_programming">Nonlinear Programming</a> (includes general <a href="http://en.wikipedia.org/wiki/Quadratic_programming">QP</a>, <a href="http://en.wikipedia.org/wiki/Quadratically_constrained_quadratic_program">QCQP</a>)</li>
+          <li style="margin: 0.1em 0;">MINLP = Mixed Integer NLP</li>
+        </ul>
+        <strong>Notes:</strong>
+        <ol style="">
+          <li>Problem must be convex.</li>
+        </ol>
+  </small>
+      </td>
+    </tr>
+  </tfoot>
+
+  <tbody>
+    <tr>
+      <th><a href="https://github.com/JuliaOpt/JuMP.jl">JuMP</a></th>
+      <td>&#10004;</td> <!-- LP -->
+      <td>&#10004;</td> <!-- MILP -->
+      <td>&#10004;</td> <!-- SOCP -->
+      <td>&#10004;</td> <!-- MISOCP -->
+      <td>&#10004;</td> <!-- SDP -->
+      <td>&#10004;</td> <!-- NLP -->
+      <td>&#10004;</td> <!-- MINLP -->
+      <td></td> <!-- Other -->
+    </tr>
+
+    <tr>
+      <th><a href="https://github.com/cvxgrp/Convex.jl">Convex.jl</a></th>
+      <td>&#10004;</td> <!-- LP -->
+      <td>&#10004;</td> <!-- MILP -->
+      <td>&#10004;</td> <!-- SOCP -->
+      <td>&#10004;</td> <!-- MISOCP -->
+      <td>&#10004;</td> <!-- SDP -->
+      <td></td> <!-- NLP -->
+      <td></td> <!-- MINLP -->
+      <td></td> <!-- Other -->
+    </tr>
+
+    <thead>
+      <tr>
+        <th><strong>Solver</strong></th>
+        <th>LP</th>
+        <th>MILP</th>
+        <th>SOCP</th>
+        <th>MISOCP</th>
+        <th>SDP</th>
+        <th>NLP</th>
+        <th>MINLP</th>
+        <th>Other</th>
+      </tr>
+    </thead>
+
+    <tr>
+      <th>
+        <a href="https://projects.coin-or.org/Bonmin">Bonmin</a>
+        <a href="https://github.com/JuliaOpt/AmplNLWriter.jl">(via AmplNLWriter.jl)</a>
+      </th>
+      <td>&#10004;</td> <!-- LP -->
+      <td>&#10004;</td> <!-- MILP -->
+      <td></td> <!-- SOCP -->
+      <td></td> <!-- MISOCP -->
+      <td></td> <!-- SDP -->
+      <td>&#10004;</td> <!-- NLP -->
+      <td>&#10004;</td> <!-- MINLP -->
+      <td></td> <!-- Other -->
+    </tr>
+
+    <tr>
+      <th>
+        <a href="https://projects.coin-or.org/Cbc">Cbc</a>
+        <a href="https://github.com/JuliaOpt/Cbc.jl">(.jl)</a>
+      </th>
+      <td>&#10004;</td> <!-- LP -->
+      <td>&#10004;</td> <!-- MILP -->
+      <td></td> <!-- SOCP -->
+      <td></td> <!-- MISOCP -->
+      <td></td> <!-- SDP -->
+      <td></td> <!-- NLP -->
+      <td></td> <!-- MINLP -->
+      <td></td> <!-- Other -->
+    </tr>
+
+    <tr>
+      <th>
+        <a href="https://projects.coin-or.org/Clp">Clp</a>
+        <a href="https://github.com/JuliaOpt/Clp.jl">(.jl)</a>
+      </th>
+      <td>&#10004;</td> <!-- LP -->
+      <td></td> <!-- MILP -->
+      <td></td> <!-- SOCP -->
+      <td></td> <!-- MISOCP -->
+      <td></td> <!-- SDP -->
+      <td></td> <!-- NLP -->
+      <td></td> <!-- MINLP -->
+      <td></td> <!-- Other -->
+    </tr>
+
+    <tr>
+      <th>
+        <a href="https://projects.coin-or.org/Couenne">Couenne</a>
+        <a href="https://github.com/JuliaOpt/AmplNLWriter.jl">(via AmplNLWriter.jl)</a>
+      </th>
+
+      <td>&#10004;</td> <!-- LP -->
+      <td>&#10004;</td> <!-- MILP -->
+      <td></td> <!-- SOCP -->
+      <td></td> <!-- MISOCP -->
+      <td></td> <!-- SDP -->
+      <td>&#10004;</td> <!-- NLP -->
+      <td>&#10004;</td> <!-- MINLP -->
+      <td></td> <!-- Other -->
+    </tr>
+
+    <tr>
+      <th>
+        <a href="http://www-01.ibm.com/software/commerce/optimization/cplex-optimizer/">CPLEX</a>
+        <a href="https://github.com/JuliaOpt/CPLEX.jl">(.jl)</a>
+      </th>
+      <td>&#10004;</td> <!-- LP -->
+      <td>&#10004;</td> <!-- MILP -->
+      <td>&#10004;</td> <!-- SOCP -->
+      <td>&#10004;</td> <!-- MISOCP -->
+      <td></td> <!-- SDP -->
+      <td></td> <!-- NLP -->
+      <td></td> <!-- MINLP -->
+      <td><small>IP Callbacks</small></td> <!-- Other -->
+    </tr>
+
+    <tr>
+      <th>
+        <a href="https://github.com/ifa-ethz/ecos/">ECOS</a>
+        <a href="https://github.com/JuliaOpt/ECOS.jl">(.jl)</a>
+      </th>
+      <td>&#10004;</td> <!-- LP -->
+      <td></td> <!-- MILP -->
+      <td>&#10004;</td> <!-- SOCP -->
+      <td></td> <!-- MISOCP -->
+      <td></td> <!-- SDP -->
+      <td></td> <!-- NLP -->
+      <td></td> <!-- MINLP -->
+      <td></td> <!-- Other -->
+    </tr>
+
+    <tr>
+      <th>
+        <a href="http://www.gnu.org/software/glpk/">GLPK</a>
+        <a href="https://github.com/JuliaOpt/GLPK.jl">(.jl)</a>
+      </th>
+      <td>&#10004;</td> <!-- LP -->
+      <td>&#10004;</td> <!-- MILP -->
+      <td></td> <!-- SOCP -->
+      <td></td> <!-- MISOCP -->
+      <td></td> <!-- SDP -->
+      <td></td> <!-- NLP -->
+      <td></td> <!-- MINLP -->
+      <td><small>IP Callbacks</small></td> <!-- Other -->
+    </tr>
+
+    <tr>
+      <th>
+        <a href="http://www.gurobi.com">Gurobi</a>
+        <a href="https://github.com/JuliaOpt/Gurobi.jl">(.jl)</a>
+      </th>
+      <td>&#10004;</td> <!-- LP -->
+      <td>&#10004;</td> <!-- MILP -->
+      <td>&#10004;</td> <!-- SOCP -->
+      <td>&#10004;</td> <!-- MISOCP -->
+      <td></td> <!-- SDP -->
+      <td></td> <!-- NLP -->
+      <td></td> <!-- MINLP -->
+      <td><small>IP Callbacks</small></td> <!-- Other -->
+    </tr>
+
+    <tr>
+      <th>
+        <a href="https://projects.coin-or.org/Ipopt">Ipopt</a>
+        <a href="https://github.com/JuliaOpt/Ipopt.jl">(.jl)</a>
+      </th>
+      <td>&#10004;</td> <!-- LP -->
+      <td></td> <!-- MILP -->
+      <td></td> <!-- SOCP -->
+      <td></td> <!-- MISOCP -->
+      <td></td> <!-- SDP -->
+      <td>&#10004;</td> <!-- NLP -->
+      <td></td> <!-- MINLP -->
+      <td></td> <!-- Other -->
+    </tr>
+
+    <tr>
+      <th>
+        <a href="http://artelys.com/en/optimization-tools/knitro">Artelys Knitro</a>
+        <a href="https://github.com/JuliaOpt/KNITRO.jl">(.jl)</a>
+      </th>
+      <td>&#10004;</td> <!-- LP -->
+      <td>&#10004;</td> <!-- MILP -->
+      <td></td> <!-- SOCP -->
+      <td></td> <!-- MISOCP -->
+      <td></td> <!-- SDP -->
+      <td>&#10004;</td> <!-- NLP -->
+      <td>&#10004;</td> <!-- MINLP -->
+      <td></td> <!-- Other -->
+    </tr>
+
+    <tr>
+      <th>
+        <a href="http://www.mosek.com/">Mosek</a>
+        <a href="https://github.com/JuliaOpt/Mosek.jl">(.jl)</a>
+      </th>
+      <td>&#10004;</td> <!-- LP -->
+      <td>&#10004;</td> <!-- MILP -->
+      <td>&#10004;</td> <!-- SOCP -->
+      <td>&#10004;</td> <!-- MISOCP -->
+      <td>&#10004;</td> <!-- SDP -->
+      <td>&#10004;<small>1</small></td> <!-- NLP -->
+      <td></td> <!-- MINLP -->
+      <td></td> <!-- Other -->
+    </tr>
+
+    <tr>
+      <th>
+        <a href="http://ab-initio.mit.edu/nlopt">NLopt</a>
+        <a href="https://github.com/JuliaOpt/NLopt.jl">(.jl)</a>
+      </th>
+      <td></td> <!-- LP -->
+      <td></td> <!-- MILP -->
+      <td></td> <!-- SOCP -->
+      <td></td> <!-- MISOCP -->
+      <td></td> <!-- SDP -->
+      <td>&#10004;</td> <!-- NLP -->
+      <td></td> <!-- MINLP -->
+      <td></td> <!-- Other -->
+    </tr>
+
+    <tr>
+      <th>
+        <a href="https://github.com/cvxgrp/scs">SCS</a>
+        <a href="https://github.com/JuliaOpt/SCS.jl">(.jl)</a>
+      </th>
+      <td>&#10004;</td> <!-- LP -->
+      <td></td> <!-- MILP -->
+      <td>&#10004;</td> <!-- SOCP -->
+      <td></td> <!-- MISOCP -->
+      <td>&#10004;</td> <!-- SDP -->
+      <td></td> <!-- NLP -->
+      <td></td> <!-- MINLP -->
+      <td></td> <!-- Other -->
+    </tr>
+
+  </tbody>
+</table>
