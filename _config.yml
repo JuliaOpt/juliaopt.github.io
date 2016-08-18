@@ -12,8 +12,8 @@ navigation:
   - title: Packages
     url: "/packages/"
 
-  - title: Showcases
-    url: "/showcases/"
+  - title: Showcase
+    url: "/showcase/"
 
   - title: Buy Stickers
     url: "https://www.stickermule.com/marketplace/4071-juliaopt"

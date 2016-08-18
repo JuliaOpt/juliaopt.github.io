@@ -1,6 +1,6 @@
 ---
 layout: default
-title:  Showcases
+title:  Showcase
 ---
 
 # Papers about JuliaOpt packages
