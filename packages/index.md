@@ -6,9 +6,6 @@ title:  Packages
 # Optimization-Related Packages
 The ecosystem of [Julia packages](http://pkg.julialang.org) is growing very fast. There are JuliaOpt packages that are not introduced in the [home](/) page and other optimization related packages that are not part of JuliaOpt.
 
-- [NEOS.jl](https://github.com/odow/NEOS.jl): an interface to the [NEOS Optimization Server](http://www.neos-server.org/).
-
-- [BlackBoxOptim.jl](https://github.com/robertfeldt/BlackBoxOptim.jl): a derivative-free, global optimizer that supports multi-objective optimization problems
 
 ## JuMP Extensions
 
@@ -20,12 +17,28 @@ The ecosystem of [Julia packages](http://pkg.julialang.org) is growing very fast
 
 - [StochDynamicProgramming.jl](https://github.com/JuliaOpt/StochDynamicProgramming.jl): for discrete-time stochastic optimal control problems.
 
+## Other Optimization
+
+https://github.com/JuliaSmoothOptimizers
+
+- [NEOS.jl](https://github.com/odow/NEOS.jl): an interface to the [NEOS Optimization Server](http://www.neos-server.org/).
+
+- [BlackBoxOptim.jl](https://github.com/robertfeldt/BlackBoxOptim.jl): a derivative-free, global optimizer that supports multi-objective optimization problems
+
+https://github.com/mlubin/Pajarito.jl
+
+- [DifferentialDynamicProgramming.jl](https://github.com/baggepinnen/DifferentialDynamicProgramming.jl): for differential dynamic programming problems.
+
+https://github.com/emmt/OptimPack.jl
+
 
 ## Equilibrium Problems
 
 - [VariationalInequality.jl](https://github.com/chkwon/VariationalInequality.jl): uses JuMP modeling language for [variational inequality](https://en.wikipedia.org/wiki/Variational_inequality) problems.
 
 - [Complementarity.jl](https://github.com/chkwon/Complementarity.jl): uses JuMP modeling language for [linear](https://en.wikipedia.org/wiki/Linear_complementarity_problem)/[nonlinear](https://en.wikipedia.org/wiki/Nonlinear_complementarity_problem)/[mixed](https://en.wikipedia.org/wiki/Mixed_complementarity_problem) complementarity problems and solves using [a Julia interface](https://github.com/chkwon/PATHSolver.jl) to [the PATH Solver](http://pages.cs.wisc.edu/%7Eferris/path.html).
+
+https://github.com/EconForge/NLsolve.jl
 
 
 ## Graph and Network

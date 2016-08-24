@@ -2,33 +2,43 @@
   <thead>
     <tr>
       <th width="22%"></th>
-      <th width="15.6%" rowspan="2">Linear / <br>Quadratic</th>
-      <th  colspan="2">Convex</th>
-      <th width="15.6%" rowspan="2">Nonconvex</th>
-      <th width="15.6%" rowspan="2">Integer</th>
+      <th width="13%" rowspan="2">Linear / <br>Quadratic</th>
+      <th colspan="2">Convex</th>
+      <th width="13%" rowspan="2">Nonconvex</th>
+      <th width="13%" rowspan="2">Integer</th>
+      <th width="13%" rowspan="2">License</th>
     </tr>
     <tr>
       <th><strong>Modeling Tool</strong></th>
       <!-- <th>Linear/Quadratic</th> -->
-      <th width="15.6%">Conic</th>
-      <th width="15.6%">Smooth</th>
+      <th width="13%">Conic</th>
+      <th width="13%">Smooth</th>
       <!-- <th>Nonconvex</th> -->
       <!-- <th>Integer</th> -->
+      <!-- <th>License</th> -->
     </tr>
   </thead>
 
   <tfoot>
     <tr style="text-align: left">
-      <td colspan="6">
+      <td colspan="7">
         <small>
-  <strong>Key:</strong>
-  <ul style="list-style: none; margin-top: 5px; margin-bottom: 5px">
-          <li style="margin: 0.1em 0;">Linear/Quadratic = Supports <a href="http://en.wikipedia.org/wiki/Linear_programming">Linear Programming</a> possibly with the addition of quadratic objectives or constraints.</li>
+        <strong>Key:</strong>
+        <ul style="list-style: none; margin-top: 5px; margin-bottom: 5px">
+          <li style="margin: 0.1em 0;">Linear/Quadratic = Supports <a href="http://en.wikipedia.org/wiki/Linear_programming">Linear Programming</a> (&#10004;) possibly with the addition of quadratic objectives or constraints (&#10004;&#10004;).</li>
           <li style="margin: 0.1em 0;">Convex conic = Supports <a href="http://en.wikipedia.org/wiki/Second_order_cone_programming">Second-order Cone Programming</a> or <a href="http://en.wikipedia.org/wiki/Semidefinite_programming">Semidefinite Programming</a> or exponential cones.</li>
           <li style="margin: 0.1em 0;">Convex smooth = Supports constrained derivative-based <a href="http://en.wikipedia.org/wiki/Nonlinear_programming">Nonlinear Programming</a> with convex constraints and objective functions</li>
           <li style="margin: 0.1em 0;">Nonlinear = Supports general nonconvex nonlinear programming.</li>
           <li style="margin: 0.1em 0;">Integer = Supports integer-constrained variables, e.g., <a href="https://en.wikipedia.org/wiki/Integer_programming">Integer Programming</a>.</li>
+          <li style="margin: 0.1em 0;">cb = Supports Integer Programming callbacks.</li>
         </ul>
+
+        <strong>License:</strong>
+              <ul style="list-style: none; margin-top: 5px; margin-bottom: 5px">
+                <li style="margin: 0.1em 0;">Open = Open Source</li>
+                <li style="margin: 0.1em 0;">Comm. = Commercial</li>
+                <li style="margin: 0.1em 0;">a = Commercial, but provides free academic license</li>
+              </ul>
         <!--
         <strong>Notes:</strong>
         <ol style="">
@@ -49,6 +59,7 @@
       <td>&#10004;</td> <!-- Convex smooth -->
       <td>&#10004;</td> <!-- Nonconvex -->
       <td>&#10004;</td> <!-- Integer -->
+      <td>Open</td> <!-- License -->
     </tr>
 
     <tr>
@@ -58,12 +69,13 @@
       <td></td> <!-- Convex smooth -->
       <td></td> <!-- Nonconvex -->
       <td>&#10004;</td> <!-- Integer -->
+      <td>Open</td> <!-- License -->
     </tr>
 
     <thead>
       <tr>
         <th><strong>Solver</strong></th>
-        <th colspan="5"></th>
+        <th colspan="6"></th>
       </tr>
     </thead>
 
@@ -77,7 +89,7 @@
       <td>&#10004;</td> <!-- Convex smooth -->
       <td>&#10004;</td> <!-- Nonconvex -->
       <td>&#10004;</td> <!-- Integer -->
-
+      <td>Open</td> <!-- License -->
     </tr>
     <tr>
       <th>
@@ -89,6 +101,7 @@
       <td></td> <!-- Convex smooth -->
       <td></td> <!-- Nonconvex -->
       <td>&#10004;</td> <!-- Integer -->
+      <td>Open</td> <!-- License -->
     </tr>
 
     <tr>
@@ -101,6 +114,7 @@
       <td></td> <!-- Convex smooth -->
       <td></td> <!-- Nonconvex -->
       <td></td> <!-- Integer -->
+      <td>Open</td> <!-- License -->
     </tr>
 
     <tr>
@@ -113,6 +127,7 @@
       <td>&#10004;</td> <!-- Convex smooth -->
       <td>&#10004;</td> <!-- Nonconvex -->
       <td>&#10004;</td> <!-- Integer -->
+      <td>Open</td> <!-- License -->
     </tr>
 
     <tr>
@@ -124,7 +139,8 @@
       <td>&#10004;</td> <!-- Convex conic -->
       <td></td> <!-- Convex smooth -->
       <td></td> <!-- Nonconvex -->
-      <td>&#10004;</td> <!-- Integer -->
+      <td>&#10004;<sup>cb</sup></td> <!-- Integer -->
+      <td>Comm.<sup>a</sup></td> <!-- License -->
     </tr>
 
     <tr>
@@ -137,6 +153,7 @@
       <td></td> <!-- Convex smooth -->
       <td></td> <!-- Nonconvex -->
       <td></td> <!-- Integer -->
+      <td>Open</td> <!-- License -->
     </tr>
 
     <tr>
@@ -148,7 +165,8 @@
       <td></td> <!-- Convex conic -->
       <td></td> <!-- Convex smooth -->
       <td></td> <!-- Nonconvex -->
-      <td>&#10004;</td> <!-- Integer -->
+      <td>&#10004;<sup>cb</sup></td> <!-- Integer -->
+      <td>Open</td> <!-- License -->
     </tr>
 
     <tr>
@@ -160,7 +178,8 @@
       <td>&#10004;</td> <!-- Convex conic -->
       <td></td> <!-- Convex smooth -->
       <td></td> <!-- Nonconvex -->
-      <td>&#10004;</td> <!-- Integer -->
+      <td>&#10004;<sup>cb</sup></td> <!-- Integer -->
+      <td>Comm.<sup>a</sup></td> <!-- License -->
     </tr>
 
     <tr>
@@ -173,6 +192,7 @@
       <td>&#10004;</td> <!-- Convex smooth -->
       <td>&#10004;</td> <!-- Nonconvex -->
       <td></td> <!-- Integer -->
+      <td>Open</td> <!-- License -->
     </tr>
 
     <tr>
@@ -185,6 +205,7 @@
       <td>&#10004;</td> <!-- Convex smooth -->
       <td>&#10004;</td> <!-- Nonconvex -->
       <td>&#10004;</td> <!-- Integer -->
+      <td>Comm.</td> <!-- License -->
     </tr>
 
     <tr>
@@ -197,6 +218,7 @@
       <td>&#10004;</td> <!-- Convex smooth -->
       <td></td> <!-- Nonconvex -->
       <td>&#10004;</td> <!-- Integer -->
+      <td>Comm.<sup>a</sup></td> <!-- License -->
     </tr>
 
     <tr>
@@ -209,6 +231,7 @@
       <td>&#10004;</td> <!-- Convex smooth -->
       <td>&#10004;</td> <!-- Nonconvex -->
       <td></td> <!-- Integer -->
+      <td>Open</td> <!-- License -->
     </tr>
 
     <tr>
@@ -221,6 +244,7 @@
       <td></td> <!-- Convex smooth -->
       <td></td> <!-- Nonconvex -->
       <td></td> <!-- Integer -->
+      <td>Open</td> <!-- License -->
     </tr>
 
   </tbody>

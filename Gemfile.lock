@@ -125,7 +125,6 @@ PLATFORMS
 
 DEPENDENCIES
   github-pages
-  rouge
 
 BUNDLED WITH
    1.12.5
