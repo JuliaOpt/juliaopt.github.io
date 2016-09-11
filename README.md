@@ -10,6 +10,6 @@ This uses jekyll to generate static web pages. To run the source locally, see: [
 2. In your local directory of this repository, run `bundle exec jekyll serve` (in the terminal).
 3. Open `http://localhost:4000` in your web browser.
 
-It runs under the `gh-pages` branch.
+It runs under the `master` branch.
 
 The solver table file is at: `\_includes\solver_tables.html`
