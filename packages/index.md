@@ -19,17 +19,17 @@ The ecosystem of [Julia packages](http://pkg.julialang.org) is growing very fast
 
 ## Other Optimization
 
-https://github.com/JuliaSmoothOptimizers
+- [JuliaSmoothOptimizers](https://github.com/JuliaSmoothOptimizers): A collection of tools primarily designed for developing solvers for smooth nonlinear optimization.
 
 - [NEOS.jl](https://github.com/odow/NEOS.jl): an interface to the [NEOS Optimization Server](http://www.neos-server.org/).
 
 - [BlackBoxOptim.jl](https://github.com/robertfeldt/BlackBoxOptim.jl): a derivative-free, global optimizer that supports multi-objective optimization problems
 
-https://github.com/mlubin/Pajarito.jl
+- [Pajarito](https://github.com/mlubin/Pajarito.jl) - A state-of-the-art solver for mixed-integer convex optimization written in Julia.
 
 - [DifferentialDynamicProgramming.jl](https://github.com/baggepinnen/DifferentialDynamicProgramming.jl): for differential dynamic programming problems.
 
-https://github.com/emmt/OptimPack.jl
+- [OptimPack.jl](https://github.com/emmt/OptimPack.jl): Julia bindings for the [OptimPack](https://github.com/emmt/OptimPack) library.
 
 
 ## Equilibrium Problems
@@ -38,7 +38,7 @@ https://github.com/emmt/OptimPack.jl
 
 - [Complementarity.jl](https://github.com/chkwon/Complementarity.jl): uses JuMP modeling language for [linear](https://en.wikipedia.org/wiki/Linear_complementarity_problem)/[nonlinear](https://en.wikipedia.org/wiki/Nonlinear_complementarity_problem)/[mixed](https://en.wikipedia.org/wiki/Mixed_complementarity_problem) complementarity problems and solves using [a Julia interface](https://github.com/chkwon/PATHSolver.jl) to [the PATH Solver](http://pages.cs.wisc.edu/%7Eferris/path.html).
 
-https://github.com/EconForge/NLsolve.jl
+- [NLsolve.jl](https://github.com/EconForge/NLsolve.jl): Julia solvers for systems of nonlinear equations and mixed complementarity problems
 
 
 ## Graph and Network
