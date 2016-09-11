@@ -1,0 +1,251 @@
+<table class="solvers">
+  <thead>
+    <tr>
+      <th width="22%"></th>
+      <th width="13%" rowspan="2">Linear / <br>Quadratic</th>
+      <th colspan="2">Convex</th>
+      <th width="13%" rowspan="2">Nonconvex</th>
+      <th width="13%" rowspan="2">Integer</th>
+      <th width="13%" rowspan="2">License</th>
+    </tr>
+    <tr>
+      <th><strong>Modeling Tool</strong></th>
+      <!-- <th>Linear/Quadratic</th> -->
+      <th width="13%">Conic</th>
+      <th width="13%">Smooth</th>
+      <!-- <th>Nonconvex</th> -->
+      <!-- <th>Integer</th> -->
+      <!-- <th>License</th> -->
+    </tr>
+  </thead>
+
+  <tfoot>
+    <tr style="text-align: left">
+      <td colspan="7">
+        <small>
+        <strong>Key:</strong>
+        <ul style="list-style: none; margin-top: 5px; margin-bottom: 5px">
+          <li style="margin: 0.1em 0;">Linear/Quadratic = Supports <a href="http://en.wikipedia.org/wiki/Linear_programming">Linear Programming</a> possibly with the addition of quadratic objectives or constraints.</li>
+          <li style="margin: 0.1em 0;">Convex conic = Supports <a href="http://en.wikipedia.org/wiki/Second_order_cone_programming">Second-order Cone Programming</a> or <a href="http://en.wikipedia.org/wiki/Semidefinite_programming">Semidefinite Programming</a> or exponential cones.</li>
+          <li style="margin: 0.1em 0;">Convex smooth = Supports constrained derivative-based <a href="http://en.wikipedia.org/wiki/Nonlinear_programming">Nonlinear Programming</a> with convex constraints and objective functions</li>
+          <li style="margin: 0.1em 0;">Nonconvex = Supports general nonconvex nonlinear programming.</li>
+          <li style="margin: 0.1em 0;">Integer = Supports integer-constrained variables, e.g., <a href="https://en.wikipedia.org/wiki/Integer_programming">Integer Programming</a>.</li>
+          <li style="margin: 0.1em 0;">cb = Supports Integer Programming callbacks.</li>
+        </ul>
+
+        <strong>License:</strong>
+              <ul style="list-style: none; margin-top: 5px; margin-bottom: 5px">
+                <li style="margin: 0.1em 0;">Open = Open Source</li>
+                <li style="margin: 0.1em 0;">Comm. = Commercial</li>
+                <li style="margin: 0.1em 0;">a = Commercial, but provides free academic license</li>
+              </ul>
+        <!--
+        <strong>Notes:</strong>
+        <ol style="">
+          <li>Problem must be convex.</li>
+        </ol>
+        -->
+  </small>
+      </td>
+    </tr>
+  </tfoot>
+
+
+  <tbody>
+    <tr>
+      <th><a href="https://github.com/JuliaOpt/JuMP.jl">JuMP</a></th>
+      <td>&#10004;</td> <!-- Linear/Quadratic -->
+      <td>&#10004;</td> <!-- Convex conic -->
+      <td>&#10004;</td> <!-- Convex smooth -->
+      <td>&#10004;</td> <!-- Nonconvex -->
+      <td>&#10004;</td> <!-- Integer -->
+      <td>Open</td> <!-- License -->
+    </tr>
+
+    <tr>
+      <th><a href="https://github.com/JuliaOpt/Convex.jl">Convex.jl</a></th>
+      <td>&#10004;</td> <!-- Linear/Quadratic -->
+      <td>&#10004;</td> <!-- Convex conic -->
+      <td></td> <!-- Convex smooth -->
+      <td></td> <!-- Nonconvex -->
+      <td>&#10004;</td> <!-- Integer -->
+      <td>Open</td> <!-- License -->
+    </tr>
+
+    <thead>
+      <tr>
+        <th><strong>Solver</strong></th>
+        <th colspan="6"></th>
+      </tr>
+    </thead>
+
+    <tr>
+      <th>
+        <a href="https://projects.coin-or.org/Bonmin">Bonmin</a>
+        <a href="https://github.com/JuliaOpt/AmplNLWriter.jl">(via AmplNLWriter.jl)</a>
+      </th>
+      <td>&#10004;</td> <!-- Linear/Quadratic -->
+      <td></td> <!-- Convex conic -->
+      <td>&#10004;</td> <!-- Convex smooth -->
+      <td>&#10004;</td> <!-- Nonconvex -->
+      <td>&#10004;</td> <!-- Integer -->
+      <td>Open</td> <!-- License -->
+    </tr>
+    <tr>
+      <th>
+        <a href="https://projects.coin-or.org/Cbc">Cbc</a>
+        <a href="https://github.com/JuliaOpt/Cbc.jl">(.jl)</a>
+      </th>
+      <td>&#10004;</td> <!-- Linear/Quadratic -->
+      <td></td> <!-- Convex conic -->
+      <td></td> <!-- Convex smooth -->
+      <td></td> <!-- Nonconvex -->
+      <td>&#10004;</td> <!-- Integer -->
+      <td>Open</td> <!-- License -->
+    </tr>
+
+    <tr>
+      <th>
+        <a href="https://projects.coin-or.org/Clp">Clp</a>
+        <a href="https://github.com/JuliaOpt/Clp.jl">(.jl)</a>
+      </th>
+      <td>&#10004;</td> <!-- Linear/Quadratic -->
+      <td></td> <!-- Convex conic -->
+      <td></td> <!-- Convex smooth -->
+      <td></td> <!-- Nonconvex -->
+      <td></td> <!-- Integer -->
+      <td>Open</td> <!-- License -->
+    </tr>
+
+    <tr>
+      <th>
+        <a href="https://projects.coin-or.org/Couenne">Couenne</a>
+        <a href="https://github.com/JuliaOpt/AmplNLWriter.jl">(via AmplNLWriter.jl)</a>
+      </th>
+      <td>&#10004;</td> <!-- Linear/Quadratic -->
+      <td></td> <!-- Convex conic -->
+      <td>&#10004;</td> <!-- Convex smooth -->
+      <td>&#10004;</td> <!-- Nonconvex -->
+      <td>&#10004;</td> <!-- Integer -->
+      <td>Open</td> <!-- License -->
+    </tr>
+
+    <tr>
+      <th>
+        <a href="http://www-01.ibm.com/software/commerce/optimization/cplex-optimizer/">CPLEX</a>
+        <a href="https://github.com/JuliaOpt/CPLEX.jl">(.jl)</a>
+      </th>
+      <td>&#10004;</td> <!-- Linear/Quadratic -->
+      <td>&#10004;</td> <!-- Convex conic -->
+      <td></td> <!-- Convex smooth -->
+      <td></td> <!-- Nonconvex -->
+      <td>&#10004;<sup>cb</sup></td> <!-- Integer -->
+      <td>Comm.<sup>a</sup></td> <!-- License -->
+    </tr>
+
+    <tr>
+      <th>
+        <a href="https://github.com/ifa-ethz/ecos/">ECOS</a>
+        <a href="https://github.com/JuliaOpt/ECOS.jl">(.jl)</a>
+      </th>
+      <td>&#10004;</td> <!-- Linear/Quadratic -->
+      <td>&#10004;</td> <!-- Convex conic -->
+      <td></td> <!-- Convex smooth -->
+      <td></td> <!-- Nonconvex -->
+      <td></td> <!-- Integer -->
+      <td>Open</td> <!-- License -->
+    </tr>
+
+    <tr>
+      <th>
+        <a href="http://www.gnu.org/software/glpk/">GLPK</a>
+        <a href="https://github.com/JuliaOpt/GLPK.jl">(.jl)</a>
+      </th>
+      <td>&#10004;</td> <!-- Linear/Quadratic -->
+      <td></td> <!-- Convex conic -->
+      <td></td> <!-- Convex smooth -->
+      <td></td> <!-- Nonconvex -->
+      <td>&#10004;<sup>cb</sup></td> <!-- Integer -->
+      <td>Open</td> <!-- License -->
+    </tr>
+
+    <tr>
+      <th>
+        <a href="http://www.gurobi.com">Gurobi</a>
+        <a href="https://github.com/JuliaOpt/Gurobi.jl">(.jl)</a>
+      </th>
+      <td>&#10004;</td> <!-- Linear/Quadratic -->
+      <td>&#10004;</td> <!-- Convex conic -->
+      <td></td> <!-- Convex smooth -->
+      <td></td> <!-- Nonconvex -->
+      <td>&#10004;<sup>cb</sup></td> <!-- Integer -->
+      <td>Comm.<sup>a</sup></td> <!-- License -->
+    </tr>
+
+    <tr>
+      <th>
+        <a href="https://projects.coin-or.org/Ipopt">Ipopt</a>
+        <a href="https://github.com/JuliaOpt/Ipopt.jl">(.jl)</a>
+      </th>
+      <td>&#10004;</td> <!-- Linear/Quadratic -->
+      <td></td> <!-- Convex conic -->
+      <td>&#10004;</td> <!-- Convex smooth -->
+      <td>&#10004;</td> <!-- Nonconvex -->
+      <td></td> <!-- Integer -->
+      <td>Open</td> <!-- License -->
+    </tr>
+
+    <tr>
+      <th>
+        <a href="http://artelys.com/en/optimization-tools/knitro">Artelys Knitro</a>
+        <a href="https://github.com/JuliaOpt/KNITRO.jl">(.jl)</a>
+      </th>
+      <td>&#10004;</td> <!-- Linear/Quadratic -->
+      <td></td> <!-- Convex conic -->
+      <td>&#10004;</td> <!-- Convex smooth -->
+      <td>&#10004;</td> <!-- Nonconvex -->
+      <td>&#10004;</td> <!-- Integer -->
+      <td>Comm.</td> <!-- License -->
+    </tr>
+
+    <tr>
+      <th>
+        <a href="http://www.mosek.com/">Mosek</a>
+        <a href="https://github.com/JuliaOpt/Mosek.jl">(.jl)</a>
+      </th>
+      <td>&#10004;</td> <!-- Linear/Quadratic -->
+      <td>&#10004;</td> <!-- Convex conic -->
+      <td>&#10004;</td> <!-- Convex smooth -->
+      <td></td> <!-- Nonconvex -->
+      <td>&#10004;</td> <!-- Integer -->
+      <td>Comm.<sup>a</sup></td> <!-- License -->
+    </tr>
+
+    <tr>
+      <th>
+        <a href="http://ab-initio.mit.edu/nlopt">NLopt</a>
+        <a href="https://github.com/JuliaOpt/NLopt.jl">(.jl)</a>
+      </th>
+      <td></td> <!-- Linear/Quadratic -->
+      <td></td> <!-- Convex conic -->
+      <td>&#10004;</td> <!-- Convex smooth -->
+      <td>&#10004;</td> <!-- Nonconvex -->
+      <td></td> <!-- Integer -->
+      <td>Open</td> <!-- License -->
+    </tr>
+
+    <tr>
+      <th>
+        <a href="https://github.com/cvxgrp/scs">SCS</a>
+        <a href="https://github.com/JuliaOpt/SCS.jl">(.jl)</a>
+      </th>
+      <td>&#10004;</td> <!-- Linear/Quadratic -->
+      <td>&#10004;</td> <!-- Convex conic -->
+      <td></td> <!-- Convex smooth -->
+      <td></td> <!-- Nonconvex -->
+      <td></td> <!-- Integer -->
+      <td>Open</td> <!-- License -->
+    </tr>
+
+  </tbody>
+</table>

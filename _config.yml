@@ -1,0 +1,19 @@
+permalink: /:categories/:year/:month/:title
+highlighter: rouge
+gems:
+  - jekyll-redirect-from
+navigation:
+  - title: Home
+    url: /
+
+  - title: Learning
+    url: "/learning/"
+
+  - title: Packages
+    url: "/packages/"
+
+  - title: Showcase
+    url: "/showcase/"
+
+  - title: Stickers
+    url: "https://www.stickermule.com/marketplace/4071-juliaopt"
