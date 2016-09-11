@@ -36,7 +36,7 @@ The ecosystem of [Julia packages](http://pkg.julialang.org) is growing very fast
 
 - [VariationalInequality.jl](https://github.com/chkwon/VariationalInequality.jl): uses JuMP modeling language for [variational inequality](https://en.wikipedia.org/wiki/Variational_inequality) problems.
 
-- [Complementarity.jl](https://github.com/chkwon/Complementarity.jl): uses JuMP modeling language for [linear](https://en.wikipedia.org/wiki/Linear_complementarity_problem)/[nonlinear](https://en.wikipedia.org/wiki/Nonlinear_complementarity_problem)/[mixed](https://en.wikipedia.org/wiki/Mixed_complementarity_problem) complementarity problems and solves using [a Julia interface](https://github.com/chkwon/PATHSolver.jl) to [the PATH Solver](http://pages.cs.wisc.edu/%7Eferris/path.html).
+- [Complementarity.jl](https://github.com/chkwon/Complementarity.jl): uses JuMP modeling language for [linear](https://en.wikipedia.org/wiki/Linear_complementarity_problem)/[nonlinear](https://en.wikipedia.org/wiki/Nonlinear_complementarity_problem)/[mixed](https://en.wikipedia.org/wiki/Mixed_complementarity_problem) complementarity problems and solves using [a Julia interface](https://github.com/chkwon/PATHSolver.jl) to [the PATH Solver](http://pages.cs.wisc.edu/%7Eferris/path.html). This package also enables `@complements` for modeling complementarity constraints.
 
 - [NLsolve.jl](https://github.com/EconForge/NLsolve.jl): Julia solvers for systems of nonlinear equations and mixed complementarity problems
 
