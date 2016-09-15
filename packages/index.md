@@ -51,6 +51,8 @@ The ecosystem of [Julia packages](http://pkg.julialang.org) is growing very fast
 
 - [Munkres.jl](https://github.com/FugroRoames/Munkres.jl): solves optimal assignment problems using the Hungarian algorithm.
 
+- [PowerModels.jl](https://github.com/lanl-ansi/PowerModels.jl): solves various power network flow problems.
+
 - [RobustShortestPath.jl](https://github.com/chkwon/RobustShortestPath.jl): solves robust shortest path problems.
 
 - [TrafficAssignment.jl](https://github.com/chkwon/TrafficAssignment.jl): solves network user equilibrium problems.
