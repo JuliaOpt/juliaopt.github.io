@@ -47,11 +47,23 @@
     <text x="55%" y="201" fill="black">Mosek.jl</text>
 
 
+
+    <rect x="1%" y="180" width="20%" height="30" stroke="black" />
+    <text x="11%" y="201" fill="black">NLopt.jl</text>
+
+    <rect x="23%" y="180" width="20%" height="30" stroke="black" />
+    <text x="33%" y="201" fill="black">SCS.jl</text>
+
+    <rect x="45%" y="180" width="20%" height="30" stroke="black" />
+    <text x="55%" y="201" fill="black">Xpress.jl</text>
+
+
+    <!--  2 boxes 
     <rect x="11%" y="220" width="20%" height="30" stroke="black" />
     <text x="21%" y="241" fill="black">NLopt.jl</text>
 
     <rect x="33%" y="220" width="20%" height="30" stroke="black" />
-    <text x="43%" y="241" fill="black">SCS.jl</text>
+    <text x="43%" y="241" fill="black">SCS.jl</text> -->
   </g>
 
   <g fill="#BBE" font-size="20" text-anchor="middle">
