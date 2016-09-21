@@ -36,7 +36,7 @@ The second set comprises modeling languages (red), external solver interfaces (p
 
 
 # Solvers
-JuliaOpt provides wrappers for a wide variety of solvers. The following table summarizes the forms supported by the modeling languages and solvers.
+JuliaOpt provides wrappers for a wide variety of solvers. The following table summarizes the forms supported by the modeling languages and solvers. Note that the capabilities marked in the table represent those of the Julia package, not necessarily the capabilities of the solver itself.
 
 {%include solver-tables.html %}
 
