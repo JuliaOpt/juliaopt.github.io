@@ -17,6 +17,8 @@ The ecosystem of [Julia packages](http://pkg.julialang.org) is growing very fast
 
 - [StochDynamicProgramming.jl](https://github.com/JuliaOpt/StochDynamicProgramming.jl): for discrete-time stochastic optimal control problems.
 
+- [PolyJuMP.jl](https://github.com/blegat/PolyJuMP.jl): for polynomial optimization.
+
 ## Other Optimization
 
 - [JuliaSmoothOptimizers](https://github.com/JuliaSmoothOptimizers): A collection of tools primarily designed for developing solvers for smooth nonlinear optimization.
@@ -30,6 +32,8 @@ The ecosystem of [Julia packages](http://pkg.julialang.org) is growing very fast
 - [DifferentialDynamicProgramming.jl](https://github.com/baggepinnen/DifferentialDynamicProgramming.jl): for differential dynamic programming problems.
 
 - [OptimPack.jl](https://github.com/emmt/OptimPack.jl): Julia bindings for the [OptimPack](https://github.com/emmt/OptimPack) library.
+
+- [SumOfSquares.jl](https://github.com/blegat/SumOfSquares.jl): Sum of Squares reformulation for [PolyJuMP.jl](https://github.com/blegat/PolyJuMP.jl).
 
 
 ## Equilibrium Problems
