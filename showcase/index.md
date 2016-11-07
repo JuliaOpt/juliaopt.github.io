@@ -23,6 +23,12 @@ title:  Showcase
 - Virginia Commonwealth University
 
 # Papers using JuliaOpt packages
+- T. Gueudré, C. Baldassi, M. Zamparo, M. Weigt and A. Pagnani,
+  "Simultaneous identification of specifically interacting paralogs and interprotein contacts by direct coupling analysis".
+  <i>Proc. Natl. Acad. Sci. USA</i> 113, 12186–12191 (2016).
+  <a href="http://dx.doi.org/10.1073/pnas.1607570113">[DOI]</a>
+  <a href="https://github.com/Mirmu/ParalogMatching.jl">[Code]</a>
+
 - R. Brandt and M. Bengtsson, "Fast-Convergent Distributed Coordinated Precoding for TDD Multicell MIMO Systems",
 <i>IEEE Int. Workshop Computational Advances in Multi-Sensor Adaptive Process. (CAMSAP'15)</i>, 2015.
 <a href="http://kth.diva-portal.org/smash/get/diva2:861877/FULLTEXT01.pdf">[PDF]</a>
