@@ -19,6 +19,8 @@ The ecosystem of [Julia packages](http://pkg.julialang.org) is growing very fast
 
 - [PolyJuMP.jl](https://github.com/blegat/PolyJuMP.jl): for polynomial optimization.
 
+- [StructJuMP.jl](https://github.com/StructJuMP/StructJuMP.jl): for block-structured optimization.
+
 ## Other Optimization
 
 - [JuliaSmoothOptimizers](https://github.com/JuliaSmoothOptimizers): A collection of tools primarily designed for developing solvers for smooth nonlinear optimization.
