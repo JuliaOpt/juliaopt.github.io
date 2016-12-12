@@ -12,7 +12,8 @@ JuliaOpt is an organization that brings together packages written in Julia that 
 
 - **Overview**: [presentation](https://www.youtube.com/watch?v=7LNeR299q88) and [workshop](https://www.youtube.com/watch?v=nnL7yLMVu6c) from JuliaCon 2015
 - **Code**: [github.com/JuliaOpt](http://github.com/JuliaOpt)
-- **Mailing list**: [julia-opt](https://groups.google.com/forum/#!forum/julia-opt)
+- **Forum**: [Discourse](https://discourse.julialang.org/c/domain/opt)
+- **Old Mailing list**: [julia-opt](https://groups.google.com/forum/#!forum/julia-opt)
 - **Case study**: [Computing in Operations Research using Julia](http://dx.doi.org/10.1287/ijoc.2014.0623), *INFORMS Journal on Computing*. [[PDF]](http://arxiv.org/abs/1312.1431)
 
 
