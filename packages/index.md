@@ -21,6 +21,8 @@ The ecosystem of [Julia packages](http://pkg.julialang.org) is growing very fast
 
 - [StructJuMP.jl](https://github.com/StructJuMP/StructJuMP.jl): for block-structured optimization.
 
+- [NLOptControl.jl](https://github.com/huckl3b3rry87/NLOptControl.jl): for formulating and solving nonlinear optimal control problems. 
+
 ## Other Optimization
 
 - [JuliaSmoothOptimizers](https://github.com/JuliaSmoothOptimizers): A collection of tools primarily designed for developing solvers for smooth nonlinear optimization.
