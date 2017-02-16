@@ -11,7 +11,6 @@ title:  Learning
 
         {% highlight julia %}
         julia> Pkg.update()     # Get latest package info
-        julia> Pkg.add("Optim")
         julia> Pkg.add("JuMP")
         julia> Pkg.add("Cbc")   # and so on
         {% endhighlight %}
