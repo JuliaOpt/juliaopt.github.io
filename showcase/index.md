@@ -62,3 +62,7 @@ title:  Showcase
 <a href="http://www.mcs.anl.gov/~petra/papers/StochJuMP.pdf">[PDF]</a>
 
 - V. Gupta, "Data-driven models for uncertainty and behavior". 2014. <a href="http://hdl.handle.net/1721.1/91301">[PDF]</a>
+
+# Open-Source projects using JuliaOpt packages
+
+- [Staffjoy workforce autoscheduling algorithm](https://github.com/staffjoy/autoscheduler)
