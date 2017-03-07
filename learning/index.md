@@ -18,6 +18,14 @@ title:  Learning
 
 - **Open-source** solvers will automatically be downloaded and installed in your Julia package directory. If you want to use an external **commercial** solver, you will need to download those before installing the corresponding JuliaOpt package.
 
+## Detailed Guides for Beginners
+
+- [Julia/IJulia/JuMP install instructions](https://docs.google.com/document/d/1nv6bvzbcBDRnVjxPusiTMXdwo7Ywooggp_o2W0IZuTg/edit)
+
+- [Chapter 1. Introduction and Installation](http://www.chkwon.net/julia/book/juliabook-preview.pdf) of Julia Programming for Operations Research
+
+
+
 # Examples
 <img style="height: 4em; width:auto" src="/images/ijulialogo.png">
 
