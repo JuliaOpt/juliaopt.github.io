@@ -10,7 +10,7 @@ The JuMP developers meetup will take place at MIT, June 12-16, 2017.
 
 ## Purpose
 
-The meetup is designed to serve as an opportunity for developers of mathematical optimization software within the JuMP "stack" (i.e., MathProgBase, JuMP, and JuMP extensions) to meet and focus on advancing common interests. JuMP core developers will present on the internals of JuMP and solicit feedback in preparation for the release of JuMP 1.0 (targeted for July, 2017). Attendees are welcome to contribute to the JuMP stack itself or to pursue JuMP-related projects while having the JuMP developers in the same room for questions and feedback.
+The meetup is designed to serve as an opportunity for developers of mathematical optimization software within the JuMP "stack" (i.e., solvers, solver interfaces, MathProgBase, JuMP, and JuMP extensions) to meet and focus on advancing common interests. JuMP core developers will present on the internals of JuMP and solicit feedback in preparation for the release of JuMP 1.0 (targeted for July, 2017). Attendees are welcome to contribute to the JuMP stack itself or to pursue JuMP-related projects while having the JuMP developers in the same room for questions and feedback.
 
 
 ## Schedule
