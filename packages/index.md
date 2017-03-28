@@ -4,7 +4,7 @@ title:  Packages
 ---
 
 # Optimization-Related Packages
-The ecosystem of [Julia packages](http://pkg.julialang.org) is growing very fast. There are JuliaOpt packages that are not introduced in the [home](/) page and other optimization related packages that are not part of JuliaOpt.
+The ecosystem of [Julia packages](http://pkg.julialang.org) is growing very fast. There are packages hosted in the JuliaOpt GitHub organization which are not introduced in the [home](/) page and other optimization related packages that are not part of JuliaOpt.
 
 
 ## JuMP Extensions
