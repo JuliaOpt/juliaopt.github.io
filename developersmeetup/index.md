@@ -32,11 +32,11 @@ The meetup is designed to serve as an opportunity for developers of mathematical
 
 ## Planned Talks
 
-- Carleton Coffrin (Los Alamos National Lab): "PowerModels.jl - Reference Implementations for R&D in Power Network Optimization"
-- Joaquim Dias Garcia (PSR and PUC-Rio): "Stochastic programming in energy systems"
+- Carleton Coffrin (Los Alamos National Lab): PowerModels.jl - Reference Implementations for R&D in Power Network Optimization
+- Joaquim Dias Garcia (PSR and PUC-Rio): Stochastic programming in energy systems
 - Joey Huchette (MIT): A talk on piecewise linear optimization (<a href="https://github.com/joehuchette/PiecewiseLinearOpt.jl">PiecewiseLinearOpt.jl</a>)
 - Jordan Jalving (UW Madison): A talk on component-wise nonlinear modeling
-- Yee Sian Ng (MIT): "Working with JuMP's macros for extensions"
+- Yee Sian Ng (MIT): Working with JuMP's macros for extensions
 - Jarrett Revels (MIT): A talk on automatic differentiation (<a href="https://github.com/JuliaDiff/ForwardDiff.jl">ForwardDiff.jl</a>, <a href="https://github.com/JuliaDiff/ReverseDiff.jl">ReverseDiff.jl</a>)
 - ...
 
