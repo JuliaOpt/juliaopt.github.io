@@ -14,6 +14,7 @@ title:  Showcase
 - Sapienza Università di Roma
 - Stanford University
 - Universidad Carlos III de Madrid
+- Université catholique de Louvain
 - Université de Liège
 - University at Buffalo
 - University of Iowa
