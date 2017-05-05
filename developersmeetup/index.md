@@ -33,6 +33,7 @@ The meetup is designed to serve as an opportunity for developers of mathematical
 ## Planned Talks
 
 - Carleton Coffrin (Los Alamos National Lab): PowerModels.jl - Reference Implementations for R&D in Power Network Optimization
+- Oscar Dowson (University of Auckland): A talk on <a href="https://solverstudio.org/">SolverStudio</a> + Julia
 - Joaquim Dias Garcia (PSR and PUC-Rio): Stochastic programming in energy systems
 - Joey Huchette (MIT): A talk on piecewise linear optimization (<a href="https://github.com/joehuchette/PiecewiseLinearOpt.jl">PiecewiseLinearOpt.jl</a>)
 - Jordan Jalving (UW Madison): A talk on component-wise nonlinear modeling
