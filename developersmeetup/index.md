@@ -33,7 +33,7 @@ The meetup is designed to serve as an opportunity for developers of mathematical
 ## Planned Talks
 
 - **Chris Coey** (MIT): A talk on the design and architecture of <a href="https://github.com/JuliaOpt/Pajarito.jl">Pajarito.jl</a>
-- **Carleton Coffrin** (Los Alamos National Lab): PowerModels.jl - Reference Implementations for R&D in Power Network Optimization
+- **Carleton Coffrin** (Los Alamos National Lab): <a href="https://github.com/lanl-ansi/PowerModels.jl">PowerModels.jl</a> - Reference Implementations for R&D in Power Network Optimization
 - **Oscar Dowson** (University of Auckland): A talk on <a href="https://solverstudio.org/">SolverStudio</a> + Julia
 - **Joaquim Dias Garcia** (PSR and PUC-Rio): Stochastic programming in energy systems
 - **Joey Huchette** (MIT): A talk on piecewise linear optimization (<a href="https://github.com/joehuchette/PiecewiseLinearOpt.jl">PiecewiseLinearOpt.jl</a>)
