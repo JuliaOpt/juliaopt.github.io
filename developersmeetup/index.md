@@ -41,6 +41,7 @@ The meetup is designed to serve as an opportunity for developers of mathematical
 - **Benoît Legat** (Université Catholique de Louvain): A talk on sum-of-squares optimization in Julia [remote presentation]
 - **Yee Sian Ng** (MIT): Working with JuMP's macros for extensions
 - **Jarrett Revels** (MIT): A talk on automatic differentiation (<a href="https://github.com/JuliaDiff/ForwardDiff.jl">ForwardDiff.jl</a>, <a href="https://github.com/JuliaDiff/ReverseDiff.jl">ReverseDiff.jl</a>)
+- **Bartolomeo Stellato** (University of Oxford): OSQP.jl - A Julia wrapper and extensions for the Operator Splitting QP solver
 - ...
 
 
