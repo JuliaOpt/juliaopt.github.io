@@ -30,23 +30,23 @@ On Monday after lunch, Thursday all day, and Friday all day, the meetup will tak
 
 Room <a href="http://whereis.mit.edu/?go=E62">E62-223</a> (until lunch)
 
-<tt>09:00</tt> Welcome and introduction (**Juan Pablo Vielma**, MIT)
+<a href="https://www.timeanddate.com/worldclock/fixedtime.html?iso=20170612T0900&msg=Welcome+and+Introduction&p1=43&am=30"><tt>09:00</tt></a> Welcome and Introduction (**Juan Pablo Vielma**, MIT)
 
-<tt>09:30</tt> *The design of JuMP and MathProgBase* (**Miles Lubin**, MIT)
+<a href="https://www.timeanddate.com/worldclock/fixedtime.html?iso=20170612T0930&msg=The+design+of+JuMP+and+MathProgBase&p1=43&ah=1"><tt>09:30</tt></a> *The design of JuMP and MathProgBase* (**Miles Lubin**, MIT)
 
-<tt>10:30</tt> *The design and architecture of <a href="https://github.com/JuliaOpt/Pajarito.jl">Pajarito</a>* (**Chris Coey**, MIT)
+<a href="https://www.timeanddate.com/worldclock/fixedtime.html?iso=20170612T1030&msg=The+design+and+architecture+of+Pajarito&p1=43&am=30"><tt>10:30</tt></a> *The design and architecture of <a href="https://github.com/JuliaOpt/Pajarito.jl">Pajarito</a>* (**Chris Coey**, MIT)
 
-<tt>11:00</tt> Coffee break and group photo
+<a href="https://www.timeanddate.com/worldclock/fixedtime.html?iso=20170612T1100&msg=Coffee+break+and+group+photo&p1=43&am=45"><tt>11:00</tt></a> Coffee break and group photo
 
-<tt>11:45</tt> *A Graph-Based Architecture for Optimization Modeling Frameworks* (**Steven Diamond**, Stanford)
+<a href="https://www.timeanddate.com/worldclock/fixedtime.html?iso=20170612T1145&msg=A+talk+on+cvxflow&p1=43&am=45"><tt>11:45</tt></a> *A Graph-Based Architecture for Optimization Modeling Frameworks* (**Steven Diamond**, Stanford)
 
 <tt>12:15</tt> Lunch break
 
 Room <a href="http://whereis.mit.edu/?go=E51">E51-376</a> (after lunch)
 
-<tt>14:30</tt> *Plans and priorities for JuMP 1.0 and MathProgBase 1.0* (**Miles Lubin**)
+<a href="https://www.timeanddate.com/worldclock/fixedtime.html?iso=20170612T1430&msg=Plans+and+priorities+for+JuMP+1.0+and+MathProgBase+1.0&p1=43&am=30"><tt>14:30</tt></a> *Plans and priorities for JuMP 1.0 and MathProgBase 1.0* (**Miles Lubin**)
 
-<tt>15:00</tt> Discussion and feedback on JuMP 1.0 and MathProgBase 1.0, discuss important issues including <a href="https://github.com/JuliaOpt/MathProgBase.jl/issues/164">MathProgBase issue #164</a> on solver statuses and <a href="https://github.com/JuliaOpt/MathProgBase.jl/issues/168">MathProgBase issue #168</a> on a new standard problem format
+<a href="https://www.timeanddate.com/worldclock/fixedtime.html?iso=20170612T1500&msg=Discussion+and+feedback+on+JuMP+1.0+and+MathProgBase+1.0&p1=43&ah=2"><tt>15:00</tt></a> Discussion and feedback on JuMP 1.0 and MathProgBase 1.0, discuss important issues including <a href="https://github.com/JuliaOpt/MathProgBase.jl/issues/164">MathProgBase issue #164</a> on solver statuses and <a href="https://github.com/JuliaOpt/MathProgBase.jl/issues/168">MathProgBase issue #168</a> on a new standard problem format
 
 <tt>17:00</tt> Finish
 
@@ -55,29 +55,29 @@ Room <a href="http://whereis.mit.edu/?go=E51">E51-376</a> (after lunch)
 
 Room <a href="http://whereis.mit.edu/?go=E62">E62-223</a> (all day)
 
-<tt>09:10</tt> Welcome for the day
+<a href="https://www.timeanddate.com/worldclock/fixedtime.html?iso=20170613T0910&msg=Welcome+for+the+day&p1=43&am=5"><tt>09:10</tt></a> Welcome for the day
 
-<tt>09:15</tt> *Sum-of-squares optimization in Julia* [remote presentation] (**Benoît Legat**, Université Catholique de Louvain)
+<a href="https://www.timeanddate.com/worldclock/fixedtime.html?iso=20170613T0915&msg=A+talk+on+sum-of-squares+optimization+in+Julia&p1=43&am=30"><tt>09:15</tt></a> *Sum-of-squares optimization in Julia* [remote presentation] (**Benoît Legat**, Université Catholique de Louvain)
 
-<tt>09:45</tt> *<a href="https://github.com/lanl-ansi/PowerModels.jl">PowerModels.jl</a>: Reference Implementations for R&D in Power Network Optimization* (**Carleton Coffrin**, Los Alamos National Lab)
+<a href="https://www.timeanddate.com/worldclock/fixedtime.html?iso=20170613T0945&msg=Reference+Implementations+for+R%26D+in+Power+Network+Optimization&p1=43&am=30"><tt>09:45</tt></a> *<a href="https://github.com/lanl-ansi/PowerModels.jl">PowerModels.jl</a>: Reference Implementations for R&D in Power Network Optimization* (**Carleton Coffrin**, Los Alamos National Lab)
 
-<tt>10:15</tt> Coffee break
+<a href="https://www.timeanddate.com/worldclock/fixedtime.html?iso=20170613T1015&msg=Coffee+break&p1=43&am=30"><tt>10:15</tt></a> Coffee break
 
-<tt>10:45</tt> *Stochastic programming in energy systems* (**Joaquim Dias Garcia**, PSR and PUC-Rio)
+<a href="https://www.timeanddate.com/worldclock/fixedtime.html?iso=20170613T1045&msg=Stochastic+programming+in+energy+systems&p1=43&am=30"><tt>10:45</tt></a> *Stochastic programming in energy systems* (**Joaquim Dias Garcia**, PSR and PUC-Rio)
 
-<tt>11:15</tt> *Graph-based modeling using JuMP* (**Jordan Jalving**, UW-Madison)
+<a href="https://www.timeanddate.com/worldclock/fixedtime.html?iso=20170613T1115&msg=Graph-based+modeling+using+JuMP&p1=43&am=30"><tt>11:15</tt></a> *Graph-based modeling using JuMP* (**Jordan Jalving**, UW-Madison)
 
-<tt>11:45</tt> *Decarbonization of power systems using JuMP* (**Nestor Sepulveda**, MIT)
+<a href="https://www.timeanddate.com/worldclock/fixedtime.html?iso=20170613T1145&msg=Decarbonization+of+power+systems+using+JuMP&p1=43&am=30"><tt>11:45</tt></a> *Decarbonization of power systems using JuMP* (**Nestor Sepulveda**, MIT)
 
 <tt>12:15</tt> Lunch break
 
-<tt>14:00</tt> *Working with JuMP’s macros for extensions* (**Yee Sian Ng**, MIT)
+<a href="https://www.timeanddate.com/worldclock/fixedtime.html?iso=20170613T1400&msg=Working+with+JuMP’s+macros+for+extensions&p1=43&am=30"><tt>14:00</tt></a> *Working with JuMP’s macros for extensions* (**Yee Sian Ng**, MIT)
 
-<tt>14:30</tt> *<a href="https://github.com/joehuchette/PiecewiseLinearOpt.jl">PiecewiseLinearOpt.jl</a>: Solving optimization problems containing piecewise linear functions* (**Joey Huchette**, MIT)
+<a href="https://www.timeanddate.com/worldclock/fixedtime.html?iso=20170613T1430&msg=Solving+optimization+problems+containing+piecewise+linear+functions&p1=43&am=30"><tt>14:30</tt></a> *<a href="https://github.com/joehuchette/PiecewiseLinearOpt.jl">PiecewiseLinearOpt.jl</a>: Solving optimization problems containing piecewise linear functions* (**Joey Huchette**, MIT)
 
-<tt>15:00</tt> *OSQP.jl: A Julia wrapper and extensions for the Operator Splitting QP solver* (**Bartolomeo Stellato**, Oxford)
+<a href="https://www.timeanddate.com/worldclock/fixedtime.html?iso=20170613T1500&msg=A+Julia+wrapper+and+extensions+for+the+Operator+Splitting+QP+solver&p1=43&am=30"><tt>15:00</tt></a> *OSQP.jl: A Julia wrapper and extensions for the Operator Splitting QP solver* (**Bartolomeo Stellato**, Oxford)
 
-<tt>15:30</tt> *<a href="https://solverstudio.org/">SolverStudio</a> + Julia* (**Oscar Dowson**, University of Auckland)
+<a href="https://www.timeanddate.com/worldclock/fixedtime.html?iso=20170613T1530&msg=A+talk+on+SolverStudio+%2B+Julia&p1=43&am=30"><tt>15:30</tt></a> *<a href="https://solverstudio.org/">SolverStudio</a> + Julia* (**Oscar Dowson**, University of Auckland)
 
 <tt>16:00</tt> Finish
 
@@ -86,9 +86,9 @@ Room <a href="http://whereis.mit.edu/?go=E62">E62-223</a> (all day)
 
 Room <a href="http://whereis.mit.edu/?go=E62">E62-223</a> (all day)
 
-<tt>09:00</tt> Tutorial and live coding with Documenter.jl
+<a href="https://www.timeanddate.com/worldclock/fixedtime.html?iso=20170614T0900&msg=Tutorial+and+live+coding+with+Documenter.jl&p1=43&ah=2"><tt>09:00</tt></a> Tutorial and live coding with Documenter.jl
 
-<tt>11:00</tt> *A talk on automatic differentiation using <a href="https://github.com/JuliaDiff/ForwardDiff.jl">ForwardDiff.jl</a> and <a href="https://github.com/JuliaDiff/ReverseDiff.jl">ReverseDiff.jl</a>* (**Jarrett Revels**, MIT)
+<a href="https://www.timeanddate.com/worldclock/fixedtime.html?iso=20170614T0900&msg=A+talk+on+automatic+differentiation&p1=43&am=45"><tt>11:00</tt></a> *A talk on automatic differentiation using <a href="https://github.com/JuliaDiff/ForwardDiff.jl">ForwardDiff.jl</a> and <a href="https://github.com/JuliaDiff/ReverseDiff.jl">ReverseDiff.jl</a>* (**Jarrett Revels**, MIT)
 
 <tt>11:45</tt> Lunch break
 
