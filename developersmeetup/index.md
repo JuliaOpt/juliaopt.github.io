@@ -29,15 +29,15 @@ The meetup is designed to serve as an opportunity for developers of mathematical
 
 - 9:10am: Welcome for the day
 - 9:15am - 9:45am: A talk on sum-of-squares optimization in Julia [remote presentation] (**Benoît Legat**, Université Catholique de Louvain)
-- 9:45am - 10:15am: <a href="https://github.com/lanl-ansi/PowerModels.jl">PowerModels.jl</a> - Reference Implementations for R&D in Power Network Optimization (**Carleton Coffrin**, Los Alamos National Lab)
+- 9:45am - 10:15am: <a href="https://github.com/lanl-ansi/PowerModels.jl">PowerModels.jl</a>: Reference Implementations for R&D in Power Network Optimization (**Carleton Coffrin**, Los Alamos National Lab)
 - 10:15am - 10:45am: Coffee break
 - 10:45am - 11:15am: Stochastic programming in energy systems (**Joaquim Dias Garcia**, PSR and PUC-Rio)
 - 11:15am - 11:45am: Decarbonization of power systems using JuMP (**Nestor Sepulveda**)
 - 11:45am - 12:15pm: A talk on component-wise nonlinear modeling (**Jordan Jalving**, UW Madison)
 - Lunch break
 - 2:00pm - 2:30pm: Working with JuMP’s macros for extensions (**Yee Sian Ng**, MIT)
-- 2:30pm - 3:00pm: A talk on <a href="https://github.com/joehuchette/PiecewiseLinearOpt.jl">piecewise linear optimization</a> (**Joey Huchette**, MIT)
-- 3:00pm - 3:30pm: OSQP.jl - A Julia wrapper and extensions for the Operator Splitting QP solver (**Bartolomeo Stellato**, Oxford)
+- 2:30pm - 3:00pm: <a href="https://github.com/joehuchette/PiecewiseLinearOpt.jl">PiecewiseLinearOpt.jl</a>: Solving optimization problems containing piecewise linear functions (**Joey Huchette**, MIT)
+- 3:00pm - 3:30pm: OSQP.jl: A Julia wrapper and extensions for the Operator Splitting QP solver (**Bartolomeo Stellato**, Oxford)
 - 3:30pm - 4:00pm: A talk on <a href="https://solverstudio.org/">SolverStudio</a> + Julia (**Oscar Dowson**, University of Auckland)
 
 ### Wednesday
