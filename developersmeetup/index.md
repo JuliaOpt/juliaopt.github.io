@@ -13,38 +13,50 @@ The JuMP developers meetup will take place at MIT, June 12-16, 2017.
 The meetup is designed to serve as an opportunity for developers of mathematical optimization software within the JuMP "stack" (i.e., solvers, solver interfaces, MathProgBase, JuMP, and JuMP extensions) to meet and focus on advancing common interests. JuMP core developers will present on the internals of JuMP and solicit feedback in preparation for the release of JuMP 1.0 (targeted for July, 2017). Attendees are welcome to contribute to the JuMP stack itself or to pursue JuMP-related projects while having the JuMP developers in the same room for questions and feedback.
 
 
-## Schedule
+## Draft Schedule
 
 ### Monday
 
-- Presentations on MathProgBase and JuMP internals
-- Guest speaker: <a href="http://stanford.edu/~stevend2/">Steven Diamond</a> (Stanford, developer of <a href="https://github.com/cvxgrp/cvxpy">cvxpy</a>)
-- Attendee presentations
+- 9:00am - 9:30am: Welcome and Introduction (**Juan Pablo Vielma**, MIT)
+- 9:30am - 10:30am: The design of JuMP and MathProgBase (**Miles Lubin**, MIT)
+- 10:30am - 11:00am: The design and architecture of <a href="https://github.com/JuliaOpt/Pajarito.jl">Pajarito</a> (**Chris Coey**, MIT)
+- 11:00am - 11:45am: Coffee break and group photo
+- 11:45am - 12:30pm: A talk on <a href="http://stanford.edu/~boyd/papers/cvxflow.html">cvxflow</a> (**Steven Diamond**, Stanford)
+- Lunch break
+- 2:30pm - 5:00pm: Developer collaboration time. Plans and priorities for JuMP 1.0 (**Miles Lubin** and **Joey Huchette**). Brainstorming on the future of algebraic modeling (**Chris Coey**).
 
 ### Tuesday
 
-- Attendee presentations
-- Hackathon
+- 9:10am: Welcome for the day
+- 9:15am - 9:45am: A talk on sum-of-squares optimization in Julia [remote presentation] (**Benoît Legat**, Université Catholique de Louvain)
+- 9:45am - 10:15am: <a href="https://github.com/lanl-ansi/PowerModels.jl">PowerModels.jl</a> - Reference Implementations for R&D in Power Network Optimization (**Carleton Coffrin**, Los Alamos National Lab)
+- 10:15am - 10:45am: Coffee break
+- 10:45am - 11:15am: Stochastic programming in energy systems (**Joaquim Dias Garcia**, PSR and PUC-Rio)
+- 11:15am - 11:45am: Decarbonization of power systems using JuMP (**Nestor Sepulveda**)
+- 11:45am - 12:15pm: A talk on component-wise nonlinear modeling (**Jordan Jalving**, UW Madison)
+- Lunch break
+- 2:00pm - 2:30pm: Working with JuMP’s macros for extensions (**Yee Sian Ng**, MIT)
+- 2:30pm - 3:00pm: A talk on <a href="https://github.com/joehuchette/PiecewiseLinearOpt.jl">piecewise linear optimization</a> (**Joey Huchette**, MIT)
+- 3:00pm - 3:30pm: OSQP.jl - A Julia wrapper and extensions for the Operator Splitting QP solver (**Bartolomeo Stellato**, Oxford)
+- 3:30pm - 4:00pm: A talk on <a href="https://solverstudio.org/">SolverStudio</a> + Julia (**Oscar Dowson**, University of Auckland)
 
-### Wednesday, Thursday, Friday
+### Wednesday
 
-- Hackathon
+- Developer collaboration time
+- A talk on automatic differentiation using <a href="https://github.com/JuliaDiff/ForwardDiff.jl">ForwardDiff.jl</a> and <a href="https://github.com/JuliaDiff/ReverseDiff.jl">ReverseDiff.jl</a> (**Jarrett Revels**, MIT)
 
-## Planned Talks
+### Thursday
 
-- **Chris Coey** (MIT): A talk on the design and architecture of <a href="https://github.com/JuliaOpt/Pajarito.jl">Pajarito.jl</a>
-- **Carleton Coffrin** (Los Alamos National Lab): <a href="https://github.com/lanl-ansi/PowerModels.jl">PowerModels.jl</a> - Reference Implementations for R&D in Power Network Optimization
-- **Oscar Dowson** (University of Auckland): A talk on <a href="https://solverstudio.org/">SolverStudio</a> + Julia
-- **Joaquim Dias Garcia** (PSR and PUC-Rio): Stochastic programming in energy systems
-- **Joey Huchette** (MIT): A talk on piecewise linear optimization (<a href="https://github.com/joehuchette/PiecewiseLinearOpt.jl">PiecewiseLinearOpt.jl</a>)
-- **Jordan Jalving** (UW Madison): A talk on component-wise nonlinear modeling
-- **Benoît Legat** (Université Catholique de Louvain): A talk on sum-of-squares optimization in Julia [remote presentation]
-- **Yee Sian Ng** (MIT): Working with JuMP's macros for extensions
-- **Jarrett Revels** (MIT): A talk on automatic differentiation (<a href="https://github.com/JuliaDiff/ForwardDiff.jl">ForwardDiff.jl</a>, <a href="https://github.com/JuliaDiff/ReverseDiff.jl">ReverseDiff.jl</a>)
-- **Bartolomeo Stellato** (University of Oxford): OSQP.jl - A Julia wrapper and extensions for the Operator Splitting QP solver
-- ...
+- Developer collaboration time
+- Meetup dinner
+
+### Friday
+
+- Developer collaboration time
+
+
 
 
 ## Contact
 
-Contact mlubin at mit.edu for more information, or if you are interested in attending and have not received an invitation. 
+Contact mlubin at mit.edu for more information.
