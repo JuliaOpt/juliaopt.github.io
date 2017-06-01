@@ -32,7 +32,7 @@ The meetup is designed to serve as an opportunity for developers of mathematical
 - 9:45am - 10:15am: <a href="https://github.com/lanl-ansi/PowerModels.jl">PowerModels.jl</a>: Reference Implementations for R&D in Power Network Optimization (**Carleton Coffrin**, Los Alamos National Lab)
 - 10:15am - 10:45am: Coffee break
 - 10:45am - 11:15am: Stochastic programming in energy systems (**Joaquim Dias Garcia**, PSR and PUC-Rio)
-- 11:15am - 11:45am: Decarbonization of power systems using JuMP (**Nestor Sepulveda**)
+- 11:15am - 11:45am: Decarbonization of power systems using JuMP (**Nestor Sepulveda**, MIT)
 - 11:45am - 12:15pm: Graph-based modeling using JuMP (**Jordan Jalving**, UW Madison)
 - Lunch break
 - 2:00pm - 2:30pm: Working with JuMP’s macros for extensions (**Yee Sian Ng**, MIT)
