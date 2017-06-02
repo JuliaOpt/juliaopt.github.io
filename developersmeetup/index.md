@@ -17,7 +17,7 @@ The meetup is designed to serve as an opportunity for developers of mathematical
 
 ### Monday
 
-- 9:00am - 9:30am: Welcome and Introduction (**Juan Pablo Vielma**, MIT)
+- 9:00am - 9:30am: Welcome and introduction (**Juan Pablo Vielma**, MIT)
 - 9:30am - 10:30am: The design of JuMP and MathProgBase (**Miles Lubin**, MIT)
 - 10:30am - 11:00am: The design and architecture of <a href="https://github.com/JuliaOpt/Pajarito.jl">Pajarito</a> (**Chris Coey**, MIT)
 - 11:00am - 11:45am: Coffee break and group photo
@@ -52,6 +52,7 @@ The meetup is designed to serve as an opportunity for developers of mathematical
 
 ### Friday
 
+- 10:00am: Tour of the MIT Museum
 - Developer collaboration time
 
 
