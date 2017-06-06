@@ -21,7 +21,7 @@ The meetup is designed to serve as an opportunity for developers of mathematical
 - 9:30am - 10:30am: The design of JuMP and MathProgBase (**Miles Lubin**, MIT)
 - 10:30am - 11:00am: The design and architecture of <a href="https://github.com/JuliaOpt/Pajarito.jl">Pajarito</a> (**Chris Coey**, MIT)
 - 11:00am - 11:45am: Coffee break and group photo
-- 11:45am - 12:30pm: A talk on <a href="http://stanford.edu/~boyd/papers/cvxflow.html">cvxflow</a> (**Steven Diamond**, Stanford)
+- 11:45am - 12:15pm: A Graph-Based Architecture for Optimization Modeling Frameworks (**Steven Diamond**, Stanford)
 - Lunch break
 - 2:30pm - 5:00pm: Developer collaboration time. Plans and priorities for JuMP 1.0 (**Miles Lubin** and **Joey Huchette**). Brainstorming on the future of algebraic modeling (**Chris Coey**).
 
