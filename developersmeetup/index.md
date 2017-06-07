@@ -63,9 +63,9 @@ Room <a href="http://whereis.mit.edu/?go=E62">E62-223</a> (all day)
 
 <tt>10:45</tt> <it>Stochastic programming in energy systems</it> (**Joaquim Dias Garcia**, PSR and PUC-Rio)
 
-<tt>11:15</tt> <it>Decarbonization of power systems using JuMP</it> (**Nestor Sepulveda**, MIT)
+<tt>11:15</tt> <it>Graph-based modeling using JuMP</it> (**Jordan Jalving**, UW-Madison)
 
-<tt>11:45</tt> <it>Graph-based modeling using JuMP</it> (**Jordan Jalving**, UW-Madison)
+<tt>11:45</tt> <it>Decarbonization of power systems using JuMP</it> (**Nestor Sepulveda**, MIT)
 
 <tt>12:15</tt> Lunch break
 
