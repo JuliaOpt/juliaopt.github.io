@@ -8,6 +8,15 @@ layout: common
 
 The JuMP developers meetup will take place at MIT, June 12-16, 2017.
 
+## Where
+
+On Monday morning until the lunch break, Tuesday all day, and Wednesday all day, the meetup will take place
+in the room <a href="http://whereis.mit.edu/?go=E62">E62-223</a>. This is on the second floor of the
+main building of MIT Sloan.
+
+On Monday after lunch, Thursday all day, and Friday all day, the meetup will take place the room
+<a href="http://whereis.mit.edu/?go=E51">E51-376</a>. This is on the third floor of the Tang Center.
+
 ## Purpose
 
 The meetup is designed to serve as an opportunity for developers of mathematical optimization software within the JuMP "stack" (i.e., solvers, solver interfaces, MathProgBase, JuMP, and JuMP extensions) to meet and focus on advancing common interests. JuMP core developers will present on the internals of JuMP and solicit feedback in preparation for the release of JuMP 1.0 (targeted for July, 2017). Attendees are welcome to contribute to the JuMP stack itself or to pursue JuMP-related projects while having the JuMP developers in the same room for questions and feedback.
