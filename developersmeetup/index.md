@@ -84,7 +84,7 @@ Room <a href="http://whereis.mit.edu/?go=E62">E62-223</a> (all day)
 
 Room <a href="http://whereis.mit.edu/?go=E62">E62-223</a> (all day)
 
-<tt>09:00</tt> Developer collaboration
+<tt>09:00</tt> Tutorial and live coding with Documenter.jl
 
 <tt>11:00</tt> *A talk on automatic differentiation using <a href="https://github.com/JuliaDiff/ForwardDiff.jl">ForwardDiff.jl</a> and <a href="https://github.com/JuliaDiff/ReverseDiff.jl">ReverseDiff.jl</a>* (**Jarrett Revels**, MIT)
 
