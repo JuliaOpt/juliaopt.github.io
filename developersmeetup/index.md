@@ -22,7 +22,7 @@ On Monday after lunch, Thursday all day, and Friday all day, the meetup will tak
 <a href="http://whereis.mit.edu/?go=E51">E51-376</a>. This is on the third floor of the Tang Center.
 
 
-## Draft Schedule
+## Schedule
 
 ### Monday June 12
 
