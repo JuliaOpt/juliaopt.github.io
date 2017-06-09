@@ -6,6 +6,8 @@ layout: common
 
 June 12-16, 2017, at Sloan School of Business, Massachusetts Institute of Technology
 
+The meetup is sponsored by the MIT Sloan Latin America Office.
+
 
 ## Purpose
 
