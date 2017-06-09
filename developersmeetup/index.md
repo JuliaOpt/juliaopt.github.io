@@ -90,7 +90,7 @@ Room <a href="http://whereis.mit.edu/?go=E62">E62-223</a> (all day)
 
 <tt>11:45</tt> Lunch break
 
-<tt>14:00</tt> Developer collaboration
+<tt>14:00</tt> Developer collaboration, brainstorming on the future of algebraic modeling languages (**Chris Coey**)
 
 <tt>17:00</tt> Finish
 
