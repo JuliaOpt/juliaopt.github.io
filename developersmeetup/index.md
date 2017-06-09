@@ -6,7 +6,7 @@ layout: common
 
 June 12-16, 2017, at Sloan School of Business, Massachusetts Institute of Technology
 
-The meetup is sponsored by the MIT Sloan Latin America Office.
+The meetup is sponsored by the <a href="http://mitsloan.mit.edu/office-of-international-programs/mit-sloan-latin-america-office/">MIT Sloan Latin America Office</a>.
 
 
 ## Purpose
