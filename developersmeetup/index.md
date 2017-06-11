@@ -101,7 +101,7 @@ Room <a href="http://whereis.mit.edu/?go=E62">E62-223</a> (all day)
 
 Room <a href="http://whereis.mit.edu/?go=E51">E51-376</a> (all day)
 
-<tt>09:00</tt> Developer collaboration
+<tt>09:00</tt> Developer collaboration, brainstorming on JuMP's containers (<a href="https://github.com/JuliaOpt/JuMP.jl/issues/1047">JuMP issue #1047</a>)
 
 <tt>12:00</tt> Lunch break
 
