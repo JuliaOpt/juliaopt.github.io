@@ -44,9 +44,9 @@ Room <a href="http://whereis.mit.edu/?go=E62">E62-223</a> (until lunch)
 
 Room <a href="http://whereis.mit.edu/?go=E51">E51-376</a> (after lunch)
 
-<tt>14:30</tt> *Plans and priorities for JuMP 1.0 and MathProgBase* (**Miles Lubin**)
+<tt>14:30</tt> *Plans and priorities for JuMP 1.0 and MathProgBase 1.0* (**Miles Lubin**)
 
-<tt>15:00</tt> Discussion and feedback on JuMP 1.0 and MathProgBase, discuss important issues including <a href="https://github.com/JuliaOpt/MathProgBase.jl/issues/164">MathProgBase issue #164</a> on solver statuses and <a href="https://github.com/JuliaOpt/MathProgBase.jl/issues/168">MathProgBase issue #168</a> on a new standard problem format
+<tt>15:00</tt> Discussion and feedback on JuMP 1.0 and MathProgBase 1.0, discuss important issues including <a href="https://github.com/JuliaOpt/MathProgBase.jl/issues/164">MathProgBase issue #164</a> on solver statuses and <a href="https://github.com/JuliaOpt/MathProgBase.jl/issues/168">MathProgBase issue #168</a> on a new standard problem format
 
 <tt>17:00</tt> Finish
 
