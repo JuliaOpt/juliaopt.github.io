@@ -32,9 +32,9 @@ Room <a href="http://whereis.mit.edu/?go=E62">E62-223</a> (until lunch)
 
 <tt>09:00</tt> Welcome and introduction (**Juan Pablo Vielma**, MIT)
 
-<tt>09:30</tt> *The design of JuMP and MathProgBase* (**Miles Lubin**, MIT)
+<tt>09:30</tt> *The design of JuMP and MathProgBase* (**Miles Lubin**, MIT) [[Slides](lubin.pdf)]
 
-<tt>10:30</tt> *The design and architecture of <a href="https://github.com/JuliaOpt/Pajarito.jl">Pajarito</a>* (**Chris Coey**, MIT)
+<tt>10:30</tt> *The design and architecture of <a href="https://github.com/JuliaOpt/Pajarito.jl">Pajarito</a>* (**Chris Coey**, MIT) [[Slides](coey.pdf)]
 
 <tt>11:00</tt> Coffee break and group photo
 
@@ -59,7 +59,7 @@ Room <a href="http://whereis.mit.edu/?go=E62">E62-223</a> (all day)
 
 <tt>09:15</tt> *Sum-of-squares optimization in Julia* [remote presentation] (**Benoît Legat**, Université Catholique de Louvain)
 
-<tt>09:45</tt> *<a href="https://github.com/lanl-ansi/PowerModels.jl">PowerModels.jl</a>: Reference Implementations for R&D in Power Network Optimization* (**Carleton Coffrin**, Los Alamos National Lab)
+<tt>09:45</tt> *<a href="https://github.com/lanl-ansi/PowerModels.jl">PowerModels.jl</a>: Reference Implementations for R&D in Power Network Optimization* (**Carleton Coffrin**, Los Alamos National Lab) [[Slides](coffrin.pdf)]
 
 <tt>10:15</tt> Coffee break
 
