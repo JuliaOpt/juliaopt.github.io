@@ -57,15 +57,15 @@ Room <a href="http://whereis.mit.edu/?go=E62">E62-223</a> (all day)
 
 <a href="https://www.timeanddate.com/worldclock/fixedtime.html?iso=20170613T0910&msg=Welcome+for+the+day&p1=43&am=5"><tt>09:10</tt></a> Welcome for the day
 
-<a href="https://www.timeanddate.com/worldclock/fixedtime.html?iso=20170613T0915&msg=A+talk+on+sum-of-squares+optimization+in+Julia&p1=43&am=30"><tt>09:15</tt></a> *Sum-of-squares optimization in Julia* [remote presentation] (**Benoît Legat**, Université Catholique de Louvain)
+<a href="https://www.timeanddate.com/worldclock/fixedtime.html?iso=20170613T0915&msg=A+talk+on+sum-of-squares+optimization+in+Julia&p1=43&am=30"><tt>09:15</tt></a> *Sum-of-squares optimization in Julia* [remote presentation] (**Benoît Legat**, Université Catholique de Louvain) [[Slides](legat.pdf)]
 
 <a href="https://www.timeanddate.com/worldclock/fixedtime.html?iso=20170613T0945&msg=Reference+Implementations+for+R%26D+in+Power+Network+Optimization&p1=43&am=30"><tt>09:45</tt></a> *<a href="https://github.com/lanl-ansi/PowerModels.jl">PowerModels.jl</a>: Reference Implementations for R&D in Power Network Optimization* (**Carleton Coffrin**, Los Alamos National Lab) [[Slides](coffrin.pdf)]
 
 <a href="https://www.timeanddate.com/worldclock/fixedtime.html?iso=20170613T1015&msg=Coffee+break&p1=43&am=30"><tt>10:15</tt></a> Coffee break
 
-<a href="https://www.timeanddate.com/worldclock/fixedtime.html?iso=20170613T1045&msg=Stochastic+programming+in+energy+systems&p1=43&am=30"><tt>10:45</tt></a> *Stochastic programming in energy systems* (**Joaquim Dias Garcia**, PSR and PUC-Rio)
+<a href="https://www.timeanddate.com/worldclock/fixedtime.html?iso=20170613T1045&msg=Stochastic+programming+in+energy+systems&p1=43&am=30"><tt>10:45</tt></a> *Stochastic programming in energy systems* (**Joaquim Dias Garcia**, PSR and PUC-Rio) [[Slides](dias.pdf)]
 
-<a href="https://www.timeanddate.com/worldclock/fixedtime.html?iso=20170613T1115&msg=Graph-based+modeling+using+JuMP&p1=43&am=30"><tt>11:15</tt></a> *Graph-based modeling using JuMP* (**Jordan Jalving**, UW-Madison)
+<a href="https://www.timeanddate.com/worldclock/fixedtime.html?iso=20170613T1115&msg=Graph-based+modeling+using+JuMP&p1=43&am=30"><tt>11:15</tt></a> *Graph-based modeling using JuMP* (**Jordan Jalving**, UW-Madison) [[Slides](jalving.pdf)]
 
 <a href="https://www.timeanddate.com/worldclock/fixedtime.html?iso=20170613T1145&msg=Decarbonization+of+power+systems+using+JuMP&p1=43&am=30"><tt>11:45</tt></a> *Decarbonization of power systems using JuMP* (**Nestor Sepulveda**, MIT)
 
