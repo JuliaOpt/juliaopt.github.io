@@ -20,8 +20,8 @@ On Monday morning until the lunch break, Tuesday all day, and Wednesday all day,
 in the room <a href="http://whereis.mit.edu/?go=E62">E62-223</a>. This is on the second floor of the
 main building of MIT Sloan.
 
-On Monday after lunch, Thursday all day, and Friday all day, the meetup will take place in the room
-<a href="http://whereis.mit.edu/?go=E51">E51-376</a>. This is on the third floor of the Tang Center.
+Thursday all day and Friday all day, the meetup will take place in the room
+<a href="http://whereis.mit.edu/?go=E52">E62-650</a>. This is on the sixth floow of the main building of MIT Sloan.
 
 
 ## Schedule
@@ -99,7 +99,7 @@ Room <a href="http://whereis.mit.edu/?go=E62">E62-223</a> (all day)
 
 ### Thursday June 15
 
-Room <a href="http://whereis.mit.edu/?go=E51">E51-376</a> (all day)
+Room <a href="http://whereis.mit.edu/?go=E62">E62-650</a> (all day) **Updated**
 
 <tt>09:00</tt> Developer collaboration, brainstorming on JuMP's containers (<a href="https://github.com/JuliaOpt/JuMP.jl/issues/1047">JuMP issue #1047</a>)
 
@@ -118,7 +118,7 @@ Room <a href="http://whereis.mit.edu/?go=E51">E51-376</a> (all day)
 
 <tt>11:30</tt> Lunch break
 
-Room <a href="http://whereis.mit.edu/?go=E51">E51-376</a>
+Room <a href="http://whereis.mit.edu/?go=E62">E62-650</a> **Updated**
 
 <tt>14:00</tt> Developer collaboration, brainstorming on the future of algebraic modeling languages (**Chris Coey**)
 
