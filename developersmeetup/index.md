@@ -71,7 +71,7 @@ Room <a href="http://whereis.mit.edu/?go=E62">E62-223</a> (all day)
 
 <tt>12:15</tt> Lunch break
 
-<a href="https://www.timeanddate.com/worldclock/fixedtime.html?iso=20170613T1400&msg=Working+with+JuMP’s+macros+for+extensions&p1=43&am=30"><tt>14:00</tt></a> *Working with JuMP’s macros for extensions* (**Yee Sian Ng**, MIT)
+<a href="https://www.timeanddate.com/worldclock/fixedtime.html?iso=20170613T1400&msg=Working+with+JuMP’s+macros+for+extensions&p1=43&am=30"><tt>14:00</tt></a> *Working with JuMP’s macros for extensions* (**Yee Sian Ng**, MIT) [[Notebook](http://nbviewer.jupyter.org/url/www.juliaopt.org/developersmeetup/ng.ipynb)]
 
 <a href="https://www.timeanddate.com/worldclock/fixedtime.html?iso=20170613T1430&msg=Solving+optimization+problems+containing+piecewise+linear+functions&p1=43&am=30"><tt>14:30</tt></a> *<a href="https://github.com/joehuchette/PiecewiseLinearOpt.jl">PiecewiseLinearOpt.jl</a>: Solving optimization problems containing piecewise linear functions* (**Joey Huchette**, MIT) [[Slides](huchette.pdf)]
 
