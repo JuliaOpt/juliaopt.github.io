@@ -30,7 +30,7 @@ Thursday all day and Friday all day, the meetup will take place in the room
 
 Room <a href="http://whereis.mit.edu/?go=E62">E62-223</a> (until lunch)
 
-<a href="https://www.timeanddate.com/worldclock/fixedtime.html?iso=20170612T0900&msg=Welcome+and+Introduction&p1=43&am=30"><tt>09:00</tt></a> Welcome and Introduction (**Juan Pablo Vielma**, MIT)
+<a href="https://www.timeanddate.com/worldclock/fixedtime.html?iso=20170612T0900&msg=Welcome+and+Introduction&p1=43&am=30"><tt>09:00</tt></a> Welcome and Introduction (**Juan Pablo Vielma**, MIT) [[Slides](vielma.pdf)]
 
 <a href="https://www.timeanddate.com/worldclock/fixedtime.html?iso=20170612T0930&msg=The+design+of+JuMP+and+MathProgBase&p1=43&ah=1"><tt>09:30</tt></a> *The design of JuMP and MathProgBase* (**Miles Lubin**, MIT) [[Slides](lubin.pdf)]
 
