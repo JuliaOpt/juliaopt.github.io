@@ -75,7 +75,7 @@ Room <a href="http://whereis.mit.edu/?go=E62">E62-223</a> (all day)
 
 <a href="https://www.timeanddate.com/worldclock/fixedtime.html?iso=20170613T1430&msg=Solving+optimization+problems+containing+piecewise+linear+functions&p1=43&am=30"><tt>14:30</tt></a> *<a href="https://github.com/joehuchette/PiecewiseLinearOpt.jl">PiecewiseLinearOpt.jl</a>: Solving optimization problems containing piecewise linear functions* (**Joey Huchette**, MIT) [[Slides](huchette.pdf)]
 
-<a href="https://www.timeanddate.com/worldclock/fixedtime.html?iso=20170613T1500&msg=A+Julia+wrapper+and+extensions+for+the+Operator+Splitting+QP+solver&p1=43&am=30"><tt>15:00</tt></a> *OSQP.jl: A Julia wrapper and extensions for the Operator Splitting QP solver* (**Bartolomeo Stellato**, Oxford)
+<a href="https://www.timeanddate.com/worldclock/fixedtime.html?iso=20170613T1500&msg=A+Julia+wrapper+and+extensions+for+the+Operator+Splitting+QP+solver&p1=43&am=30"><tt>15:00</tt></a> *OSQP.jl: A Julia wrapper and extensions for the Operator Splitting QP solver* (**Bartolomeo Stellato**, Oxford) [[Slides](stellato.pdf)]
 
 <a href="https://www.timeanddate.com/worldclock/fixedtime.html?iso=20170613T1530&msg=A+talk+on+SolverStudio+%2B+Julia&p1=43&am=30"><tt>15:30</tt></a> *<a href="https://solverstudio.org/">SolverStudio</a> + Julia* (**Oscar Dowson**, University of Auckland)
 
