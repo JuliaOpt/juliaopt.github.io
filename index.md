@@ -8,7 +8,7 @@ title:  JuliaOpt&#58; Optimization packages for the Julia language
 
 
 # What is JuliaOpt?
-The [JuliaOpt GitHub organization](https://github.com/JuliaOpt) is home to a number of optimization-related packaged written in Julia. Its purpose is to facilitate collaboration among developers of a tightly integrated set of packages for mathematical optimization.
+The [JuliaOpt GitHub organization](https://github.com/JuliaOpt) is home to a number of optimization-related packages written in Julia. Its purpose is to facilitate collaboration among developers of a tightly integrated set of packages for mathematical optimization.
 
 - **Overview**: [presentation](https://www.youtube.com/watch?v=7LNeR299q88) and [workshop](https://www.youtube.com/watch?v=nnL7yLMVu6c) from JuliaCon 2015
 - **Code**: [github.com/JuliaOpt](http://github.com/JuliaOpt)
