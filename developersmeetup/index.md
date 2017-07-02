@@ -59,7 +59,7 @@ Room <a href="http://whereis.mit.edu/?go=E62">E62-223</a> (all day)
 
 <a href="https://www.timeanddate.com/worldclock/fixedtime.html?iso=20170613T0915&msg=A+talk+on+sum-of-squares+optimization+in+Julia&p1=43&am=30"><tt>09:15</tt></a> *Sum-of-squares optimization in Julia* [remote presentation] (**Benoît Legat**, Université Catholique de Louvain) [[Slides](legat.pdf)]
 
-<a href="https://www.timeanddate.com/worldclock/fixedtime.html?iso=20170613T0945&msg=Reference+Implementations+for+R%26D+in+Power+Network+Optimization&p1=43&am=30"><tt>09:45</tt></a> *<a href="https://github.com/lanl-ansi/PowerModels.jl">PowerModels.jl</a>: Reference Implementations for R&D in Power Network Optimization* (**Carleton Coffrin**, Los Alamos National Lab) [[Slides](coffrin.pdf)]
+<a href="https://www.timeanddate.com/worldclock/fixedtime.html?iso=20170613T0945&msg=Reference+Implementations+for+R%26D+in+Power+Network+Optimization&p1=43&am=30"><tt>09:45</tt></a> *<a href="https://github.com/lanl-ansi/PowerModels.jl">PowerModels.jl</a>: A Brief Introduction* (**Carleton Coffrin**, Los Alamos National Lab) [[Slides](coffrin.pdf)]
 
 <a href="https://www.timeanddate.com/worldclock/fixedtime.html?iso=20170613T1015&msg=Coffee+break&p1=43&am=30"><tt>10:15</tt></a> Coffee break
 
