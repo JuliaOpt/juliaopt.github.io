@@ -10,7 +10,9 @@ title:  Showcase
 
 
 # JuliaOpt packages used in courses at
+- École Polytechnique Fédérale de Lausanne
 - MIT
+- Pontifical Catholic University of Rio de Janeiro
 - Sapienza Università di Roma
 - Stanford University
 - Universidad Carlos III de Madrid
