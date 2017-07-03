@@ -2,12 +2,13 @@
 layout: common
 ---
 
-# JuMP Developers Meetup
+# JuMP Developers Meetup/Workshop
 
 June 12-16, 2017, at Sloan School of Business, Massachusetts Institute of Technology
 
-The meetup is sponsored by the <a href="http://mitsloan.mit.edu/office-of-international-programs/mit-sloan-latin-america-office/">MIT Sloan Latin America Office</a>.
+The meetup/workshop was sponsored by the <a href="http://mitsloan.mit.edu/office-of-international-programs/mit-sloan-latin-america-office/">MIT Sloan Latin America Office</a>.
 
+<img src="developersgroup.jpg" alt="Group Photo">
 
 ## Purpose
 
