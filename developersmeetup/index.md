@@ -80,7 +80,7 @@ Room <a href="http://whereis.mit.edu/?go=E62">E62-223</a> (all day)
 
 <tt>15:00</tt> *OSQP.jl: A Julia wrapper and extensions for the Operator Splitting QP solver* (**Bartolomeo Stellato**, Oxford) [[Slides](stellato.pdf)] [[Video](https://youtu.be/k6yJHw0CzeA)]
 
-<tt>15:30</tt> *<a href="https://solverstudio.org/">SolverStudio</a> + Julia* (**Oscar Dowson**, University of Auckland) [[Video](https://youtu.be/IJB2308IA2Q)]]
+<tt>15:30</tt> *<a href="https://solverstudio.org/">SolverStudio</a> + Julia* (**Oscar Dowson**, University of Auckland) [[Video](https://youtu.be/IJB2308IA2Q)]
 
 <tt>16:00</tt> Finish
 
