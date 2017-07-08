@@ -4,8 +4,8 @@ title:  Showcase
 ---
 
 # Papers about JuliaOpt packages
-- I. Dunning, J. Huchette, and M. Lubin, "JuMP: A modeling language for mathematical optimization". <a href="http://www.optimization-online.org/DB_FILE/2015/04/4891.pdf">[PDF]</a>
-- M. Lubin and I. Dunning, "Computing in Operations Research using Julia". <i>INFORMS Journal on Computing</i> 27(2), pages 238-248, 2015 <a href="http://dx.doi.org/10.1287/ijoc.2014.0623">[DOI]</a> <a href="http://arxiv.org/abs/1312.1431">[arXiv]</a>
+- I. Dunning, J. Huchette, and M. Lubin, "JuMP: A modeling language for mathematical optimization". <i>SIAM Review</i> 59(2), pages 295-320, 2017. <a href="http://dx.doi.org/10.1137/15M1020575">[PDF]</a> <a href="http://arxiv.org/abs/1508.01982">[arXiv]</a>
+- M. Lubin and I. Dunning, "Computing in Operations Research using Julia". <i>INFORMS Journal on Computing</i> 27(2), pages 238-248, 2015. <a href="http://dx.doi.org/10.1287/ijoc.2014.0623">[DOI]</a> <a href="http://arxiv.org/abs/1312.1431">[arXiv]</a>
 - M. Udell, K. Mohan, D. Zeng, J. Hong, S. Diamond, and S. Boyd, "Convex Optimization in Julia". <i>Proceedings of the 1st First Workshop for High Performance Technical Computing in Dynamic Languages</i>, IEEE Press, 2014. <a href="http://arxiv.org/abs/1410.4821">[arXiv]</a>
 
 
@@ -18,6 +18,7 @@ title:  Showcase
 - Universidad Carlos III de Madrid
 - Université catholique de Louvain
 - Université de Liège
+- Université de Nantes
 - University at Buffalo
 - University of Iowa
 - University of Southern California
