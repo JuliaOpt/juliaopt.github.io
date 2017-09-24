@@ -24,7 +24,7 @@ The [JuliaOpt GitHub organization](https://github.com/JuliaOpt) is home to a num
 
 JuliaOpt's packages currently all revolve around the [MathProgBase abstraction layer](https://github.com/JuliaOpt/MathProgBase.jl) (green). Above the abstraction layer we have modeling languages (red), and below external solver interfaces (purple). The modeling languages in JuliaOpt are:
 
-- **JuMP**: An algebraic modeling language for linear, quadratic, and nonlinear constrained optimization problems embedded in Julia. Generates models as quick as commercial modeling tools and supports advanced features like solver callbacks. (<a href="https://jump.readthedocs.org/en/latest/">documentation</a>, <a href="https://github.com/JuliaOpt/JuMP.jl">code</a>)
+- **JuMP**: An algebraic modeling language for linear, quadratic, and nonlinear constrained optimization problems embedded in Julia. Generates models as quick as commercial modeling tools and supports advanced features like solver callbacks. (<a href="http://www.juliaopt.org/JuMP.jl/0.18/">documentation</a>, <a href="https://github.com/JuliaOpt/JuMP.jl">code</a>)
 
 - **Convex.jl**: An algebraic modeling language for <a href="http://stanford.edu/~boyd/papers/disc_cvx_prog.html">disciplined convex programming</a> embedded in Julia. (<a href="http://convexjl.readthedocs.org/">documentation</a>, <a href="https://github.com/JuliaOpt/Convex.jl">code</a>)
 
