@@ -23,6 +23,8 @@ The ecosystem of [Julia packages](http://pkg.julialang.org) is growing very fast
 
 - [NLOptControl.jl](https://github.com/huckl3b3rry87/NLOptControl.jl): for formulating and solving nonlinear optimal control problems
 
+**Developers:** Thinking about how to name your JuMP extension? While we're happy you're building on top of JuMP, please do not use JuMP in the name of the package without explicit permission from the JuMP developers.
+
 ## Other Optimization
 
 - [Optim.jl](https://github.com/JuliaNLSolvers/Optim.jl): implementations in Julia of standard optimization algorithms for unconstrained or box-constrained problems such as BFGS, Nelder-Mead, conjugate gradient, etc.
