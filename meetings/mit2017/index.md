@@ -1,4 +1,5 @@
 ---
+redirect_from: "/developersmeetup/"
 layout: common
 ---
 

@@ -20,9 +20,9 @@ A variety of information about Bordeaux, as well as how to get there, and possib
 
 ## Call for participants
 
-The workshop is open for anybody to attend, however it is aimed at JuMP developers rather than users. In particular, we encourage new contributors and those who have not met the core development team to attend.
+The workshop is open for anybody to attend, however it is aimed at developers of mathematical optimization software who use JuMP rather than users. In particular, we encourage new contributors and those who have not met the core development team to attend.
 
-Participants are invited to give a 20 minute talk about how they are using JuMP. Talks should be aimed at a technical audience and demonstrate what you are using JuMP for, as well as the features that you like/dislike/have on your wishlist. Depending on the number of participants, we may not be able to accommodate all those who wish to talk. ([Here](https://www.youtube.com/watch?v=esOe5saQRKY&list=PLzK_rUGmc3o6EwPOCUCvBAbMJeYBS8PyY) is a playlist of talks from the previous workshop.)
+Participants are invited to give a 20 minute talk about their work that is related to JuMP. Talks should be aimed at a technical audience and demonstrate what you are using JuMP for, as well as the features that you like/dislike/have on your wishlist. Depending on the number of participants, we may not be able to accommodate all those who wish to talk. ([Here](https://www.youtube.com/watch?v=esOe5saQRKY&list=PLzK_rUGmc3o6EwPOCUCvBAbMJeYBS8PyY) is a playlist of talks from the previous workshop.)
 
 Please contact o.dowson at auckland.ac.nz if you would like to attend.
 
