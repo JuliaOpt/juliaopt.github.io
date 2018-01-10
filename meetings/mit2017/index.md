@@ -1,28 +1,28 @@
 ---
-redirect_from: "/developersmeetup/"
 layout: common
+redirect_from: "/developersmeetup/"
 ---
 
-# JuMP Developers Meetup/Workshop
+# First Annual JuMP-dev Workshop
 
 June 12-16, 2017, at Sloan School of Business, Massachusetts Institute of Technology
 
-The meetup/workshop was sponsored by the <a href="http://mitsloan.mit.edu/office-of-international-programs/mit-sloan-latin-america-office/">MIT Sloan Latin America Office</a>.
+The workshop was sponsored by the <a href="http://mitsloan.mit.edu/office-of-international-programs/mit-sloan-latin-america-office/">MIT Sloan Latin America Office</a>.
 
 <img src="developersgroup.jpg" alt="Group Photo">
 
 ## Purpose
 
-The meetup is designed to serve as an opportunity for developers of mathematical optimization software within the JuMP "stack" (i.e., solvers, solver interfaces, MathProgBase, JuMP, and JuMP extensions) to meet and focus on advancing common interests. JuMP core developers will present on the internals of JuMP and solicit feedback in preparation for the release of JuMP 1.0 (targeted for July, 2017). Attendees are welcome to contribute to the JuMP stack itself or to pursue JuMP-related projects while having the JuMP developers in the same room for questions and feedback.
+The workshop is designed to serve as an opportunity for developers of mathematical optimization software within the JuMP "stack" (i.e., solvers, solver interfaces, MathProgBase, JuMP, and JuMP extensions) to meet and focus on advancing common interests. JuMP core developers will present on the internals of JuMP and solicit feedback in preparation for the release of JuMP 1.0 (targeted for July, 2017). Attendees are welcome to contribute to the JuMP stack itself or to pursue JuMP-related projects while having the JuMP developers in the same room for questions and feedback.
 
 
 ## Locations
 
-On Monday morning until the lunch break, Tuesday all day, and Wednesday all day, the meetup will take place
+On Monday morning until the lunch break, Tuesday all day, and Wednesday all day, the workshop will take place
 in the room <a href="http://whereis.mit.edu/?go=E62">E62-223</a>. This is on the second floor of the
 main building of MIT Sloan.
 
-Thursday all day and Friday all day, the meetup will take place in the room
+Thursday all day and Friday all day, the workshop will take place in the room
 <a href="http://whereis.mit.edu/?go=E52">E62-650</a>. This is on the sixth floow of the main building of MIT Sloan.
 
 
@@ -75,7 +75,7 @@ Room <a href="http://whereis.mit.edu/?go=E62">E62-223</a> (all day)
 
 <tt>12:15</tt> Lunch break
 
-<tt>14:00</tt> *Working with JuMP’s macros for extensions* (**Yee Sian Ng**, MIT) [[Notebook](http://nbviewer.jupyter.org/url/www.juliaopt.org/developersmeetup/ng.ipynb)] [[Video](https://youtu.be/u8CL5hShoEE)]
+<tt>14:00</tt> *Working with JuMP’s macros for extensions* (**Yee Sian Ng**, MIT) [[Notebook](http://nbviewer.jupyter.org/url/www.juliaopt.org/meetings/mit2017/ng.ipynb)] [[Video](https://youtu.be/u8CL5hShoEE)]
 
 <tt>14:30</tt> *<a href="https://github.com/joehuchette/PiecewiseLinearOpt.jl">PiecewiseLinearOpt.jl</a>: Solving optimization problems containing piecewise linear functions* (**Joey Huchette**, MIT) [[Slides](huchette.pdf)] [[Video](https://youtu.be/yiWx52yVVzM)]
 
@@ -113,7 +113,7 @@ Room <a href="http://whereis.mit.edu/?go=E62">E62-650</a> (all day) **Updated**
 
 <tt>16:00</tt> Finish
 
-<tt>18:00</tt> Meetup dinner
+<tt>18:00</tt> Workshop dinner
 
 
 ### Friday June 16
