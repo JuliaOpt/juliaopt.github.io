@@ -8,7 +8,7 @@ June 28-29, 2018, at the Institut de Mathématiques de Bordeaux, University of B
 
 ## Purpose
 
-This workshop is a follow-up to the [first annual JuMP Developers Workshop](http://www.juliaopt.org/developersmeetup/) held in June 2017 at MIT. The purpose of the workshop is to bring together developers of mathematical optimization software based around the JuMP "stack". These include developers writing solvers in Julia, interfacing solvers from Julia, writing JuMP extensions (for problem classes such as stochastic, robust, and multiobjective), and developing other optimization libraries that utilize JuMP.
+This workshop is a follow-up to the [first annual JuMP Developers Workshop](http://www.juliaopt.org/meetings/mit2017/) held in June 2017 at MIT. The purpose of the workshop is to bring together developers of mathematical optimization software based around the JuMP "stack". These include developers writing solvers in Julia, interfacing solvers from Julia, writing JuMP extensions (for problem classes such as stochastic, robust, and multiobjective), and developing other optimization libraries that utilize JuMP.
 
 The workshop is a great opportunity to meet other developers working on and around JuMP, as well as to provide feedback to the core JuMP team concerning its future direction.
 
