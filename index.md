@@ -3,7 +3,7 @@ layout: default
 title:  JuliaOpt&#58; Optimization packages for the Julia language
 ---
 
-# JuMP Developers Workshop 2018, Bordeaux
+# JuMP-dev Workshop 2018, Bordeaux
 
 A two-day JuMP developers workshop will be held at the Institut de Mathématiques de Bordeaux, University of Bordeaux on June 28-29. More details to come.
 
