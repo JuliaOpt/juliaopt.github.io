@@ -3,9 +3,9 @@ layout: common
 redirect_from: "/developersmeetup/"
 ---
 
-# First Annual JuMP-dev Workshop
+# JuMP Developers Meetup/Workshop
 
-June 12-16, 2017, at Sloan School of Business, Massachusetts Institute of Technology
+June 12-16, 2017, at Sloan School of Business, Massachusetts Institute of Technology.
 
 The workshop was sponsored by the <a href="http://mitsloan.mit.edu/office-of-international-programs/mit-sloan-latin-america-office/">MIT Sloan Latin America Office</a>.
 
