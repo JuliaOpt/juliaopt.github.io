@@ -15,7 +15,7 @@ A two-day JuMP developers workshop will be held at the Institut de Mathématique
 The [JuliaOpt GitHub organization](https://github.com/JuliaOpt) is home to a number of optimization-related packages written in Julia. Its purpose is to facilitate collaboration among developers of a tightly integrated set of packages for mathematical optimization.
 
 - **Overview**: [presentation](https://www.youtube.com/watch?v=7LNeR299q88) and [workshop](https://www.youtube.com/watch?v=nnL7yLMVu6c) from JuliaCon 2015
-- **Developer Workshops**: : [2017](/developersmeetup/index.md), [2018](/developersmeetup_2018/index.md)
+- **Developer Workshops**: [2017](/developersmeetup/index.md), [2018](/developersmeetup_2018/index.md)
 - **Code**: [github.com/JuliaOpt](http://github.com/JuliaOpt)
 - **Forum**: [Discourse](https://discourse.julialang.org/c/domain/opt)
 - **Old Mailing list**: [julia-opt](https://groups.google.com/forum/#!forum/julia-opt)
