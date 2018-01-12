@@ -48,12 +48,12 @@ A preliminary schedule is as follows.
 
 ## Committee
 
-- Miles Lubin
-- Oscar Dowson
-- Benoît Legat
-- Joaquim Garcia
-- Juan Pablo Vielma
-- Issam Tahiri (Local Organization)
-- François Vanderbeck (Local Organization)
+- Miles Lubin (Google Research)
+- Oscar Dowson (U. of Auckland)
+- Benoît Legat (UCL)
+- Joaquim Garcia (PSR & PUC-Rio)
+- Juan Pablo Vielma (MIT)
+- Issam Tahiri (INRIA; Local Organization)
+- François Vanderbeck (U. of Bordeaux; Local Organization)
 
 Contact o.dowson at auckland.ac.nz or jump-dev-committee at googlegroups.com for more information.
