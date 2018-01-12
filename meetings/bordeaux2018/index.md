@@ -48,7 +48,7 @@ A preliminary schedule is as follows.
 
 ## Committee
 
-- Miles Lubin (Google Research)
+- Miles Lubin (Google)
 - Oscar Dowson (U. of Auckland)
 - Benoît Legat (UCL)
 - Joaquim Garcia (PSR & PUC-Rio)
