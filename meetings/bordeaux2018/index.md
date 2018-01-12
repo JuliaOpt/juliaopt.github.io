@@ -10,7 +10,7 @@ June 28-29, 2018, at the Institut de Mathématiques de Bordeaux, University of B
 
 This workshop is a follow-up to the [first annual JuMP-dev workshop](/meetings/mit2017/) held in June 2017 at MIT. The purpose of the workshop is to bring together students, researchers, and practitioners with interests in the software aspects of the [JuMP](https://github.com/JuliaOpt/JuMP.jl) "stack". Interest areas of the workshop include:
 
-- JuMP core development (MathOptInterface, JuMP 1.0)
+- JuMP core development ([MathOptInterface](https://github.com/JuliaOpt/MathOptInterface.jl), JuMP 1.0)
 - Mathematical optimization solvers written in Julia
 - Julia interfaces to solvers
 - JuMP extensions (stochastic programming, robust optimization, multiobjective optimization, ...)
