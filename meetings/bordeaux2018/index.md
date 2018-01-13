@@ -30,7 +30,7 @@ A variety of information about Bordeaux, as well as how to get there, and possib
 
 The workshop is open for anybody to attend. In particular, we invite new contributors and those who have not met the core development team.
 
-Participants are encouraged but not required to give a 20-minute talk about their work that is related to JuMP. Talks should be aimed at a technical audience and demonstrate what you are using JuMP for, as well as the features that you like/dislike/have on your wishlist. See [last year's talks](https://www.youtube.com/watch?v=esOe5saQRKY&list=PLzK_rUGmc3o6EwPOCUCvBAbMJeYBS8PyY) for a flavor of the workshop. Depending on the number of participants, we may not be able to accommodate all those who wish to talk.
+Participants are encouraged but not required to give a 20-minute talk about their work that is related to JuMP. Talks should be aimed at a technical audience and demonstrate what you are using JuMP for, as well as the features that you like/dislike/have on your wishlist. See [last year's talks](https://www.youtube.com/watch?v=esOe5saQRKY&list=PLzK_rUGmc3o6EwPOCUCvBAbMJeYBS8PyY) for a flavor of the workshop.
 
 
 Please contact jump-dev-committee@googlegroups.com if you would like to attend.
