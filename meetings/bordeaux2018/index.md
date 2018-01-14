@@ -50,7 +50,7 @@ A preliminary schedule is as follows.
 
 - Miles Lubin (Google)
 - Oscar Dowson (U. of Auckland)
-- Benoît Legat (UCL)
+- Benoît Legat (UCLouvain)
 - Joaquim Garcia (PSR & PUC-Rio)
 - Juan Pablo Vielma (MIT)
 - Issam Tahiri (INRIA; Local Organization)
