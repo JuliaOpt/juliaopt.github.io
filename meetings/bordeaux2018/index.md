@@ -4,7 +4,7 @@ layout: common
 
 # The Second Annual JuMP-dev Workshop
 
-June 28-29, 2018, at the Institut de Mathématiques de Bordeaux, University of Bordeaux.
+June 27-29, 2018, at the Institut de Mathématiques de Bordeaux, University of Bordeaux.
 
 ## Purpose
 
@@ -32,27 +32,12 @@ The workshop is open for anybody to attend. In particular, we invite new contrib
 
 Participants are encouraged but not required to give a 20-minute talk about their work that is related to JuMP. Talks should be aimed at a technical audience and demonstrate what you are using JuMP for, as well as the features that you like/dislike/have on your wishlist. See [last year's talks](https://www.youtube.com/watch?v=esOe5saQRKY&list=PLzK_rUGmc3o6EwPOCUCvBAbMJeYBS8PyY) for a flavor of the workshop.
 
-
-Please contact jump-dev-committee@googlegroups.com if you would like to attend.
+Please contact jump-dev-committee@googlegroups.com if you would like to attend. Submissions are welcome until **March 15th**.
 
 ## Schedule
 
-A preliminary schedule is as follows.
+The schedule will be posted closer to the date of the workshop. We expect to have a mix of talks from participants and the core development team. Similarly to last year, the workshop will end with unstructured collaboration time to work on personal projects and brainstorm the future of JuMP.
 
-### Thursday June 28
-
- - Morning: Participant talks
- - Afternoon: An introduction to MathOptInterface by the core development team
- - Evening: Workshop dinner
-
-### Friday June 29
-
- - Morning: Participant talks
- - Afternoon: Developer collaboration
-
-### Sunday July 1
-
- - ISMP 2018 begins.
 
 ## Committee
 
