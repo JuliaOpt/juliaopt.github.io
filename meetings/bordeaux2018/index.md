@@ -22,7 +22,7 @@ The JuMP-dev workshop is a great opportunity to meet other people working on and
 
 ## Location
 
-The workshop will be held at the Institut de Mathématiques de Bordeaux, University of Bordeaux on the Thursday and Friday of the week prior to ISMP 2018 (i.e. June 28-29).
+The workshop will be held at the Institut de Mathématiques de Bordeaux, University of Bordeaux.
 
 A variety of information about Bordeaux, as well as how to get there, and possible accommodation options, is available on the [ISMP conference website](https://ismp2018.sciencesconf.org).
 
