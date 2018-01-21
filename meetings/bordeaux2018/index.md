@@ -32,7 +32,7 @@ The workshop is open for anybody to attend. In particular, we invite new contrib
 
 Participants are encouraged to give a short (~20-minute) talk. The committee is looking for talks that will start off discussions during the workshop and beyond and for talks that present developments that the community may not be aware of. Talks will optionally be recorded and posted for those who cannot attend. We encourage speakers to give direct feedback on JuMP. See [last year's talks](https://www.youtube.com/watch?v=esOe5saQRKY&list=PLzK_rUGmc3o6EwPOCUCvBAbMJeYBS8PyY) for a flavor of the workshop.
 
-Please contact jump-dev-committee@googlegroups.com if you would like to attend. Submissions are welcome until **March 15th**.
+Please contact jump-dev-committee@googlegroups.com to let us know that you will be attending. We will provide updates to attendees on scheduling and logicstics via e-mail. Additionally, talk proposals are welcome until **March 15th**.
 
 ## Schedule
 
