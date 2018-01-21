@@ -26,11 +26,11 @@ The workshop will be held at the Institut de Mathématiques de Bordeaux, Univers
 
 A variety of information about Bordeaux, as well as how to get there, and possible accommodation options, is available on the [ISMP conference website](https://ismp2018.sciencesconf.org).
 
-## Call for participants
+## Call for participants and talks
 
 The workshop is open for anybody to attend. In particular, we invite new contributors and those who have not met the core development team.
 
-Participants are encouraged but not required to give a 20-minute talk about their work that is related to JuMP. Talks should be aimed at a technical audience and demonstrate what you are using JuMP for, as well as the features that you like/dislike/have on your wishlist. See [last year's talks](https://www.youtube.com/watch?v=esOe5saQRKY&list=PLzK_rUGmc3o6EwPOCUCvBAbMJeYBS8PyY) for a flavor of the workshop.
+Participants are encouraged to give a short (~20-minute) talk. The committee is looking for talks that will start off discussions during the workshop and beyond and for talks that present developments that the community may not be aware of. Talks will optionally be recorded and posted for those who cannot attend. We encourage speakers to give direct feedback on JuMP. See [last year's talks](https://www.youtube.com/watch?v=esOe5saQRKY&list=PLzK_rUGmc3o6EwPOCUCvBAbMJeYBS8PyY) for a flavor of the workshop.
 
 Please contact jump-dev-committee@googlegroups.com if you would like to attend. Submissions are welcome until **March 15th**.
 
