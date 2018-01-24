@@ -18,7 +18,7 @@ This workshop is a follow-up to the [first annual JuMP-dev workshop](/meetings/m
 - JuMP for teaching
 - Developer tools for JuMP
 
-The JuMP-dev workshop is a great opportunity to meet other people working on and around JuMP, as well as to provide feedback to the core JuMP team concerning its future direction. The workshop is scheduled to lead into [ISMP](https://ismp2018.sciencesconf.org), which most of the core team will be attending.
+The JuMP-dev workshop is a great opportunity to meet other people working on and around JuMP, as well as to provide feedback to the core JuMP team concerning its future direction. The workshop is scheduled to lead into [ISMP](https://ismp2018.sciencesconf.org).
 
 ## Location
 
