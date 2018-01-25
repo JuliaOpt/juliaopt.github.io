@@ -5,7 +5,7 @@ title:  JuliaOpt&#58; Optimization packages for the Julia language
 
 # JuMP-dev Workshop 2018, Bordeaux
 
-The second annual JuMP-dev workshop will be held at the Institut de Mathématiques de Bordeaux, University of Bordeaux on June 27-29. More details to come.
+The second annual JuMP-dev workshop will be held at the Institut de Mathématiques de Bordeaux, University of Bordeaux on June 27-29. More details [here](meetings/bordeaux2018/).
 
 # What is Julia?
 ["Julia is a high-level, high-performance dynamic programming language for technical computing"](http://julialang.org). It is free (open source) and supports Windows, OSX, and Linux. It has a familiar syntax, works well with external libraries, is fast, and has advanced language features like metaprogramming that enable interesting possibilities for optimization software.
@@ -15,7 +15,7 @@ The second annual JuMP-dev workshop will be held at the Institut de Mathématiqu
 The [JuliaOpt GitHub organization](https://github.com/JuliaOpt) is home to a number of optimization-related packages written in Julia. Its purpose is to facilitate collaboration among developers of a tightly integrated set of packages for mathematical optimization.
 
 - **Overview**: [presentation](https://www.youtube.com/watch?v=7LNeR299q88) and [workshop](https://www.youtube.com/watch?v=nnL7yLMVu6c) from JuliaCon 2015
-- **Developer Workshops**: [2017](meetings/mit2017/)
+- **JuMP-dev Workshops**: [2018](meetings/bordeaux2018/) [2017](meetings/mit2017/)
 - **Code**: [github.com/JuliaOpt](http://github.com/JuliaOpt)
 - **Forum**: [Discourse](https://discourse.julialang.org/c/domain/opt)
 - **Old Mailing list**: [julia-opt](https://groups.google.com/forum/#!forum/julia-opt)
