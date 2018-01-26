@@ -12,6 +12,7 @@ This workshop is a follow-up to the [first annual JuMP-dev workshop](/meetings/m
 
 - JuMP core development ([MathOptInterface](https://github.com/JuliaOpt/MathOptInterface.jl), JuMP 1.0)
 - Mathematical optimization solvers written in Julia
+- Automatic differentiation
 - Julia interfaces to solvers
 - JuMP extensions (stochastic programming, robust optimization, multiobjective optimization, ...)
 - Optimization libraries that use JuMP
