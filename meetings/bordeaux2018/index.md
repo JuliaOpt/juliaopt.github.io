@@ -16,6 +16,7 @@ This workshop is a follow-up to the [first annual JuMP-dev workshop](/meetings/m
 - Julia interfaces to solvers
 - JuMP extensions (stochastic programming, robust optimization, multiobjective optimization, ...)
 - Optimization libraries that use JuMP
+- Significant uses of JuMP in applications
 - JuMP for teaching
 - Developer tools for JuMP
 
