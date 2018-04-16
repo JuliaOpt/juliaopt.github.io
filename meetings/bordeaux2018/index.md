@@ -24,7 +24,8 @@ The JuMP-dev workshop is a great opportunity to meet other people working on and
 
 ## Location
 
-The workshop will be held at the Institut de Mathématiques de Bordeaux, University of Bordeaux.
+The workshop will be held at the [Institut de Mathématiques de Bordeaux, University of Bordeaux](https://goo.gl/maps/PaeJbcRC58K2). If you are not staying within walking distance, the Talence campus is a short tram ride from the city centre.
+
 
 A variety of information about Bordeaux, as well as how to get there, and possible accommodation options, is available on the [ISMP conference website](https://ismp2018.sciencesconf.org).
 
@@ -36,7 +37,7 @@ The call for talks has now closed. However, if you wish to attend without giving
 
 ## Schedule
 
-A preliminary schedule is outlined below. It will be updated once speakers are confirmed.
+A preliminary schedule is outlined below. It will be updated once speakers are confirmed. The scheduled start of the workshop is at 13:00 on Wednesday, 27th June. This is to allow international visitors to arrive in Bordeaux on Wednesday morning. 
 
 ### Wednesday 27 June
 
@@ -58,6 +59,8 @@ A preliminary schedule is outlined below. It will be updated once speakers are c
 
 <tt>Evening</tt> Workshop Dinner
 
+*We are trying to arrange funding for the dinner, however if this is not possible, there may be a charge for participants.*
+
 
 ### Friday 29 June
 
@@ -66,6 +69,9 @@ A preliminary schedule is outlined below. It will be updated once speakers are c
 <tt>12:30</tt> Lunch
 
 <tt>15:00</tt> JuMP Tutorial
+
+The tutorial will cover how to use the new version of JuMP with [MathOptInterface](https://github.com/JuliaOpt/MathOptInterface.jl). The tutorial will be open to anyone, even if they have not attended the workshop.
+
 
 <tt>17:00</tt> Finish
 
