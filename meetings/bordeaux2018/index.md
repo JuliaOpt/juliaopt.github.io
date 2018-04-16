@@ -28,19 +28,46 @@ The workshop will be held at the Institut de Mathématiques de Bordeaux, Univers
 
 A variety of information about Bordeaux, as well as how to get there, and possible accommodation options, is available on the [ISMP conference website](https://ismp2018.sciencesconf.org).
 
-## Call for participants and talks
+## Call for participants
 
 The workshop is open for anybody to attend. In particular, we invite new contributors and those who have not met the core development team.
 
-Participants are encouraged to give a short (~20-minute) talk. The committee is looking for talks that will start off discussions during the workshop and beyond and for talks that present developments that the community may not be aware of. Talks will optionally be recorded and posted for those who cannot attend. We encourage speakers to give direct feedback on JuMP. See [last year's talks](https://www.youtube.com/watch?v=esOe5saQRKY&list=PLzK_rUGmc3o6EwPOCUCvBAbMJeYBS8PyY) for a flavor of the workshop.
-
-**[Use this form to indicate your participation and submit talk proposals](https://goo.gl/forms/tUeBUY6uAnAo8v5m2)**
-by **April 7th ~~March 15th~~**. There is no penalty for late sign-ups, but we may not be able to accommodate late talk proposals.
+The call for talks has now closed. However, if you wish to attend without giving a talk, **[use this form to indicate your participation](https://goo.gl/forms/tUeBUY6uAnAo8v5m2)**.
 
 ## Schedule
 
-The schedule will be posted closer to the date of the workshop. We expect to have a mix of talks from participants and the core development team. Similarly to last year, the workshop will end with unstructured collaboration time to work on personal projects and brainstorm the future of JuMP.
+A preliminary schedule is outlined below. It will be updated once speakers are confirmed.
 
+### Wednesday 27 June
+
+<tt>13:00</tt> Welcome and Introduction
+
+<tt>13:30</tt> Talks
+
+<tt>17:00</tt> Finish
+
+### Thursday 28 June
+
+<tt>10:00</tt> An Introduction to [MathOptInterface](https://github.com/JuliaOpt/MathOptInterface.jl)
+
+<tt>12:30</tt> Lunch
+
+<tt>14:00</tt> Talks
+
+<tt>17:00</tt> Finish
+
+<tt>Evening</tt> Workshop Dinner
+
+
+### Friday 29 June
+
+<tt>10:00</tt> Talks
+
+<tt>12:30</tt> Lunch
+
+<tt>15:00</tt> JuMP Tutorial
+
+<tt>17:00</tt> Finish
 
 ## Committee
 
