@@ -36,7 +36,7 @@ The call for talks has now closed. However, if you wish to attend without giving
 
 ## Schedule
 
-A preliminary schedule is outlined below. It will be updated once speakers are confirmed. The scheduled start of the workshop is at 13:00 on Wednesday, 27th June. This is to allow international visitors to arrive in Bordeaux on Wednesday morning. 
+A preliminary schedule is outlined below. It will be updated once speakers are confirmed. The scheduled start of the workshop is at 13:00 on Wednesday, 27th June. This is to allow participants to arrive in Bordeaux on Wednesday morning. 
 
 ### Wednesday 27 June
 
@@ -57,7 +57,7 @@ A preliminary schedule is outlined below. It will be updated once speakers are c
 
 <tt>Morning</tt> Workshop
 
-<tt>15:00</tt> JuMP Tutorial
+<tt>15:00</tt> JuMP Tutorial / Developer Collaboration
 
 The tutorial will cover how to use the new version of JuMP with [MathOptInterface](https://github.com/JuliaOpt/MathOptInterface.jl). The tutorial will be open to anyone, even if they have not attended the workshop. No JuMP experience is required.
 
