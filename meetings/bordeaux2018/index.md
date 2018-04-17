@@ -24,10 +24,9 @@ The JuMP-dev workshop is a great opportunity to meet other people working on and
 
 ## Location
 
-The workshop will be held at the [Institut de Mathématiques de Bordeaux, University of Bordeaux](https://goo.gl/maps/PaeJbcRC58K2). If you are not staying within walking distance, the Talence campus is a short tram ride from the city centre.
+The workshop will be held at the [Institut de Mathématiques de Bordeaux, University of Bordeaux](https://goo.gl/maps/PaeJbcRC58K2). There are options to stay in Talence (walking distance to JuMP-dev), or the Bordeaux city centre (short tram ride).
 
-
-A variety of information about Bordeaux, as well as how to get there, and possible accommodation options, is available on the [ISMP conference website](https://ismp2018.sciencesconf.org).
+A variety of information about Bordeaux, as well as how to get there, and possible accommodation options, is available on the [ISMP conference website](https://ismp2018.sciencesconf.org). 
 
 ## Call for participants
 
@@ -41,21 +40,13 @@ A preliminary schedule is outlined below. It will be updated once speakers are c
 
 ### Wednesday 27 June
 
-<tt>13:00</tt> Welcome and Introduction
-
-<tt>13:30</tt> Talks
+<tt>13:00</tt> Workshop
 
 <tt>17:00</tt> Finish
 
 ### Thursday 28 June
 
-<tt>10:00</tt> An Introduction to [MathOptInterface](https://github.com/JuliaOpt/MathOptInterface.jl)
-
-<tt>12:30</tt> Lunch
-
-<tt>14:00</tt> Talks
-
-<tt>17:00</tt> Finish
+<tt>Day</tt> Workshop
 
 <tt>Evening</tt> Workshop Dinner
 
@@ -64,13 +55,11 @@ A preliminary schedule is outlined below. It will be updated once speakers are c
 
 ### Friday 29 June
 
-<tt>10:00</tt> Talks
-
-<tt>12:30</tt> Lunch
+<tt>Morning</tt> Workshop
 
 <tt>15:00</tt> JuMP Tutorial
 
-The tutorial will cover how to use the new version of JuMP with [MathOptInterface](https://github.com/JuliaOpt/MathOptInterface.jl). The tutorial will be open to anyone, even if they have not attended the workshop.
+The tutorial will cover how to use the new version of JuMP with [MathOptInterface](https://github.com/JuliaOpt/MathOptInterface.jl). The tutorial will be open to anyone, even if they have not attended the workshop. No JuMP experience is required.
 
 
 <tt>17:00</tt> Finish
