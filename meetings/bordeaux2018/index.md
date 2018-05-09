@@ -6,16 +6,13 @@ layout: common
 
 June 27-29, 2018, at the Institut de Mathématiques de Bordeaux, University of Bordeaux.
 
-## Funding
+## Travel support and late submissions
 
 Thanks to the generous support of MIT Sloan School of Management, the JuMP-dev committee has funds available to provide travel support to a limited number of attendees. Given the late availability of this grant, we will also consider new submissions of talk proposals for those who declined to submit earlier because of lack of funding. Already-confirmed speakers are also welcome to request support, and will be considered on an equal basis with new submissions.
 
-To apply, fill in the following form:
-
-https://goo.gl/forms/MJVDJBdkxTfD5hqf2
+To apply, fill in [this form](https://goo.gl/forms/MJVDJBdkxTfD5hqf2).
 
 **NOTE:** There will be a hard submission deadline of **May 15, 2018**. Notifications of any awards will be sent out by **June 1, 2018** (at the latest).
-
 
 ## Purpose
 
