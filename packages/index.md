@@ -59,7 +59,9 @@ The ecosystem of [Julia packages](http://pkg.julialang.org) is growing very fast
 
 - [Graphs.jl](https://github.com/JuliaLang/Graphs.jl): Julia’s standard package for shortest path algorithms, minimum spanning tree algorithms, random graph generation, etc.
 
-- [LightGraphs.jl](https://github.com/JuliaGraphs/LightGraphs.jl): a similar package to Graphs.jl
+- [LightGraphs.jl](https://github.com/JuliaGraphs/LightGraphs.jl): a similar package to Graphs.jl, defining a generic interface for graph types and an implementation with central algorithms.
+
+- [LightGraphsFlows.jl](https://github.com/JuliaGraphs/LightGraphsFlows.jl): solves max-flow and min-cut problems on top of `LightGraphs.jl`.
 
 - [NetworkFlows.jl](https://github.com/Azzaare/NetworkFlows.jl): solves max-flow problems, min-cut problems, etc.
 
