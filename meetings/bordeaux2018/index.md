@@ -6,14 +6,6 @@ layout: common
 
 June 27-29, 2018, at the Institut de Mathématiques de Bordeaux, University of Bordeaux.
 
-## Travel support and late submissions
-
-Thanks to the generous support of MIT Sloan School of Management, the JuMP-dev committee has funds available to provide travel support to a limited number of attendees. Given the late availability of this grant, we will also consider new submissions of talk proposals for those who declined to submit earlier because of lack of funding. Already-confirmed speakers are also welcome to request support, and will be considered on an equal basis with new submissions.
-
-To apply, fill in [this form](https://goo.gl/forms/MJVDJBdkxTfD5hqf2).
-
-**NOTE:** There will be a hard submission deadline of **May 15, 2018**. Notifications of any awards will be sent out by **June 1, 2018** (at the latest).
-
 ## Purpose
 
 This workshop is a follow-up to the [first annual JuMP-dev workshop](/meetings/mit2017/) held in June 2017 at MIT. The purpose of the workshop is to bring together students, researchers, and practitioners with interests in the software aspects of [JuMP](https://github.com/JuliaOpt/JuMP.jl) and related packages. Interest areas of the workshop include:
@@ -34,7 +26,7 @@ The JuMP-dev workshop is a great opportunity to meet other people working on and
 
 The workshop will be held at the [Institut de Mathématiques de Bordeaux, University of Bordeaux](https://goo.gl/maps/PaeJbcRC58K2). There are options to stay in Talence (walking distance to JuMP-dev), or the Bordeaux city centre (short tram ride).
 
-A variety of information about Bordeaux, as well as how to get there, and possible accommodation options, is available on the [ISMP conference website](https://ismp2018.sciencesconf.org). 
+A variety of information about Bordeaux, as well as how to get there, and possible accommodation options, is available on the [ISMP conference website](https://ismp2018.sciencesconf.org).
 
 ## Call for participants
 
@@ -42,9 +34,13 @@ The workshop is open for anybody to attend. In particular, we invite new contrib
 
 The call for talks has now closed. However, if you wish to attend without giving a talk, **[use this form to indicate your participation](https://goo.gl/forms/tUeBUY6uAnAo8v5m2)**.
 
+## Travel support
+
+Thanks to the generous support of MIT Sloan School of Management, the JuMP-dev committee has funds available to provide travel support to a limited number of attendees. The deadline for travel support requests was May 15.
+
 ## Schedule
 
-A preliminary schedule is outlined below. It will be updated once speakers are confirmed. The scheduled start of the workshop is at 13:00 on Wednesday, 27th June. This is to allow participants to arrive in Bordeaux on Wednesday morning. 
+A preliminary schedule is outlined below. It will be updated once speakers are confirmed. The scheduled start of the workshop is at 13:00 on Wednesday, 27th June. This is to allow participants to arrive in Bordeaux on Wednesday morning.
 
 ### Wednesday 27 June
 
