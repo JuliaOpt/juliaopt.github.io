@@ -44,13 +44,41 @@ A preliminary schedule is outlined below. It will be updated once speakers are c
 
 ### Wednesday 27 June
 
-<tt>13:00</tt> Workshop
+<tt>13:30 - 14:00</tt> Introduction **Juan-Pablo Vielma (MIT)**
 
-<tt>17:00</tt> Finish
+<tt>14:00 - 14:25</tt> Systematically building mixed-integer programming formulations using JuMP and Julia **Joey Huchette (MIT)**
+
+<tt>14:25 - 14:50</tt> Modeling decomposable Mixed Integer Programs **Guillaume Marques (Université de Bordeaux)**
+
+<tt>14:50 - 15:15</tt> Coffee Break
+
+<tt>15:15 - 15:40</tt> Artelys Knitro 11.0, a new conic solver and other novelties **Jean-hubert Hours (Artelys)**
+
+<tt>15:40 - 16:05</tt> Power and exponential Cones with Mosek **Ulf Worsøe (MOSEK)**
+
+<tt>16:05 - 16:30</tt> ProxSDP.jl : A semidefinite programming solver written in Julia **Joaquim Dias Garcia & Mario Souto (PUC-Rio)**
+
+<tt>16:30</tt> Finish
 
 ### Thursday 28 June
 
-<tt>Day</tt> Workshop
+<tt>10:00 - 10:25</tt> Stochastic Programming for Hydropower Operations: Modeling and Algorithms **Martin Biel (KTH - The Royal Institute of Technology)**
+
+<tt>10:25 - 10:50</tt> Optimal energy management and stochastic decomposition **François Pacaud (CERMICS, ENPC)**
+
+<tt>10:50 - 11:20</tt> Coffee Break
+
+<tt>11:20 - 11:55</tt> Gravity modeling language **Hassan Hijazi (LANL)**
+
+<tt>11:55 - 12:15</tt> POD, A Global Solver for Nonconvex MINLPs **Harsha Nagarajan (LANL)**
+
+<tt>12:15 - 12:40</tt> A Julia JuMP-based module for polynomial optimization with complex variables applied to Optimal Power Flow  **Julie Sliwak (RTE)**
+
+<tt>12:40 - 14:00</tt> Lunch
+
+<tt>14:00 - 14:30</tt> MathOptInterface and JuMP 0.19 **Miles Lubin (Google)**
+
+<tt>14:30 onwards</tt> Discussion
 
 <tt>Evening</tt> Workshop Dinner
 
@@ -59,9 +87,19 @@ A preliminary schedule is outlined below. It will be updated once speakers are c
 
 ### Friday 29 June
 
-<tt>Morning</tt> Workshop
+<tt>10:00 - 10:25</tt> A Julia interface to the NEOS Server **Oscar Dowson (University of Auckland)**
 
-<tt>15:00</tt> JuMP Tutorial / Developer Collaboration
+<tt>10:25 - 10:50</tt> Automatic reformulation using constraint bridges **Benoît Legat (UCLouvain)**
+
+<tt>10:50 - 11:20</tt> Coffee Break
+
+<tt>11:20 - 11:45</tt> EAGO: A Deterministic Nonconvex Optimization Package for Julia **Matthew Wilhelm (University of Connecticut)**
+
+<tt>11:45 - 12:05</tt> EMP.jl, a package for modelling Extended Mathematical Programming **Oliver Huber (UW Madison)**
+
+<tt>12:05 - 15:00</tt> Lunch + developer collaboration
+
+<tt>15:00 - 17:00</tt> JuMP Tutorial / Developer Collaboration
 
 The tutorial will cover how to use the new version of JuMP with [MathOptInterface](https://github.com/JuliaOpt/MathOptInterface.jl). The tutorial will be open to anyone, even if they have not attended the workshop. No JuMP experience is required.
 
