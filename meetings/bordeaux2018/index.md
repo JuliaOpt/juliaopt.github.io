@@ -52,11 +52,11 @@ A preliminary schedule is outlined below. It will be updated once speakers are c
 
 <tt>14:50 - 15:15</tt> Coffee Break
 
-<tt>15:15 - 15:40</tt> Artelys Knitro 11.0, a new conic solver and other novelties **Jean-hubert Hours (Artelys)**
+<tt>15:15 - 15:40</tt> [Artelys Knitro](https://www.artelys.com/en/optimization-tools/knitro) 11.0, a new conic solver and other novelties **Jean-hubert Hours (Artelys)**
 
-<tt>15:40 - 16:05</tt> Power and exponential Cones with Mosek **Ulf Worsøe (MOSEK)**
+<tt>15:40 - 16:05</tt> Power and exponential Cones with [Mosek](https://www.mosek.com/) **Ulf Worsøe (MOSEK)**
 
-<tt>16:05 - 16:30</tt> ProxSDP.jl : A semidefinite programming solver written in Julia **Joaquim Dias Garcia & Mario Souto (PUC-Rio)**
+<tt>16:05 - 16:30</tt> [ProxSDP.jl](https://github.com/mariohsouto/ProxSDP.jl): A semidefinite programming solver written in Julia **Joaquim Dias Garcia & Mario Souto (PUC-Rio)**
 
 <tt>16:30</tt> Finish
 
@@ -68,11 +68,11 @@ A preliminary schedule is outlined below. It will be updated once speakers are c
 
 <tt>10:50 - 11:20</tt> Coffee Break
 
-<tt>11:20 - 11:55</tt> Gravity modeling language **Hassan Hijazi (LANL)**
+<tt>11:20 - 11:45</tt> A Julia JuMP-based module for polynomial optimization with complex variables applied to Optimal Power Flow  **Julie Sliwak (RTE)**
 
-<tt>11:55 - 12:15</tt> POD, A Global Solver for Nonconvex MINLPs **Harsha Nagarajan (LANL)**
+<tt>11:45 - 12:05</tt> [POD](https://github.com/lanl-ansi/POD.jl), A Global Solver for Nonconvex MINLPs **Harsha Nagarajan (LANL)**
 
-<tt>12:15 - 12:40</tt> A Julia JuMP-based module for polynomial optimization with complex variables applied to Optimal Power Flow  **Julie Sliwak (RTE)**
+<tt>12:05 - 12:40</tt> [The Gravity modeling language](https://www.allinsights.io/gravity) **Hassan Hijazi (LANL)**
 
 <tt>12:40 - 14:00</tt> Lunch
 
@@ -87,17 +87,19 @@ A preliminary schedule is outlined below. It will be updated once speakers are c
 
 ### Friday 29 June
 
-<tt>10:00 - 10:25</tt> A Julia interface to the NEOS Server **Oscar Dowson (University of Auckland)**
+<tt>10:00 - 10:25</tt> [Juniper](https://github.com/lanl-ansi/Juniper.jl): An Open-Source Nonlinear Branch-and-Bound Solver in Julia **Ole Kröger (LANL)**
 
-<tt>10:25 - 10:50</tt> Automatic reformulation using constraint bridges **Benoît Legat (UCLouvain)**
+<tt>10:25 - 10:50</tt> [NEOS.jl](https://github.com/odow/NEOS.jl): A Julia interface to the NEOS Server **Oscar Dowson (University of Auckland)**
 
 <tt>10:50 - 11:20</tt> Coffee Break
 
-<tt>11:20 - 11:45</tt> EAGO: A Deterministic Nonconvex Optimization Package for Julia **Matthew Wilhelm (University of Connecticut)**
+<tt>11:20 - 11:45</tt> Automatic reformulation using constraint bridges **Benoît Legat (UCLouvain)**
 
-<tt>11:45 - 12:05</tt> EMP.jl, a package for modelling Extended Mathematical Programming **Oliver Huber (UW Madison)**
+<tt>11:45 - 12:05</tt> [EAGO](https://github.com/PSORLab/EAGO.jl): A Deterministic Nonconvex Optimization Package for Julia **Matthew Wilhelm (University of Connecticut)**
 
-<tt>12:05 - 15:00</tt> Lunch + developer collaboration
+<tt>12:05 - 12:30</tt> [EMP.jl](https://github.com/xhub/EMP.jl), a package for modelling Extended Mathematical Programming **Oliver Huber (UW Madison)**
+
+<tt>12:30 - 15:00</tt> Lunch + developer collaboration
 
 <tt>15:00 - 17:00</tt> JuMP Tutorial / Developer Collaboration
 
