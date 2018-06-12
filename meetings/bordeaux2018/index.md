@@ -22,6 +22,10 @@ This workshop is a follow-up to the [first annual JuMP-dev workshop](/meetings/m
 
 The JuMP-dev workshop is a great opportunity to meet other people working on and around JuMP, as well as to provide feedback to the core JuMP team concerning its future direction. The workshop is scheduled to lead into [ISMP](https://ismp2018.sciencesconf.org).
 
+<p align="center">
+  <img width="75%" src="poster.svg">
+</p>
+
 ## Location
 
 The workshop will be held at the [Institut de Mathématiques de Bordeaux, University of Bordeaux](https://goo.gl/maps/PaeJbcRC58K2). There are options to stay in Talence (walking distance to JuMP-dev), or the Bordeaux city centre (short tram ride).
