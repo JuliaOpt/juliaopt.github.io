@@ -40,7 +40,7 @@ Thanks to the generous support of MIT Sloan School of Management, the JuMP-dev c
 
 ## Schedule
 
-A preliminary schedule is outlined below. It will be updated once speakers are confirmed. The scheduled start of the workshop is at 13:00 on Wednesday, 27th June. This is to allow participants to arrive in Bordeaux on Wednesday morning.
+A preliminary schedule is outlined below. It will be updated once speakers are confirmed. The scheduled start of the workshop is at 13:30 on Wednesday, 27th June. This is to allow participants to arrive in Bordeaux on Wednesday morning.
 
 ### Wednesday 27 June
 
@@ -70,20 +70,19 @@ A preliminary schedule is outlined below. It will be updated once speakers are c
 
 <tt>11:20 - 11:45</tt> A Julia JuMP-based module for polynomial optimization with complex variables applied to Optimal Power Flow  **Julie Sliwak (RTE)**
 
-<tt>11:45 - 12:05</tt> [POD](https://github.com/lanl-ansi/POD.jl), A Global Solver for Nonconvex MINLPs **Harsha Nagarajan (LANL)**
+<tt>11:45 - 12:10</tt> [POD](https://github.com/lanl-ansi/POD.jl), A Global Solver for Nonconvex MINLPs **Harsha Nagarajan (LANL)**
 
-<tt>12:05 - 12:40</tt> [The Gravity modeling language](https://www.allinsights.io/gravity) **Hassan Hijazi (LANL)**
+<tt>12:10 - 13:30</tt> Lunch
 
-<tt>12:40 - 14:00</tt> Lunch
+<tt>13:30 - 14:05</tt> [The Gravity modeling language](https://www.allinsights.io/gravity) **Hassan Hijazi (LANL)**
 
-<tt>14:00 - 14:30</tt> MathOptInterface and JuMP 0.19 **Miles Lubin (Google)**
+<tt>14:05 - 15:00</tt> MathOptInterface and JuMP 0.19 **Miles Lubin (Google)**
 
-<tt>14:30 onwards</tt> Discussion
+<tt>15:00 onwards</tt> Discussion and unstructured collaboration time
 
 <tt>Evening</tt> Workshop Dinner
 
 *We are trying to arrange funding for the dinner, however if this is not possible, there may be a charge for participants.*
-
 
 ### Friday 29 June
 
@@ -95,16 +94,15 @@ A preliminary schedule is outlined below. It will be updated once speakers are c
 
 <tt>11:20 - 11:45</tt> Automatic reformulation using constraint bridges **Benoît Legat (UCLouvain)**
 
-<tt>11:45 - 12:05</tt> [EAGO](https://github.com/PSORLab/EAGO.jl): A Deterministic Nonconvex Optimization Package for Julia **Matthew Wilhelm (University of Connecticut)**
+<tt>11:45 - 12:10</tt> [EAGO](https://github.com/PSORLab/EAGO.jl): A Deterministic Nonconvex Optimization Package for Julia **Matthew Wilhelm (University of Connecticut)**
 
-<tt>12:05 - 12:30</tt> [EMP.jl](https://github.com/xhub/EMP.jl), a package for modelling Extended Mathematical Programming **Oliver Huber (UW Madison)**
+<tt>12:10 - 12:35</tt> [EMP.jl](https://github.com/xhub/EMP.jl), a package for modelling Extended Mathematical Programming **Oliver Huber (UW Madison)**
 
-<tt>12:30 - 15:00</tt> Lunch + developer collaboration
+<tt>12:35 - 15:00</tt> Lunch and unstructured collaboration time
 
-<tt>15:00 - 17:00</tt> JuMP Tutorial / Developer Collaboration
+<tt>15:00 - 17:00</tt> JuMP Tutorial
 
 The tutorial will cover how to use the new version of JuMP with [MathOptInterface](https://github.com/JuliaOpt/MathOptInterface.jl). The tutorial will be open to anyone, even if they have not attended the workshop. No JuMP experience is required.
-
 
 <tt>17:00</tt> Finish
 
