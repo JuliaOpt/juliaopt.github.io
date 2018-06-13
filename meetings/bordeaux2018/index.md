@@ -6,6 +6,12 @@ layout: common
 
 June 27-29, 2018, at the Institut de Mathématiques de Bordeaux, University of Bordeaux.
 
+## Note: Train Strike
+
+On June 27 and 28, the French train system will be disrupted due to strike
+action. If you are arriving to the workshop by train, you can find more
+information [here](https://en.oui.sncf/en/train/strike).
+
 ## Purpose
 
 This workshop is a follow-up to the [first annual JuMP-dev workshop](/meetings/mit2017/) held in June 2017 at MIT. The purpose of the workshop is to bring together students, researchers, and practitioners with interests in the software aspects of [JuMP](https://github.com/JuliaOpt/JuMP.jl) and related packages. Interest areas of the workshop include:
@@ -44,7 +50,9 @@ Thanks to the generous support of MIT Sloan School of Management, the JuMP-dev c
 
 ## Schedule
 
-A preliminary schedule is outlined below. It will be updated once speakers are confirmed. The scheduled start of the workshop is at 13:30 on Wednesday, 27th June. This is to allow participants to arrive in Bordeaux on Wednesday morning.
+The workshop schedule is outlined below. The scheduled start of the workshop is
+at 13:30 on Wednesday, 27th June. This is to allow participants to arrive in
+Bordeaux on Wednesday morning.
 
 ### Wednesday 27 June
 
@@ -282,6 +290,26 @@ to commercial solvers (Baron).
 ### Friday 29 June
 
 <tt>10:00 - 10:25</tt> [Juniper](https://github.com/lanl-ansi/Juniper.jl): An Open-Source Nonlinear Branch-and-Bound Solver in Julia **Ole Kröger (LANL)**
+
+<details>
+<summary>Abstract</summary>
+Non-convex mixed-integer nonlinear programs (MINLPs) represent a challenging
+class of optimization problems that often arise in engineering and scientific
+applications. Because of non-convexities, these programs are typically solved
+with global optimization algorithms, which have limited scalability. However,
+nonlinear branch-and-bound has recently been shown to be an effective heuristic
+for quickly finding high-quality solutions to large-scale non-convex MINLPs,
+such as those arising in infrastructure network optimization. This work proposes
+Juniper, a Julia-based open-source solver for nonlinear branch-and-bound.
+Leveraging the high-level Julia programming language makes it easy to modify
+Juniper's algorithm and explore extensions, such as branching heuristics,
+feasibility pumps, and parallelization. Detailed numerical experiments
+demonstrate that the initial release of Juniper is comparable with other
+nonlinear branch-and-bound solvers, such as Bonmin, Minotaur, and Knitro,
+illustrating that Juniper provides a strong foundation for further exploration
+in utilizing nonlinear branch-and-bound algorithms as heuristics for non-convex
+MINLPs.
+</details>
 
 <tt>10:25 - 10:50</tt> [NEOS.jl](https://github.com/odow/NEOS.jl): A Julia interface to the NEOS Server **Oscar Dowson (University of Auckland)**
 
