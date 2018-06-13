@@ -1,3 +1,4 @@
 notebooks/source
 _site
 CNAME
+Gemfile.lock
