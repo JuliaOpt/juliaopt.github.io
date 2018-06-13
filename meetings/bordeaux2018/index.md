@@ -74,15 +74,21 @@ A preliminary schedule is outlined below. It will be updated once speakers are c
 
 <tt>11:20 - 11:45</tt> A Julia JuMP-based module for polynomial optimization with complex variables applied to Optimal Power Flow  **Julie Sliwak (RTE)**
 
-<tt>11:45 - 12:10</tt> [POD](https://github.com/lanl-ansi/POD.jl), A Global Solver for Nonconvex MINLPs **Harsha Nagarajan (LANL)**
+<tt>11:45 - 12:10</tt> Topology Optimization and JuMP **Mohamed Tarek (UNSW Canberra)**
 
-<tt>12:10 - 13:30</tt> Lunch
+<tt>12:10 - 12:35</tt> Developing new optimization methods with packages from the JuliaSmoothOptimizers organization. **Abel Soares Siqueira (Federal University of Paraná)**
 
-<tt>13:30 - 14:05</tt> [The Gravity modeling language](https://www.allinsights.io/gravity) **Hassan Hijazi (LANL)**
+<tt>12:35 - 14:00</tt> Lunch
 
-<tt>14:05 - 15:00</tt> MathOptInterface and JuMP 0.19 **Miles Lubin (Google)**
+<tt>14:00 - 14:35</tt> [The Gravity modeling language](https://www.allinsights.io/gravity) **Hassan Hijazi (LANL)**
 
-<tt>15:00 onwards</tt> Discussion and unstructured collaboration time
+<tt>14:35 - 15:00</tt> [POD](https://github.com/lanl-ansi/POD.jl), A Global Solver for Nonconvex MINLPs **Harsha Nagarajan (LANL)**
+
+<tt>15:00 - 15:20</tt> Coffee Break
+
+<tt>15:20 - 16:20</tt> MathOptInterface and JuMP 0.19 **Miles Lubin (Google)**
+
+<tt>16:20 onwards</tt> Discussion and unstructured collaboration time
 
 <tt>Evening</tt> Workshop Dinner
 
