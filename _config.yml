@@ -1,6 +1,8 @@
 permalink: /:categories/:year/:month/:title
 highlighter: rouge
-gems:
+plugins:
+  - jekyll-redirect-from
+whitelist:
   - jekyll-redirect-from
 navigation:
   - title: Home

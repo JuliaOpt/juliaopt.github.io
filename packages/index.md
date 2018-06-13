@@ -23,6 +23,8 @@ The ecosystem of [Julia packages](http://pkg.julialang.org) is growing very fast
 
 - [NLOptControl.jl](https://github.com/huckl3b3rry87/NLOptControl.jl): for formulating and solving nonlinear optimal control problems
 
+**Developers:** Thinking about how to name your JuMP extension? While we're happy you're building on top of JuMP, please do not use JuMP in the name of the package without explicit permission from the JuMP developers.
+
 ## Other Optimization
 
 - [Optim.jl](https://github.com/JuliaNLSolvers/Optim.jl): implementations in Julia of standard optimization algorithms for unconstrained or box-constrained problems such as BFGS, Nelder-Mead, conjugate gradient, etc.
@@ -55,9 +57,9 @@ The ecosystem of [Julia packages](http://pkg.julialang.org) is growing very fast
 
 ## Graph and Network
 
-- [Graphs.jl](https://github.com/JuliaLang/Graphs.jl): Julia’s standard package for shortest path algorithms, minimum spanning tree algorithms, random graph generation, etc.
+- [LightGraphs.jl](https://github.com/JuliaGraphs/LightGraphs.jl): defines a generic interface for graph types and an implementation with central algorithms.
 
-- [LightGraphs.jl](https://github.com/JuliaGraphs/LightGraphs.jl): a similar package to Graphs.jl
+- [LightGraphsFlows.jl](https://github.com/JuliaGraphs/LightGraphsFlows.jl): solves max-flow and min-cut problems on top of `LightGraphs.jl`.
 
 - [NetworkFlows.jl](https://github.com/Azzaare/NetworkFlows.jl): solves max-flow problems, min-cut problems, etc.
 
