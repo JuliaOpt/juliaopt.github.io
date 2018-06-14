@@ -289,7 +289,7 @@ to commercial solvers (Baron).
 
 ### Friday 29 June
 
-<tt>10:00 - 10:25</tt> [Juniper](https://github.com/lanl-ansi/Juniper.jl): An Open-Source Nonlinear Branch-and-Bound Solver in Julia **Ole Kröger (LANL)**
+<tt>10:00 - 10:25</tt> [Juniper](https://github.com/lanl-ansi/Juniper.jl): An Open-Source Nonlinear Branch-and-Bound Solver in Julia **Ole Kröger (Uni Heidelberg)**
 
 <details>
 <summary>Abstract</summary>
