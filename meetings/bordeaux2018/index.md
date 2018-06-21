@@ -377,7 +377,7 @@ toolkit for developing and evaluating future low-level global optimization
 algorithms.
 </details>
 
-<tt>12:10 - 12:35</tt> [EMP.jl](https://github.com/xhub/EMP.jl), a package for modelling Extended Mathematical Programming **Oliver Huber (UW Madison)**
+<tt>12:10 - 12:35</tt> [EMP.jl](https://github.com/xhub/EMP.jl), a package for modelling Extended Mathematical Programming **Olivier Huber (UW Madison)**
 
 <details>
 <summary>Abstract</summary>
