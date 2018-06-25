@@ -36,7 +36,13 @@ The JuMP-dev workshop is a great opportunity to meet other people working on and
 
 The workshop will be held at the [Institut de Mathématiques de Bordeaux, University of Bordeaux](https://goo.gl/maps/PaeJbcRC58K2). There are options to stay in Talence (walking distance to JuMP-dev), or the Bordeaux city centre (short tram ride).
 
+The main entrance to the Institut is located [here](https://goo.gl/maps/uoSn1Y6krVt).
+The workshop will be held in the room "salle de conf". It is the first room on
+the left as you enter through the main entrance. The main entrance looks like
+[this](https://www.google.fr/maps/place/I.M.B.+Maths+Info/@44.809746,-0.5931191,3a,75y,90t/data=!3m8!1e2!3m6!1sAF1QipODU3iSiQiE4ZuWSBQso7HAGx4m2IrBijtxW9Ob!2e10!3e12!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipODU3iSiQiE4ZuWSBQso7HAGx4m2IrBijtxW9Ob%3Dw114-h86-k-no!7i960!8i720!4m5!3m4!1s0xd55277837c025f9:0x93476ed002d48214!8m2!3d44.809746!4d-0.5931191).
+
 A variety of information about Bordeaux, as well as how to get there, and possible accommodation options, is available on the [ISMP conference website](https://ismp2018.sciencesconf.org).
+
 
 ## Call for participants
 
