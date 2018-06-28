@@ -289,9 +289,14 @@ to commercial solvers (Baron).
 
 <tt>16:20 onwards</tt> Discussion and unstructured collaboration time
 
-<tt>Evening</tt> Workshop Dinner
+<tt>19:30 - late</tt> Workshop Dinner
 
-*We are trying to arrange funding for the dinner, however if this is not possible, there may be a charge for participants.*
+The workshop dinner will be held at [Mama Shelter, 19 rue Poquelin Molière](https://goo.gl/maps/SBkFdznc7w92),
+beginning at 19:30. To travel there from the workshop, take the B tram to the
+stop Gambetta - MADD. The restaurant is a 200m walk from the stop.
+
+If you have not yet confirmed your attendance at the dinner, please do so via
+the following link: https://goo.gl/forms/1b0BJuY5nMGcVIPx1
 
 ### Friday 29 June
 
