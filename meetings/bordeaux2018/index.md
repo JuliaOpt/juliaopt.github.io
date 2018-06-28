@@ -298,6 +298,9 @@ stop Gambetta - MADD. The restaurant is a 200m walk from the stop.
 If you have not yet confirmed your attendance at the dinner, please do so via
 the following link: https://goo.gl/forms/1b0BJuY5nMGcVIPx1
 
+Space at the restaurant is limited, so you must sign-up to the dinner in order
+to attend.
+
 ### Friday 29 June
 
 <tt>10:00 - 10:25</tt> [Juniper](https://github.com/lanl-ansi/Juniper.jl): An Open-Source Nonlinear Branch-and-Bound Solver in Julia **Ole Kröger (Uni Heidelberg)**
