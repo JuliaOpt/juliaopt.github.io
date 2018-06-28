@@ -296,7 +296,7 @@ beginning at 19:30. To travel there from the workshop, take the B tram to the
 stop Gambetta - MADD. The restaurant is a 200m walk from the stop.
 
 If you have not yet confirmed your attendance at the dinner, please do so via
-the following link: https://goo.gl/forms/1b0BJuY5nMGcVIPx1
+the following link: [https://goo.gl/forms/1b0BJuY5nMGcVIPx1](https://goo.gl/forms/1b0BJuY5nMGcVIPx1).
 
 Space at the restaurant is limited, so you must sign-up to the dinner in order
 to attend.
