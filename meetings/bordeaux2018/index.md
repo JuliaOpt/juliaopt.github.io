@@ -6,11 +6,9 @@ layout: common
 
 June 27-29, 2018, at the Institut de Mathématiques de Bordeaux, University of Bordeaux.
 
-## Note: Train Strike
+The workshop was sponsored by the [MIT Sloan school of management](http://mitsloan.mit.edu/), [IDEX Bordeaux](https://idex.u-bordeaux.fr/), and [Changhyun Kwon](http://www.chkwon.net/julia/).
 
-On June 27 and 28, the French train system will be disrupted due to strike
-action. If you are arriving to the workshop by train, you can find more
-information [here](https://en.oui.sncf/en/train/strike).
+<img src="group.jpg" alt="Group Photo">
 
 ## Purpose
 
@@ -48,7 +46,7 @@ A variety of information about Bordeaux, as well as how to get there, and possib
 
 The workshop is open for anybody to attend. In particular, we invite new contributors and those who have not met the core development team.
 
-The call for talks has now closed. However, if you wish to attend without giving a talk, **[use this form to indicate your participation](https://goo.gl/forms/tUeBUY6uAnAo8v5m2)**.
+The call for talks has now closed.
 
 ## Travel support
 
@@ -294,12 +292,6 @@ to commercial solvers (Baron).
 The workshop dinner will be held at [Mama Shelter, 19 rue Poquelin Molière](https://goo.gl/maps/SBkFdznc7w92),
 beginning at 19:30. To travel there from the workshop, take the B tram to the
 stop Gambetta - MADD. The restaurant is a 200m walk from the stop.
-
-If you have not yet confirmed your attendance at the dinner, please do so via
-the following link: [https://goo.gl/forms/1b0BJuY5nMGcVIPx1](https://goo.gl/forms/1b0BJuY5nMGcVIPx1).
-
-Space at the restaurant is limited, so you must sign-up to the dinner in order
-to attend.
 
 ### Friday 29 June
 
