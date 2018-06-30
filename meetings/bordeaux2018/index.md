@@ -62,9 +62,9 @@ Bordeaux on Wednesday morning.
 
 ### Wednesday 27 June
 
-<tt>13:30 - 14:00</tt> Introduction **Juan-Pablo Vielma (MIT)**
+<tt>13:30 - 14:00</tt> Introduction **Juan Pablo Vielma (MIT)**
 
-<tt>14:00 - 14:25</tt> Systematically building mixed-integer programming formulations using JuMP and Julia **Joey Huchette (MIT)**
+<tt>14:00 - 14:25</tt> Systematically building mixed-integer programming formulations using JuMP and Julia **Joey Huchette (MIT)** 
 
 <details>
 <summary>Abstract</summary>
@@ -79,7 +79,7 @@ fantastic tools for building intuition, and also for constructing
 high-performing formulations that may not be "human-readable."
 </details>
 
-<tt>14:25 - 14:50</tt> Modeling decomposable Mixed Integer Programs **Guillaume Marques (Université de Bordeaux)**
+<tt>14:25 - 14:50</tt> Modeling decomposable Mixed Integer Programs **Guillaume Marques (Université de Bordeaux)** [[Slides](marques.pdf)]
 
 <details>
 <summary>Abstract</summary>
@@ -98,7 +98,7 @@ which are then solved using our modern Branch-Cut-and-Price algorithm.
 
 <tt>14:50 - 15:15</tt> Coffee Break
 
-<tt>15:15 - 15:40</tt> [Artelys Knitro](https://www.artelys.com/en/optimization-tools/knitro) 11.0, a new conic solver and other novelties **Jean-hubert Hours (Artelys)**
+<tt>15:15 - 15:40</tt> [Artelys Knitro](https://www.artelys.com/en/optimization-tools/knitro) 11.0, a new conic solver and other novelties **Jean-hubert Hours (Artelys)** [[Slides](artelys.pdf)]
 
 <details>
 <summary>Abstract</summary>
@@ -129,7 +129,7 @@ few models to illustrate their usefulness.
 MOSEK is a commercial solver. Free licenses for academic use are available.
 </details>
 
-<tt>16:05 - 16:30</tt> [ProxSDP.jl](https://github.com/mariohsouto/ProxSDP.jl): A semidefinite programming solver written in Julia **Joaquim Dias Garcia & Mario Souto (PUC-Rio)**
+<tt>16:05 - 16:30</tt> [ProxSDP.jl](https://github.com/mariohsouto/ProxSDP.jl): A semidefinite programming solver written in Julia **Joaquim Dias Garcia & Mario Souto (PUC-Rio)** [[Slides](joaquim.pdf)]
 
 <details>
 <summary>Abstract</summary>
@@ -152,7 +152,7 @@ ProxSDP.jl, is made available and implementation details are discussed.
 
 ### Thursday 28 June
 
-<tt>10:00 - 10:25</tt> Stochastic Programming for Hydropower Operations: Modeling and Algorithms **Martin Biel (KTH - The Royal Institute of Technology)**
+<tt>10:00 - 10:25</tt> Stochastic Programming for Hydropower Operations: Modeling and Algorithms **Martin Biel (KTH - The Royal Institute of Technology)** [[Slides](biel.pdf)]
 
 <details>
 <summary>Abstract</summary>
@@ -180,7 +180,7 @@ flexibility such as effective model re-initialization and effective distribution
 of scenario problems on worker processes.
 </details>
 
-<tt>10:25 - 10:50</tt> Optimal energy management and stochastic decomposition **François Pacaud (CERMICS, ENPC)**
+<tt>10:25 - 10:50</tt> Optimal energy management and stochastic decomposition **François Pacaud (CERMICS, ENPC)** [[Slides](pacaud.pdf)]
 
 <details>
 <summary>Abstract</summary>
@@ -205,7 +205,7 @@ to Ipopt.jl to coordinate the decomposition scheme.
 
 <tt>10:50 - 11:20</tt> Coffee Break
 
-<tt>11:20 - 11:45</tt> A Julia JuMP-based module for polynomial optimization with complex variables applied to Optimal Power Flow  **Julie Sliwak (RTE)**
+<tt>11:20 - 11:45</tt> A Julia JuMP-based module for polynomial optimization with complex variables applied to Optimal Power Flow  **Julie Sliwak (RTE)** [[Slides](sliwak.pdf)]
 
 <details>
 <summary>Abstract</summary>
@@ -221,7 +221,7 @@ This work demonstrates the convenience of a module for POP-C to rapidly test
 several local or global methods.
 </details>
 
-<tt>11:45 - 12:10</tt> Topology Optimization and JuMP **Mohamed Tarek (UNSW Canberra)**
+<tt>11:45 - 12:10</tt> Topology Optimization and JuMP **Mohamed Tarek (UNSW Canberra)** [[Slides](tarek.pdf)]
 
 <details>
 <summary>Abstract</summary>
@@ -236,7 +236,7 @@ in Julia that abstracts away the finite element analysis and linear algebra and
 only exposes objectives and constraints to the optimization solver.
 </details>
 
-<tt>12:10 - 12:35</tt> Developing new optimization methods with packages from the JuliaSmoothOptimizers organization. **Abel Soares Siqueira (Federal University of Paraná)**
+<tt>12:10 - 12:35</tt> Developing new optimization methods with packages from the JuliaSmoothOptimizers organization. **Abel Soares Siqueira (Federal University of Paraná)** [[Slides](siqueira.pdf)]
 
 <details>
 <summary>Abstract</summary>
@@ -325,7 +325,7 @@ in utilizing nonlinear branch-and-bound algorithms as heuristics for non-convex
 MINLPs.
 </details>
 
-<tt>10:25 - 10:50</tt> [NEOS.jl](https://github.com/odow/NEOS.jl): A Julia interface to the NEOS Server **Oscar Dowson (University of Auckland)**
+<tt>10:25 - 10:50</tt> [NEOS.jl](https://github.com/odow/NEOS.jl): A Julia interface to the NEOS Server **Oscar Dowson (University of Auckland)** [[Slides](dowson.pdf)]
 
 <details>
 <summary>Abstract</summary>
@@ -338,14 +338,14 @@ enables JuMP models to be solved via NEOS in a seamless fashion.
 
 <tt>10:50 - 11:20</tt> Coffee Break
 
-<tt>11:20 - 11:45</tt> Automatic reformulation using constraint bridges **Benoît Legat (UCLouvain)**
+<tt>11:20 - 11:45</tt> Automatic reformulation using constraint bridges **Benoît Legat (UCLouvain)** [[Slides](legat.pdf)]
 
 <details>
 <summary>Abstract</summary>
 A same mathematical optimization problem often possess different equivalent
 formulations but a given solver may only support one of them. Writing this
 solver specific formulation is inconvenient when the solver is not familiar to
-the user and it is not an option when writing solver independent coxaxde. This
+the user and it is not an option when writing solver independent code. This
 motivates the need of a mechanism that, given a model and a solver,
 automatically rewrites the model into an equivalent one supported by the solver.
 To make this rewritting transparent, the solver result also need to be
@@ -364,7 +364,7 @@ reformulations are available, heuristics are used to determine the formulation
 that will incur the lower computational cost to the solver.
 </details>
 
-<tt>11:45 - 12:10</tt> [EAGO](https://github.com/PSORLab/EAGO.jl): A Deterministic Nonconvex Optimization Package for Julia **Matthew Wilhelm (University of Connecticut)**
+<tt>11:45 - 12:10</tt> [EAGO](https://github.com/PSORLab/EAGO.jl): A Deterministic Nonconvex Optimization Package for Julia **Matthew Wilhelm (University of Connecticut)** [[Slides](wilhelm.pdf)]
 
 <details>
 <summary>Abstract</summary>
@@ -391,7 +391,7 @@ toolkit for developing and evaluating future low-level global optimization
 algorithms.
 </details>
 
-<tt>12:10 - 12:35</tt> [EMP.jl](https://github.com/xhub/EMP.jl), a package for modelling Extended Mathematical Programming **Olivier Huber (UW Madison)**
+<tt>12:10 - 12:35</tt> [EMP.jl](https://github.com/xhub/EMP.jl), a package for modelling Extended Mathematical Programming **Olivier Huber (UW Madison)** [[Slides](huber.pdf)]
 
 <details>
 <summary>Abstract</summary>
