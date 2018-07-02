@@ -62,7 +62,7 @@ Bordeaux on Wednesday morning.
 
 <tt>13:30 - 14:00</tt> Introduction **Juan Pablo Vielma (MIT)**
 
-<tt>14:00 - 14:25</tt> Systematically building mixed-integer programming formulations using JuMP and Julia **Joey Huchette (MIT)** 
+<tt>14:00 - 14:25</tt> Systematically building mixed-integer programming formulations using JuMP and Julia **Joey Huchette (MIT)** [[Slides](huchette.pdf)]
 
 <details>
 <summary>Abstract</summary>
@@ -283,7 +283,7 @@ to commercial solvers (Baron).
 
 <tt>15:00 - 15:20</tt> Coffee Break
 
-<tt>15:20 - 16:20</tt> MathOptInterface and JuMP 0.19 **Miles Lubin (Google)**
+<tt>15:20 - 16:20</tt> MathOptInterface and JuMP 0.19 **Miles Lubin (Google)** [[Slides](lubin.pdf)]
 
 <tt>16:20 onwards</tt> Discussion and unstructured collaboration time
 
