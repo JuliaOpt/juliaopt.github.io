@@ -60,7 +60,7 @@ Bordeaux on Wednesday morning.
 
 ### Wednesday 27 June
 
-<tt>13:30 - 14:00</tt> Introduction **Juan Pablo Vielma (MIT)**
+<tt>13:30 - 14:00</tt> Introduction **Juan Pablo Vielma (MIT)** [[Slides](vielma.pdf)]
 
 <tt>14:00 - 14:25</tt> Systematically building mixed-integer programming formulations using JuMP and Julia **Joey Huchette (MIT)** [[Slides](huchette.pdf)]
 
