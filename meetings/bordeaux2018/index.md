@@ -62,7 +62,7 @@ Bordeaux on Wednesday morning.
 
 <tt>13:30 - 14:00</tt> Introduction **Juan Pablo Vielma (MIT)**
 
-<tt>14:00 - 14:25</tt> Systematically building mixed-integer programming formulations using JuMP and Julia **Joey Huchette (MIT)** [[Slides](huchette.pdf)]
+<tt>14:00 - 14:25</tt> Systematically building mixed-integer programming formulations using JuMP and Julia **Joey Huchette (MIT)** [[Slides](huchette.pdf)][[Video](https://www.youtube.com/watch?v=j-v48n1VVeg&list=PLP8iPy9hna6RJUxzYlWENcs9yf-CRoDvD&index=5)]
 
 <details>
 <summary>Abstract</summary>
@@ -77,7 +77,7 @@ fantastic tools for building intuition, and also for constructing
 high-performing formulations that may not be "human-readable."
 </details>
 
-<tt>14:25 - 14:50</tt> Modeling decomposable Mixed Integer Programs **Guillaume Marques (Université de Bordeaux)** [[Slides](marques.pdf)]
+<tt>14:25 - 14:50</tt> Modeling decomposable Mixed Integer Programs **Guillaume Marques (Université de Bordeaux)** [[Slides](marques.pdf)][[Video](https://www.youtube.com/watch?v=lSzuLiJxpWU&index=2&list=PLP8iPy9hna6RJUxzYlWENcs9yf-CRoDvD)]
 
 <details>
 <summary>Abstract</summary>
@@ -96,7 +96,7 @@ which are then solved using our modern Branch-Cut-and-Price algorithm.
 
 <tt>14:50 - 15:15</tt> Coffee Break
 
-<tt>15:15 - 15:40</tt> [Artelys Knitro](https://www.artelys.com/en/optimization-tools/knitro) 11.0, a new conic solver and other novelties **Jean-hubert Hours (Artelys)** [[Slides](artelys.pdf)]
+<tt>15:15 - 15:40</tt> [Artelys Knitro](https://www.artelys.com/en/optimization-tools/knitro) 11.0, a new conic solver and other novelties **Jean-hubert Hours (Artelys)** [[Slides](artelys.pdf)][[Video](https://www.youtube.com/watch?v=mgWPw75X88Y&list=PLP8iPy9hna6RJUxzYlWENcs9yf-CRoDvD&index=8)]
 
 <details>
 <summary>Abstract</summary>
@@ -113,7 +113,7 @@ ill-conditioned problems have been introduced with this release and will be
 presented during the talk.
 </details>
 
-<tt>15:40 - 16:05</tt> Power and exponential Cones with [Mosek](https://www.mosek.com/) **Ulf Worsøe (MOSEK)**
+<tt>15:40 - 16:05</tt> Power and exponential Cones with [Mosek](https://www.mosek.com/) **Ulf Worsøe (MOSEK)** [[Video](https://www.youtube.com/watch?v=zMump8BbtrI&list=PLP8iPy9hna6RJUxzYlWENcs9yf-CRoDvD&index=16)]
 
 <details>
 <summary>Abstract</summary>
@@ -127,7 +127,7 @@ few models to illustrate their usefulness.
 MOSEK is a commercial solver. Free licenses for academic use are available.
 </details>
 
-<tt>16:05 - 16:30</tt> [ProxSDP.jl](https://github.com/mariohsouto/ProxSDP.jl): A semidefinite programming solver written in Julia **Joaquim Dias Garcia & Mario Souto (PUC-Rio)** [[Slides](joaquim.pdf)]
+<tt>16:05 - 16:30</tt> [ProxSDP.jl](https://github.com/mariohsouto/ProxSDP.jl): A semidefinite programming solver written in Julia **Joaquim Dias Garcia & Mario Souto (PUC-Rio)** [[Slides](joaquim.pdf)][[Video](https://www.youtube.com/watch?v=8SQSl4WjQWE&list=PLP8iPy9hna6RJUxzYlWENcs9yf-CRoDvD&index=9)]
 
 <details>
 <summary>Abstract</summary>
@@ -150,7 +150,7 @@ ProxSDP.jl, is made available and implementation details are discussed.
 
 ### Thursday 28 June
 
-<tt>10:00 - 10:25</tt> Stochastic Programming for Hydropower Operations: Modeling and Algorithms **Martin Biel (KTH - The Royal Institute of Technology)** [[Slides](biel.pdf)]
+<tt>10:00 - 10:25</tt> Stochastic Programming for Hydropower Operations: Modeling and Algorithms **Martin Biel (KTH - The Royal Institute of Technology)** [[Slides](biel.pdf)][[Video](https://www.youtube.com/watch?v=fy81-fRFnfY&index=11&list=PLP8iPy9hna6RJUxzYlWENcs9yf-CRoDvD)]
 
 <details>
 <summary>Abstract</summary>
@@ -178,7 +178,7 @@ flexibility such as effective model re-initialization and effective distribution
 of scenario problems on worker processes.
 </details>
 
-<tt>10:25 - 10:50</tt> Optimal energy management and stochastic decomposition **François Pacaud (CERMICS, ENPC)** [[Slides](pacaud.pdf)]
+<tt>10:25 - 10:50</tt> Optimal energy management and stochastic decomposition **François Pacaud (CERMICS, ENPC)** [[Slides](pacaud.pdf)][[Video](https://www.youtube.com/watch?v=yANYC4XXYmE&list=PLP8iPy9hna6RJUxzYlWENcs9yf-CRoDvD&index=4)]
 
 <details>
 <summary>Abstract</summary>
@@ -203,7 +203,7 @@ to Ipopt.jl to coordinate the decomposition scheme.
 
 <tt>10:50 - 11:20</tt> Coffee Break
 
-<tt>11:20 - 11:45</tt> A Julia JuMP-based module for polynomial optimization with complex variables applied to Optimal Power Flow  **Julie Sliwak (RTE)** [[Slides](sliwak.pdf)]
+<tt>11:20 - 11:45</tt> A Julia JuMP-based module for polynomial optimization with complex variables applied to Optimal Power Flow  **Julie Sliwak (RTE)** [[Slides](sliwak.pdf)][[Video](https://www.youtube.com/watch?v=NYxBJ1YSXO8&index=10&list=PLP8iPy9hna6RJUxzYlWENcs9yf-CRoDvD)]
 
 <details>
 <summary>Abstract</summary>
@@ -219,7 +219,7 @@ This work demonstrates the convenience of a module for POP-C to rapidly test
 several local or global methods.
 </details>
 
-<tt>11:45 - 12:10</tt> Topology Optimization and JuMP **Mohamed Tarek (UNSW Canberra)** [[Slides](tarek.pdf)]
+<tt>11:45 - 12:10</tt> Topology Optimization and JuMP **Mohamed Tarek (UNSW Canberra)** [[Slides](tarek.pdf)][[Video](https://www.youtube.com/watch?v=zNZ_bw1ti00&index=13&list=PLP8iPy9hna6RJUxzYlWENcs9yf-CRoDvD)]
 
 <details>
 <summary>Abstract</summary>
@@ -234,7 +234,7 @@ in Julia that abstracts away the finite element analysis and linear algebra and
 only exposes objectives and constraints to the optimization solver.
 </details>
 
-<tt>12:10 - 12:35</tt> Developing new optimization methods with packages from the JuliaSmoothOptimizers organization. **Abel Soares Siqueira (Federal University of Paraná)** [[Slides](siqueira.pdf)]
+<tt>12:10 - 12:35</tt> Developing new optimization methods with packages from the JuliaSmoothOptimizers organization. **Abel Soares Siqueira (Federal University of Paraná)** [[Slides](siqueira.pdf)][[Video](https://www.youtube.com/watch?v=-iGk5LlMr-Q&list=PLP8iPy9hna6RJUxzYlWENcs9yf-CRoDvD&index=3)]
 
 <details>
 <summary>Abstract</summary>
@@ -251,9 +251,9 @@ packages - specially JuMP.
 
 <tt>12:35 - 14:00</tt> Lunch
 
-<tt>14:00 - 14:35</tt> [The Gravity modeling language](https://www.allinsights.io/gravity) **Hassan Hijazi (LANL)**
+<tt>14:00 - 14:35</tt> [The Gravity modeling language](https://www.allinsights.io/gravity) **Hassan Hijazi (LANL)** [[Video](https://www.youtube.com/watch?v=uGU_5cWR07o&list=PLP8iPy9hna6RJUxzYlWENcs9yf-CRoDvD&index=7)]
 
-<tt>14:35 - 15:00</tt> [POD](https://github.com/lanl-ansi/POD.jl), A Global Solver for Nonconvex MINLPs **Harsha Nagarajan (LANL)**
+<tt>14:35 - 15:00</tt> [POD](https://github.com/lanl-ansi/POD.jl), A Global Solver for Nonconvex MINLPs **Harsha Nagarajan (LANL)** [[Video](https://www.youtube.com/watch?v=mwkhiEIS5JA&index=6&list=PLP8iPy9hna6RJUxzYlWENcs9yf-CRoDvD)]
 
 <details>
 <summary>Abstract</summary>
@@ -283,7 +283,7 @@ to commercial solvers (Baron).
 
 <tt>15:00 - 15:20</tt> Coffee Break
 
-<tt>15:20 - 16:20</tt> MathOptInterface and JuMP 0.19 **Miles Lubin (Google)** [[Slides](lubin.pdf)]
+<tt>15:20 - 16:20</tt> MathOptInterface and JuMP 0.19 **Miles Lubin (Google)** [[Slides](lubin.pdf)][[Video](https://www.youtube.com/watch?v=_u6e184vBhc&list=PLP8iPy9hna6RJUxzYlWENcs9yf-CRoDvD&index=17)]
 
 <tt>16:20 onwards</tt> Discussion and unstructured collaboration time
 
@@ -317,7 +317,7 @@ in utilizing nonlinear branch-and-bound algorithms as heuristics for non-convex
 MINLPs.
 </details>
 
-<tt>10:25 - 10:50</tt> [NEOS.jl](https://github.com/odow/NEOS.jl): A Julia interface to the NEOS Server **Oscar Dowson (University of Auckland)** [[Slides](dowson.pdf)]
+<tt>10:25 - 10:50</tt> [NEOS.jl](https://github.com/odow/NEOS.jl): A Julia interface to the NEOS Server **Oscar Dowson (University of Auckland)** [[Slides](dowson.pdf)][[Video](https://www.youtube.com/watch?v=AQKZi1Nitt0&index=15&list=PLP8iPy9hna6RJUxzYlWENcs9yf-CRoDvD)]
 
 <details>
 <summary>Abstract</summary>
@@ -330,7 +330,7 @@ enables JuMP models to be solved via NEOS in a seamless fashion.
 
 <tt>10:50 - 11:20</tt> Coffee Break
 
-<tt>11:20 - 11:45</tt> Automatic reformulation using constraint bridges **Benoît Legat (UCLouvain)** [[Slides](legat.pdf)]
+<tt>11:20 - 11:45</tt> Automatic reformulation using constraint bridges **Benoît Legat (UCLouvain)** [[Slides](legat.pdf)] [[Video](https://www.youtube.com/watch?v=C8dHxJCUHYw&index=2&t=6s&list=PLP8iPy9hna6RJUxzYlWENcs9yf-CRoDvD)]
 
 <details>
 <summary>Abstract</summary>
@@ -356,7 +356,7 @@ reformulations are available, heuristics are used to determine the formulation
 that will incur the lower computational cost to the solver.
 </details>
 
-<tt>11:45 - 12:10</tt> [EAGO](https://github.com/PSORLab/EAGO.jl): A Deterministic Nonconvex Optimization Package for Julia **Matthew Wilhelm (University of Connecticut)** [[Slides](wilhelm.pdf)]
+<tt>11:45 - 12:10</tt> [EAGO](https://github.com/PSORLab/EAGO.jl): A Deterministic Nonconvex Optimization Package for Julia **Matthew Wilhelm (University of Connecticut)** [[Slides](wilhelm.pdf)][[Video](https://www.youtube.com/watch?v=1yvbTDouuE4&index=12&list=PLP8iPy9hna6RJUxzYlWENcs9yf-CRoDvD)]
 
 <details>
 <summary>Abstract</summary>
@@ -383,7 +383,7 @@ toolkit for developing and evaluating future low-level global optimization
 algorithms.
 </details>
 
-<tt>12:10 - 12:35</tt> [EMP.jl](https://github.com/xhub/EMP.jl), a package for modelling Extended Mathematical Programming **Olivier Huber (UW Madison)** [[Slides](huber.pdf)]
+<tt>12:10 - 12:35</tt> [EMP.jl](https://github.com/xhub/EMP.jl), a package for modelling Extended Mathematical Programming **Olivier Huber (UW Madison)** [[Slides](huber.pdf)][[Video](https://www.youtube.com/watch?v=u7vASGAJYlY&index=14&list=PLP8iPy9hna6RJUxzYlWENcs9yf-CRoDvD)]
 
 <details>
 <summary>Abstract</summary>
@@ -399,7 +399,7 @@ by using the SELKIE solver.
 
 <tt>12:35 - 15:00</tt> Lunch and unstructured collaboration time
 
-<tt>15:00 - 17:00</tt> JuMP Tutorial
+<tt>15:00 - 17:00</tt> JuMP Tutorial [[Video](https://www.youtube.com/watch?v=J43L4s-EkH8&index=18&list=PLP8iPy9hna6RJUxzYlWENcs9yf-CRoDvD)]
 
 The tutorial will cover how to use the new version of JuMP with [MathOptInterface](https://github.com/JuliaOpt/MathOptInterface.jl). The tutorial will be open to anyone, even if they have not attended the workshop. No JuMP experience is required.
 
