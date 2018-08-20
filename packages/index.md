@@ -21,7 +21,7 @@ The ecosystem of [Julia packages](http://pkg.julialang.org) is growing very fast
 
 - [StructJuMP.jl](https://github.com/StructJuMP/StructJuMP.jl): for block-structured optimization
 
-- [NLOptControl.jl](https://github.com/huckl3b3rry87/NLOptControl.jl): for formulating and solving nonlinear optimal control problems
+- [NLOptControl.jl](https://github.com/JuliaMPC/NLOptControl.jl): for formulating and solving nonlinear optimal control problems
 
 **Developers:** Thinking about how to name your JuMP extension? While we're happy you're building on top of JuMP, please do not use JuMP in the name of the package without explicit permission from the JuMP developers.
 
