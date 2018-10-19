@@ -17,6 +17,7 @@ title:  Showcase
 - Stanford University
 - Universidad Carlos III de Madrid
 - Université catholique de Louvain
+- Unviersité de Bretagne Sud
 - Université de Liège
 - Université de Nantes
 - University at Buffalo
