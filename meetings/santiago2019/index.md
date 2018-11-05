@@ -40,7 +40,7 @@ released after talk acceptance.
 The workshop is open for anybody to attend. In particular, we invite new
 contributors and those who have not met the core development team.
 
-**To register your attendance at the workshop, [use this form]().**
+, [use this form]().**
 
 In addition to attending, participants are also invited to submit a proposal for
 a short (~20-minute) talk. The committee is looking for talks that will start
@@ -52,7 +52,8 @@ See the talks from [JuMP-dev I](https://www.youtube.com/watch?v=esOe5saQRKY&list
 and [JuMP-dev II](https://www.youtube.com/playlist?list=PLP8iPy9hna6RJUxzYlWENcs9yf-CRoDvD)
 for a flavor of the workshop.
 
-**To submit a proposal for a talk at the workshop, [use this form]().**
+**To register your attendance at the workshop, (and optionally submit a proposal
+for a talk), [use this form](https://goo.gl/forms/2nEljULHwC3zzcE13).**
 
 The committee will take submissions for talks until **December 20th, 2018**.
 
