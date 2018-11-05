@@ -40,8 +40,6 @@ released after talk acceptance.
 The workshop is open for anybody to attend. In particular, we invite new
 contributors and those who have not met the core development team.
 
-, [use this form]().**
-
 In addition to attending, participants are also invited to submit a proposal for
 a short (~20-minute) talk. The committee is looking for talks that will start
 off discussions during the workshop and beyond and for talks that present
