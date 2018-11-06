@@ -6,7 +6,7 @@ title:  JuliaOpt&#58; Optimization packages for the Julia language
 # JuMP-dev Workshop 2019, Santiago
 
 The third annual JuMP-dev workshop will be held in Santiago, Chile on March
-13-14, 2019. We are currently inviting submissions for talks. More details
+12-14, 2019. We are currently inviting submissions for talks. More details
 [here](meetings/santiago2019/).
 
 # What is Julia?
