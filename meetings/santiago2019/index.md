@@ -9,8 +9,8 @@ March 12-14, 2019, Santiago, Chile.
 This workshop is the third JuMP-dev workshop after the [first](/meetings/mit2017/)
 and [second](/meetings/bordeaux2018/) JuMP-dev workshops.
 
-**To register your attendance at the workshop, (and optionally submit a proposal
-for a talk), [use this form](https://goo.gl/forms/2nEljULHwC3zzcE13).**
+**To register your (free!) attendance at the workshop, (and optionally submit a 
+proposal for a talk), [use this form](https://goo.gl/forms/2nEljULHwC3zzcE13).**
 
 ## Outline
 
@@ -72,5 +72,4 @@ released after talk acceptance.
 - Rodolfo Carvajal (Universidad Adolfo Ibañez; Local Organization)
 - Diego Moran (Universidad Adolfo Ibañez; Local Organization)
 
-Contact oscar.dowson at northwestern.edu or jump-dev-committee at
-googlegroups.com for more information.
+Contact jump-dev-committee at googlegroups.com for more information.
