@@ -19,11 +19,9 @@ researchers, and practitioners with interests in the software aspects of [JuMP](
 and related packages. The workshop is open for anybody to attend. In particular,
 we invite new contributors and those who have not met the core development team.
 
-The workshop is structured as a three-day event. The first day will begin with a
-series of hands-on tutorials by the core developers (ranging from no-experience
-necessary, to advanced usages of JuMP). On the second and third days we will
-have talks from participants in the morning and time for collaboration in the
-afternoons.
+The workshop will include hands-on tutorials (ranging from no-experience
+necessary, to advanced usages of JuMP), talks by participants and core
+developers, and ample time for collaboration.
 
 Participants are invited to submit proposals for a short (~20-minute) talk on the
 following topics:
