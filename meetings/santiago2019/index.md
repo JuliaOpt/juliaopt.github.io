@@ -6,6 +6,8 @@ layout: common
 
 March 12-14, 2019, Santiago, Chile.
 
+[Spanish version](index-SPA/)
+
 This workshop is the third JuMP-dev workshop after the [first](/meetings/mit2017/)
 and [second](/meetings/bordeaux2018/) JuMP-dev workshops.
 
