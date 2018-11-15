@@ -61,7 +61,7 @@ El Workshop se llevará a cabo en Santiago, Chile. Los detalles del lugar serán
 - Juan Pablo Vielma (MIT)
 - Victor Albornoz (Universidad Técnica Federico Santa María; Organización Local)
 - Gustavo Angulo (Pontificia Universidad Católica de Chile; Organización Local)
-- Rodolfo Carvajal (Universidad Adolfo Ibañez; Organización Local)
-- Diego Moran (Universidad Adolfo Ibañez; Organización Local)
+- Rodolfo Carvajal (Universidad Adolfo Ibáñez; Organización Local)
+- Diego Moran (Universidad Adolfo Ibáñez; Organización Local)
 
 Contactar a jump-dev-committee at googlegroups.com para más información.
