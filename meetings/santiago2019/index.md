@@ -51,8 +51,8 @@ for a flavor of the workshop.
 **To register your attendance at the workshop, (and optionally submit a proposal
 for a talk), [use this form](https://goo.gl/forms/2nEljULHwC3zzcE13).**
 
-Talk proposals are welcome until <s>December 21st</s> **January 4th** and talk acceptance will be 
-notified by <s>January 4th</s> **January 11th**. 
+Talk proposals are welcome until ~~December 21st~~ **January 4th** and talk acceptance will be 
+notified by ~~January 4th~~ **January 11th**. 
 
 ## Location
 
@@ -121,7 +121,7 @@ para tener una idea de cómo es el Workshop.
 
 **Para registrar su participación en el Workshop (y opcionalmente enviar una propuesta para una charla), [use este formulario](https://goo.gl/forms/2nEljULHwC3zzcE13).**
 
-Propuestas de charlas serán bienvenidas hasta el <s>21 de diciembre</s> **4 de enero** y se notificarán las charlas aceptadas el día <s>4 de enero</s> **11 de enero**.
+Propuestas de charlas serán bienvenidas hasta el ~~21 de diciembre~~ **4 de enero** y se notificarán las charlas aceptadas el día ~~4 de enero~~ **11 de enero**.
 
 ## Ubicación
 
