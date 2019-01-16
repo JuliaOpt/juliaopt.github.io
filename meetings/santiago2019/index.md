@@ -89,8 +89,9 @@ _Note: This schedule is subject to change! Check here for updates._
 
 <tt>Evening</tt> **Trends and challenges in multiobjective optimization**
 
-The University of Valparaíso will hold a seminar on multiobjective optimization
-in Santiago. Attendees of JuMP-dev are invited. More details to come.
+The Pontificia Universidad Católica de Valparaíso will hold a seminar on 
+multiobjective optimization in Santiago. Attendees of JuMP-dev are invited. 
+More details to come.
 
 ### Friday
 
