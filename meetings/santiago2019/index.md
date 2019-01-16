@@ -11,8 +11,7 @@ March 12-14, 2019, Santiago, Chile.
 This workshop is the third JuMP-dev workshop after the [first](/meetings/mit2017/)
 and [second](/meetings/bordeaux2018/) JuMP-dev workshops.
 
-**To register your (free!) attendance at the workshop, (and optionally submit a 
-proposal for a talk), [use this form](https://goo.gl/forms/2nEljULHwC3zzcE13).**
+**To register your (free!) attendance at the workshop, [use this form](https://goo.gl/forms/2nEljULHwC3zzcE13).**
 
 ## Outline
 
@@ -25,39 +24,66 @@ The workshop will include hands-on tutorials (ranging from no-experience
 necessary, to advanced usages of JuMP), talks by participants and core
 developers, and ample time for collaboration.
 
-Participants are invited to submit proposals for a short (~20-minute) talk on the
-following topics:
-
-- JuMP core development ([MathOptInterface](https://github.com/JuliaOpt/MathOptInterface.jl), JuMP 1.0)
-- Mathematical optimization solvers written in Julia 
-- Automatic differentiation in Julia 
-- Julia interfaces to solvers 
-- JuMP extensions (stochastic programming, robust optimization, 
-    multiobjective optimization, ...) 
-- Optimization libraries that use JuMP 
-- Significant uses of JuMP in applications 
-- JuMP for teaching 
-- Developer tools for JuMP
-
-Talks should focus on the technical aspects related to JuMP, as opposed to
-general interest talks. In particular, the committee is looking for talks that
-will start off discussions during the workshop and beyond and for talks that
-present developments that the community may not be aware of.
-
-See the talks from [JuMP-dev I](https://www.youtube.com/watch?v=esOe5saQRKY&list=PLzK_rUGmc3o6EwPOCUCvBAbMJeYBS8PyY)
-and [JuMP-dev II](https://www.youtube.com/playlist?list=PLP8iPy9hna6RJUxzYlWENcs9yf-CRoDvD)
-for a flavor of the workshop.
-
-**To register your attendance at the workshop, (and optionally submit a proposal
-for a talk), [use this form](https://goo.gl/forms/2nEljULHwC3zzcE13).**
-
-Talk proposals are welcome until ~~December 21st~~ **January 4th** and talk acceptance will be 
-notified by ~~January 4th~~ **January 11th**. 
-
 ## Location
 
-The workshop will be held in Santiago, Chile. The exact venue details will be
-released after talk acceptance.
+The workshop will be held in Santiago, Chile. On Tuesday 3/12, the workshop will be located at the [Instituto Chileno Norteamericano](https://goo.gl/maps/aSkkTc1xmGG2). On Wednesday and Thursday (3/13--3/14), it will be held at the [San Joaquin Campus](https://goo.gl/maps/BvRXRHkwnU92) of Pontificia Universidad Católica de Chile (PUC).
+
+## Tutorials
+
+On Tuesday morning we will hold an introductory tutorial on Julia and JuMP; no prior experience necessary! Additionally, on Wednesday afternoon we will hold an advanced tutorial (tentative topics include MOI, JuMP extensions, and solver interfaces). The tutorials will be open to anyone, even if they have not attended the workshop.
+
+## Tentative Schedule
+
+_Note: This schedule is subject to change!_
+
+### Tuesday
+
+<tt>10:00 - 11:30</tt> **Introductory Tutorial**
+
+<tt>13:00 - 14:30</tt> **Keynotes**
+* Stefan Karpinski (Julia Computing)
+* _Milestones and plans for JuMP 1.0_, Miles Lubin (Google)
+
+<tt>15:00 - 16:00</tt> **Energy**
+* _A Julia/JuMP based Integrated Energy Resource Planning Model_, Alessandro Soares (PSR)
+* _PowerSimulations.jl a Integrated and Scalable Power Systems modeling tool_, Jose Daniel Lara (UC Berkeley / NREL)
+
+<tt>16:00 - EOD</tt> **Collaboration time**
+
+### Wednesday
+
+<tt>9:00 - 10:25</tt> **Solvers**
+* _COSMO - A conic operator splitting method for large conic problems_, Michael Garstka (University of Oxford)
+* _the Hypatia.jl solver: conic interior point algorithms and interfaces_, Chris Coey (MIT)
+* _Modeling with new and nonsymmetric cones_, Lea Kapelevich (MIT)
+* _Tulip.jl: An interior-point solver with abstract linear algebra_, Mathieu Tanneau (Polytechnique Montréal)
+
+<tt>10:50 - 12:10</tt> **Applications**
+* _Power Systems Modeling using JuMP and Julia_, Alvaro González (Skolkovo Institute of Science and Technology)
+* _POD.jl for Provably Optimal Quantum Circuit Design_, Harsha Nagarajan (Los Alamos National Laboratory)
+* _Applications of SOS in Flowpipe Construction_, Marcelo Forets (CURE)
+* _Solving Multi-period Mine Planning Models with Endogenous Uncertainty: Using Julia with JuMP_, Tomas Lagos Gonzalez (Universidad de Chile)
+* _SDDPHYDRO.jl - A Hydrothermal Dispatch Julia Package_, Andrew David Werner Rosemberg (PUC-Rio)
+
+<tt>14:00 - 15:30</tt> **Advanced tutorial**
+
+<tt>15:30 - EOD</tt> **Collaboration time**
+
+### Thursday
+
+<tt>9:00 - 10:25</tt> **Algorithms**
+* _Solving Large-scale problems using JuMP_, Thuener Silva (PUC-Rio)
+* _Rigorous global optimization in pure Julia_, David Sanders (Universidad Nacional Autónoma de México)
+* _Coluna: An Open-Source Branch-Cut-and-Price Framework_, Vitor Nesello (University of Bordeaux)
+* _ProxSDP.jl: New developments on Semidefinite Programming in Julia/JuMP_, Mario Souto (PUC-Rio)
+
+<tt>10:50 - 12:00</tt> **Modeling paradigms**
+* _Graph-Based Modeling and Optimization using Plasmo.jl_, Jordan Jalving (University of Wisconsin-Madison)
+* _Set Programming with JuMP_, Benoît Legat (UC Louvain)
+* _ParameterJuMP.jl_, Joaquim Dias Garcia (PSR / PUC-Rio)
+* _JuliaMoments_, Tillmann Weisser (Los Alamos National Laboratory)
+
+<tt>2:00 - EOD</tt> Collaboration time
 
 ## Committee
 
