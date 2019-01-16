@@ -30,7 +30,9 @@ The workshop will be held in Santiago, Chile. On Tuesday 3/12, the workshop will
 
 ## Tutorials
 
-On Tuesday morning we will hold an introductory tutorial on Julia and JuMP; no prior experience necessary! Additionally, on Wednesday afternoon we will hold an advanced tutorial (tentative topics include MOI, JuMP extensions, and solver interfaces). The tutorials will be open to anyone, even if they have not attended the workshop.
+On Tuesday morning we will hold an introductory tutorial on Julia and JuMP; no prior experience necessary! Additionally, on Wednesday afternoon we will hold an advanced tutorial (tentative topics include MOI, JuMP extensions, and solver interfaces). The tutorials will be open to anyone, even if they have not attended the workshop. 
+
+Finally, a repeat of Tuesday's introductory tutorial will be held in Valparaíso on the morning of Friday 15 March for those who are unable to attend the tutorial in Santiago.
 
 ## Tentative Schedule
 
@@ -84,6 +86,18 @@ _Note: This schedule is subject to change! Check here for updates._
 * Tillmann Weisser (Los Alamos National Laboratory): _JuliaMoments_
 
 <tt>14:00 - EOD</tt> **Collaboration time**
+
+<tt>Evening</tt> **Trends and challenges in multiobjective optimization**
+
+The University of Valparaíso will hold a seminar on multiobjective optimization
+in Santiago. Attendees of JuMP-dev are invited. More details to come.
+
+### Friday
+
+<tt>Morning</tt> **Introductory tutorial**
+
+An introductory tutorial will be held in Valparaíso for those unable to attend
+Tuesday's introductory tutorial in Santiago. More details to come.
 
 ## Committee
 
