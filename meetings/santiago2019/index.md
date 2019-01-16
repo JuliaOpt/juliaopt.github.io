@@ -42,28 +42,28 @@ _Note: This schedule is subject to change! Check here for updates._
 
 <tt>13:00 - 14:30</tt> **Keynotes**
 * Stefan Karpinski (Julia Computing)
-* _The roadmap for JuMP 1.0_, Miles Lubin (Google)
+* Miles Lubin (Google): _The roadmap for JuMP 1.0_
 
 <tt>15:00 - 16:00</tt> **Energy**
-* _A Julia/JuMP based Integrated Energy Resource Planning Model_, Alessandro Soares (PSR)
-* _PowerSimulations.jl a Integrated and Scalable Power Systems modeling tool_, Jose Daniel Lara (UC Berkeley / NREL)
+* Alessandro Soares (PSR): _A Julia/JuMP based Integrated Energy Resource Planning Model_
+* Jose Daniel Lara (UC Berkeley / NREL): _PowerSimulations.jl a Integrated and Scalable Power Systems modeling tool_
 
 <tt>16:00 - EOD</tt> **Collaboration time**
 
 ### Wednesday
 
 <tt>9:00 - 10:25</tt> **Solvers**
-* _COSMO - A conic operator splitting method for large conic problems_, Michael Garstka (University of Oxford)
-* _The Hypatia.jl solver: conic interior point algorithms and interfaces_, Chris Coey (MIT)
-* _Modeling with new and nonsymmetric cones_, Lea Kapelevich (MIT)
-* _Tulip.jl: An interior-point solver with abstract linear algebra_, Mathieu Tanneau (Polytechnique Montréal)
+* Michael Garstka (University of Oxford): _COSMO - A conic operator splitting method for large conic problems_
+* Chris Coey (MIT): _The Hypatia.jl solver: conic interior point algorithms and interfaces_
+* Lea Kapelevich (MIT): _Modeling with new and nonsymmetric cones_
+* Mathieu Tanneau (Polytechnique Montréal): _Tulip.jl: An interior-point solver with abstract linear algebra_
 
 <tt>10:50 - 12:10</tt> **Applications**
-* _Power Systems Modeling using JuMP and Julia_, Alvaro González (Skolkovo Institute of Science and Technology)
-* _POD.jl for Provably Optimal Quantum Circuit Design_, Harsha Nagarajan (Los Alamos National Laboratory)
-* _Applications of SOS in Flowpipe Construction_, Marcelo Forets (CURE)
-* _Solving Multi-period Mine Planning Models with Endogenous Uncertainty: Using Julia with JuMP_, Tomas Lagos Gonzalez (Universidad de Chile)
-* _SDDPHYDRO.jl - A Hydrothermal Dispatch Julia Package_, Andrew David Werner Rosemberg (PUC-Rio)
+* Alvaro González (Skolkovo Institute of Science and Technology): _Power Systems Modeling using JuMP and Julia_
+* Harsha Nagarajan (Los Alamos National Laboratory): _POD.jl for Provably Optimal Quantum Circuit Design_
+* Marcelo Forets (CURE): _Applications of SOS in Flowpipe Construction_
+* Tomas Lagos Gonzalez (Universidad de Chile): _Solving Multi-period Mine Planning Models with Endogenous Uncertainty: Using Julia with JuMP_
+* Andrew David Werner Rosemberg (PUC-Rio): _SDDPHYDRO.jl - A Hydrothermal Dispatch Julia Package_
 
 <tt>14:00 - 15:30</tt> **Advanced tutorial**
 
@@ -72,18 +72,18 @@ _Note: This schedule is subject to change! Check here for updates._
 ### Thursday
 
 <tt>9:00 - 10:25</tt> **Algorithms**
-* _Solving Large-scale problems using JuMP_, Thuener Silva (PUC-Rio)
-* _Rigorous global optimization in pure Julia_, David Sanders (Universidad Nacional Autónoma de México)
-* _Coluna: An Open-Source Branch-Cut-and-Price Framework_, Vitor Nesello (University of Bordeaux)
-* _ProxSDP.jl: New developments on Semidefinite Programming in Julia/JuMP_, Mario Souto (PUC-Rio)
+* Thuener Silva (PUC-Rio): _Solving Large-scale problems using JuMP_
+* David Sanders (Universidad Nacional Autónoma de México): _Rigorous global optimization in pure Julia_
+* Vitor Nesello (University of Bordeaux): _Coluna: An Open-Source Branch-Cut-and-Price Framework_
+* Mario Souto (PUC-Rio): _ProxSDP.jl: New developments on Semidefinite Programming in Julia/JuMP_
 
 <tt>10:50 - 12:00</tt> **Modeling paradigms**
-* _Graph-Based Modeling and Optimization using Plasmo.jl_, Jordan Jalving (University of Wisconsin-Madison)
-* _Set Programming with JuMP_, Benoît Legat (UC Louvain)
-* _ParameterJuMP.jl_, Joaquim Dias Garcia (PSR / PUC-Rio)
-* _JuliaMoments_, Tillmann Weisser (Los Alamos National Laboratory)
+* Jordan Jalving (University of Wisconsin-Madison): _Graph-Based Modeling and Optimization using Plasmo.jl_
+* Benoît Legat (UC Louvain): _Set Programming with JuMP_
+* Joaquim Dias Garcia (PSR / PUC-Rio): _ParameterJuMP.jl_
+* Tillmann Weisser (Los Alamos National Laboratory): _JuliaMoments_
 
-<tt>14:00 - EOD</tt> Collaboration time
+<tt>14:00 - EOD</tt> **Collaboration time**
 
 ## Committee
 
