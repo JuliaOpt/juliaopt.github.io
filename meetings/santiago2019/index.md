@@ -34,7 +34,7 @@ On Tuesday morning we will hold an introductory tutorial on Julia and JuMP; no p
 
 ## Tentative Schedule
 
-_Note: This schedule is subject to change!_
+_Note: This schedule is subject to change! Check here for updates._
 
 ### Tuesday
 
@@ -42,7 +42,7 @@ _Note: This schedule is subject to change!_
 
 <tt>13:00 - 14:30</tt> **Keynotes**
 * Stefan Karpinski (Julia Computing)
-* _Milestones and plans for JuMP 1.0_, Miles Lubin (Google)
+* _The roadmap for JuMP 1.0_, Miles Lubin (Google)
 
 <tt>15:00 - 16:00</tt> **Energy**
 * _A Julia/JuMP based Integrated Energy Resource Planning Model_, Alessandro Soares (PSR)
@@ -54,7 +54,7 @@ _Note: This schedule is subject to change!_
 
 <tt>9:00 - 10:25</tt> **Solvers**
 * _COSMO - A conic operator splitting method for large conic problems_, Michael Garstka (University of Oxford)
-* _the Hypatia.jl solver: conic interior point algorithms and interfaces_, Chris Coey (MIT)
+* _The Hypatia.jl solver: conic interior point algorithms and interfaces_, Chris Coey (MIT)
 * _Modeling with new and nonsymmetric cones_, Lea Kapelevich (MIT)
 * _Tulip.jl: An interior-point solver with abstract linear algebra_, Mathieu Tanneau (Polytechnique Montréal)
 
@@ -67,7 +67,7 @@ _Note: This schedule is subject to change!_
 
 <tt>14:00 - 15:30</tt> **Advanced tutorial**
 
-<tt>15:30 - EOD</tt> **Collaboration time**
+<tt>15:30 - EOD</tt> **Collaboration time and core developer meeting**
 
 ### Thursday
 
@@ -83,7 +83,7 @@ _Note: This schedule is subject to change!_
 * _ParameterJuMP.jl_, Joaquim Dias Garcia (PSR / PUC-Rio)
 * _JuliaMoments_, Tillmann Weisser (Los Alamos National Laboratory)
 
-<tt>2:00 - EOD</tt> Collaboration time
+<tt>14:00 - EOD</tt> Collaboration time
 
 ## Committee
 
