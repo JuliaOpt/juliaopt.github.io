@@ -44,6 +44,7 @@ Some particular options to consider include:
 Directly connects to both Line 1 and Line 5 from Baquedano station. The most bustling, touristy option.
 * [Cumbres](https://www.cumbreslastarria.com) (~$190)
 * [Ismael](https://www.ismaelhotel.com) (~$169)
+* [Hotel Luciano K](http://www.lucianokhotel.com/en/inicio/) (~$150)
 
 **[Los Leones](https://goo.gl/maps/QmRT2DhEAL22)**
 Direct connection to Line 1, and connects to Line 5 via Line 6 (both via Los Leones station).
