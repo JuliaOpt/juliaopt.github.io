@@ -34,7 +34,7 @@ On Tuesday morning we will hold an introductory tutorial on Julia and JuMP; no p
 
 Finally, a repeat of Tuesday's introductory tutorial will be held in Valparaíso on the morning of Friday 15 March for those who are unable to attend the tutorial in Santiago.
 
-## Accomodations
+## Accommodations
 
 There are many lodging options available during your stay in Santiago. Generally, it is desirable to stay near a Metro station for easy access to transportation throughout the city. For context, Instituto Chileno Norteamericano is one block from "La Moneda" on Line 1 (red), and four blocks from "Santa Ana" on Line 5 (green). Campus San Joaquín is next to "San Joaquín" on Line 5. During rush hour, it is best to avoid Lines 4, 5, or 6 traveling towards (respectively away from) the city center in the morning (resp. afternoon), or transfering at the Vicente Valdés station.
 
