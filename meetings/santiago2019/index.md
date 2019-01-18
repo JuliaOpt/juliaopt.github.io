@@ -34,6 +34,30 @@ On Tuesday morning we will hold an introductory tutorial on Julia and JuMP; no p
 
 Finally, a repeat of Tuesday's introductory tutorial will be held in Valparaíso on the morning of Friday 15 March for those who are unable to attend the tutorial in Santiago.
 
+## Accommodations
+
+There are many lodging options available during your stay in Santiago. Generally, it is desirable to stay near a Metro station for easy access to transportation throughout the city. For context, Instituto Chileno Norteamericano is one block from "La Moneda" on Line 1 (red), and four blocks from "Santa Ana" on Line 5 (green). Campus San Joaquín is next to "San Joaquín" on Line 5. During rush hour, it is best to avoid Lines 4, 5, or 6 traveling towards (respectively away from) the city center in the morning (resp. afternoon), or transfering at the Vicente Valdés station.
+
+Some particular options to consider include:
+
+**[Barrio Lastarria](https://goo.gl/maps/8C1T2Y9om712)**
+Directly connects to both Line 1 and Line 5 from Baquedano station. The most bustling, touristy option.
+* [Cumbres](https://www.cumbreslastarria.com) (~$190)
+* [Ismael](https://www.ismaelhotel.com) (~$169)
+* [Hotel Luciano K](http://www.lucianokhotel.com/en/inicio/) (~$150)
+
+**[Los Leones](https://goo.gl/maps/QmRT2DhEAL22)**
+Direct connection to Line 1, and connects to Line 5 via Line 6 (both via Los Leones station).
+* [Torremayor](https://www.hoteltorremayorprovidencia.cl/es-es) (~$200)
+* [Diego Velázquez](http://www.hoteldiegodevelazquez.com) (~$85)
+* [EurotelL](https://www.eurotel.cl/providencia/en/) (~$150)
+
+**[Tobababa Station](https://goo.gl/maps/nQnvWyPkHs72)**
+Also along Line 1; the quietest option.
+* [DoubleTree by Hilton Hotel Santiago - Vitacura](https://doubletree3.hilton.com/en/hotels/chile/doubletree-by-hilton-hotel-santiago-vitacura-SCLSVDT/index.html) (~$159)
+* [Hotel NH Collection Plaza Santiago](https://www.nh-hotels.com/hotel/nh-collection-plaza-santiago?gmb) (~$180)
+
+
 ## Tentative Schedule
 
 _Note: This schedule is subject to change! Check here for updates._
