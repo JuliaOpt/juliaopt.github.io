@@ -8,6 +8,8 @@ March 12-14, 2019, Santiago, Chile.
 
 [Spanish version](#tercer-workshop-anual-jump-dev)
 
+<object type="image/svg+xml" data="JuMPdev2019.svg" width="750" style="text-align:center"><a href="http://www.juliaopt.org/meetings/santiago2019/">The Third Annual JuMP-dev Workshop, March 12-14, 2019, Santiago, Chile.</a></object>
+
 This workshop is the third JuMP-dev workshop after the [first](/meetings/mit2017/)
 and [second](/meetings/bordeaux2018/) JuMP-dev workshops.
 
