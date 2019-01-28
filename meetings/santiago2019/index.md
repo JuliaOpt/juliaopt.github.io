@@ -7,6 +7,9 @@ layout: common
 March 12-14, 2019, Santiago, Chile.
 
 [Spanish version](#tercer-workshop-anual-jump-dev)
+<p align="center">
+<object type="image/svg+xml" data="JuMPdev2019.svg" width="600">Poster</object>
+</p>
 
 This workshop is the third JuMP-dev workshop after the [first](/meetings/mit2017/)
 and [second](/meetings/bordeaux2018/) JuMP-dev workshops.
@@ -30,7 +33,7 @@ The workshop will be held in Santiago, Chile. On Tuesday 3/12, the workshop will
 
 ## Tutorials
 
-On Tuesday morning we will hold an introductory tutorial on Julia and JuMP; no prior experience necessary! Additionally, on Wednesday afternoon we will hold an advanced tutorial (tentative topics include MOI, JuMP extensions, and solver interfaces). The tutorials will be open to anyone, even if they have not attended the workshop. 
+On Tuesday morning we will hold an introductory tutorial on Julia and JuMP; no prior experience necessary! Additionally, on Wednesday afternoon we will hold an advanced tutorial (tentative topics include MOI, JuMP extensions, and solver interfaces). The tutorials will be open to anyone, even if they have not attended the workshop.
 
 Finally, a repeat of Tuesday's introductory tutorial will be held in Valparaíso on the morning of Friday 15 March for those who are unable to attend the tutorial in Santiago.
 
@@ -113,8 +116,8 @@ _Note: This schedule is subject to change! Check here for updates._
 
 <tt>Evening</tt> **Trends and challenges in multiobjective optimization**
 
-The Pontificia Universidad Católica de Valparaíso will hold a seminar on 
-multiobjective optimization in Santiago. Attendees of JuMP-dev are invited. 
+The Pontificia Universidad Católica de Valparaíso will hold a seminar on
+multiobjective optimization in Santiago. Attendees of JuMP-dev are invited.
 More details to come.
 
 ### Friday
@@ -152,9 +155,9 @@ y [segundo](/meetings/bordeaux2018/) workshops JuMP-dev realizados anteriormente
 
 ## Descripción
 
-El propósito de este workshop es juntar a estudiantes, investigadores y 
-profesionales, con interés en los aspectos de software de [JuMP](https://github.com/JuliaOpt/JuMP.jl) y sus paquetes relacionados. 
-El Workshop está abierto a todo público. En particular, invitamos a nuevos 
+El propósito de este workshop es juntar a estudiantes, investigadores y
+profesionales, con interés en los aspectos de software de [JuMP](https://github.com/JuliaOpt/JuMP.jl) y sus paquetes relacionados.
+El Workshop está abierto a todo público. En particular, invitamos a nuevos
 contribuidores y a aquellos que no han tenido la posibilidad de conocer al equipo de desarrollo principal de JuMP.
 
 El Workshop incluirá tutoriales *hands-on* (desde algunos sin experiencia requerida,
