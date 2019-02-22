@@ -5,7 +5,7 @@ title:  Packages
 
 # JuliaOpt and Optimization-Related Packages
 The ecosystem of [Julia packages](https://juliaobserver.com/) is growing very
-fast. We list here the main packages hosted under JuliaOpt and other related
+fast. We list here both the packages hosted under JuliaOpt and other related
 packages.
 
 ## Optimization Modeling
