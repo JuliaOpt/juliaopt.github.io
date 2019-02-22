@@ -3,8 +3,45 @@ layout: default
 title:  Packages
 ---
 
-# Optimization-Related Packages
-The ecosystem of [Julia packages](http://pkg.julialang.org) is growing very fast. There are packages hosted in the JuliaOpt GitHub organization which are not introduced in the [home](/) page and other optimization related packages that are not part of JuliaOpt.
+# JuliaOpt and Optimization-Related Packages
+The ecosystem of [Julia packages](https://juliaobserver.com/) is growing very
+fast. We list here both the packages hosted under JuliaOpt and other related
+packages.
+
+## Optimization Modeling
+
+- [JuMP](https://github.com/JuliaOpt/JuMP.jl): An algebraic modeling language
+  for linear, quadratic, and nonlinear constrained optimization problems.
+
+- [Convex.jl](https://github.com/JuliaOpt/Convex.jl): An algebraic modeling
+  language for [disciplined convex programming](http://stanford.edu/~boyd/papers/disc_cvx_prog.html).
+
+## Optimization Infrastructure
+
+- [MathOptInterface](https://github.com/JuliaOpt/MathOptInterface.jl): An
+  abstraction layer for mathematical optimization solvers.
+
+- [MathProgBase](https://github.com/JuliaOpt/MathProgBase.jl): An
+  abstraction layer for mathematical optimization solvers. This package is
+  deprecated and replaced by MathOptInterface.
+
+- Numerous Julia wrappers for solvers. See the JuMP
+  [documentation](http://www.juliaopt.org/JuMP.jl/v0.19.0/installation/#Getting-Solvers-1)
+  for a list.
+
+## Pure-Julia Optimization Solvers
+
+- [Alpine](https://github.com/lanl-ansi/Alpine.jl): a JuMP-based global
+  optimization solver
+
+- [Juniper](https://github.com/lanl-ansi/Juniper.jl): a JuMP-based nonlinear
+  integer programming solver
+
+- [Pajarito](https://github.com/JuliaOpt/Pajarito.jl): a solver for
+  mixed-integer convex optimization
+
+- [Pavito](https://github.com/JuliaOpt/Pavito.jl): a gradient-based outer
+  approximation solver for convex mixed-integer nonlinear programming (MINLP)
 
 
 ## JuMP Extensions
