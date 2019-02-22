@@ -166,7 +166,7 @@ hasta otros acerca de uso avanzado de JuMP), charlas por participantes y desarro
 ## Ubicación
 
 El Workshop se llevará a cabo en Santiago, Chile. El martes, 12 de marzo,
-el Workshop se ubicará en el[Instituto Chileno Norteamericano](https://goo.gl/maps/aSkkTc1xmGG2). El miercoles y el
+el Workshop se ubicará en el [Instituto Chileno Norteamericano](https://goo.gl/maps/aSkkTc1xmGG2). El miercoles y el
 viernes, 13 y 14 de marzo, se llevará a cabo en el [Campus San Joaquin](https://goo.gl/maps/BvRXRHkwnU92) de la Pontificia Universidad Católica de Chile (PUC).
 
 ## Progama
