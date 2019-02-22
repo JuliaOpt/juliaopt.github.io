@@ -186,12 +186,12 @@
     <td>1000</td> 
   </tr>
   <tr>
-    <td>$c^g$, \$/MWh</td>
+    <td>$c^g$, $/MWh</td>
     <td>50</td> 
     <td>100</td> 
   </tr>
   <tr>
-    <td>$c^{g0}$, \$/MWh</td>
+    <td>$c^{g0}$, $/MWh</td>
     <td>1000</td> 
     <td>0</td> 
   </tr> 
@@ -227,7 +227,7 @@
     <td>50</td> 
   </tr>
   <tr>
-  <td>$c^{w}$, \$/MWh</td>
+  <td>$c^{w}$, $/MWh</td>
     <td>50</td> 
     <td>50</td> 
   </tr>
@@ -993,6 +993,11 @@ $$</p>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+        });
+    </script>
     <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
   </body>
 </html>
