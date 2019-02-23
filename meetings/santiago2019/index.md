@@ -151,7 +151,7 @@ Contact jump-dev-committee at googlegroups.com for more information.
 Este es el tercer workshop JuMP-dev después del [primer](/meetings/mit2017/)
 y [segundo](/meetings/bordeaux2018/) workshops JuMP-dev realizados anteriormente.
 
-**Para registrar (gratis!) su participación en el Workshop), [use este formulario](https://goo.gl/forms/2nEljULHwC3zzcE13).**
+**Para registrar (gratis!) su participación en el Workshop, [use este formulario](https://goo.gl/forms/2nEljULHwC3zzcE13).**
 
 ## Descripción
 
