@@ -7,6 +7,9 @@ layout: common
 March 12-14, 2019, Santiago, Chile.
 
 [Spanish version](#tercer-workshop-anual-jump-dev)
+<p align="center">
+<object type="image/svg+xml" data="JuMPdev2019.svg" width="600">Poster</object>
+</p>
 
 This workshop is the third JuMP-dev workshop after the [first](/meetings/mit2017/)
 and [second](/meetings/bordeaux2018/) JuMP-dev workshops.
@@ -30,7 +33,7 @@ The workshop will be held in Santiago, Chile. On Tuesday 3/12, the workshop will
 
 ## Tutorials
 
-On Tuesday morning we will hold an introductory tutorial on Julia and JuMP; no prior experience necessary! Additionally, on Wednesday afternoon we will hold an advanced tutorial (tentative topics include MOI, JuMP extensions, and solver interfaces). The tutorials will be open to anyone, even if they have not attended the workshop. 
+On Tuesday morning we will hold an introductory tutorial on Julia and JuMP; no prior experience necessary! Additionally, on Wednesday afternoon we will hold an advanced tutorial (tentative topics include MOI, JuMP extensions, and solver interfaces). The tutorials will be open to anyone, even if they have not attended the workshop.
 
 Finally, a repeat of Tuesday's introductory tutorial will be held in Valparaíso on the morning of Friday 15 March for those who are unable to attend the tutorial in Santiago.
 
@@ -113,8 +116,8 @@ _Note: This schedule is subject to change! Check here for updates._
 
 <tt>Evening</tt> **Trends and challenges in multiobjective optimization**
 
-The Pontificia Universidad Católica de Valparaíso will hold a seminar on 
-multiobjective optimization in Santiago. Attendees of JuMP-dev are invited. 
+The Pontificia Universidad Católica de Valparaíso will hold a seminar on
+multiobjective optimization in Santiago. Attendees of JuMP-dev are invited.
 More details to come.
 
 ### Friday
@@ -148,49 +151,27 @@ Contact jump-dev-committee at googlegroups.com for more information.
 Este es el tercer workshop JuMP-dev después del [primer](/meetings/mit2017/)
 y [segundo](/meetings/bordeaux2018/) workshops JuMP-dev realizados anteriormente.
 
-**Para registrar (gratis!) su participación en el Workshop (y opcionalmente enviar una propuesta para una charla), [use este formulario](https://goo.gl/forms/2nEljULHwC3zzcE13).**
+**Para registrar (gratis!) su participación en el Workshop, [use este formulario](https://goo.gl/forms/2nEljULHwC3zzcE13).**
 
 ## Descripción
 
-El propósito de este workshop es juntar a estudiantes, investigadores y 
-profesionales, con interés en los aspectos de software de [JuMP](https://github.com/JuliaOpt/JuMP.jl) y sus paquetes relacionados. 
-El Workshop está abierto a todo público. En particular, invitamos a nuevos 
+El propósito de este workshop es juntar a estudiantes, investigadores y
+profesionales, con interés en los aspectos de software de [JuMP](https://github.com/JuliaOpt/JuMP.jl) y sus paquetes relacionados.
+El Workshop está abierto a todo público. En particular, invitamos a nuevos
 contribuidores y a aquellos que no han tenido la posibilidad de conocer al equipo de desarrollo principal de JuMP.
 
 El Workshop incluirá tutoriales *hands-on* (desde algunos sin experiencia requerida,
 hasta otros acerca de uso avanzado de JuMP), charlas por participantes y desarrolladores principales, y amplio tiempo para colaboración.
 
-Los participantes son invitados a enviar propuestas para charlas cortas (~20 minutos) acerca de los siguientes tópicos:
-
-- Desarrollo principal de JuMP ([MathOptInterface](https://github.com/JuliaOpt/MathOptInterface.jl), JuMP 1.0)
-- Solvers de optimización matemática escritos en Julia
-- Diferenciación automática en Julia
-- Interfaces de Julia con solvers
-- Extensiones de JuMP (programación estocástica, optimización robusta,
-    optimización multi-objetivo, etc.)
-- Librerías de optimización que usen JuMP
-- Usos significativos de JuMP en aplicaciones
-- JuMP para docencia
-- Herramientas para desarrollo en JuMP
-
-Las charlas deberán enfocarse en los aspectos técnicos relacionados con JuMP,
-en oposición a las charlas de interés general. En particular, el Comité está buscando
-charlas que motiven discusiones durante el Workshop y en el futuro, y también charlas
-que presenten desarrollos de los cuales la comunidad puede no estar enterada.
-
-**El idioma oficial del Workshop es el Inglés, por lo que las charlas deben ser realizadas en este idioma.**
-
-Ver las charlas en [JuMP-dev I](https://www.youtube.com/watch?v=esOe5saQRKY&list=PLzK_rUGmc3o6EwPOCUCvBAbMJeYBS8PyY)
-y [JuMP-dev II](https://www.youtube.com/playlist?list=PLP8iPy9hna6RJUxzYlWENcs9yf-CRoDvD)
-para tener una idea de cómo es el Workshop.
-
-**Para registrar su participación en el Workshop (y opcionalmente enviar una propuesta para una charla), [use este formulario](https://goo.gl/forms/2nEljULHwC3zzcE13).**
-
-Propuestas de charlas serán bienvenidas hasta el ~~21 de diciembre~~ **4 de enero** y se notificarán las charlas aceptadas el día ~~4 de enero~~ **11 de enero**.
-
 ## Ubicación
 
-El Workshop se llevará a cabo en Santiago, Chile. Los detalles del lugar serán publicados después de la aceptación de charlas.
+El Workshop se llevará a cabo en Santiago, Chile. El martes, 12 de marzo,
+el Workshop se ubicará en el [Instituto Chileno Norteamericano](https://goo.gl/maps/aSkkTc1xmGG2). El miercoles y el
+viernes, 13 y 14 de marzo, se llevará a cabo en el [Campus San Joaquin](https://goo.gl/maps/BvRXRHkwnU92) de la Pontificia Universidad Católica de Chile (PUC).
+
+## Progama
+
+Ver la [versión en inglés](#tentative-schedule).
 
 ## Comité
 
