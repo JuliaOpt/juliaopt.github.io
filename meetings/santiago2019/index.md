@@ -130,7 +130,7 @@ Tuesday's introductory tutorial in Santiago. The tutorial will be held at the [E
 
 <tt>15:00 - 13:30</tt> **JuMP@USM MISTI Workshop**
 
-An additional workshop focusing on the MISTI project sponsoring JuMP-Dev will be held the Monday just before the workshop. This workshop will be held at the Campus Santiago San Joaquín of Universidad Técnica Federico Santa María. For more information and registration form see the [JuMP@USM MISTI Workshop page](http://www.industrias.usm.cl/quienes-somos/operations-management/seminars/march-11-2019/).
+An additional workshop focusing on the MISTI project sponsoring JuMP-dev will be held the Monday just before the workshop. This workshop will be held at the Campus Santiago San Joaquín of Universidad Técnica Federico Santa María. For more information and registration form see the [JuMP@USM MISTI Workshop page](http://www.industrias.usm.cl/quienes-somos/operations-management/seminars/march-11-2019/).
 
 ## Committee
 
