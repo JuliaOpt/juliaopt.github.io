@@ -14,7 +14,7 @@ March 12-14, 2019, Santiago, Chile.
 This workshop is the third JuMP-dev workshop after the [first](/meetings/mit2017/)
 and [second](/meetings/bordeaux2018/) JuMP-dev workshops.
 
-**To register your (free!) attendance at the workshop, [use this form](https://survey.qualtrics.com/jfe/form/SV_b4uFR9H7TftQdsV).**
+**To register your (free!) attendance at the workshop, [use this form](https://survey.qualtrics.com/jfe/form/SV_b4uFR9H7TftQdsV) by Wednesday, March 6th at 17:00 Chile (UTC-3) / 15:00 EST (UTC-5).**
 
 ## Outline
 
@@ -158,7 +158,7 @@ Contact jump-dev-committee at googlegroups.com for more information.
 Este es el tercer workshop JuMP-dev después del [primer](/meetings/mit2017/)
 y [segundo](/meetings/bordeaux2018/) workshops JuMP-dev realizados anteriormente.
 
-**Para registrar (gratis!) su participación en el Workshop, [use este formulario](https://survey.qualtrics.com/jfe/form/SV_b4uFR9H7TftQdsV).**
+**Para registrar (gratis!) su participación en el Workshop, [use este formulario](https://survey.qualtrics.com/jfe/form/SV_b4uFR9H7TftQdsV) antes del miercoles 6 de marzo a las 17:00 Chile (UTC-3) / 15:00 EST (UTC-5).**
 
 ## Descripción
 
