@@ -76,7 +76,7 @@ An additional workshop focusing on the MISTI project sponsoring JuMP-dev will be
 <tt>10:00 - 11:30</tt> **Introductory Tutorial**
 
 <tt>13:00 - 14:30</tt> **Keynotes**
-* Stefan Karpinski (Julia Computing)
+* Stefan Karpinski (Julia Computing): _The Unreasonable Effectiveness of Multiple Dispatch_
 * Miles Lubin (Google): _The roadmap for JuMP 1.0_
 
 <tt>15:00 - 16:00</tt> **Energy**
