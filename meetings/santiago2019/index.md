@@ -132,7 +132,7 @@ multiobjective optimization in Santiago. This seminar will be held at the CEA (C
 
 An introductory tutorial will be held in Valparaíso for those unable to attend
 Tuesday's introductory tutorial in Santiago. The tutorial will be held at the [Escuela de Ingeniería Informática](http://www.inf.ucv.cl) of [Pontificia Universidad Católica de Valparaíso](https://www.pucv.cl) ([Av Brasil 2241, Valparaiso, Chile](https://goo.gl/maps/VPHBJsP1qr62)) on Friday, March 15th at 14:00.
-This tutorial will be held in Spanish.
+This tutorial will be held in English and Spanish.
 
 
 
