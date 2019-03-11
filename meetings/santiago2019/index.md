@@ -70,6 +70,7 @@ _Note: This schedule is subject to change! Check here for updates._
 <tt>15:00 - 18:30</tt> **Talks and introductory tutorial**
 
 An additional workshop focusing on the MISTI project sponsoring JuMP-dev will be held the Monday just before the workshop. This workshop will be held at the Campus Santiago San Joaquín of Universidad Técnica Federico Santa María. For more information and registration form see the [JuMP@USM MISTI Workshop page](http://www.industrias.usm.cl/quienes-somos/operations-management/seminars/march-11-2019/).
+This workshop will be held in Spanish.
 
 ### Tuesday, March 12: JuMP-dev Day 1 at Instituto Chileno Norteamericano
 
@@ -131,6 +132,7 @@ multiobjective optimization in Santiago. This seminar will be held at the CEA (C
 
 An introductory tutorial will be held in Valparaíso for those unable to attend
 Tuesday's introductory tutorial in Santiago. The tutorial will be held at the [Escuela de Ingeniería Informática](http://www.inf.ucv.cl) of [Pontificia Universidad Católica de Valparaíso](https://www.pucv.cl) ([Av Brasil 2241, Valparaiso, Chile](https://goo.gl/maps/VPHBJsP1qr62)) on Friday, March 15th at 14:00.
+This tutorial will be held in English and Spanish.
 
 
 
