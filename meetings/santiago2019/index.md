@@ -177,7 +177,7 @@ viernes, 13 y 14 de marzo, se llevará a cabo en el [Campus San Joaquin](https:/
 
 ## Progama
 
-Ver la [versión en inglés](#tentative-schedule).
+Ver la [versión en inglés](#schedule).
 
 ## Comité
 
