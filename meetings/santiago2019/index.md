@@ -61,9 +61,7 @@ Also along Line 1; the quietest option.
 * [Hotel NH Collection Plaza Santiago](https://www.nh-hotels.com/hotel/nh-collection-plaza-santiago?gmb) (~$180)
 
 
-## Tentative Schedule
-
-_Note: This schedule is subject to change! Check here for updates._
+## Schedule
 
 ### Monday, March 11: JuMP@USM MISTI Workshop
 
@@ -179,7 +177,7 @@ viernes, 13 y 14 de marzo, se llevará a cabo en el [Campus San Joaquin](https:/
 
 ## Progama
 
-Ver la [versión en inglés](#tentative-schedule).
+Ver la [versión en inglés](#schedule).
 
 ## Comité
 
