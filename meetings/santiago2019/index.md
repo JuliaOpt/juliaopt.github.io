@@ -14,7 +14,7 @@ March 12-14, 2019, Santiago, Chile.
 This workshop is the third JuMP-dev workshop after the [first](/meetings/mit2017/)
 and [second](/meetings/bordeaux2018/) JuMP-dev workshops.
 
-**GSoC News: JuMP will be participating in the [2019 Google Summer of Code](https://summerofcode.withgoogle.com) under the [NumFOCUS umbrella](https://github.com/numfocus/gsoc). For more information see  [JuMP's project ideas page.](https://github.com/JuliaOpt/GSOC2019/blob/master/ideas-list.md)**
+**GSoC News: JuMP will be participating in the [2019 Google Summer of Code](https://summerofcode.withgoogle.com) under the [NumFOCUS umbrella](https://github.com/numfocus/gsoc). For more information see [JuMP's project ideas page.](https://github.com/JuliaOpt/GSOC2019/blob/master/ideas-list.md)**
 
 ## Outline
 
@@ -84,7 +84,7 @@ This workshop will be held in Spanish.
 
 <tt>16:00 - EOD</tt> **Collaboration time**
 
-### Wednesday, March 13: JuMP-dev Day 2 at Campus San Joaquín ([Centro de Innovación, Sala 203](https://goo.gl/maps/GVKuqnqdujS2))
+### Wednesday, March 13: JuMP-dev Day 2 at Campus San Joaquín ([Centro de Innovación, room "Sala 203"](https://goo.gl/maps/GVKuqnqdujS2))
 
 <tt>9:00 - 10:25</tt> **Solvers**
 * Michael Garstka (University of Oxford): _COSMO - A conic operator splitting method for large conic problems_
@@ -102,7 +102,7 @@ This workshop will be held in Spanish.
 
 <tt>15:30 - EOD</tt> **Collaboration time and core developer meeting**
 
-### Thursday, March 14: JuMP-dev Day 3 at Campus San Joaquín ([Centro de Innovación, Sala 203](https://goo.gl/maps/GVKuqnqdujS2))
+### Thursday, March 14: JuMP-dev Day 3 at Campus San Joaquín ([Centro de Innovación, room "Sala 203"](https://goo.gl/maps/GVKuqnqdujS2))
 
 <tt>9:00 - 10:25</tt> **Algorithms**
 * Thuener Silva (PUC-Rio): _Solving Large-scale problems using JuMP_
