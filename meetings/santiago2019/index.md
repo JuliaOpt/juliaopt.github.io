@@ -14,7 +14,7 @@ March 12-14, 2019, Santiago, Chile.
 This workshop is the third JuMP-dev workshop after the [first](/meetings/mit2017/)
 and [second](/meetings/bordeaux2018/) JuMP-dev workshops.
 
-**To register your (free!) attendance at the workshop, [use this form](https://survey.qualtrics.com/jfe/form/SV_b4uFR9H7TftQdsV) by Wednesday, March 6th at 17:00 Chile (UTC-3) / 15:00 EST (UTC-5).**
+**GSoC News: JuMP will be participating in the [2019 Google Summer of Code](https://summerofcode.withgoogle.com) under the [NumFOCUS](https://numfocus.org) umbrella. For more information see  [JuMP's project ideas page.](https://github.com/JuliaOpt/GSOC2019/blob/master/ideas-list.md)**
 
 ## Outline
 
