@@ -84,7 +84,7 @@ This workshop will be held in Spanish.
 
 <tt>16:00 - EOD</tt> **Collaboration time**
 
-### Wednesday, March 13: JuMP-dev Day 2 at Campus San Joaquín
+### Wednesday, March 13: JuMP-dev Day 2 at Campus San Joaquín ([Centro de Innovación, Sala 203](https://goo.gl/maps/GVKuqnqdujS2))
 
 <tt>9:00 - 10:25</tt> **Solvers**
 * Michael Garstka (University of Oxford): _COSMO - A conic operator splitting method for large conic problems_
@@ -102,7 +102,7 @@ This workshop will be held in Spanish.
 
 <tt>15:30 - EOD</tt> **Collaboration time and core developer meeting**
 
-### Thursday, March 14: JuMP-dev Day 3 at Campus San Joaquín
+### Thursday, March 14: JuMP-dev Day 3 at Campus San Joaquín ([Centro de Innovación, Sala 203](https://goo.gl/maps/GVKuqnqdujS2))
 
 <tt>9:00 - 10:25</tt> **Algorithms**
 * Thuener Silva (PUC-Rio): _Solving Large-scale problems using JuMP_
