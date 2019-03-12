@@ -61,9 +61,7 @@ Also along Line 1; the quietest option.
 * [Hotel NH Collection Plaza Santiago](https://www.nh-hotels.com/hotel/nh-collection-plaza-santiago?gmb) (~$180)
 
 
-## Tentative Schedule
-
-_Note: This schedule is subject to change! Check here for updates._
+## Schedule
 
 ### Monday, March 11: JuMP@USM MISTI Workshop
 
