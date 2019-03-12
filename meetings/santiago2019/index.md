@@ -94,8 +94,7 @@ This workshop will be held in Spanish.
 * Lea Kapelevich (MIT): _Modeling with new and nonsymmetric cones_
 * Mathieu Tanneau (Polytechnique Montréal): _Tulip.jl: An interior-point solver with abstract linear algebra_
 
-<tt>10:50 - 12:10</tt> **Applications**
-* Alvaro González (Skolkovo Institute of Science and Technology): _Power Systems Modeling using JuMP and Julia_
+<tt>10:50 - 11:45</tt> **Applications**
 * Harsha Nagarajan (Los Alamos National Laboratory): _POD.jl for Provably Optimal Quantum Circuit Design_
 * Marcelo Forets (CURE): _Applications of SOS in Flowpipe Construction_
 * Tomas Lagos Gonzalez (Universidad de Chile): _Solving Multi-period Mine Planning Models with Endogenous Uncertainty: Using Julia with JuMP_
