@@ -14,7 +14,7 @@ March 12-14, 2019, Santiago, Chile.
 This workshop is the third JuMP-dev workshop after the [first](/meetings/mit2017/)
 and [second](/meetings/bordeaux2018/) JuMP-dev workshops.
 
-**To register your (free!) attendance at the workshop, [use this form](https://survey.qualtrics.com/jfe/form/SV_b4uFR9H7TftQdsV) by Wednesday, March 6th at 17:00 Chile (UTC-3) / 15:00 EST (UTC-5).**
+**GSoC News: JuMP will be participating in the [2019 Google Summer of Code](https://summerofcode.withgoogle.com) under the [NumFOCUS umbrella](https://github.com/numfocus/gsoc). For more information see [JuMP's project ideas page.](https://github.com/JuliaOpt/GSOC2019/blob/master/ideas-list.md)**
 
 ## Outline
 
@@ -72,7 +72,7 @@ This workshop will be held in Spanish.
 
 ### Tuesday, March 12: JuMP-dev Day 1 at Instituto Chileno Norteamericano
 
-<tt>10:00 - 11:30</tt> **Introductory Tutorial**
+<tt>10:00 - 11:30</tt> **Introductory Tutorial** Install instructions and notebooks can be found [here](https://github.com/juan-pablo-vielma/JuMP-dev-2019-tutorial).
 
 <tt>13:00 - 14:30</tt> **Keynotes**
 * Stefan Karpinski (Julia Computing): _The Unreasonable Effectiveness of Multiple Dispatch_
@@ -84,7 +84,7 @@ This workshop will be held in Spanish.
 
 <tt>16:00 - EOD</tt> **Collaboration time**
 
-### Wednesday, March 13: JuMP-dev Day 2 at Campus San Joaquín
+### Wednesday, March 13: JuMP-dev Day 2 at Campus San Joaquín ([Centro de Innovación, room "Sala 203"](https://goo.gl/maps/GVKuqnqdujS2))
 
 <tt>9:00 - 10:25</tt> **Solvers**
 * Michael Garstka (University of Oxford): _COSMO - A conic operator splitting method for large conic problems_
@@ -102,7 +102,7 @@ This workshop will be held in Spanish.
 
 <tt>15:30 - EOD</tt> **Collaboration time and core developer meeting**
 
-### Thursday, March 14: JuMP-dev Day 3 at Campus San Joaquín
+### Thursday, March 14: JuMP-dev Day 3 at Campus San Joaquín ([Centro de Innovación, room "Sala 203"](https://goo.gl/maps/GVKuqnqdujS2))
 
 <tt>9:00 - 10:25</tt> **Algorithms**
 * Thuener Silva (PUC-Rio): _Solving Large-scale problems using JuMP_
