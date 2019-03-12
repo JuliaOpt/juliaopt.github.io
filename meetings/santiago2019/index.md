@@ -72,7 +72,7 @@ This workshop will be held in Spanish.
 
 ### Tuesday, March 12: JuMP-dev Day 1 at Instituto Chileno Norteamericano
 
-<tt>10:00 - 11:30</tt> **Introductory Tutorial**
+<tt>10:00 - 11:30</tt> **Introductory Tutorial** Install instructions and notebooks can be found [here](https://github.com/juan-pablo-vielma/JuMP-dev-2019-tutorial).
 
 <tt>13:00 - 14:30</tt> **Keynotes**
 * Stefan Karpinski (Julia Computing): _The Unreasonable Effectiveness of Multiple Dispatch_
