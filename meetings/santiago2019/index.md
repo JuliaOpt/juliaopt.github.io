@@ -98,7 +98,7 @@ This workshop will be held in Spanish.
 * Tomas Lagos Gonzalez (Universidad de Chile): _Solving Multi-period Mine Planning Models with Endogenous Uncertainty: Using Julia with JuMP_
 * Andrew David Werner Rosemberg (PUC-Rio): _SDDPHYDRO.jl - A Hydrothermal Dispatch Julia Package_
 
-<tt>14:00 - 15:30</tt> **Advanced tutorial**
+<tt>14:00 - 15:30</tt> **Advanced tutorial** [[Notebooks](https://github.com/blegat/JuMP-dev_2019_tutorial)]
 
 <tt>15:30 - EOD</tt> **Collaboration time and core developer meeting**
 
