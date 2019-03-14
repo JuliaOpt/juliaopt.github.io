@@ -121,7 +121,8 @@ This workshop will be held in Spanish.
 <tt>18:00</tt> **Trends and challenges in multiobjective optimization**
 
 The Pontificia Universidad Católica de Valparaíso will hold a seminar on
-multiobjective optimization in Santiago. This seminar will be held at the CEA (Centro de Estudios Avanzados) building in [Antonio Bellet #314, Providencia, Santiago](https://goo.gl/maps/gqa2g9fHVCq), and all attendees of JuMP-dev are invited.
+multiobjective optimization in Santiago. This seminar will be held at the CEA (Centro de Estudios Avanzados) building in [Antonio Bellet #314, Providencia, Santiago](https://goo.gl/maps/gqa2g9fHVCq), and all attendees of JuMP-dev are invited. 
+Sign-up at [http://inf.ucv.cl/eventos](http://inf.ucv.cl/eventos).
 
 ### Friday, March 15: JuMP@Valparaíso
 
