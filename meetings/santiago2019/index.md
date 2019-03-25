@@ -11,6 +11,8 @@ March 12-14, 2019, Santiago, Chile.
 <object type="image/svg+xml" data="JuMPdev2019.svg" width="600">Poster</object>
 </p>
 
+<img src="jump-dev-2019-picture.JPG" alt="Group Photo">
+
 This workshop is the third JuMP-dev workshop after the [first](/meetings/mit2017/)
 and [second](/meetings/bordeaux2018/) JuMP-dev workshops.
 
