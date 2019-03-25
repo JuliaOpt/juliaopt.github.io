@@ -11,6 +11,8 @@ March 12-14, 2019, Santiago, Chile.
 <object type="image/svg+xml" data="JuMPdev2019.svg" width="600">Poster</object>
 </p>
 
+<img src="jump-dev-2019-picture.JPG" alt="Group Photo">
+
 This workshop is the third JuMP-dev workshop after the [first](/meetings/mit2017/)
 and [second](/meetings/bordeaux2018/) JuMP-dev workshops.
 
@@ -98,7 +100,7 @@ This workshop will be held in Spanish.
 * Tomas Lagos Gonzalez (Universidad de Chile): _Solving Multi-period Mine Planning Models with Endogenous Uncertainty: Using Julia with JuMP_
 * Andrew David Werner Rosemberg (PUC-Rio): _SDDPHYDRO.jl - A Hydrothermal Dispatch Julia Package_
 
-<tt>14:00 - 15:30</tt> **Advanced tutorial**
+<tt>14:00 - 15:30</tt> **Advanced tutorial** [[Notebooks](https://github.com/blegat/JuMP-dev_2019_tutorial)]
 
 <tt>15:30 - EOD</tt> **Collaboration time and core developer meeting**
 
@@ -121,7 +123,8 @@ This workshop will be held in Spanish.
 <tt>18:00</tt> **Trends and challenges in multiobjective optimization**
 
 The Pontificia Universidad Católica de Valparaíso will hold a seminar on
-multiobjective optimization in Santiago. This seminar will be held at the CEA (Centro de Estudios Avanzados) building in [Antonio Bellet #314, Providencia, Santiago](https://goo.gl/maps/gqa2g9fHVCq), and all attendees of JuMP-dev are invited.
+multiobjective optimization in Santiago. This seminar will be held at the CEA (Centro de Estudios Avanzados) building in [Antonio Bellet #314, Providencia, Santiago](https://goo.gl/maps/gqa2g9fHVCq), and all attendees of JuMP-dev are invited. 
+Sign-up at [http://inf.ucv.cl/eventos](http://inf.ucv.cl/eventos).
 
 ### Friday, March 15: JuMP@Valparaíso
 
