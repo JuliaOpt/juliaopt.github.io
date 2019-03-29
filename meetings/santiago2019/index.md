@@ -77,11 +77,11 @@ This workshop will be held in Spanish.
 <tt>10:00 - 11:30</tt> **Introductory Tutorial** Install instructions and notebooks can be found [here](https://github.com/juan-pablo-vielma/JuMP-dev-2019-tutorial).
 
 <tt>13:00 - 14:30</tt> **Keynotes**
-* Stefan Karpinski (Julia Computing): _The Unreasonable Effectiveness of Multiple Dispatch_
-* Miles Lubin (Google): _The roadmap for JuMP 1.0_
+* Stefan Karpinski (Julia Computing): _The Unreasonable Effectiveness of Multiple Dispatch_ [[slides](slides/stefan_karpinski.pdf)]
+* Miles Lubin (Google): _The roadmap for JuMP 1.0_ [[slides](slides/miles_lubin.pdf)]
 
 <tt>15:00 - 16:00</tt> **Energy**
-* Alessandro Soares (PSR): _A Julia/JuMP based Integrated Energy Resource Planning Model_
+* Alessandro Soares (PSR): _A Julia/JuMP based Integrated Energy Resource Planning Model_ [[slides](slides/alessandro_soares.pdf)]
 * Jose Daniel Lara (UC Berkeley / NREL): _PowerSimulations.jl a Integrated and Scalable Power Systems modeling tool_
 
 <tt>16:00 - EOD</tt> **Collaboration time**
@@ -89,16 +89,16 @@ This workshop will be held in Spanish.
 ### Wednesday, March 13: JuMP-dev Day 2 at Campus San Joaquín ([Centro de Innovación, room "Sala 203"](https://goo.gl/maps/GVKuqnqdujS2))
 
 <tt>9:00 - 10:25</tt> **Solvers**
-* Michael Garstka (University of Oxford): _COSMO - A conic operator splitting method for large conic problems_
+* Michael Garstka (University of Oxford): _COSMO - A conic operator splitting method for large conic problems_ [[slides](slides/michael_garstka.pdf)]
 * Chris Coey (MIT): _The Hypatia.jl solver: conic interior point algorithms and interfaces_
 * Lea Kapelevich (MIT): _Modeling with new and nonsymmetric cones_
-* Mathieu Tanneau (Polytechnique Montréal): _Tulip.jl: An interior-point solver with abstract linear algebra_
+* Mathieu Tanneau (Polytechnique Montréal): _Tulip.jl: An interior-point solver with abstract linear algebra_ [[slides](slides/mathieu_tanneau.pdf)]
 
 <tt>10:50 - 11:45</tt> **Applications**
 * Harsha Nagarajan (Los Alamos National Laboratory): _POD.jl for Provably Optimal Quantum Circuit Design_
 * Marcelo Forets (CURE): _Applications of SOS in Flowpipe Construction_
-* Tomas Lagos Gonzalez (Universidad de Chile): _Solving Multi-period Mine Planning Models with Endogenous Uncertainty: Using Julia with JuMP_
-* Andrew David Werner Rosemberg (PUC-Rio): _SDDPHYDRO.jl - A Hydrothermal Dispatch Julia Package_
+* Tomas Lagos Gonzalez (Universidad de Chile): _Solving Multi-period Mine Planning Models with Endogenous Uncertainty: Using Julia with JuMP_ [[notebook](slides/tomas_lagos_gonzalez/JuMP-Workshop_Santiago.ipynb)]
+* Andrew David Werner Rosemberg (PUC-Rio): _SDDPHYDRO.jl - A Hydrothermal Dispatch Julia Package_ [[slides](slides/andrew_rosemberg.pdf)]
 
 <tt>14:00 - 15:30</tt> **Advanced tutorial** [[Notebooks](https://github.com/blegat/JuMP-dev_2019_tutorial)]
 
@@ -107,15 +107,15 @@ This workshop will be held in Spanish.
 ### Thursday, March 14: JuMP-dev Day 3 at Campus San Joaquín ([Centro de Innovación, room "Sala 203"](https://goo.gl/maps/GVKuqnqdujS2))
 
 <tt>9:00 - 10:25</tt> **Algorithms**
-* Thuener Silva (PUC-Rio): _Solving Large-scale problems using JuMP_
-* David Sanders (Universidad Nacional Autónoma de México): _Rigorous global optimization in pure Julia_
-* Vitor Nesello (University of Bordeaux): _Coluna: An Open-Source Branch-Cut-and-Price Framework_
-* Mario Souto (PUC-Rio): _ProxSDP.jl: New developments on Semidefinite Programming in Julia/JuMP_
+* Thuener Silva (PUC-Rio): _Solving Large-scale problems using JuMP_ [[slides](slides/thuener_silva.pdf)]
+* David Sanders (Universidad Nacional Autónoma de México): _Rigorous global optimization in pure Julia_ [[notebook](slides/david_sanders.pdf)]
+* Vitor Nesello (University of Bordeaux): _Coluna: An Open-Source Branch-Cut-and-Price Framework_ [[slides](slides/vitor_nesello.pdf)]
+* Mario Souto (PUC-Rio): _ProxSDP.jl: New developments on Semidefinite Programming in Julia/JuMP_ [[slides](slides/mario_souto.pdf)]
 
 <tt>10:50 - 12:00</tt> **Modeling paradigms**
-* Jordan Jalving (University of Wisconsin-Madison): _Graph-Based Modeling and Optimization using Plasmo.jl_
-* Benoît Legat (UC Louvain): _Set Programming with JuMP_
-* Joaquim Dias Garcia (PSR / PUC-Rio): _ParameterJuMP.jl_
+* Jordan Jalving (University of Wisconsin-Madison): _Graph-Based Modeling and Optimization using Plasmo.jl_ [[slides](slides/jordan_jalving.pdf)]
+* Benoît Legat (UC Louvain): _Set Programming with JuMP_ [[slides](slides/benoit_legat.pdf)]
+* Joaquim Dias Garcia (PSR / PUC-Rio): _ParameterJuMP.jl_ [[notebooks](slides/joaquim_dias_garcia)]
 * Tillmann Weisser (Los Alamos National Laboratory): _JuliaMoments_
 
 <tt>14:00 - EOD</tt> **Collaboration time**
@@ -123,7 +123,7 @@ This workshop will be held in Spanish.
 <tt>18:00</tt> **Trends and challenges in multiobjective optimization**
 
 The Pontificia Universidad Católica de Valparaíso will hold a seminar on
-multiobjective optimization in Santiago. This seminar will be held at the CEA (Centro de Estudios Avanzados) building in [Antonio Bellet #314, Providencia, Santiago](https://goo.gl/maps/gqa2g9fHVCq), and all attendees of JuMP-dev are invited. 
+multiobjective optimization in Santiago. This seminar will be held at the CEA (Centro de Estudios Avanzados) building in [Antonio Bellet #314, Providencia, Santiago](https://goo.gl/maps/gqa2g9fHVCq), and all attendees of JuMP-dev are invited.
 Sign-up at [http://inf.ucv.cl/eventos](http://inf.ucv.cl/eventos).
 
 ### Friday, March 15: JuMP@Valparaíso
