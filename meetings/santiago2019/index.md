@@ -82,7 +82,7 @@ This workshop will be held in Spanish.
 
 <tt>15:00 - 16:00</tt> **Energy**
 * Alessandro Soares (PSR): _A Julia/JuMP based Integrated Energy Resource Planning Model_ [[slides](slides/alessandro_soares.pdf)]
-* Jose Daniel Lara (UC Berkeley / NREL): _PowerSimulations.jl a Integrated and Scalable Power Systems modeling tool_
+* Jose Daniel Lara (UC Berkeley / NREL): _PowerSimulations.jl a Integrated and Scalable Power Systems modeling tool_ [[notebook](slides/jose_daniel_lara.ipynb)]
 
 <tt>16:00 - EOD</tt> **Collaboration time**
 
