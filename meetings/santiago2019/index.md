@@ -108,14 +108,14 @@ This workshop will be held in Spanish.
 
 <tt>9:00 - 10:25</tt> **Algorithms**
 * Thuener Silva (PUC-Rio): _Solving Large-scale problems using JuMP_ [[slides](slides/thuener_silva.pdf)]
-* David Sanders (Universidad Nacional Autónoma de México): _Rigorous global optimization in pure Julia_ [[notebook](slides/david_sanders.pdf)]
+* David Sanders (Universidad Nacional Autónoma de México): _Rigorous global optimization in pure Julia_ [[notebook](slides/david_sanders.ipynb)]
 * Vitor Nesello (University of Bordeaux): _Coluna: An Open-Source Branch-Cut-and-Price Framework_ [[slides](slides/vitor_nesello.pdf)]
 * Mario Souto (PUC-Rio): _ProxSDP.jl: New developments on Semidefinite Programming in Julia/JuMP_ [[slides](slides/mario_souto.pdf)]
 
 <tt>10:50 - 12:00</tt> **Modeling paradigms**
 * Jordan Jalving (University of Wisconsin-Madison): _Graph-Based Modeling and Optimization using Plasmo.jl_ [[slides](slides/jordan_jalving.pdf)]
 * Benoît Legat (UC Louvain): _Set Programming with JuMP_ [[slides](slides/benoit_legat.pdf)]
-* Joaquim Dias Garcia (PSR / PUC-Rio): _ParameterJuMP.jl_ [[notebooks](slides/joaquim_dias_garcia)]
+* Joaquim Dias Garcia (PSR / PUC-Rio): _ParameterJuMP.jl_ [[notebooks](slides/joaquim_dias_garcia/benders_quantile_regression_small_glpk.html)]
 * Tillmann Weisser (Los Alamos National Laboratory): _JuliaMoments_
 
 <tt>14:00 - EOD</tt> **Collaboration time**
