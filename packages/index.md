@@ -26,7 +26,7 @@ packages.
   deprecated and replaced by MathOptInterface.
 
 - Numerous Julia wrappers for solvers. See the JuMP
-  [documentation](http://www.juliaopt.org/JuMP.jl/v0.19.0/installation/#Getting-Solvers-1)
+  [documentation](http://www.juliaopt.org/JuMP.jl/stable/installation/#Getting-Solvers-1)
   for a list.
 
 ## Pure-Julia Optimization Solvers
