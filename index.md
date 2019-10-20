@@ -5,7 +5,7 @@ title:  JuliaOpt&#58; Optimization packages for the Julia language
 
 # JuMP talks at the 2019 INFORMS Annual Meeting
 
-Following is a list of some JuMP sessions and talks at the [2019 INFORMS Annual Meeting](http://meetings2.informs.org/wordpress/seattle2019/):
+Following is a list of some JuMP related sessions and talks at the [2019 INFORMS Annual Meeting](http://meetings2.informs.org/wordpress/seattle2019/):
 
 - Dedicated JuMP sessions:
   - [SB33. JuMP for Stochastic Optimization](https://www.abstractsonline.com/pp8/#!/6818/session/294), CC- Room 602,
