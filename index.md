@@ -61,8 +61,9 @@ https://www.abstractsonline.com/pp8/#!/6818/presentation/3170).
   - [TB84 - Resilience in Energy and its Interdependent Systems](https://www.abstractsonline.com/pp8/#!/6818/session/215), S- Ravenna A, October 22, 2019, 10:30 AM - 12:00 PM:
     - 3 (11:10 AM - 11:30 AM) - [A 3-level Nested Decomposition Framework For Multi-year Power Systems Planning Under Policy Uncertainty](
 https://www.abstractsonline.com/pp8/#!/6818/presentation/9384).
+  - [TB41 - Conic Optimization in Energy](https://www.abstractsonline.com/pp8/#!/6818/session/2497),  CC- Room 610, October 22, 2019, 10:30 AM - 12:00 PM:
+    - 4 (11:30 AM - 11:50 AM) - [Reduction of Transmission-Grid Constraints for Computationally Efficient N-1 Secure Optimal Power Flow](https://www.abstractsonline.com/pp8/#!/6818/presentation/10293)
   - [TC47 - Open Source Software for Transportation Systems Research](https://www.abstractsonline.com/pp8/#!/6818/session/2386),  CC- Room 616, October 22, 2019, 12:05 PM - 1:35 PM:
     - 1 - [Traffic Equilibrium Tools in the Julia Language: Trafficassignment.jl and Complementarity.jl](
 https://www.abstractsonline.com/pp8/#!/6818/presentation/7914).
-
 <br><br>
