@@ -3,9 +3,11 @@ layout: default
 title:  JuliaOpt&#58; Optimization packages for the Julia language
 ---
 
-# JuMP-dev IV
+# 4th annual JuMP-dev
 
-We are pleased to announce that JuMP-dev IV will be held June 15-17 2020 in [Louvain-la-Neuve, Belgium](https://goo.gl/maps/fyxqevrKn76nvhwq9), in conjunction with UCLouvain.
+We are pleased to announce that the 4th annual JuMP-dev workshop will be held
+June 15-17 2020 in [Louvain-la-Neuve, Belgium](https://goo.gl/maps/fyxqevrKn76nvhwq9),
+in conjunction with UCLouvain.
 
 Further details, including a call for speakers, will be announced shortly.
 
