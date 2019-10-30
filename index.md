@@ -25,5 +25,5 @@ The [JuliaOpt GitHub organization](https://github.com/JuliaOpt) is home to a num
 - **Forum**: [Discourse](https://discourse.julialang.org/c/domain/opt)
 - **Old Mailing list**: [julia-opt](https://groups.google.com/forum/#!forum/julia-opt)
 - **Case study**: [Computing in Operations Research using Julia](http://dx.doi.org/10.1287/ijoc.2014.0623), *INFORMS Journal on Computing*. [[PDF]](http://arxiv.org/abs/1312.1431)
-- **JuMP at conferences**: [INFORMS 2019](conferences/informs_2019)
+- **JuMP at conferences**: [INFORMS 2019](conferences/informs_2019), [ROADEF 2018](conferences/roadef_2018)
 <br><br>
