@@ -5,7 +5,7 @@ title:  JuliaOpt&#58; Optimization packages for the Julia language
 
 # New webpage
 
-The new webpage for the JuMP ecosystem is: [https://jump.dev](https://jump.dev)
+We are transitioning to a new webpage for the JuMP ecosystem: [https://jump.dev](https://jump.dev)
 
 # JuMP-dev 2020: Abstract Submission
 
