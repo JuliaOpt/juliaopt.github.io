@@ -5,7 +5,7 @@ title:  JuliaOpt&#58; Optimization packages for the Julia language
 
 # New webpage
 
-We are transitioning to a new webpage for the JuMP ecosystem: [https://jump.dev](https://jump.dev)
+We are transitioning to a new webpage for the JuMP ecosystem: [https://jump.dev](https://jump.dev).
 
 # JuMP-dev 2020: Abstract Submission
 
@@ -13,7 +13,7 @@ We are pleased to announce that the 4th annual JuMP-dev workshop will be held
 June 15-17 2020 in [Louvain-la-Neuve, Belgium](https://goo.gl/maps/fyxqevrKn76nvhwq9),
 in conjunction with UCLouvain.
 
-For information go to the [new webpage](https://jump.dev/meetings/louvain2020/)
+For information go to the [new webpage](https://jump.dev/meetings/louvain2020/).
 
 # What is Julia?
 ["Julia is a high-level, high-performance dynamic programming language for technical computing"](http://julialang.org). It is free (open source) and supports Windows, OSX, and Linux. It has a familiar syntax, works well with external libraries, is fast, and has advanced language features like metaprogramming that enable interesting possibilities for optimization software.
