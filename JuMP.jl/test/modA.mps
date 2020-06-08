@@ -1,0 +1,42 @@
+NAME   JuMPModel
+ROWS
+ N  OBJ
+ E  CON1
+ L  CON2
+ L  CON3
+COLUMNS
+    VAR1  CON1  1
+    VAR1  CON2  0.5
+    VAR1  OBJ  -0.16666666666666666
+    MARKER    'MARKER'                 'INTORG'
+    VAR2  CON1  1
+    VAR2  CON3  7
+    VAR2  OBJ  -0.16666666666666666
+    MARKER    'MARKER'                 'INTEND'
+    VAR3  CON3  -1
+    VAR3  OBJ  -1
+    VAR4  CON2  1
+    VAR4  OBJ  -1
+    VAR5  CON2  1
+    VAR5  OBJ  0
+    VAR6  CON2  1
+    VAR6  OBJ  0
+    VAR7  CON3  -0.5263157894736842
+    VAR7  OBJ  0
+RHS
+    rhs    CON1    2
+    rhs    CON2    1
+    rhs    CON3    0
+RANGES
+    rhs    CON1    2
+BOUNDS
+  PL BOUND VAR1
+  MI BOUND VAR2
+  UP BOUND VAR2 5
+  LO BOUND VAR3 2
+  UP BOUND VAR3 4
+  UP BOUND VAR4 3
+  UP BOUND VAR5 4
+  UP BOUND VAR6 5
+  UP BOUND VAR7 6
+ENDATA
