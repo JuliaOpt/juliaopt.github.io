@@ -5,7 +5,7 @@ title:  JuliaOpt&#58; Optimization packages for the Julia language
 
 # JuliaOpt is dead, long live JuMP!
 
-As of 2020, the JuMP ecosystem has transition to a new webpage, [jump.dev](https://jump.dev), and a new GitHub organization, [JuMP-dev](https://github.com/jump-dev). JuliaOpt is no longer an active organization. This website remains up for historical interest only; most of the content is out of date.
+As of 2020, the JuMP ecosystem has transitioned to a new webpage, [jump.dev](https://jump.dev), and a new GitHub organization, [JuMP-dev](https://github.com/jump-dev). JuliaOpt is no longer an active organization. This website remains up for historical interest only; most of the content is out of date.
 
 # What is Julia?
 ["Julia is a high-level, high-performance dynamic programming language for technical computing"](http://julialang.org). It is free (open source) and supports Windows, OSX, and Linux. It has a familiar syntax, works well with external libraries, is fast, and has advanced language features like metaprogramming that enable interesting possibilities for optimization software.
