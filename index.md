@@ -3,23 +3,15 @@ layout: default
 title:  JuliaOpt&#58; Optimization packages for the Julia language
 ---
 
-# New webpage
+# JuliaOpt is dead, long live JuMP!
 
-We are transitioning to a new webpage for the JuMP ecosystem: [https://jump.dev](https://jump.dev).
-
-# JuMP-dev 2020: Abstract Submission
-
-We are pleased to announce that the 4th annual JuMP-dev workshop will be held
-June 15-17 2020 in [Louvain-la-Neuve, Belgium](https://goo.gl/maps/fyxqevrKn76nvhwq9),
-in conjunction with UCLouvain.
-
-For information go to the [new webpage](https://jump.dev/meetings/louvain2020/).
+As of 2020, the JuMP ecosystem has transitioned to a new webpage, [jump.dev](https://jump.dev), and a new GitHub organization, [JuMP-dev](https://github.com/jump-dev). JuliaOpt is no longer an active organization. This website remains up for historical interest only; most of the content is out of date.
 
 # What is Julia?
 ["Julia is a high-level, high-performance dynamic programming language for technical computing"](http://julialang.org). It is free (open source) and supports Windows, OSX, and Linux. It has a familiar syntax, works well with external libraries, is fast, and has advanced language features like metaprogramming that enable interesting possibilities for optimization software.
 
-# What is JuliaOpt?
-The [JuliaOpt GitHub organization](https://github.com/JuliaOpt) is home to a number of optimization-related packages written in Julia. Its purpose is to facilitate collaboration among developers of a tightly integrated set of packages for mathematical optimization.
+# What was JuliaOpt?
+The [JuliaOpt GitHub organization](https://github.com/JuliaOpt) was home to a number of optimization-related packages written in Julia. Its purpose was to facilitate collaboration among developers of a tightly integrated set of packages for mathematical optimization.
 
 - **Overview**: [presentation](https://www.youtube.com/watch?v=7LNeR299q88) and [workshop](https://www.youtube.com/watch?v=nnL7yLMVu6c) from JuliaCon 2015
 - **JuMP-dev Workshops**: [2019](meetings/santiago2019/), [2018](meetings/bordeaux2018/), [2017](meetings/mit2017/)
