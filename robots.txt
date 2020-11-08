@@ -26,3 +26,4 @@ Disallow: /JuMP.jl/v0.19.2
 Disallow: /JuMP.jl/v0.19-alpha
 Disallow: /JuMP.jl/v0.19-beta
 Disallow: /JuMP.jl/v0.19-beta2
+Disallow: /notebooks
