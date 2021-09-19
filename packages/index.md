@@ -114,7 +114,7 @@ packages.
 
 - [GeneticAlgorithms.jl](https://github.com/WestleyArgentum/GeneticAlgorithms.jl): genetic algorithms
 
-- [Metaheuristics.jl](https://github.com/jmejia8/Metaheuristics.jl): Metaheuristics algorithms for single and multi-objective optimization
+- [Metaheuristics.jl](https://github.com/jmejia8/Metaheuristics.jl): Metaheuristic algorithms for single and multi-objective optimization
 
 - [StochasticSearch.jl](https://github.com/phrb/StochasticSearch.jl): stochastic local search algorithms such as simulated annealing and tabu search
 
